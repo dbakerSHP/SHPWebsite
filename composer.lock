@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "516f4637559a4509f05457a2026315df",
+    "hash": "9f5eaa531b1961b39d368150effb2d8b",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -866,6 +866,60 @@
                 "tree"
             ],
             "time": "2014-08-01 09:50:16"
+        },
+        {
+            "name": "knplabs/knp-menu-bundle",
+            "version": "v2.0.0",
+            "target-dir": "Knp/Bundle/MenuBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-menu": "~2.0",
+                "symfony/framework-bundle": "~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\MenuBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "Knplabs",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
+                }
+            ],
+            "description": "This bundle provides an integration of the KnpMenu library",
+            "keywords": [
+                "menu"
+            ],
+            "time": "2014-08-01 09:57:23"
         },
         {
             "name": "kriswallsmith/assetic",

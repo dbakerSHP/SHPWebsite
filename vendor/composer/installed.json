@@ -1720,5 +1720,61 @@
             "menu",
             "tree"
         ]
+    },
+    {
+        "name": "knplabs/knp-menu-bundle",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "target-dir": "Knp/Bundle/MenuBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
+            "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+            "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+            "shasum": ""
+        },
+        "require": {
+            "knplabs/knp-menu": "~2.0",
+            "symfony/framework-bundle": "~2.0"
+        },
+        "time": "2014-08-01 09:57:23",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Knp\\Bundle\\MenuBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christophe Coevoet",
+                "email": "stof@notk.org"
+            },
+            {
+                "name": "Knplabs",
+                "homepage": "http://knplabs.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
+            }
+        ],
+        "description": "This bundle provides an integration of the KnpMenu library",
+        "keywords": [
+            "menu"
+        ]
     }
 ]
