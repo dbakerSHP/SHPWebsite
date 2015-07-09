@@ -1,3 +1,49 @@
 homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
+
+
+about:
+    path:     /about
+    defaults: { _controller: SiteBundle:About:about }
+
+shp_members:
+    path:     /shp-members
+    defaults: { _controller: SiteBundle:About:shpMembers }
+
+shp_honor_health:
+    path:     /honor-health
+    defaults: { _controller: SiteBundle:About:shpHonorHealth }
+
+physician_directory:
+    path:     /physician-directory
+    defaults: { _controller: SiteBundle:About:physicianDirectory }
+
+clinical_integration:
+    path:     /clinical-integration
+    defaults: { _controller: SiteBundle:ClinicalIntegration:clinicalIntegration }
+
+shp_clinical_integration_success:
+    path:     /clinical-integration-success
+    defaults: { _controller: SiteBundle:ClinicalIntegration:shpClinicalIntegrationSuccess }
+
+
+_a_c_o:
+    path:     /ACO
+    defaults: { _controller: SiteBundle:ACO:ACO }
+
+what_is_an_a_c_o:
+    path:     /what-is-an-aco
+    defaults: { _controller: SiteBundle:ACO:whatIsAnACO }
+
+contact:
+    path:     /contact
+    defaults: { _controller: SiteBundle:Contact:contact }
+
+news:
+    path:     /news
+    defaults: { _controller: SiteBundle:News:news }
+
+technology:
+    path:     /technology
+    defaults: { _controller: SiteBundle:Technology:technology }
