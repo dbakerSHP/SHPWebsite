@@ -2,8 +2,315 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ee475d-93fd-44b7-a404-c772255575b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SiteBundle/Menu/Builder.php" afterPath="$PROJECT_DIR$/src/SiteBundle/Menu/Builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/25.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/26.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/grid/9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-set-interface.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-set-interface.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-set-interface.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-social.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-social.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-social.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/arrow-left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/arrow-right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_large_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_large_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_left2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrow_right2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrowleft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrowright.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/arrows.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/avatar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/bakery-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/bakery-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/bakery-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/black50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/boxed_bgtile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_rounded/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_square/btnNext.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_rounded/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_square/btnPrevious.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/bullet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/bullet_boxed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/bullets.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/bullets.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/bullets2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/coloredbg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/comment-link.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/contentPattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/contentPattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/deal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/images/decor_inside.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/images/decor_inside_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/images/decor_testimonial.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/default_thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_rounded/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_square/default_thumbnail.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/doctor.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/eng-flag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/fra-flag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/images/gradient/g30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/images/gradient/g40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/ger-flag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/grain.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/gridtile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/gridtile_3x3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/gridtile_3x3_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/gridtile_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/hosting-slide1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/hosting-slide2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/hosting-slide3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/icomoon.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/icomoon.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/icomoon.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/jslider.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/large_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/large_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_rounded/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_square/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/loader2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/map-marker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/model.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/navigdots.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/navigdots_bgtile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/offer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/patterns/pattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/patterns/pattern2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/placehold.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/point.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/port-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/port-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/port-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/port-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/revicons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/font/revicons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/revicons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/font/revicons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/revicons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/font/revicons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider1-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider1-bootstrap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider1-css3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider1-html5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider1-img2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-four.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-img.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-one.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-three.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider2-two.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider3-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/rs-slider4-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/saloon-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/saloon-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/saloon-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/shadow1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/shadow2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/shadow3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider1-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider10-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider11-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider12-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider13-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider14-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider15-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider16-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider17-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider18-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider19-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider2-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider20-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider20-bg1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider21-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider22-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider22-bg2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider23-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider24-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider25-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider26-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider27-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider28-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider29-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider3-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider30-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider31-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider32-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider33-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider34-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider35-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider36-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider37-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider38-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider39-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider4-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider40-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider41-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider5-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider6-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider7-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider8-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/slider9-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/small_arrows.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/small_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/small_left_boxed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/small_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/small_right_boxed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_rounded/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/dark_square/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_rounded/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/light_square/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/sprite_next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/sprite_prev.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/sprite_x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/prettyPhoto/default/sprite_y.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/student-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/student.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/timer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/timerdot.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/transparent.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/travel-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/travel-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/sections/slider/travel-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/images/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/assets/white50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-set-interface.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/Pe-icon-social.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/animate.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/bootstrap-datetimepicker.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/bootstrap-datetimepicker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/bootstrapValidator.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/tweet/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/charts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/color.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/countdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/custom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/effect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/fancySelect.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/fancySelect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/grid-rotator.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/hover-dropdown-menu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/hover-dropdown-menu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/icomoon.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/icons.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/isotope.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.appear.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.countTo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.easing.1.3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.easy-ticker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.easypiechart.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.elevateZoom-3.0.8.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.gridrotator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.hover-dropdown-menu-addon.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.mb.YTPlayer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.migrate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.mixitup.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.parallax-1.1.3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.prettyPhoto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.sticky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/jquery.superslides.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/js/jquery.themepunch.enablelog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/js/jquery.themepunch.revolution.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/js/jquery.themepunch.revolution.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/js/jquery.themepunch.tools.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/revolution/jquery.zozothemes.plugins.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/revolution/jquery.zozothemes.revolution.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/masonry.pkgd.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/modernizr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/moment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/owl/owl.carousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/owl.carousel.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/owl/owl.theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/owl/owl.transitions.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/photostack.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/photostack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/prettyPhoto.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/price-filter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/retina.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/fonts/revicons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/font/revicons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/revolution-custom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/revolution-slider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/tweet/scripts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/css/settings-ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/settings.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/css/settings.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/smoothscroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/socialstream.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/tweet/tweetie.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/typed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/css/video.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/public/js/video.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/framework" afterPath="$PROJECT_DIR$/web/bundles/framework" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/sensiodistribution" afterPath="$PROJECT_DIR$/web/bundles/sensiodistribution" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/navigation.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/navigation.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SHPWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,24 +335,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Mist - theme - themeforest/Mist/light/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="825">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="16" />
+            <state vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="41715">
+              <caret line="39" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Builder.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SiteBundle/Menu/Builder.php">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46581197" vertical-offset="138" max-vertical-offset="1410">
-              <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+            <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="870">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding>
-                <element signature="e#109#139#0#PHP" expanded="true" />
+                <element signature="e#8#28#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85790175" vertical-offset="374" max-vertical-offset="1380">
+              <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,14 +382,14 @@
         <option value="$PROJECT_DIR$/src/SiteBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/SiteBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/navigation.html.twig" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/SiteBundle/Controller/ACOController.php" />
         <option value="$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/SiteBundle/Menu/Builder.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/navigation.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
       </list>
     </option>
   </component>
@@ -123,6 +440,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -342,6 +713,190 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rs-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rs-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -466,6 +1021,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SHPWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -483,6 +1078,12 @@
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/SiteBundle/Resources/public" />
+      <recent name="$PROJECT_DIR$/src/SiteBundle/Resources/public/js" />
+      <recent name="$PROJECT_DIR$/src/SiteBundle/Resources/public/images" />
+      <recent name="$PROJECT_DIR$/src/SiteBundle/Resources/public/css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -522,7 +1123,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -531,7 +1132,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -657,14 +1258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5816733" vertical-offset="657" max-vertical-offset="1410">
-          <caret line="73" column="27" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
@@ -681,28 +1274,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22633745" vertical-offset="0" max-vertical-offset="729">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#8#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/navigation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.041152265" vertical-offset="0" max-vertical-offset="729">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -717,29 +1292,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/navigation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041152265" vertical-offset="0" max-vertical-offset="729">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/public/rs-plugin/js/jquery.themepunch.enablelog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="870">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#8#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24691358" vertical-offset="0" max-vertical-offset="729">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28806585" vertical-offset="0" max-vertical-offset="729">
-          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="825">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.30278885" vertical-offset="72" max-vertical-offset="825">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SiteBundle/Menu/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46581197" vertical-offset="138" max-vertical-offset="1410">
-          <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.2948718" vertical-offset="138" max-vertical-offset="1410">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
             <element signature="e#109#139#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/public/css/animate.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25896415" vertical-offset="0" max-vertical-offset="753">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/public/js/bootstrap-datetimepicker.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35856575" vertical-offset="0" max-vertical-offset="30765">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Mist - theme - themeforest/Mist/light/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="41715">
+          <caret line="39" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85790175" vertical-offset="374" max-vertical-offset="1380">
+          <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
