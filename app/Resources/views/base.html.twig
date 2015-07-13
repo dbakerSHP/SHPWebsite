@@ -1,4 +1,7 @@
-{% use 'navigation.html.twig' %}
+{% use '::page_elements.html.twig' %}
+{% use '::navigation.html.twig' %}
+{% use '::footer.html.twig' %}
+{% use '::js_footer_includes.html.twig' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +47,25 @@
 
 </head>
 <body>
-    {{ block('main_navigation') }}
-    {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+<div id="page">
+	<!-- Page Loader -->
+	<div id="pageloader">
+		<div class="loader-item fa fa-spin text-color"></div>
+	</div>
+
+	{{ block('main_navigation') }}
+
+	{% block body %}{% endblock %}
+
+	{{ block('footer') }}
+
+</div>
+<!-- page -->
+
+{{ block('js_footer_includes') }}
+
+{% block javascripts %}{% endblock %}
+
 </body>
 </html>
 

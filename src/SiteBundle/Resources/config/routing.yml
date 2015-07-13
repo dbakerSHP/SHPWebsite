@@ -1,6 +1,6 @@
 homepage:
     path:     /
-    defaults: { _controller: SiteBundle:Default:index }
+    defaults: { _controller: SiteBundle:Home:home }
 
 
 about:

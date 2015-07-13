@@ -476,7 +476,7 @@ li.search-dropdown a {
 }
 /* Logo Styles */
 .navbar-brand{
-	padding: 0;
+	padding: 15px 0 0 0;
 	height:auto;
 }
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
@@ -1220,7 +1220,7 @@ header .navbar-collapse{
 	}
 	/* Sub Menu Arrow */
 	.has-submenu:after {
-		color: #ffc400;
+		color: #8EB4E3;
 		content: "\e114";
 		font-family: 'icomoon';
 		font-size: 22px;

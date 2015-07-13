@@ -39,7 +39,7 @@
 .side-navbar .top-social-icon > a:hover i,
 header .nav .open > a.highlighteds
 {
-	color: #ffc400;
+	color: #8EB4E3;
 }
 
 
@@ -98,7 +98,7 @@ div.count-number:before,
 .hotel-tab .nav-tabs > li.active > a:hover,
 .navbar-default .navbar-toggle .icon-bar
 {
-	background-color: #ffc400;
+	background-color: #8EB4E3;
 }
 
 
@@ -118,32 +118,32 @@ div.count-number:before,
 .blog.timeliner  >li:hover .timeline-panel,
 .form-control:focus
 {
-	border-color: #ffc400;
+	border-color: #8EB4E3;
 }
 
 .bottom-arrow:before{
-	border-top-color: #ffc400;
+	border-top-color: #8EB4E3;
 }
 .rightGrip, 
 .leftGrip{
-	border-bottom: 10px solid #ffc400 !important;
+	border-bottom: 10px solid #8EB4E3 !important;
 }
 
 .blog.timeliner >li:hover  .timeline-panel:before{
-  border-left-color: #ffc400;
+  border-left-color: #8EB4E3;
   
 }
 .blog.timeliner  >li.timeline-inverted:hover .timeline-panel:before{
-  border-right-color: #ffc400;
+  border-right-color: #8EB4E3;
   border-left-color: #ffffff;
 }
 .right.blog.timeliner  >li.timeline-inverted:hover .timeline-panel:before,
 .right.blog.timeliner >li:hover  .timeline-panel:before{
-	border-right-color: #ffc400;
+	border-right-color: #8EB4E3;
 	border-left-color: #ffffff;
 }
 .pricing:hover i.icons-circle.medium.pricing-icon{
-	text-shadow: 0px 0px 5px rgba(255, 196, 0, 0.5);
+	text-shadow: 0px 0px 5px rgba(142, 180, 227, 0.5);
 }	
 
 
@@ -153,7 +153,7 @@ div.count-number:before,
 @media (max-width: 767px) { 
 	.blog.timeliner  >li.timeline-inverted:hover .timeline-panel:before,
 	.blog.timeliner >li:hover  .timeline-panel:before{
-		border-right-color: #ffc400;
+		border-right-color: #8EB4E3;
 		border-left-color: #ffffff;
 	}
 }
@@ -164,7 +164,7 @@ div.count-number:before,
 .btn-default:hover,
 .color-switch .owl-controls .owl-page span,
 .tags li a{
- background-color: rgba(255,196,0,.8);
+ background-color: rgba(142, 180, 227,.8);
 }
 
 
@@ -172,13 +172,13 @@ div.count-number:before,
 /* Content Select In Browser */
 
 ::-moz-selection {
-    background: #ffc400;
+    background: #8EB4E3;
     color: #000000;
     text-shadow: none;
 }
 
 ::selection {
-    background: #ffc400;
+    background: #8EB4E3;
     color: #a4003a;
     text-shadow: none;
 }

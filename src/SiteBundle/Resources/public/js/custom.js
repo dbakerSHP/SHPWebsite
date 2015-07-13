@@ -744,7 +744,7 @@ var appMaster = {
 						data : [70,30,60,40,50,30,60]
 					},
 					{
-						fillColor : "rgba(255,196,0,0.5)",
+						fillColor : "rgba(142, 180, 227,0.5)",
 						strokeColor : "rgba(151,187,205,1)",
 						pointColor : "rgba(151,187,205,1)",
 						pointStrokeColor : "#fff",
@@ -757,7 +757,7 @@ var appMaster = {
 				labels : ["January","February","March","April","May","June","July"],
 				datasets : [
 					{
-						fillColor : "rgba(255,196,0,0.5)",
+						fillColor : "rgba(142, 180, 227,0.5)",
 						strokeColor : "rgba(220,220,220,1)",
 						data : [50,70,90,60,70,40,50]
 					}
@@ -776,9 +776,9 @@ var appMaster = {
 						data : [65,59,90,81,56,55,40]
 					},
 					{
-						fillColor : "rgba(255,196,0,0.5)",
-						strokeColor : "rgba(255,196,0,1)",
-						pointColor : "rgba(255,196,0,1)",
+						fillColor : "rgba(142, 180, 227,0.5)",
+						strokeColor : "rgba(142, 180, 227,1)",
+						pointColor : "rgba(142, 180, 227,1)",
 						pointStrokeColor : "#fff",
 						data : [28,48,40,19,96,27,100]
 					}
@@ -789,7 +789,7 @@ var appMaster = {
 			var pieChartData = [
 				{
 					value: 90,
-					color:"#ffc400"
+					color:"#8EB4E3"
 				},
 				{
 					value : 30,
@@ -813,7 +813,7 @@ var appMaster = {
 			var polarAreaChartData = [
 				{
 					value : 60,
-					color: "#ffc400"
+					color: "#8EB4E3"
 				},
 				{
 					value : 70,
@@ -840,7 +840,7 @@ var appMaster = {
 			var doughnutChartData = [
 				{
 					value: 30,
-					color:"#ffc400"
+					color:"#8EB4E3"
 				},
 				{
 					value : 50,
@@ -1129,8 +1129,8 @@ function GmapInit() {
 	  Gmap = $('.map-canvas');
 	  Gmap.each(function() {
 		var $this           = $(this),
-			lat             = -35.2835,
-			lng             = 149.128,
+			lat             = 33.57338,
+			lng             = -111.88749,
 			zoom            = 12,
 			scrollwheel     = false,
 			zoomcontrol 	= true,
@@ -1189,7 +1189,7 @@ function GmapInit() {
 		};		
 		var map = new google.maps.Map($this[0], mapOptions);
 		
-		var image = 'img/map-marker.png';
+		var image = '/bundles/site/images/map-marker.png';
 		if( dataContent !== undefined && dataContent !== false ) {
 			contentString = '<div class="map-data">' + '<h6>' + title + '</h6>' + '<div class="map-content">' + dataContent + '</div>' + '</div>';
 		}

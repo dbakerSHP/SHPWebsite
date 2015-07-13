@@ -1,0 +1,33 @@
+{% block js_footer_includes %}
+
+	<!-- Scripts -->
+	<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+	{% javascripts
+		'bundles/site/js/bootstrap.min.js'
+		'bundles/site/js/hover-dropdown-menu.js'
+		'bundles/site/js/jquery.hover-dropdown-menu-addon.js'
+		'bundles/site/js/jquery.easing.1.3.js'
+		'bundles/site/js/jquery.sticky.js'
+		'bundles/site/js/bootstrapValidator.min.js'
+		'bundles/site/rs-plugin/js/jquery.themepunch.tools.min.js'
+		'bundles/site/rs-plugin/js/jquery.themepunch.revolution.min.js'
+		'bundles/site/js/revolution-custom.js'
+		'bundles/site/js/jquery.mixitup.min.js'
+		'bundles/site/js/jquery.appear.js'
+		'bundles/site/js/effect.js'
+		'bundles/site/js/owl.carousel.min.js'
+		'bundles/site/js/jquery.prettyPhoto.js'
+		'bundles/site/js/jquery.parallax-1.1.3.js'
+		'bundles/site/js/jquery.countTo.js'
+		'bundles/site/js/tweet/carousel.js'
+		'bundles/site/js/tweet/scripts.js'
+		'bundles/site/js/tweet/tweetie.min.js'
+		'bundles/site/js/jquery.mb.YTPlayer.js'
+		'bundles/site/js/custom.js'
+	filter='uglifyjs2' %}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<!-- Scripts -->
+
+{% endblock %}
