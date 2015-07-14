@@ -7,7 +7,7 @@
 
 	<div class="page-header">
 		<div class="container">
-			<h1 class="title">Contact Us</h1>
+			<h1 class="title">Contact {{ company_name }}</h1>
 		</div>
 	</div>
 	<!-- page-header -->
@@ -37,48 +37,25 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</div><!-- Contact Info -->
 				<div class="col-md-4">
-					<p class="form-message" style="display: none;"></p>
+					<p class="form-message alert hidden"></p>
 					<div class="contact-form">
 						<!-- Form Begins -->
-
-
-						{{ form_start(contact, {'action': path('contact'), 'attr': {'id': 'contactform'}}) }}
+						{{ form_start(contact, {'action': path('contact_process'), 'attr': {'id': 'contactform'}}) }}
 						<div class="input-text form-group">
-							{{ form_widget(contact.fullName) }}
+							{{ form_widget(contact.fullName, { 'attr': {'class': 'input-name form-control', 'placeholder': 'Full Name'} }) }}
 						</div>
 						<div class="input-email form-group">
-							{{ form_widget(contact.email) }}
+							{{ form_widget(contact.email, { 'attr': {'class': 'input-email form-control', 'placeholder': 'Email'} }) }}
 						</div>
 						<div class="input-phone form-group">
-							{{ form_widget(contact.phone) }}
+							{{ form_widget(contact.phone, { 'attr': {'class': 'input-phone form-control', 'placeholder': 'Phone'} }) }}
 						</div>
 						<div class="textarea-message form-group">
-							{{ form_widget(contact.message) }}
+							{{ form_widget(contact.message, { 'attr': {'class': 'textarea-message hight-82 form-control', 'placeholder': 'Message'} }) }}
 						</div>
-						<button type="submit" class="button btn-info mr10 btn-block">Send Now <i class="icon-paper-plane"></i></button>
-						<!-- end .form-body section -->
+						<button type="submit" class="btn btn-default btn-block">Send Now <i class="icon-paper-plane"></i></button>
 						{{ form_end(contact) }}
-
-
-
-
-						{#<form role="form" name="contactform" id="contactform" method="post" action="php/contact-form.php">#}
-							{#<div class="input-text form-group">#}
-								{#<input type="text" name="contact_name" class="input-name form-control" placeholder="Full Name" />#}
-							{#</div>#}
-							{#<div class="input-email form-group">#}
-								{#<input type="email" name="contact_email" class="input-email form-control" placeholder="Email"/>#}
-							{#</div>#}
-							{#<div class="input-email form-group">#}
-								{#<input type="text" name="contact_phone" class="input-phone form-control" placeholder="Phone"/>#}
-							{#</div>#}
-							{#<div class="textarea-message form-group">#}
-								{#<textarea name="contact_message" class="textarea-message hight-82 form-control" placeholder="Message" rows="2" ></textarea>#}
-							{#</div>#}
-							{#<button class="btn btn-default btn-block" type="submit">Send Now <i class="icon-paper-plane"></i></button>#}
-						{#</form>#}
-
-
+						<!-- Form Ends -->
 					</div>
 				</div>
 			</div>

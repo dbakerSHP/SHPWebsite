@@ -3,11 +3,12 @@
 namespace SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Contact
  *
- * @ORM\Table()
+ * @ORM\Table(name="contact")
  * @ORM\Entity(repositoryClass="SiteBundle\Entity\ContactRepository")
  */
 class Contact
@@ -24,42 +25,45 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="full_name", type="string", length=255)
+     * @ORM\Column(name="full_name", type="string", length=255, nullable=false)
+     * @Assert\NotBlank()
      */
     private $fullName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=255)
+     * @ORM\Column(name="phone", type="string", length=255, nullable=false)
+     * @Assert\NotBlank()
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="text")
+     * @ORM\Column(name="message", type="text", nullable=false)
+     * @Assert\NotBlank()
      */
     private $message;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_date", type="datetime")
+     * @ORM\Column(name="created_date", type="datetime", nullable=false)
      */
     private $createdDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="subject", type="string", length=255)
+     * @ORM\Column(name="subject", type="string", length=255, nullable=true)
      */
     private $subject;
 

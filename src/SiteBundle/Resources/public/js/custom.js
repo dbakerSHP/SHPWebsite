@@ -295,20 +295,40 @@ var appMaster = {
 			})	
 			.on('success.form.bv', function(e) {
 				e.preventDefault();
-				var $form        = $(e.target),
-				validator    = $form.data('bootstrapValidator'),
-				submitButton = validator.getSubmitButton();
-				var form_data = $('#contactform').serialize();
+				var $form           = $(e.target),
+					validator       = $form.data('bootstrapValidator'),
+					submitButton    = validator.getSubmitButton();
+				var form_data       = $('#contactform').serialize();
 				$.ajax({
 						type: "POST",
 						dataType: 'json',
-						url: "php/contact-form.php",					
+						url: $form.attr('action'),
 						data: form_data,
 						success: function(msg){						
 							$('.form-message').html(msg.data);
-							$('.form-message').show();
+							//$('.form-message').addClass('alert-success').show();
+
+
+							$('.form-message')
+								.removeClass('hidden')
+								.addClass('alert-success')
+								.animate({opacity: 1}, 1000, function() {
+									$('.alert')
+										.delay(2000)
+										.animate({opacity: 0}, 1000, function() {
+											$('.alert')
+												.html("")
+												.removeClass('alert-success')
+												.addClass('hidden')
+											;
+										})
+									;
+								})
+							;
+
+
 							submitButton.removeAttr("disabled");
-							resetForm($('#contactform'));						
+							resetForm($('#contactform'));
 						},
 						error: function(msg){}
 				 });
@@ -317,10 +337,12 @@ var appMaster = {
 		}
 		function resetForm($form) {
 
-            $form.find(
-                    'input:text, input:password, input, input:file, select, textarea'
-                )
-                .val('');
+            //$form.find(
+            //        'input:text, input:password, input, input:file, select, textarea'
+            //    )
+            //    .val('');
+			
+			$form[0].reset();
 
             $form.find('input:radio, input:checkbox')
                 .removeAttr('checked')

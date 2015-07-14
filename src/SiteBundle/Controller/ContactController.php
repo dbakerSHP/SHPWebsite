@@ -12,7 +12,6 @@ class ContactController extends Controller
     public function contactAction()
     {
 
-
         //Create a new user details entity instance
         $contact = new Contact();
         $contact_form = $this->createForm(new ContactType(), $contact);

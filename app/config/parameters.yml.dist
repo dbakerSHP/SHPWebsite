@@ -22,6 +22,9 @@ parameters:
     debug_redirects:        false
     use_assetic_controller: true
 
+    company_name: Scottsdale Health Partners
+
     send_emails_to: justin@omedix.com
+    send_emails_from: web@scottsdalehealthpartners.com
     send_emails_cc: ~
     send_emails_bcc: ~

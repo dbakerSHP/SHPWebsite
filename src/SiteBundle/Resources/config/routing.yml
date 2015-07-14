@@ -47,3 +47,7 @@ news:
 technology:
     path:     /technology
     defaults: { _controller: SiteBundle:Technology:technology }
+
+contact_process:
+    path:     /process/contact
+    defaults: { _controller: SiteBundle:FormProcess:contactProcess }
