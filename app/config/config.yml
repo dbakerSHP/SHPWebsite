@@ -37,6 +37,15 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         company_name: %company_name%
+        company_phone: %company_phone%
+        company_address1: %company_address1%
+        company_address2: %company_address2%
+        company_city: %company_city%
+        company_state: %company_state%
+        company_zip_code: %company_zip_code%
+        company_location_latitude: %company_location_latitude%
+        company_location_longitude: %company_location_longitude%
+        support_email: %send_emails_to%
 
 # Assetic Configuration
 assetic:

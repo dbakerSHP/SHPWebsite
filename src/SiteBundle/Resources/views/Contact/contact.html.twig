@@ -19,17 +19,17 @@
 						<address class="col-sm-4 col-md-4">
 							<i class="fa fa-map-marker i-8x icons-circle text-color light-bg hover-black"></i>
 							<div class="title">Address</div>
-							49 Archdale, 2B Charleston<br/>New York City, USA
+							{{ company_address1 }}{% if company_address2 != '' %}, {{ company_address2 }}{% endif %}<br/>{{ company_city }}, {{ company_state }} {{ company_zip_code }}
 						</address>
 						<address class="col-sm-4 col-md-4">
 							<i class="fa fa-microphone i-8x icons-circle text-color light-bg hover-black"></i>
 							<div class="title">Phones</div>
-							<div>Support: +123 (345) 6789</div>
+							<div>Support: {{ company_phone }}</div>
 						</address>
 						<address class="col-sm-4 col-md-4">
 							<i class="fa fa-envelope i-8x icons-circle text-color light-bg hover-black"></i>
 							<div class="title">Email Addresses</div>
-							<div>Support: <a href="mailto:support@example.com">support@example.com</a></div>
+							<div>Support: <a href="mailto:{{ support_email }}">{{ support_email }}</a></div>
 						</address>
 					</div>
 					<hr/>

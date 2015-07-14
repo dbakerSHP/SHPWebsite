@@ -45,5 +45,5 @@ assetic:
     use_controller: true
 
 swiftmailer:
-    delivery_address: %send_emails_to%
+    delivery_address: %send_dev_emails_to%
     sender_address: %send_emails_from%
