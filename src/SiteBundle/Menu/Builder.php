@@ -82,7 +82,8 @@ class Builder extends ContainerAware
 				'safe_label' => true
 			)
 		))
-			->setLinkAttribute('class', 'header-contact');
+			->setLinkAttribute('class', 'header-contact')
+			->setAttributes(array('class' => 'hidden-767'));
 
 		/**
 		 * Search Link / Icon
@@ -93,7 +94,8 @@ class Builder extends ContainerAware
 				'safe_label' => true
 			)
 		))
-			->setLinkAttribute('class', 'header-search');
+			->setLinkAttribute('class', 'header-search')
+			->setAttributes(array('class' => 'hidden-767'));
 
 
 		// access services from the container!
