@@ -23,6 +23,7 @@ parameters:
     use_assetic_controller: true
 
     company_name: Scottsdale Health Partners
+    company_founded: 2012
     company_phone: +1 (480) 588-7528
     company_address1: 8901 E Mountain View Rd
     company_address2:

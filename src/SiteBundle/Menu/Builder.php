@@ -17,6 +17,7 @@ class Builder extends ContainerAware
 	 */
 	public function mainMenu(FactoryInterface $factory, array $options)
 	{
+
 		$menu = $factory->createItem('root');
 		$menu->setChildrenAttributes(array('class' => 'nav navbar-nav'));
 
@@ -112,6 +113,54 @@ class Builder extends ContainerAware
 		// ... add more children
 
 		return $menu;
+
+	}
+
+	/**
+	 * Footer Navigation
+	 */
+	public function footerMenu(FactoryInterface $factory, array $options)
+	{
+
+		$menu = $factory->createItem('root');
+
+		/**
+		 * Contact Us
+		 */
+		$menu->addChild('Contact Us', array('route' => 'contact'));
+
+		/**
+		 * Frequently Asked Questions
+		 */
+		$menu->addChild('Frequently Asked Questions', array('route' => 'faq'));
+
+		/**
+		 * Request Access
+		 */
+		$menu->addChild('Request Access', array('route' => 'request_access'));
+
+		/**
+		 * Client Portal
+		 */
+		$menu->addChild('Client Portal', array('uri' => '#'));
+
+		/**
+		 * Locate a Physician
+		 */
+		$menu->addChild('Locate a Physician', array('route' => 'locate_physician'));
+
+		/**
+		 * Terms of Use
+		 */
+		$menu->addChild('Terms of Use', array('route' => 'tos'));
+
+		/**
+		 * Privacy Policy
+		 */
+		$menu->addChild('Privacy Policy', array('route' => 'privacy_policy'));
+
+		return $menu;
+
 	}
 
 }

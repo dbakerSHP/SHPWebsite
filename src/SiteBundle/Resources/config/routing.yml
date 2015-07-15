@@ -51,3 +51,23 @@ technology:
 contact_process:
     path:     /process/contact
     defaults: { _controller: SiteBundle:FormProcess:contactProcess }
+
+faq:
+    path:     /frequently-asked-questions
+    defaults: { _controller: SiteBundle:FrequentlyAskedQuestions:faq }
+
+request_access:
+    path:     /request-access
+    defaults: { _controller: SiteBundle:Contact:requestAccess }
+
+locate_physician:
+    path:     /locate-a-physician
+    defaults: { _controller: SiteBundle:LocatePhysician:locatePhysician }
+
+tos:
+    path:     /terms-of-use
+    defaults: { _controller: SiteBundle:TermsOfUse:tos }
+
+privacy_policy:
+    path:     /privacy-policy
+    defaults: { _controller: SiteBundle:PrivacyPolicy:privacyPolicy }

@@ -130,6 +130,9 @@ select,
 textarea {
   font-family: 'Arimo', sans-serif;
 }
+.line-height-3x {
+	line-height: 3em;
+}
 /* Heading */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
@@ -471,7 +474,7 @@ i.icons-square{
 }
 /* Icon With Color */
 .gray-bg i{	
-   background-color:#c6c6c6;
+   background-color:#9e9ea6;
    color:#ffffff;
 }
 
@@ -698,7 +701,7 @@ i.fa-1x{
 	padding:0;
 }
 .no-margin {
-    margin: 0;
+    margin: 0 !important;
 }
 /* Custom Height */
 
@@ -5740,7 +5743,7 @@ textarea.form-control {
   position: relative;
 }
 #footer .footer-icon {
-  color: #c6c6c6;
+  color: #9e9ea6;
   left: 16px;
   position: absolute;
   top: 0;
@@ -5785,7 +5788,7 @@ textarea.form-control {
 	line-height:40px;
     text-align: center;
     width: 40px;
-	background-color:#c6c6c6;
+	background-color:#9e9ea6;
 }
 .page-sticky-footer{
     margin-bottom: 80px;
