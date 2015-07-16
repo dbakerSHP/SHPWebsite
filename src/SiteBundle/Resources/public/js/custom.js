@@ -341,7 +341,7 @@ var appMaster = {
             //        'input:text, input:password, input, input:file, select, textarea'
             //    )
             //    .val('');
-			
+
 			$form[0].reset();
 
             $form.find('input:radio, input:checkbox')
@@ -1251,6 +1251,7 @@ function MapLoadScript() {
 	script.type = 'text/javascript';
 	script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=GmapInit';
 	document.body.appendChild(script);
+	console.log(script.src);
 }
 
 

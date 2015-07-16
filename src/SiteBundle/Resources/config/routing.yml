@@ -71,3 +71,31 @@ tos:
 privacy_policy:
     path:     /privacy-policy
     defaults: { _controller: SiteBundle:PrivacyPolicy:privacyPolicy }
+
+for_patients:
+    path:     /for-patients
+    defaults: { _controller: SiteBundle:ForPatients:forPatients }
+
+our_philosophy:
+    path:     /our-philosophy
+    defaults: { _controller: SiteBundle:ForPatients:ourPhilosophy }
+
+our_physicians:
+    path:     /our-physicians
+    defaults: { _controller: SiteBundle:ForPatients:ourPhysicians }
+
+physician_directory:
+    path:     /physician-directory
+    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
+
+insurance_plans:
+    path:     /insurance-plans
+    defaults: { _controller: SiteBundle:ForPatients:insurancePlans }
+
+care_management:
+    path:     /care-management
+    defaults: { _controller: SiteBundle:ForPatients:careManagement }
+
+for_physicians:
+    path:     /for-physicians
+    defaults: { _controller: SiteBundle:ForPhysicians:forPhysicians }

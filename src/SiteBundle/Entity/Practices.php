@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Practices
  *
- * @ORM\Table()
+ * @ORM\Table(name="practices")
  * @ORM\Entity(repositoryClass="SiteBundle\Entity\PracticesRepository")
  */
 class Practices
@@ -38,7 +38,7 @@ class Practices
     /**
      * @var string
      *
-     * @ORM\Column(name="address2", type="string", length=255)
+     * @ORM\Column(name="address2", type="string", length=255, nullable=true)
      */
     private $address2;
 
@@ -59,28 +59,28 @@ class Practices
     /**
      * @var string
      *
-     * @ORM\Column(name="zip", type="string", length=10)
+     * @ORM\Column(name="zip", type="string", length=10, nullable=true)
      */
     private $zip;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="latitude", type="string", length=15)
+     * @ORM\Column(name="latitude", type="string", length=15, nullable=true)
      */
     private $latitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude", type="string", length=15)
+     * @ORM\Column(name="longitude", type="string", length=15, nullable=true)
      */
     private $longitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=25)
+     * @ORM\Column(name="phone", type="string", length=25, nullable=true)
      */
     private $phone;
 
@@ -94,10 +94,16 @@ class Practices
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="deleted_date", type="datetime")
+     * @ORM\Column(name="deleted_date", type="datetime", nullable=true)
      */
     private $deletedDate;
 
+
+    public function __construct()
+    {
+        $this->createdDate(new \DateTime());
+        $this->deletedDate(new \DateTime());
+    }
 
     /**
      * Get id
