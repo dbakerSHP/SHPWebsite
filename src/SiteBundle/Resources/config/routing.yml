@@ -84,9 +84,9 @@ our_physicians:
     path:     /our-physicians
     defaults: { _controller: SiteBundle:ForPatients:ourPhysicians }
 
-physician_directory:
-    path:     /physician-directory
-    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
+#physician_directory:
+#    path:     /physician-directory
+#    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
 
 insurance_plans:
     path:     /insurance-plans
