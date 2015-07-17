@@ -1,0 +1,93 @@
+{% block footer %}
+<footer id="footer">
+	<div class="footer-widget">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-3 widget bottom-xs-pad-20">
+					<div class="widget-title">
+						<!-- Title -->
+						<h3 class="title">About Us</h3>
+					</div>
+					<!-- Text -->
+					<p> We like to provide great site with complete features what you want to impletement in your business!</p>
+					<!-- Address -->
+					<p><strong>Office:</strong> {{ company_name }}<br> {{ company_address1 }}{% if company_address2 != '' %}, {{ company_address2 }}{% endif %}<br/>{{ company_city }}, {{ company_state }} {{ company_zip_code }}</p>
+					<!-- Phone -->
+					<p><strong>Call Us:</strong> {{ company_phone }}
+					</p>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3 widget bottom-xs-pad-20">
+					<div class="widget-title">
+						<!-- Title -->
+						<h3 class="title">Need Help?</h3>
+					</div>
+					{{ knp_menu_render("SiteBundle:Builder:footerMenu") }}
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3 widget">
+					<div class="widget-title">
+						<!-- Title -->
+						<h3 class="title">Latest News</h3>
+					</div>
+					<nav>
+						<ul class="footer-blog">
+							<!-- List Items -->
+							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
+							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
+							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3 widget newsletter bottom-xs-pad-20">
+					<div class="widget-title">
+						<!-- Title -->
+						<h3 class="title">Newsletter Signup</h3>
+					</div>
+					<div>
+						<!-- Text -->
+						<p>Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>
+						<p class="form-message1" style="display: none;"></p>
+						<div class="clearfix"></div>
+						<!-- Form -->
+						<form id="subscribe_form" action="subscription.php" method="post" name="subscribe_form" role="form">
+							<div class="input-text form-group has-feedback">
+								<input class="form-control" type="email" value="" name="subscribe_email">
+								<button class="submit bg-color" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
+							</div>
+						</form>
+					</div>
+					<div class="widget-title">
+						<!-- Title -->
+						<h3 class="title">Join the Conversation</h3>
+					</div>
+					<!-- Social Links -->
+					<div class="social-icon gray-bg icons-circle i-3x">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+				<!-- .newsletter -->
+			</div>
+		</div>
+	</div>
+	<!-- footer-top -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<!-- Copyrights -->
+				<div class="col-xs-12 col-sm-6 col-md-6 line-height-3x">
+					Copyright &copy; {{ company_name }}, &reg; {{ company_founded }}{% if "now"|date("Y") != company_founded %} - {{ "now"|date("Y") }}{% endif %}
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 text-right page-scroll gray-bg icons-circle i-3x">
+					<!-- Goto Top -->
+					<a href="#page">
+						<i class="glyphicon glyphicon-arrow-up no-margin"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer-bottom -->
+</footer>
+<!-- footer -->
+{% endblock %}

@@ -17,7 +17,9 @@ class Builder extends ContainerAware
 	 */
 	public function mainMenu(FactoryInterface $factory, array $options)
 	{
+
 		$menu = $factory->createItem('root');
+		$menu->setChildrenAttributes(array('class' => 'nav navbar-nav'));
 
 		/**
 		 * Home
@@ -27,15 +29,15 @@ class Builder extends ContainerAware
 		/**
 		 * About Us
 		 */
-		$menu->addChild('About Us', array('route' => 'about'))
+		$menu->addChild('About Us', array('route' => 'about'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('SHP Members', array('route' => 'shp_members'))->getParent()
-			->addChild('SHP & HonorHealth', array('route' => 'shp_honor_health'))->getParent()
+			->addChild('SHP & HonorHealth', array('route' => 'shp_honor_health'))->getParent()->setAttribute('dropdown', true)
 		;
 
 		/**
 		 * About Us > Scottsdale Health Partners & Honor Health
 		 */
-		$menu['About Us']['SHP & HonorHealth']
+		$menu['About Us']['SHP & HonorHealth']->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('Physician Directory', array('route' => 'physician_directory'))->getParent()
 			->addChild('Learn More', array('route' => 'shp_honor_health'))->getParent()
 		;
@@ -43,7 +45,7 @@ class Builder extends ContainerAware
 		/**
 		 * Clinical Integration
 		 */
-		$menu->addChild('Clinical Integration', array('route' => 'clinical_integration'))
+		$menu->addChild('Clinical Integration', array('route' => 'clinical_integration'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('What is Clinical Integration', array('route' => 'clinical_integration'))->getParent()
 			->addChild('SHP Clinical Integration Success', array('route' => 'shp_clinical_integration_success'))->getParent()
 		;
@@ -51,7 +53,7 @@ class Builder extends ContainerAware
 		/**
 		 * ACO
 		 */
-		$menu->addChild('ACO', array('route' => '_a_c_o'))
+		$menu->addChild('ACO', array('route' => '_a_c_o'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('What is and ACO', array('route' => 'what_is_an_a_c_o'))->getParent()
 			->addChild('SHP ACO', array('route' => '_a_c_o'))->getParent()
 		;
@@ -71,6 +73,31 @@ class Builder extends ContainerAware
 		 */
 		$menu->addChild('Contact Us', array('route' => 'contact'));
 
+		/**
+		 * Contact Icon Toggle
+		 */
+		$menu->addChild('<span><i class="fa fa-phone"></i></span>', array(
+			'uri' => '#',
+			'extras' => array(
+				'safe_label' => true
+			)
+		))
+			->setLinkAttribute('class', 'header-contact')
+			->setAttributes(array('class' => 'hidden-767'));
+
+		/**
+		 * Search Link / Icon
+		 */
+		$menu->addChild('<span><i class="fa fa-search"></i></span>', array(
+			'uri' => '#',
+			'extras' => array(
+				'safe_label' => true
+			)
+		))
+			->setLinkAttribute('class', 'header-search')
+			->setAttributes(array('class' => 'hidden-767'));
+
+
 		// access services from the container!
 		$em = $this->container->get('doctrine')->getManager();
 		// findMostRecent and Blog are just imaginary examples
@@ -88,6 +115,54 @@ class Builder extends ContainerAware
 		// ... add more children
 
 		return $menu;
+
+	}
+
+	/**
+	 * Footer Navigation
+	 */
+	public function footerMenu(FactoryInterface $factory, array $options)
+	{
+
+		$menu = $factory->createItem('root');
+
+		/**
+		 * Contact Us
+		 */
+		$menu->addChild('Contact Us', array('route' => 'contact'));
+
+		/**
+		 * Frequently Asked Questions
+		 */
+		$menu->addChild('Frequently Asked Questions', array('route' => 'faq'));
+
+		/**
+		 * Request Access
+		 */
+		$menu->addChild('Request Access', array('route' => 'request_access'));
+
+		/**
+		 * Client Portal
+		 */
+		$menu->addChild('Client Portal', array('uri' => '#'));
+
+		/**
+		 * Locate a Physician
+		 */
+		$menu->addChild('Locate a Physician', array('route' => 'locate_physician'));
+
+		/**
+		 * Terms of Use
+		 */
+		$menu->addChild('Terms of Use', array('route' => 'tos'));
+
+		/**
+		 * Privacy Policy
+		 */
+		$menu->addChild('Privacy Policy', array('route' => 'privacy_policy'));
+
+		return $menu;
+
 	}
 
 }

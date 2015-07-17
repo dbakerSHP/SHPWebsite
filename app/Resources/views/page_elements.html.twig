@@ -1,0 +1,123 @@
+{# TESTIMONIALS#}
+{% block pe_testimonials %}
+	<section id="testimonials" class="page-section light-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 testimonails">
+					<div class="owl-carousel pagination-1 dark-switch " data-pagination="true" data-autoplay="true" data-navigation="false" data-singleitem="true">
+						<div class="item">
+							<div class="desc-border bottom-arrow">
+								<blockquote class="small-text text-center">
+									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+								</blockquote>
+								<div class="star-rating text-center">
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star-half-o  text-color"></i>
+								</div>
+							</div>
+							<div class="client-details text-center">
+								<div class="client-image">
+									<!-- Image -->
+									<img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
+								</div>
+								<div class="client-details">
+									<!-- Name -->
+									<strong class="text-color">John Doe</strong>
+									<!-- Company -->
+									<span>Designer, zozothemes</span>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="desc-border bottom-arrow">
+								<blockquote class="small-text text-center">
+									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+								</blockquote>
+								<div class="star-rating text-center">
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star-half-o  text-color"></i>
+								</div>
+							</div>
+							<div class="client-details text-center">
+								<div class="client-image">
+									<!-- Image -->
+									<img class="img-circle" src="img/sections/testimonials/2.jpg" width="80" height="80" alt="">
+								</div>
+								<div class="client-details">
+									<!-- Name -->
+									<strong class="text-color">John Doe</strong>
+									<!-- Company -->
+									<span>Designer, zozothemes</span>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="desc-border bottom-arrow">
+								<blockquote class="small-text text-center">
+									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+								</blockquote>
+								<div class="star-rating text-center">
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star  text-color"></i>
+									<i class="fa fa-star-half-o  text-color"></i>
+								</div>
+							</div>
+							<div class="client-details text-center">
+								<div class="client-image">
+									<!-- Image -->
+									<img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
+								</div>
+								<div class="client-details">
+									<!-- Name -->
+									<strong class="text-color">John Doe</strong>
+									<!-- Company -->
+									<span>Designer, zozothemes</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{# GOOGLE MAP #}
+{% block pe_google_map %}
+	<section id="map">
+		<div class="map-section">
+			<div class="map-canvas"
+			     data-zoom="15"
+			     data-zoomcontrol="false"
+			     data-lat="{{ company_location_latitude }}"
+			     data-lng="{{ company_location_longitude }}"
+			     data-type="roadmap"
+			     data-hue="#8eb4e3"
+			     data-title="{{ company_name }}"
+			     data-content="Contact: {{ company_phone }}<br>
+						<a href='mailto:info@scottsdalehealthpartners.com'>info@scottsdalehealthpartners.com</a>"
+			     style="height: 376px;">
+			</div>
+		</div>
+	</section> <!-- map -->
+{% endblock %}
+
+{% block pe_contact_divider %}
+	<div id="get-quote" class="bg-color get-a-quote black text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					Become A Partner / Need Help? <a class="black" href="{{ path('contact') }}">Contact Us </a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

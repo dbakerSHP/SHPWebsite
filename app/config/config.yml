@@ -35,6 +35,18 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        company_name: %company_name%
+        company_founded: %company_founded%
+        company_phone: %company_phone%
+        company_address1: %company_address1%
+        company_address2: %company_address2%
+        company_city: %company_city%
+        company_state: %company_state%
+        company_zip_code: %company_zip_code%
+        company_location_latitude: %company_location_latitude%
+        company_location_longitude: %company_location_longitude%
+        support_email: %send_emails_to%
 
 # Assetic Configuration
 assetic:
@@ -82,5 +94,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    sender_address: %send_emails_from%
 
-
+doctrine_migrations:
+    dir_name: %kernel.root_dir%/DoctrineMigrations
+    namespace: SiteBundle\Migrations
+    table_name: migration_versions
+    name: Application Migrations

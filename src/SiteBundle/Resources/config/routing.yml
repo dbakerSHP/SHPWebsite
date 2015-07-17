@@ -1,6 +1,6 @@
 homepage:
     path:     /
-    defaults: { _controller: SiteBundle:Default:index }
+    defaults: { _controller: SiteBundle:Home:home }
 
 
 about:
@@ -47,3 +47,55 @@ news:
 technology:
     path:     /technology
     defaults: { _controller: SiteBundle:Technology:technology }
+
+contact_process:
+    path:     /process/contact
+    defaults: { _controller: SiteBundle:FormProcess:contactProcess }
+
+faq:
+    path:     /frequently-asked-questions
+    defaults: { _controller: SiteBundle:FrequentlyAskedQuestions:faq }
+
+request_access:
+    path:     /request-access
+    defaults: { _controller: SiteBundle:Contact:requestAccess }
+
+locate_physician:
+    path:     /locate-a-physician
+    defaults: { _controller: SiteBundle:LocatePhysician:locatePhysician }
+
+tos:
+    path:     /terms-of-use
+    defaults: { _controller: SiteBundle:TermsOfUse:tos }
+
+privacy_policy:
+    path:     /privacy-policy
+    defaults: { _controller: SiteBundle:PrivacyPolicy:privacyPolicy }
+
+for_patients:
+    path:     /for-patients
+    defaults: { _controller: SiteBundle:ForPatients:forPatients }
+
+our_philosophy:
+    path:     /our-philosophy
+    defaults: { _controller: SiteBundle:ForPatients:ourPhilosophy }
+
+our_physicians:
+    path:     /our-physicians
+    defaults: { _controller: SiteBundle:ForPatients:ourPhysicians }
+
+#physician_directory:
+#    path:     /physician-directory
+#    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
+
+insurance_plans:
+    path:     /insurance-plans
+    defaults: { _controller: SiteBundle:ForPatients:insurancePlans }
+
+care_management:
+    path:     /care-management
+    defaults: { _controller: SiteBundle:ForPatients:careManagement }
+
+for_physicians:
+    path:     /for-physicians
+    defaults: { _controller: SiteBundle:ForPhysicians:forPhysicians }
