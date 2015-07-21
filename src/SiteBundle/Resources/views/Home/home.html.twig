@@ -154,7 +154,7 @@
 				<div class="col-md-6 pad-60">
 					<div class="section-title text-left">
 						<!-- Title -->
-						<h2 class="title">Who Are We?</h2>
+						<h2 class="title">Who We Are</h2>
 					</div>
 					<div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-singleitem="true">
 						<div class="item">
@@ -264,6 +264,7 @@
 		</div>
 	</section>
 	<!-- additional -->
+	{{ block('pe_testimonials') }}
 	<section id="fun-factor" class="page-section">
 		<div class="image-bg content-in fixed" data-background="{{ asset('bundles/site/images/sections/bg/counters-back.jpg') }}"></div>
 		<div class="container">
@@ -380,8 +381,37 @@
 		</div>
 	</section>
 	<!-- Features -->
-	{{ block('pe_testimonials') }}
-	{{ block('pe_google_map') }}
+	<section id="our-locations" class="page-section">
+		<div class="image-bg content-in fixed" data-background="{{ asset('bundles/site/images/sections/bg/counters-back.jpg') }}"></div>
+		<div class="container">
+			<div class="row text-center fact-counter white">
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="5"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Hospitals</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="398"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Practices</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="925"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Physicians</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="1910"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Specialties</h5>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- clients -->
 	{{ block('pe_contact_divider') }}
 
