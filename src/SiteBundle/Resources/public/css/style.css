@@ -309,7 +309,9 @@ a:focus{
  text-align:left;
 }
 .section-title h1:before ,
-.section-title h2:before {
+.section-title h2:before ,
+.section-title.invert-divider h1:before ,
+.section-title.invert-divider h2:before {
   bottom: 0;
   content: "";
   display: block;
@@ -319,6 +321,10 @@ a:focus{
   margin:-2px auto;
   position: absolute;
   width: 40px;
+}
+.section-title.invert-divider h1:before ,
+.section-title.invert-divider h2:before {
+	background-color: #0C0562;
 }
 .section-title h2{
 	font-size:28px;
@@ -395,8 +401,11 @@ section,
 -webkit-transition: background .2s linear, color .2s linear;
 transition:  background .2s linear, color .2s linear;
 }
-.btn-default{
+a.btn-default{
 color:#ffffff;
+}
+a.btn-success {
+	color: #FFFFFF;
 }
 .btn-default:hover{
 color:#ffffff;
