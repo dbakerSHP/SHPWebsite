@@ -7,25 +7,22 @@ about:
     path:     /about
     defaults: { _controller: SiteBundle:About:about }
 
-shp_members:
-    path:     /shp-members
-    defaults: { _controller: SiteBundle:About:shpMembers }
+what_we_do:
+    path:     /what-we-do
+    defaults: { _controller: SiteBundle:About:whatWeDo }
 
-shp_honor_health:
-    path:     /honor-health
-    defaults: { _controller: SiteBundle:About:shpHonorHealth }
+mission_vision_values:
+    path:     /mission-vision-values
+    defaults: { _controller: SiteBundle:About:missionVisionValues }
 
-physician_directory:
-    path:     /physician-directory
-    defaults: { _controller: SiteBundle:About:physicianDirectory }
+executive_team:
+    path:     /executive-team
+    defaults: { _controller: SiteBundle:About:executiveTeam }
 
-clinical_integration:
-    path:     /clinical-integration
-    defaults: { _controller: SiteBundle:ClinicalIntegration:clinicalIntegration }
+board_of_directors:
+    path:     /board-of-directors
+    defaults: { _controller: SiteBundle:About:boardOfDirectors }
 
-shp_clinical_integration_success:
-    path:     /clinical-integration-success
-    defaults: { _controller: SiteBundle:ClinicalIntegration:shpClinicalIntegrationSuccess }
 
 
 _a_c_o:
@@ -72,6 +69,11 @@ privacy_policy:
     path:     /privacy-policy
     defaults: { _controller: SiteBundle:PrivacyPolicy:privacyPolicy }
 
+
+
+
+
+
 for_patients:
     path:     /for-patients
     defaults: { _controller: SiteBundle:ForPatients:forPatients }
@@ -84,9 +86,9 @@ our_physicians:
     path:     /our-physicians
     defaults: { _controller: SiteBundle:ForPatients:ourPhysicians }
 
-#physician_directory:
-#    path:     /physician-directory
-#    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
+physician_directory:
+    path:     /physician-directory
+    defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
 
 insurance_plans:
     path:     /insurance-plans

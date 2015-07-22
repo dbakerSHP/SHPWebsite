@@ -10,28 +10,8 @@ class AboutController extends Controller
     {
         return $this->render('SiteBundle:About:about.html.twig', array(
                 // ...
-            ));
-    }
-
-    public function shpMembersAction()
-    {
-        return $this->render('SiteBundle:About:shpMembers.html.twig', array(
-                // ...
-            ));
-    }
-
-    public function shpHonorHealthAction()
-    {
-        return $this->render('SiteBundle:About:shpHonorHealth.html.twig', array(
-                // ...
-            ));
-    }
-
-    public function physicianDirectoryAction()
-    {
-        return $this->render('SiteBundle:About:physicianDirectory.html.twig', array(
-                // ...
-            ));
+            )
+        );
     }
 
 
@@ -43,22 +23,34 @@ class AboutController extends Controller
 
     public function missionVisionValuesAction()
     {
-
+        return $this->render('SiteBundle:About:missionVisionValues.html.twig', array(
+                // ...
+            )
+        );
     }
 
     public function executiveTeamAction()
     {
-
+        return $this->render('SiteBundle:About:executiveTeam.html.twig', array(
+                // ...
+            )
+        );
     }
 
     public function boardOfDirectorsAction()
     {
-
+        return $this->render('SiteBundle:About:boardOfDirectors.html.twig', array(
+                // ...
+            )
+        );
     }
 
     public function whatWeDoAction()
     {
-
+        return $this->render('SiteBundle:About:whatWeDo.html.twig', array(
+                // ...
+            )
+        );
     }
 
 }

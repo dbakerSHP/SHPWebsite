@@ -30,43 +30,40 @@ class Builder extends ContainerAware
 		 * About Us
 		 */
 		$menu->addChild('About Us', array('route' => 'about'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
-			->addChild('SHP Members', array('route' => 'shp_members'))->getParent()
-			->addChild('SHP & HonorHealth', array('route' => 'shp_honor_health'))->getParent()->setAttribute('dropdown', true)
+			->addChild('Who is SHP', array('route' => 'about'))->getParent()->setAttribute('dropdown', true)
+			->addChild('What We Do', array('route' => 'mission_vision_values'))->getParent()
 		;
 
 		/**
-		 * About Us > Scottsdale Health Partners & Honor Health
+		 * About Us > Who is SHP
 		 */
-		$menu['About Us']['SHP & HonorHealth']->setChildrenAttributes(array('class' => 'dropdown-menu'))
+		$menu['About Us']['Who is SHP']->setChildrenAttributes(array('class' => 'dropdown-menu'))
+			->addChild('Mission / Vision / Values', array('route' => 'mission_vision_values'))->getParent()
+			->addChild('Executive Team', array('route' => 'executive_team'))->getParent()
+			->addChild('Board of Directors', array('route' => 'board_of_directors'))->getParent()
+		;
+
+		/**
+		 * For Patients
+		 */
+		$menu->addChild('For Patients', array('route' => 'for_patients'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
+			->addChild('Our Philosophy', array('route' => 'our_philosophy'))->getParent()
+			->addChild('Our Physicians', array('route' => 'our_physicians'))->getParent()->setAttribute('dropdown', true)
+			->addChild('Insurance Plans', array('route' => 'insurance_plans'))->getParent()
+			->addChild('Care Management', array('route' => 'care_management'))->getParent()
+		;
+
+		/**
+		 * For Patients > Our Physicians
+		 */
+		$menu['For Patients']['Our Physicians']->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('Physician Directory', array('route' => 'physician_directory'))->getParent()
-			->addChild('Learn More', array('route' => 'shp_honor_health'))->getParent()
 		;
 
 		/**
-		 * Clinical Integration
+		 * For Physicians
 		 */
-		$menu->addChild('Clinical Integration', array('route' => 'clinical_integration'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
-			->addChild('What is Clinical Integration', array('route' => 'clinical_integration'))->getParent()
-			->addChild('SHP Clinical Integration Success', array('route' => 'shp_clinical_integration_success'))->getParent()
-		;
-
-		/**
-		 * ACO
-		 */
-		$menu->addChild('ACO', array('route' => '_a_c_o'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
-			->addChild('What is and ACO', array('route' => 'what_is_an_a_c_o'))->getParent()
-			->addChild('SHP ACO', array('route' => '_a_c_o'))->getParent()
-		;
-
-		/**
-		 * Technology
-		 */
-		$menu->addChild('Technology', array('route' => 'technology'));
-
-		/**
-		 * News
-		 */
-		$menu->addChild('News', array('route' => 'news'));
+		$menu->addChild('For Physicians', array('route' => 'for_physicians'));
 
 		/**
 		 * Contact Us

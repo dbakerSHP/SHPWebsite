@@ -13,13 +13,6 @@ class ACOController extends Controller
             ));
     }
 
-    public function whatIsAnACOAction()
-    {
-        return $this->render('SiteBundle:Aco:whatIsAnAco.html.twig', array(
-                // ...
-            ));
-    }
-
 
 
     /**
@@ -28,12 +21,16 @@ class ACOController extends Controller
 
     public function ACORepositoryAction()
     {
-
+        return $this->render('SiteBundle:Aco:acoRepository.html.twig', array(
+            // ...
+        ));
     }
 
     public function ACOParticipationAction()
     {
-
+        return $this->render('SiteBundle:Aco:acoParticipation.html.twig', array(
+            // ...
+        ));
     }
 
 }
