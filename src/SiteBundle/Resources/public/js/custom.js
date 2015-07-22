@@ -65,10 +65,10 @@ var appMaster = {
 	/* ---------------------	
 		Owl Slider
 	/* --------------------- */
-	owlCarousel: function(){	
+	owlCarousel: function(){
 		(function($) {
 			"use strict";
-			if ($('.owl-carousel').length) {		    
+			if ($('.owl-carousel').length) {
 				  $(".owl-carousel").each(function (index) {
 					var effect_mode = $(this).data('effect');
 					var autoplay = $(this).data('autoplay');
@@ -76,19 +76,76 @@ var appMaster = {
 					var pagination = $(this).data('pagination');
 					var singleitem = $(this).data('singleitem');
 					var items = $(this).data('items');
-					$(this).owlCarousel({ 
+					  //console.log(autoplay);
+					$(this).owlCarousel({
 						transitionStyle: effect_mode,
 						autoplay: autoplay,
 						navigation : navigation,
-						pagination : pagination, 
+						pagination : pagination,
 						singleItem : singleitem,
 						items : items,
-						navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]						
+						navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 					});
 				});
-			}  
+			}
 		 })(jQuery);
 	},
+
+
+
+
+
+
+	owlCarousel: function(){
+		(function($) {
+			"use strict";
+			if ($('.owl-carousel').length) {
+				$(".owl-carousel").each(function (index) {
+					var effect_mode = $(this).data('effect');
+					var autoplay = $(this).data('autoplay');
+					var navigation = $(this).data('navigation');
+					var pagination = $(this).data('pagination');
+					var singleitem = $(this).data('singleitem');
+					var items = $(this).data('items');
+					var itemsdesktop = $(this).data('desktop');
+					var itemsdesktopsmall = $(this).data('desktopsmall');
+					var itemstablet = $(this).data('tablet');
+					var itemsmobile = $(this).data('mobile');
+					if( itemsdesktop > 0 )
+					{
+						itemsdesktop = [1199, itemsdesktop];
+					}
+					if( itemsdesktopsmall > 0 )
+					{
+						itemsdesktopsmall = [979, itemsdesktopsmall];
+					}
+					if( itemstablet > 0 )
+					{
+						itemstablet = [768, itemstablet];
+					}
+					if( itemsmobile > 0 )
+					{
+						itemsmobile = [479, itemsmobile];
+					}
+					$(this).owlCarousel({
+						transitionStyle: effect_mode,
+						autoPlay : autoplay,
+						navigation : navigation,
+						pagination : pagination,
+						singleItem : singleitem,
+						items : items,
+						itemsDesktop : itemsdesktop,
+						itemsDesktopSmall : itemsdesktopsmall,
+						itemsTablet : itemstablet,
+						itemsMobile : itemsmobile,
+						navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+					});
+				});
+			}
+		})(jQuery);
+	},
+
+
 	/* ---------------------	
 		Animation
 	/* --------------------- */	
@@ -1249,9 +1306,8 @@ function GmapInit() {
 function MapLoadScript() {
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
-	script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=GmapInit';
+	script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=GmapInit';
 	document.body.appendChild(script);
-	console.log(script.src);
 }
 
 
