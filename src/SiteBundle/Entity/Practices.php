@@ -101,8 +101,10 @@ class Practices
 
     public function __construct()
     {
-        $this->createdDate(new \DateTime());
-        $this->deletedDate(new \DateTime());
+        $createdDate = new \DateTime();
+        $this->createdDate = $createdDate;
+        $deletedDate = new \DateTime();
+        $this->deletedDate = $deletedDate;
     }
 
     /**
