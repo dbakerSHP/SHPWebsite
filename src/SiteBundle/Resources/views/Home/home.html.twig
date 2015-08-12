@@ -1,69 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<section class="slider">
-		<div class="tp-banner">
-			<ul>
-				<!-- Slide -->
-				<li data-delay="7000" class="bg-white" data-transition="fade" data-slotamount="7" data-start-height="300" data-masterspeed="2000">
-					<div class="elements">
-						<div class="tp-caption tp-resizeme lfb"
-						     data-x="650"
-						     data-y="85"
-						     data-speed="1000"
-						     data-start="2040"
-						     data-easing="Power4.easeOut"
-						     data-endspeed="500"
-						     data-endeasing="Power1.easeIn"
-						     style="z-index: 4">
-							<img src="img/sections/slider/doctor.jpg" width="500" height="560" alt="">
-						</div>
-						<h2 class="tp-caption lft skewtotop title bold"
-						    data-x="12"
-						    data-y="281"
-						    data-speed="1000"
-						    data-start="1700"
-						    data-easing="Power4.easeOut"
-						    data-endspeed="500"
-						    data-endeasing="Power1.easeIn">
-							<strong><span class="text-color">Meet</span> Our <br>Doctor’s Team</strong>
-						</h2>
-					</div>
-				</li>
-				<!-- Slide Ends -->
-				<!-- Slide -->
-				<li data-delay="7000" data-transition="fade" data-slotamount="7" data-start-height="300" data-masterspeed="2000">
-					<div class="elements">
-						<h2 class="tp-caption lft skewtotop title bold"
-						    data-x="12"
-						    data-y="201"
-						    data-speed="1000"
-						    data-start="1700"
-						    data-easing="Power4.easeOut"
-						    data-endspeed="500"
-						    data-endeasing="Power1.easeIn">
-							<strong>We Care About <span class="text-color">Every Customers</span></strong>
-						</h2>
-						<div class="tp-caption lfr skewtoright description text-left hidden-xs"
-						     data-x="20"
-						     data-y="300"
-						     data-speed="1000"
-						     data-start="1900"
-						     data-easing="Power4.easeOut"
-						     data-endspeed="500"
-						     data-endeasing="Power1.easeIn"
-						     style="max-width: 600px">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do usmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam  dolore magna aliqua ut enim ad minim veniam. </p>
-						</div>
-					</div>
-					<img src="img/sections/slider/slider23-bg.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
-				</li>
-				<!-- Slide Ends -->
-			</ul>
-		</div>
-		<hr class="no-margin">
-	</section>
-	<!-- slider -->
+	{{ block('pe_home_slider') }}
 	<section id="about-us" class="page-section" data-animation="fadeInUp">
 		<div class="container">
 			<div class="section-title">
@@ -309,7 +247,7 @@
 		<div class="container">
 			<div class="section-title">
 				<!-- Heading -->
-				<h2 class="title">Awesome Features</h2>
+				<h2 class="title">Our Results</h2>
 			</div>
 			<div class="row">
 				<div class="item-box col-sm-6 col-md-4">
