@@ -7,7 +7,7 @@
 				<li data-delay="7000" class="bg-white" data-transition="fade" data-slotamount="7" data-start-height="300" data-masterspeed="2000">
 					<div class="elements">
 						<div class="tp-caption tp-resizeme lfb"
-							 data-x="650"
+							 data-x="450"
 							 data-y="85"
 							 data-speed="1000"
 							 data-start="2040"
@@ -15,7 +15,7 @@
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
 							 style="z-index: 4">
-							<img src="{{ asset('bundles/site/images/doctors.jpg') }}" width="500" height="560" alt="">
+							<img src="{{ asset('bundles/site/images/sections/slider/slide-1.png') }}" alt="">
 						</div>
 						<h2 class="tp-caption lft skewtotop title bold"
 							data-x="12"
@@ -62,7 +62,7 @@
 				<li data-delay="7000" class="bg-white" data-transition="fade" data-slotamount="7" data-start-height="300" data-masterspeed="2000">
 					<div class="elements">
 						<div class="tp-caption tp-resizeme lfb"
-							 data-x="650"
+							 data-x="12"
 							 data-y="85"
 							 data-speed="1000"
 							 data-start="2040"
@@ -73,7 +73,7 @@
 							<img src="{{ asset('bundles/site/images/shp-logo.png') }}" width="500" alt="">
 						</div>
 						<h2 class="tp-caption lft skewtotop title bold"
-							data-x="12"
+							data-x="760"
 							data-y="231"
 							data-speed="1000"
 							data-start="1700"
@@ -82,8 +82,8 @@
 							data-endeasing="Power1.easeIn">
 							<strong><span class="text-color">Join</span> SHP</strong>
 						</h2>
-						<div class="tp-caption lfr skewtoright description text-left hidden-xs"
-							 data-x="12"
+						<div class="tp-caption lfr skewtoright description text-right hidden-xs"
+							 data-x="730"
 							 data-y="350"
 							 data-speed="1000"
 							 data-start="1900"
@@ -91,7 +91,7 @@
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
 							 style="max-width: 600px">
-							<p>Click here to login or to request access to the SHP physician member website.</p>
+							<p>Click here to login or to request access<br/>to the SHP physician member website.</p>
 						</div>
 					</div>
 				</li>
@@ -104,97 +104,252 @@
 {% endblock %}
 
 
+{# SPEACIAL FEATURES #}
+{% block pe_special_features %}
+	<div class="row special-feature">
+		<!-- Special Feature Box 1 -->
+		<div class="col-md-3">
+			<div class="s-feature-box text-center">
+				<div class="mask-top">
+					<!-- Icon -->
+					<i class="fa fa-user-md"></i>
+					<!-- Title -->
+					<h4>Physician Directory</h4></div>
+				<div class="mask-bottom">
+					<!-- Icon -->
+					<i class="fa fa-user-md"></i>
+					<!-- Title -->
+					<h4>Physician Directory</h4>
+					<!-- Text -->
+					<p>Search more than 600 local physicians in the SHP network</p></div>
+			</div>
+		</div>
+		<!-- Special Feature Box 2 -->
+		<div class="col-md-3">
+			<div class="s-feature-box text-center">
+				<div class="mask-top">
+					<!-- Icon -->
+					<i class="fa fa-hospital-o"></i>
+					<!-- Title -->
+					<h4>Hospitals</h4></div>
+				<div class="mask-bottom">
+					<!-- Icon -->
+					<i class="fa fa-hospital-o"></i>
+					<!-- Title -->
+					<h4>Hospitals</h4>
+					<!-- Text -->
+					<p>{{ company_name }} is aligned with 5 hospitals in the Phoenix area</p>
+				</div>
+			</div>
+		</div>
+		<!-- Special Feature Box 3 -->
+		<div class="col-md-3">
+			<div class="s-feature-box text-center">
+				<div class="mask-top">
+					<!-- Icon -->
+					<i class="fa fa-heartbeat"></i>
+					<!-- Title -->
+					<h4>Insurance Plans</h4></div>
+				<div class="mask-bottom">
+					<!-- Icon -->
+					<i class="fa fa-heartbeat"></i>
+					<!-- Title -->
+					<h4>Insurance Plans</h4>
+					<!-- Text -->
+					<p>{{ company_name }} has contracts with major insurance companies.</p>
+					<p><a href="">Learn more</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- Special Feature Box 3 -->
+		<div class="col-md-3">
+			<div class="s-feature-box text-center">
+				<div class="mask-top">
+					<!-- Icon -->
+					<i class="fa fa-users"></i>
+					<!-- Title -->
+					<h4>Members</h4></div>
+				<div class="mask-bottom">
+					<!-- Icon -->
+					<i class="fa fa-users"></i>
+					<!-- Title -->
+					<h4>Members</h4>
+					<!-- Text -->
+					<p>Would you like to know more about joining the SHP network?</p>
+					<p><a href="#">Log in</a> or <a href="#">request access</a> to the SHP Physician Member website.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{# WHO WE ARE #}
+{% block pe_who_we_are %}
+	<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="false" data-pagination="true">
+		<div class="item">
+			<!-- Heading -->
+			<h2 class="entry-title"><a href="#">Our philosophy</a></h2>
+			<!-- Content -->
+			<div class="entry-content">
+				<p>SHP is committed to transforming healthcare to provide coordinated, patient-centered care of the highest quality and value.</p>
+				<ul class="list-style small">
+					<label>We believe this is achieved through:</label>
+					<li>Strong relationships between primary care providers and patients</li>
+					<li>Following evidence-based care guidelines</li>
+					<li>Providing care coordination services for patients to help them better navigate the complexity of healthcare and achieve their health goals</li>
+					<li>Collaborating, coordinating and communicating within a tightly integrated community of care providers</li>
+					<li>Obtaining, analyzing, and leveraging clinical and quality data for better health outcomes</li>
+				</ul>
+				{#<p><a href="#" class="btn btn-default">Read more</a></p>#}
+			</div>
+		</div>
+		<div class="item">
+			<!-- Heading -->
+			<h2 class="entry-title"><a href="#">Our mission</a></h2>
+			<!-- Content -->
+			<div class="entry-content">
+				<p>{{ company_name }} is a collaboration of medical professionals and a local healthcare system committed to providing high quality, coordinated and innovative care for the patients and families we serve.</p>
+				{#<p><a href="#" class="btn btn-default">Read more</a></p>#}
+			</div>
+		</div>
+		<div class="item">
+			<!-- Heading -->
+			<h2 class="entry-title"><a href="#">Our history</a></h2>
+			<!-- Content -->
+			<div class="entry-content">
+				<p>{{ company_name }} was established in the summer of  2012 as a joint venture between Scottsdale Healthcare Hospitals (now HonorHealth) and Scottsdale Physician Organization.</p>
+				<p>SHP launched with 430 physicians, one insurance contract, and about 3,500 patients.</p>
+				<p>Today SHP has seven contracts with major insurance companies and now has over 630 physician members serving more than 30,000 patients in the community.</p>
+				<p>SHP represents a unique collaboration between independent community physicians and a community hospital system where all parties share a common mission and vision to improve healthcare in the local community.</p>
+				{#<p><a href="#" class="btn btn-default">Read more</a></p>#}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
 {# TESTIMONIALS#}
 {% block pe_testimonials %}
-	<section id="testimonials" class="page-section light-bg">
+	<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="true" data-pagination="true" data-effect="backSlide">
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+				</blockquote>
+				<div class="star-rating text-center">
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star-half-o  text-color"></i>
+				</div>
+			</div>
+			<div class="client-details text-center">
+				<div class="client-image">
+					<!-- Image -->
+					<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/1.jpg') }}" width="80" height="80" alt="">
+				</div>
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Dr. John Doe</strong>
+					<!-- Company -->
+					<span>Pediatric Surgeon, Honor Health</span>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+				</blockquote>
+				<div class="star-rating text-center">
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star-half-o  text-color"></i>
+				</div>
+			</div>
+			<div class="client-details text-center">
+				<div class="client-image">
+					<!-- Image -->
+					<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/2.jpg') }}" width="80" height="80" alt="">
+				</div>
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Dr. John Doe</strong>
+					<!-- Company -->
+					<span>Pediatric Surgeon, Honor Health</span>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+				</blockquote>
+				<div class="star-rating text-center">
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star  text-color"></i>
+					<i class="fa fa-star-half-o  text-color"></i>
+				</div>
+			</div>
+			<div class="client-details text-center">
+				<div class="client-image">
+					<!-- Image -->
+					<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/3.jpg') }}" width="80" height="80" alt="">
+				</div>
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Dr. John Doe</strong>
+					<!-- Company -->
+					<span>Pediatric Surgeon, Honor Health</span>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{# COUNTERS #}
+{%  block pe_counters %}
+	<section id="fun-factor" class="page-section">
+		<div class="image-bg content-in fixed" data-background="{{ asset('bundles/site/images/sections/bg/counters-back.jpg') }}"></div>
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 testimonails">
-					<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="true" data-pagination="true" data-effect="backSlide">
-						<div class="item">
-							<div class="desc-border bottom-arrow">
-								<blockquote class="small-text text-center">
-									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
-								</blockquote>
-								<div class="star-rating text-center">
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star-half-o  text-color"></i>
-								</div>
-							</div>
-							<div class="client-details text-center">
-								<div class="client-image">
-									<!-- Image -->
-									<img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
-								</div>
-								<div class="client-details">
-									<!-- Name -->
-									<strong class="text-color">John Doe</strong>
-									<!-- Company -->
-									<span>Designer, zozothemes</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="desc-border bottom-arrow">
-								<blockquote class="small-text text-center">
-									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
-								</blockquote>
-								<div class="star-rating text-center">
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star-half-o  text-color"></i>
-								</div>
-							</div>
-							<div class="client-details text-center">
-								<div class="client-image">
-									<!-- Image -->
-									<img class="img-circle" src="img/sections/testimonials/2.jpg" width="80" height="80" alt="">
-								</div>
-								<div class="client-details">
-									<!-- Name -->
-									<strong class="text-color">John Doe</strong>
-									<!-- Company -->
-									<span>Designer, zozothemes</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="desc-border bottom-arrow">
-								<blockquote class="small-text text-center">
-									The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
-								</blockquote>
-								<div class="star-rating text-center">
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star  text-color"></i>
-									<i class="fa fa-star-half-o  text-color"></i>
-								</div>
-							</div>
-							<div class="client-details text-center">
-								<div class="client-image">
-									<!-- Image -->
-									<img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
-								</div>
-								<div class="client-details">
-									<!-- Name -->
-									<strong class="text-color">John Doe</strong>
-									<!-- Company -->
-									<span>Designer, zozothemes</span>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row text-center fact-counter white">
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="5"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Hospitals</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="640"><span class="counter plus"></span></div>
+					<!-- Title -->
+					<h5>Physicians</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="390"><span class="counter plus"></span></div>
+					<!-- Title -->
+					<h5>Locations</h5>
+				</div>
+				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
+					<!-- Icon -->
+					<div class="count-number" data-count="59"><span class="counter"></span></div>
+					<!-- Title -->
+					<h5>Specialties</h5>
 				</div>
 			</div>
 		</div>
 	</section>
+	<!-- fun-factor -->
 {% endblock %}
+
 
 {# GOOGLE MAP #}
 {% block pe_google_map %}
@@ -221,7 +376,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					Become A Partner / Need Help? <a class="black" href="{{ path('contact') }}">Contact Us </a>
+					Join SHP / Need Help? <a class="black" href="{{ path('contact') }}">Contact Us </a>
 				</div>
 			</div>
 		</div>

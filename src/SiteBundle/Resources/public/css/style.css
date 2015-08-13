@@ -2916,6 +2916,12 @@ p.tp-caption.button-block a{
 	 font-weight: 500;	 
 	 font-family:Oswald,sans-serif;
  }
+.count-number .counter.plus:after {
+	content: "+";
+	font-family: Oswald,sans-serif;
+	font-size: 32px;
+	font-weight: 500;
+}
 div.count-number{
 	position:relative;
 	padding-bottom:10px;

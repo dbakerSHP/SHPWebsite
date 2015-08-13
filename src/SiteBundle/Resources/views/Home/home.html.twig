@@ -10,89 +10,10 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<!-- Text -->
-					<p class="title-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae odit iste exercitationem praesentium deleniti nostrum laborum rem id nihil tempora. Adipisci ea commodi unde nam placeat cupiditate quasi a ducimus rem consequuntur ex eligendi minima voluptatem assumenda voluptas quidem sit maiores odio velit voluptate.</p>
+					<p class="title-description">{{ company_name }} is a physician-led Clinical Integration Network and Accountable Care Organization. We are dedicated to improving patient health and reducing healthcare spend through collaboration, coordination, and communication in the community.</p>
 				</div>
 			</div>
-			<div class="row special-feature">
-				<!-- Special Feature Box 1 -->
-				<div class="col-md-3">
-					<div class="s-feature-box text-center">
-						<div class="mask-top">
-							<!-- Icon -->
-							<i class="fa fa-user-md"></i>
-							<!-- Title -->
-							<h4>Physician Directory</h4></div>
-						<div class="mask-bottom">
-							<!-- Icon -->
-							<i class="fa fa-user-md"></i>
-							<!-- Title -->
-							<h4>Physician Directory</h4>
-							<!-- Text -->
-							<p>Search more than 600 local physicians in the SHP network</p></div>
-					</div>
-				</div>
-				<!-- Special Feature Box 2 -->
-				<div class="col-md-3">
-					<div class="s-feature-box text-center">
-						<div class="mask-top">
-							<!-- Icon -->
-							<i class="fa fa-hospital-o"></i>
-							<!-- Title -->
-							<h4>Hospitals</h4></div>
-						<div class="mask-bottom">
-							<!-- Icon -->
-							<i class="fa fa-hospital-o"></i>
-							<!-- Title -->
-							<h4>Hospitals</h4>
-							<!-- Text -->
-							<p>Scottsdale Health Partners is aligned with 5 hospitals in the Phoenix area</p>
-						</div>
-					</div>
-				</div>
-				<!-- Special Feature Box 3 -->
-				<div class="col-md-3">
-					<div class="s-feature-box text-center">
-						<div class="mask-top">
-							<!-- Icon -->
-							<i class="fa fa-heartbeat"></i>
-							<!-- Title -->
-							<h4>Insurance Plans</h4></div>
-						<div class="mask-bottom">
-							<!-- Icon -->
-							<i class="fa fa-heartbeat"></i>
-							<!-- Title -->
-							<h4>Insurance Plans</h4>
-							<!-- Text -->
-							<ul>
-								<li>Blue Cross Blue Shield</li>
-								<li>Cigna Open Access Plus</li>
-								<li>Humana Gold Plus</li>
-								<li>Meritus HMO</li>
-								<li>Medicare ACO</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- Special Feature Box 3 -->
-				<div class="col-md-3">
-					<div class="s-feature-box text-center">
-						<div class="mask-top">
-							<!-- Icon -->
-							<i class="fa fa-users"></i>
-							<!-- Title -->
-							<h4>Members</h4></div>
-						<div class="mask-bottom">
-							<!-- Icon -->
-							<i class="fa fa-users"></i>
-							<!-- Title -->
-							<h4>Members</h4>
-							<!-- Text -->
-							<p>Would you like to know more about joining the SHP network?</p>
-							<p><a href="#">Log in</a> or <a href="#">request access</a> to the SHP Physician Member website.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			{{ block('pe_special_features') }}
 		</div>
 	</section>
 	<!-- about-us -->
@@ -104,48 +25,7 @@
 						<!-- Title -->
 						<h2 class="title">Who We Are</h2>
 					</div>
-					<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="false" data-pagination="true">
-						<div class="item">
-							<!-- Heading -->
-							<h2 class="entry-title"><a href="#">Our philosophy</a></h2>
-							<!-- Content -->
-							<div class="entry-content">
-								<p>SHP is committed to reducing healthcare cost and delivering outstanding patient care.</p>
-								<ul class="list-style small">
-									<label>We strongly believe these results are achieved through:</label>
-									<li>Strong relationships between primary care providers and patients</li>
-									<li>Developing and following evidence-based care guidelines</li>
-									<li>Providing care coordination services for patients to ensure that patients get the right care at the right time</li>
-									<li>Collaborating, coordinating and communicating within an integrated community of care providers</li>
-									<li>Obtaining, analyzing, and leveraging clinical and quality data for better health outcomes</li>
-								</ul>
-								<p><a href="#" class="btn btn-default">Read more</a></p>
-							</div>
-						</div>
-						<div class="item">
-							<!-- Heading -->
-							<h2 class="entry-title"><a href="#">Our mission</a></h2>
-							<!-- Content -->
-							<div class="entry-content">
-								<p>Scottsdale Health Partners is a collaboration of medical professionals and a local healthcare system committed to providing high quality, coordinated and innovative care for the patients and families we serve.</p>
-								<p><a href="#" class="btn btn-default">Read more</a></p>
-							</div>
-						</div>
-						<div class="item">
-							<!-- Heading -->
-							<h2 class="entry-title"><a href="#">Our history</a></h2>
-							<!-- Content -->
-							<div class="entry-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi
-									laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti.
-								</p>
-								<p>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis
-									voluptate assumenda quidem eos explicabo rerum.
-								</p>
-								<p><a href="#" class="btn btn-default">Read more</a></p>
-							</div>
-						</div>
-					</div>
+					{{ block('pe_who_we_are') }}
 				</div>
 				<div class="col-md-6 no-pad text-center">
 					<!-- Image -->
@@ -157,25 +37,28 @@
 	<!-- who-we-are -->
 	<section id="additional" class="page-section">
 		<div class="container">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Why Choose Us</h2>
+			</div>
 			<div class="row">
 				<div class="col-md-4 text-center bottom-xs-pad-30">
 					<!-- Image -->
-					<img src="{{ asset('bundles/site/images/doctors.jpg') }}" width="280" height="440" alt="">
+					{#<img src="{{ asset('bundles/site/images/doctors.jpg') }}" width="280" height="440" alt="">#}
+					{{ block('pe_testimonials') }}
 				</div>
 				<div class="col-md-8">
-					<div class="section-title text-left">
-						<!-- Title -->
-						<h2 class="title">Why Choose Us.</h2>
-					</div>
+					{# MOVING THIS TO SPAN BOTH COLUMNS FOR A MORE EVEN FEEL #}
+					{#<div class="section-title text-left">#}
+						{#<!-- Title -->#}
+						{#<h2 class="title">Why Choose Us.</h2>#}
+					{#</div>#}
 					<!-- Content -->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed
-						dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed
-						dolor tincidunt porttitor consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. porttitor consecteturadipiscing elit. Vestibulum nec odio
-						ipsum. Suspendisse cursus malesuada facilisis.
-					</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed
-						dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</p>
+					<p>{{ company_name }} provides value-based patient care through nearly 300 practice locations and 5 local hospitals.</p>
+					<p>SHP physician practices accept multiple insurance plans offering convenience for patients including Commercial Insurance Plans, Medicare Advantage, and traditional Medicare insurance plans.</p>
+					<p>Patients who choose SHP providers have access to personalized care coordination, transitional care management, and optimized specialist referrals.</p>
+					<p>As a clinical integration network and an ACO, we strive to provide improved clinical quality, greater efficiency, improved collaboration, better access to care and long-term cost-control.</p>
+					<p>SHP physician members share in our vision to transform healthcare delivery through coordinated, patient-centered care of the highest quality and value.</p>
 					<!-- Features -->
 					<div class="row responsive-features top-pad-20">
 						<!-- Features 1 -->
@@ -183,15 +66,15 @@
 							<!-- Title And Content -->
 							<span class="icon-anchor text-color"></span>
 							<h5>Care Management</h5>
-							<p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+							<p>Industry leading Complex Care Coordination and Transitional Care Management programs</p>
 						</div>
 						<!-- Features 1 -->
 						<!-- Features 2 -->
 						<div class="col-md-4">
 							<!-- Title And Content -->
 							<span class="icon-heart-fill text-color"></span>
-							<h5>Great Outcomes</h5>
-							<p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+							<h5>Positive Outcomes</h5>
+							<p>Proven track record of patient satisfaction, reduced readmissions, improved quality, and lowered cost</p>
 						</div>
 						<!-- Features 2 -->
 						<!-- Features 3 -->
@@ -199,7 +82,7 @@
 							<!-- Title And Content -->
 							<span class="icon-user-md text-color"></span>
 							<h5>Excellent Patient Care</h5>
-							<p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+							<p>Caring physicians who take time to communicate and collaborate about patient care</p>
 						</div>
 						<!-- Features 3 -->
 					</div>
@@ -210,39 +93,16 @@
 		</div>
 	</section>
 	<!-- additional -->
-	{{ block('pe_testimonials') }}
-	<section id="fun-factor" class="page-section">
-		<div class="image-bg content-in fixed" data-background="{{ asset('bundles/site/images/sections/bg/counters-back.jpg') }}"></div>
-		<div class="container">
-			<div class="row text-center fact-counter white">
-				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
-					<!-- Icon -->
-					<div class="count-number" data-count="5"><span class="counter"></span></div>
-					<!-- Title -->
-					<h5>Hospitals</h5>
-				</div>
-				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
-					<!-- Icon -->
-					<div class="count-number" data-count="398"><span class="counter"></span></div>
-					<!-- Title -->
-					<h5>Practices</h5>
-				</div>
-				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
-					<!-- Icon -->
-					<div class="count-number" data-count="925"><span class="counter"></span></div>
-					<!-- Title -->
-					<h5>Physicians</h5>
-				</div>
-				<div class="col-sm-4 col-md-3 bottom-xs-pad-30">
-					<!-- Icon -->
-					<div class="count-number" data-count="1910"><span class="counter"></span></div>
-					<!-- Title -->
-					<h5>Specialties</h5>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- fun-factor -->
+	{#<section id="testimonials" class="page-section light-bg">#}
+		{#<div class="container">#}
+			{#<div class="row">#}
+				{#<div class="col-sm-12 testimonails">#}
+					{#{{ block('pe_testimonials') }}#}
+				{#</div>#}
+			{#</div>#}
+		{#</div>#}
+	{#</section>#}
+	{{ block('pe_counters') }}
 	<section id="features" class="page-section">
 		<div class="container">
 			<div class="section-title">
