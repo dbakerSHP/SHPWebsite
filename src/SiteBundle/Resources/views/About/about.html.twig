@@ -1,7 +1,93 @@
+{% set title = 'About Us' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:About:about{% endblock %}
 
 {% block body %}
-<h1>Welcome to the About:about page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">About {{ company_name }}</h1>
+		</div>
+	</div>
+	<!-- page-header -->
+	<section id="say-hello" class="page-section">
+		<div class="container">
+			<div class="row">
+				<div class="row">
+					<div class="col-md-4 text-center bottom-xs-pad-30">
+						<!-- Image -->
+						<img src="{{ asset('bundles/site/images/doctors.jpg') }}" width="280" height="440" alt="">
+					</div>
+					<div class="col-md-8">
+						<div class="section-title text-center">
+							<h2 class="title">Superior Quality Patient-Centered Services</h2>
+						</div>
+						<p><span class="lead">Scottsdale Health Partners, LLC is a young organization strategically launched to transform healthcare delivery in the local community.</span> Over the last 3 years, more than 600 physicians have joined our clinically integrated physician network. SHP is committed to supporting independent, self-employed physicians as well as those employed by HonorHealth. SHP delivers value-based healthcare defined by superior quality and patient-centered services. Formed in 2012, SHP launched with 430 physicians and covered approximately 3,500 patients. Today SHP has contracts with seven major insurance companies and cover more than 35,000 patients.</p>
+						<p>Clinical Integration is key to improving healthcare quality while eliminating inefficient spending, and SHP's physician-led network offers the tools necessary to deliver best practice patient care.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="features" class="page-section light-bg">
+		<div class="container">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Clinical Integration is designed to improve healthcare delivery through:</h2>
+			</div>
+			<div class="row">
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Remarkable improvements</h5>
+						<!-- Text -->
+						<div>in clinical outcomes and evidence-based care for patients</div>
+					</a>
+				</div>
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Coordinated care</h5>
+						<!-- Text -->
+						<div>between physicians, hospitals and other healthcare professionals</div>
+					</a>
+				</div>
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Quality</h5>
+						<!-- Text -->
+						<div>of care and performance reports</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Delivery</h5>
+						<!-- Text -->
+						<div>of the right care, at the right time, in the right place</div>
+					</a>
+				</div>
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Reduced</h5>
+						<!-- Text -->
+						<div>healthcare costs for patients, employers and health plans</div>
+					</a>
+				</div>
+				<div class="item-box col-sm-6 col-md-4">
+					<a href="#">
+						<!-- Title -->
+						<h5 class="title"><i class="fa fa-check fa-2x"></i> Improved physician reimbursement</h5>
+						<!-- Text -->
+						<div>through demonstrated quality improvements and reductions in health care delivery costs</div>
+					</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</section>
 {% endblock %}
