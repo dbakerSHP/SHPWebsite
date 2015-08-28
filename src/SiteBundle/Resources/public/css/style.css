@@ -715,7 +715,7 @@ i.fa-1x{
 							Space Adjustments
 *******************************************************************************/
 .no-pad{
-	padding:0;
+	padding:0 !important;
 }
 .no-margin {
     margin: 0 !important;
@@ -2491,6 +2491,9 @@ p.tp-caption.button-block a{
 	font-weight:300;
 	position:relative;
 }
+.features-list.condensed li {
+	padding: 0;
+}
 .features-list li i {
 	display:block;
 	border-radius:50%;
@@ -2506,17 +2509,32 @@ p.tp-caption.button-block a{
 	text-align:center;
 	position:absolute;
 }
+.features-list.condensed li i {
+	width:30px;
+	height:30px;
+	line-height:30px;
+	margin: 0 auto;
+}
 .features-list-left li i {
 	left:0px;
 }
 .features-list-right li i {
 	right:0px;
 }
+.condensed .features-list-item:hover i {
+	background-color: transparent;
+}
 .features-list-left .features-content {
 	margin-left:90px;
 }
 .features-list-right .features-content {
 	margin-right:90px;
+}
+.features-list-left.condensed .features-content {
+	margin-left:50px;
+}
+.features-list-right.condensed .features-content {
+	margin-right:50px;
 }
 /* Additional Features */
 .responsive-features span {
@@ -3340,6 +3358,8 @@ div.count-number:before{
 .get-a-quote a{
 	font-weight:500;
 	text-decoration:underline;
+	letter-spacing: 0;
+	transition: all .1s ease-in;
 }
 .get-a-quote a.black:hover{
 	color:#111111;
@@ -3348,7 +3368,31 @@ div.count-number:before{
 	color:#ffffff;
 }
 .get-a-quote:hover a{
-	padding-left:10px;
+	letter-spacing: 2px;
+}
+/******************************************************************************
+  Call To Action Section
+*******************************************************************************/
+.call-to-action{
+	padding:30px 0;
+	font-size:34px;
+	font-weight:300;
+    font-family:Oswald,sans-serif;
+}
+.call-to-action a{
+	font-weight:500;
+	text-decoration:underline;
+	letter-spacing: 0;
+	transition: all .1s ease-in;
+}
+.call-to-action a.black:hover{
+	color:#111111;
+}
+.call-to-action a.white:hover{
+	color:#ffffff;
+}
+.call-to-action:hover a{
+	letter-spacing: 2px;
 }
 /* Header */
 .transparent-header.dark-header .navbar{
