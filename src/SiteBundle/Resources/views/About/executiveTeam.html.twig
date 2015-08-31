@@ -1,7 +1,163 @@
+{% set title = 'Executive Team' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:About:executiveTeams{% endblock %}
 
 {% block body %}
-<h1>Welcome to the About:executiveTeams page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<!-- page-header -->
+	<section id="executive-team" class="page-section">
+		<div class="container text-center">
+			<div class="col-sm-12 col-md-12">
+				<div class="section-title">
+					<!-- Heading -->
+					<h2 class="title">Meet the {{ company_name }} {{ title }}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20 info-thumb-container">
+					<div class="thumb-info">
+						<div class="image">
+							<!-- Image -->
+							<img src="{{ asset('bundles/site/images/sections/about/tiffany-nelson-thumb.jpg') }}" alt="" title="" width="270" height="270" />
+						</div>
+						<div class="description-container">
+							<div class="description">
+								<!-- Name -->
+								<h2 class="name">Tiffany Nelson</h2>
+								<!-- Designation -->
+								<p class="role">MD, Chief Strategy Officer</p>
+								<p><a href="#tiffany-nelson" data-toggle="modal" data-target="#tiffany-nelson"><i class="fa fa-info-circle fa-2x white"></i></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .employee  -->
+				<div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20 info-thumb-container">
+					<div class="thumb-info">
+						<div class="image">
+							<!-- Image -->
+							<img src="{{ asset('bundles/site/images/sections/about/james-whitfill-thumb.jpg') }}" alt="" title="" width="270" height="270" />
+						</div>
+						<div class="description-container">
+							<div class="description">
+								<!-- Name -->
+								<h2 class="name">James Whitfill</h2>
+								<!-- Designation -->
+								<p class="role">MD, Chief Medical Officer</p>
+								<p><a href="#james-whitfill" data-toggle="modal" data-target="#james-whitfill"><i class="fa fa-info-circle fa-2x white"></i></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .employee -->
+				<div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20 info-thumb-container">
+					<div class="thumb-info">
+						<div class="image">
+							<!-- Image -->
+							<img src="{{ asset('bundles/site/images/sections/about/faron-thompson-thumb.jpg') }}" alt="" title="" width="270" height="270" />
+						</div>
+						<div class="description-container">
+							<div class="description">
+								<!-- Name -->
+								<h2 class="name">Faron Thompson</h2>
+								<!-- Designation -->
+								<p class="role">MBA, Chief Operating Officer</p>
+								<p><a href="#faron-thompson" data-toggle="modal" data-target="#faron-thompson"><i class="fa fa-info-circle fa-2x white"></i></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- .employee -->
+				<div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20 info-thumb-container">
+					<div class="thumb-info">
+						<div class="image">
+							<!-- Image -->
+							<img src="{{ asset('bundles/site/images/sections/about/karen-r-vanaskie-thumb.jpg') }}" alt="" title="" width="270" height="270" />
+						</div>
+						<div class="description-container">
+							<div class="description">
+								<!-- Name -->
+								<h2 class="name">Karen R Vanaskie</h2>
+								<!-- Designation -->
+								<p class="role">DNP, MSN, RN, Care Management Program Director</p>
+								<p><a href="#karen-r-vanaskie" data-toggle="modal" data-target="#karen-r-vanaskie"><i class="fa fa-info-circle fa-2x white"></i></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="tiffany-nelson" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Tiffany Nelson <span>MD, Chief Strategy Officer</span></h3>
+					</div>
+					<div class="modal-body">
+						<p>Dr. Tiffany Nelson played an integral role in the formation of Scottsdale Health Partners (SHP).  She currently serves as the Chief Strategy Officer, and has been in the role of Chairman of the Board and Chief Medical Officer.  Dr. Nelson has been an instrumental part of developing both the care management program and technology platform that has been critical to the success of SHP.  Dr. Nelson obtained her medical degree from The University of Arizona College of Medicine, where she received the prestigious Alpha Omega Alpha distinction.  Following medical school, Dr. Nelson completed her residency training in Family Medicine at Banner Good Samaritan where she served as Chief Resident.  Dr. Nelson was chosen to be part of the inaugural class of Health IT Fellows by ONC.</p>
+						<p>Dr. Nelson is the founder of Desert Ridge Family Physicians in Phoenix, AZ.  The practice was created in 2004 to promote a patient-centered philosophy in order to foster long lasting relationships with their patients.  Desert Ridge Family Physicians has grown to ten physicians and provides care to more than 25,000 patients.  The practice has received NextGen’s Best Small Practice Award, Intel Innovation Award and Arizona Republic’s Most Family Friendly Primary Care Offic</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="james-whitfill" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">James Whitfill <span>MD, Chief Medical Officer</span></h3>
+					</div>
+					<div class="modal-body">
+						<p>Dr. Whitfill is currently the Chief Medical Officer for Scottsdale Health Partners, a Clinical Integrated Network in Phoenix Arizona. Dr. Whitfill received his Bachelor of Arts degree from Princeton University and his Medical Degree from the University of Pennsylvania. He did his Residency and Chief Residency in Internal Medicine at the Hospital of the University of Pennsylvania and completed a fellowship in Medical Informatics in the University of Pennsylvania Department of Medicine.</p>
+						<p>His focus has been on the use of business intelligence for clinical and operational improvement within healthcare organizations; leadership and team development; and workflow-focused information technology. He currently serves as a Clinical Associate Professor, Departments of Internal Medicine and Bioinformatics at the University of Arizona College of Medicine-Phoenix.  He frequently lectures on the intersection of population health and information technology.  He previously held and currently holds advisory board responsibilities at GE Healthcare, Philips Healthcare, IDX, KLAS and Society of Imaging Informatics in Medicine. In recent years, he has transitioned his focus to include population health.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="faron-thompson" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Faron Thompson <span>MBA, Chief Operating Officer</span></h3>
+					</div>
+					<div class="modal-body">
+						<p>Faron Thompson is the Chief Operating Officer for Scottsdale Health Partners (SHP). As COO, he is responsible for Information Technology, Finance, and Operations for SHP. He joined SHP as Chief Information Officer in September, 2012. Prior to this date, he served SHP in a similar capacity as a consultant leading the selection and implementation of technologies to help start up Scottsdale Health Partners. Faron has over 20 years of experience in Healthcare leading information technology, process improvement, reengineering, cost improvement, strategy, and merger & acquisition projects. Additionally, he has over eight years of experience in Financial Services, Consumer Products, Manufacturing, and Education. Faron started his career in Healthcare consulting with Ernst & Young in St. Louis, MO where he received his MBA from Washington University in 1992.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="karen-r-vanaskie" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Karen R Vanaskie <span>DNP, MSN, RN, Care Management Program Director</span></h3>
+					</div>
+					<div class="modal-body">
+						<p>Karen Vanaskie currently serves as Care Management Program Director for Scottsdale Health Partners. Over the span of her career, Karen holds 30 years of nursing experience along with extensive experience in acute care settings, home health, multi-specialty medical groups, independent physician associations, and managed care organizations. Karen has spent her nursing leadership career developing case management programs, overseeing quality of care, infection control, and risk management activities, and serving as a chief nursing officer. Karen’s formal education includes earning a Baccalaureate Degree in the Science of Nursing (B.S.N.), a Master’s Degree in the Science of Nursing (M.S.N.), and a Doctorate in Nursing Practice (D.N.P).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

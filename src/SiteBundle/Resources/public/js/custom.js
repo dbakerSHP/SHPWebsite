@@ -1155,8 +1155,7 @@ $(document).ready(function() {
 	appMaster.gridRotator();
 	appMaster.datePicker();
 	appMaster.timePicker();
-	
-});	
+});
 
 /* --------------------------------------------
 	
