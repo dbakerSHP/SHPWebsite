@@ -2611,6 +2611,7 @@ p.tp-caption.button-block a{
 }
 
 .info-thumb-container .thumb-info .description-container .description h2 {
+	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 28px;
 	-webkit-transition: all 0.7s ease-in-out;
