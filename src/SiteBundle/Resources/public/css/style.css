@@ -2536,6 +2536,10 @@ p.tp-caption.button-block a{
 .features-list-right.condensed .features-content {
 	margin-right:50px;
 }
+.features-list.condensed .features-content h5 {
+	line-height: 30px;
+	margin-bottom: 1em;
+}
 /* Additional Features */
 .responsive-features span {
     font-size: 24px;
