@@ -31,7 +31,7 @@ class Builder extends ContainerAware
 		 */
 		$menu->addChild('About Us', array('route' => 'about'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('Who is SHP', array('route' => 'about'))->getParent()->setAttribute('dropdown', true)
-			->addChild('What We Do', array('route' => 'mission_vision_values'))->getParent()
+			->addChild('What We Do', array('route' => 'what_we_do'))->getParent()
 		;
 
 		/**

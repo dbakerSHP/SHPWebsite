@@ -4122,6 +4122,7 @@ ul.tags li{
 	padding: 0;
 	margin-top:20px;
 	list-style: none;
+	margin-bottom: 40px;
 }
 .timeliner:before {
 	content: "";

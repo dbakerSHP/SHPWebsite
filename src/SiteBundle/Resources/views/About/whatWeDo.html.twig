@@ -1,7 +1,103 @@
+{% set title = 'What We Do' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:About:whatWeDo{% endblock %}
 
 {% block body %}
-<h1>Welcome to the About:whatWeDo page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<!-- page-header -->
+	<section id="features" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Industry-leading Communication</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Scottsdale Health Partners has created a local network for physicians that have agreed to come together to deliver high quality, cost efficient care.  Through SHP, physician members have access to industry-leading communication and collaboration technologies, best practice care coordination services, and access to insurance value based contracts.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="what-we-do" class="page-section light-bg">
+		<div class="container">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Fundamentally, Scottsdale Health Partners does the following</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="timeliner">
+						<li>
+							<div class="timeline-image">
+								<img width="200" height="200" class="img-circle" src="{{ asset('bundles/site/images/sections/what-we-do/care-management.jpg') }}" alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="subheading">Care Management</h4>
+								</div>
+								<div class="timeline-body text-muted">
+									<p><strong>Provide Care Coordination and Transitional Care Management Services</strong></p>
+									<p>SHP Transition Care Managers assist patients with transitions from the hospital, working with patients and families connecting them to their primary care physicians, and helping to coordinate services and support at home to improve the patient's recovery and avoid another Hospital or Emergency Room admission.</p>
+									<p>SHP Comprehensive Care Coordinators provide additional support to patients through their primary care physician. Care Coordinators serve as health coaches,  connect patients with community resources, and help patients establish and achieve their healthcare goals.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="timeline-image">
+								<img width="200" height="200" class="img-circle" src="{{ asset('bundles/site/images/sections/what-we-do/data.jpg') }}" alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="subheading">Access to Data</h4>
+								</div>
+								<div class="timeline-body text-muted">
+									<p><strong>Improve Access to Data for Clinicians</strong></p>
+									<p>SHP has implemented technology to give clinicians greater, easier access to their patient's clinical data. Healthcare is famous for multiple, disparate information systems that don't communicate well. SHP has technology to bring together clinical data from multiple sources so clinicians have access to more of the data they need to make informed care decisions for their patients.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="timeline-image">
+								<img width="200" height="200" class="img-circle" src="{{ asset('bundles/site/images/sections/what-we-do/communication.jpg') }}" alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="subheading">Communication</h4>
+								</div>
+								<div class="timeline-body text-muted">
+									<p><strong>Improve Physician Communication and Coordination</strong></p>
+									<p>SHP encourages physicians to communicate, collaborate, and coordinate regarding patient care. To support efficient and secure communication, SHP has implemented HIPPA-compliant secure communication and referral management technologies that enable our physicians to achieve their communication goals.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted last">
+							<div class="timeline-image">
+								<img width="200" height="200" class="img-circle" src="{{ asset('bundles/site/images/sections/what-we-do/health.jpg') }}" alt="" />
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="subheading">Health</h4>
+								</div>
+								<div class="timeline-body text-muted">
+									<p><strong>Manage the Health of Patients</strong></p>
+									<p>Everything SHP does ultimately is aimed to help our physicians to be better equipped to understand and manage their patient's health better. SHP leverages the vast amount of clinical data available to physicians and delivers analytical data to our physicians to help them proactively manage patient health.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p class="lead">Everything SHP does helps lead to improved quality of care, improved patient satisfaction, and healthcare cost reductions.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- page-section -->
 {% endblock %}
