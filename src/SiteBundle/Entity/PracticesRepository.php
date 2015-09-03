@@ -12,4 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class PracticesRepository extends EntityRepository
 {
+	public function getAllPractices() {
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices");
+		$queryBuilder->select(
+			"practices.practice",
+			"practices.address1",
+			"practices.address2",
+			"practices.city",
+			"practices.state",
+			"practices.zip",
+			"practices.phone",
+			"practices.latitude",
+			"practices.longitude"
+		)
+			->from("SiteBundle:Practices", "practices")
+			->where("practices.deletedDate IS NULL")
+		;
+		return $queryBuilder->getQuery()->getResult();
+	}
 }

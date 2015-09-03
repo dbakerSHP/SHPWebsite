@@ -101,3 +101,45 @@ doctrine_migrations:
     namespace: SiteBundle\Migrations
     table_name: migration_versions
     name: Application Migrations
+
+
+# FOS REST API
+fos_rest:
+    access_denied_listener:
+        json: true
+        html: false
+    allowed_methods_listener: true
+    body_converter:
+        enabled: true
+        validate: true
+        validation_errors_argument: validationErrors
+    body_listener:
+        array_normalizer: fos_rest.normalizer.camel_keys
+    disable_csrf_role: ROLE_API
+    exception:
+        codes:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
+            'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
+#    format_listener:
+#        rules:
+#            - { path: ^/image, priorities: [jpeg, gif], fallback_format: false, prefer_extension: true }
+#            - { path: ^/api, priorities: [json], fallback_format: ~, exception_fallback_format: json, prefer_extension: false }
+#            - { path: ^/, priorities: [html], fallback_format: ~, exception_fallback_format: json, prefer_extension: false }
+    param_fetcher_listener: true
+    routing_loader:
+        include_format: false
+    service:
+        exception_handler: fos_rest.view.exception_wrapper_handler
+    view:
+        formats:
+            rss: false
+            html: false
+            xml: false
+            json: true
+        templating_formats:
+            html: true
+        force_redirects:
+            html: true
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: twig
+

@@ -103,8 +103,6 @@ class Practices
     {
         $createdDate = new \DateTime();
         $this->createdDate = $createdDate;
-        $deletedDate = new \DateTime();
-        $this->deletedDate = $deletedDate;
     }
 
     /**

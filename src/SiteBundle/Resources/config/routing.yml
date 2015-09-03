@@ -101,3 +101,13 @@ care_management:
 for_physicians:
     path:     /for-physicians
     defaults: { _controller: SiteBundle:ForPhysicians:forPhysicians }
+
+
+
+
+# FOS Rest Routing
+api_physician_directory:
+    type: rest
+    prefix: /api
+    resource: @SiteBundle/Controller/PhysicianAPIController.php
+

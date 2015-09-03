@@ -1,7 +1,27 @@
+{% set title = 'Physician Directory' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:ForPatients:physicianDirectory{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ForPatients:physicianDirectory page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<section id="features" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Search for a Physician</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p><input type="email" class="form-control input-lg" id="search" data-search="true" placeholder="Sart type 'a' ...."></p>
+				</div>
+			</div>
+			{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}
+			<div id="results" class="row"></div>
+		</div>
+	</section>
 {% endblock %}

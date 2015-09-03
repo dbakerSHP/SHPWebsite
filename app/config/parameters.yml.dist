@@ -24,7 +24,7 @@ parameters:
 
     company_name: Scottsdale Health Partners
     company_founded: 2012
-    company_phone: +1 (480) 588-7528
+    company_phone: +1 (480) 696-4020
     company_address1: 8901 E Mountain View Rd
     company_address2:
     company_city: Scottsdale
@@ -34,7 +34,7 @@ parameters:
     company_location_longitude: -111.88749
 
     send_dev_emails_to: justin@omedix.com
-    send_emails_to: support@scottsdalehealthpartners.com
+    send_emails_to: info@shpcare.com
     send_emails_from: web@scottsdalehealthpartners.com
     send_emails_cc: ~
     send_emails_bcc: ~

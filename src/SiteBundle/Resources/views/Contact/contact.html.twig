@@ -11,32 +11,7 @@
 		</div>
 	</div>
 	<!-- page-header -->
-	<section id="say-hello" class="page-section">
-		<div class="container">
-			<div class="row text-center">
-				<div class="section-title text-center">
-					<h2 class="title">Want to say hello?</h2>
-				</div>
-				<address class="col-sm-4 col-md-4">
-					<i class="fa fa-map-marker i-10x icons-circle text-color light-bg hover-black"></i>
-					<div class="title">Address</div>
-					{{ company_address1 }}{% if company_address2 != '' %}, {{ company_address2 }}{% endif %}<br/>{{ company_city }}, {{ company_state }} {{ company_zip_code }}
-				</address>
-				<address class="col-sm-4 col-md-4">
-					<i class="fa fa-microphone i-10x icons-circle text-color light-bg hover-black"></i>
-					<div class="title">Phones</div>
-					<div>Support: {{ company_phone }}</div>
-				</address>
-				<address class="col-sm-4 col-md-4">
-					<i class="fa fa-envelope i-10x icons-circle text-color light-bg hover-black"></i>
-					<div class="title">Email Addresses</div>
-					<div>Support: <a href="mailto:{{ support_email }}">{{ support_email }}</a></div>
-				</address>
-
-			</div>
-		</div>
-	</section>
-	<section id="contact-us" class="page-section light-bg border-tb">
+	<section id="contact-us" class="page-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -45,9 +20,53 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					<p class="lead">Give us a call or drop us an email and we will get back to you as soon as we can.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+					<address class="row">
+						<div class="row-height">
+							<div class="col-xs-2 col-height col-middle">
+								<div class="inside">
+									<i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i>
+								</div>
+							</div>
+							<div class="col-xs-10 col-height col-middle">
+								<div class="inside">
+									<div class="title">Address</div>
+									{{ company_address1 }}{% if company_address2 != '' %}, {{ company_address2 }}{% endif %}<br/>{{ company_city }}, {{ company_state }} {{ company_zip_code }}
+								</div>
+							</div>
+						</div>
+					</address>
+					<address class="row">
+						<div class="row-height">
+							<div class="col-xs-2 col-height col-middle">
+								<div class="inside">
+									<i class="fa fa-microphone i-7x icons-circle text-color light-bg hover-black"></i>
+								</div>
+							</div>
+							<div class="col-xs-10 col-height col-middle">
+								<div class="inside">
+									<div class="title">Phones</div>
+									<p>Support: {{ company_phone }}</p>
+								</div>
+							</div>
+						</div>
+					</address>
+					<address class="row">
+						<div class="row-height">
+							<div class="col-xs-2 col-height col-middle">
+								<div class="inside">
+									<i class="fa fa-envelope i-7x icons-circle text-color light-bg hover-black"></i>
+								</div>
+							</div>
+							<div class="col-xs-10 col-height col-middle">
+								<div class="inside">
+									<div class="title">Email Addresses</div>
+									<p>Support: <a href="mailto:{{ support_email }}">{{ support_email }}</a></p>
+								</div>
+							</div>
+						</div>
+					</address>
+
 				</div><!-- Contact Info -->
 				<div class="col-md-6">
 					<p class="form-message alert hidden"></p>
