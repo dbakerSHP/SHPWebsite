@@ -85,14 +85,14 @@ class Builder extends ContainerAware
 		/**
 		 * Search Link / Icon
 		 */
-		$menu->addChild('<span><i class="fa fa-search"></i></span>', array(
-			'uri' => '#',
-			'extras' => array(
-				'safe_label' => true
-			)
-		))
-			->setLinkAttribute('class', 'header-search')
-			->setAttributes(array('class' => 'hidden-767'));
+//		$menu->addChild('<span><i class="fa fa-search"></i></span>', array(
+//			'uri' => '#',
+//			'extras' => array(
+//				'safe_label' => true
+//			)
+//		))
+//			->setLinkAttribute('class', 'header-search')
+//			->setAttributes(array('class' => 'hidden-767'));
 
 
 		// access services from the container!
