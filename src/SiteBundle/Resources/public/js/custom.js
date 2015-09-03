@@ -1177,19 +1177,19 @@ $(document).ready(function() {
 					if ((value.practice.search(regex) != -1) || (value.address1.search(regex) != -1)) {
 						output += '<div class="col-sm-12">';
 
-						output += '<div class="map-section">';
-						output += '<div class="map-canvas"';
-						output += 'data-zoom="15"';
-						output += 'data-zoomcontrol="false"';
-						output += 'data-lat="' + value.latitude + '"';
-						output += 'data-lng="' + value.longitude + '"';
-						output += 'data-type="roadmap"';
-						output += 'data-hue="#8eb4e3"';
-						output += 'data-title="' + value.practice + '"';
-						output += 'data-content="Address: ' + value.address1 + '"';
-						output += 'style="height: 376px;">';
-						output += '</div>';
-						output += '</div>';
+						//output += '<div class="map-section">';
+						//output += '<div class="map-canvas"';
+						//output += 'data-zoom="15"';
+						//output += 'data-zoomcontrol="false"';
+						//output += 'data-lat="' + value.latitude + '"';
+						//output += 'data-lng="' + value.longitude + '"';
+						//output += 'data-type="roadmap"';
+						//output += 'data-hue="#8eb4e3"';
+						//output += 'data-title="' + value.practice + '"';
+						//output += 'data-content="Address: ' + value.address1 + '"';
+						//output += 'style="height: 376px;">';
+						//output += '</div>';
+						//output += '</div>';
 
 						output += '<h5>' + value.practice + '</h5>';
 						output += '<p>' + value.address1 + '</p>';
@@ -1205,14 +1205,13 @@ $(document).ready(function() {
 			output += '</div>';
 			$('#results').html(output);
 		});
-		window.GmapInit();
 	});
 
-	$('input').keyup(function() {
-		delay(function(){
-			alert('Time elapsed!');
-		}, 3000 );
-	});
+	//$('input').keyup(function() {
+	//	delay(function(){
+	//		alert('Time elapsed!');
+	//	}, 3000 );
+	//});
 
 });
 

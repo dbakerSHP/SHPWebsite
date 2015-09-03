@@ -1,7 +1,52 @@
+{% set title = 'For Physicians' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:ForPhysicians:forPhysicians{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ForPhysicians:forPhysicians page</h1>
+	<section class="slider">
+		<div class="tp-banner">
+			<ul>
+				<!-- Slide -->
+				<li data-delay="7000" data-transition="fade" data-slotamount="7" data-masterspeed="2000">
+					<div class="elements">
+						<h2 class="tp-caption lft skewtotop title bold" data-x="120" data-y="301" data-speed="1000" data-start="1700" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn">
+							<strong>Become a physician member</strong>
+						</h2>
+						<h2 class="tp-caption lft skewtotop upper" data-x="120" data-y="381" data-speed="1000" data-start="1700" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn">
+							<strong>of <span class="text-color">{{ company_name }}</span>, LLC</strong>
+						</h2>
+						<div class="tp-caption lfr skewtoright description text-left hidden-xs"
+							 data-x="120"
+							 data-y="440"
+							 data-speed="1000"
+							 data-start="1900"
+							 data-easing="Power4.easeOut"
+							 data-endspeed="500"
+							 data-endeasing="Power1.easeIn"
+							 style="max-width: 600px; background: #8EB4E6; padding: 10px 20px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
+							<p class="no-margin">If you are already a member, <a href="#">click here</a>.</p>
+						</div>
+					</div>
+					<img src="{{ asset('bundles/site/images/sections/for-physicians/heading-back.jpg') }}" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
+				</li>
+				<!-- Slide Ends -->
+			</ul>
+		</div>
+	</section>
+	<section id="for-physicians" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Necessary Foundation</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>{{ company_name }}, LLC provides local physicians with the foundation necessary to deliver value-based patient care to our community. As a Clinical Integration Network (CIN) and Accountable Care Organization (ACO), we establish a baseline for improved clinical quality, greater efficiency, improved collaboration, and better access to care and long-term cost-control. Our structure also allows our physician members to benefit from the changes in healthcare reimbursement models driven by the Federal government, national payers, and employers. SHP's business model helps support independent physicians ability to maintain their independence in a rapidly changing healthcare environment. SHP offers physicians access to advanced technology solutions,a vast referral network in the local area, and contracts with major insurance payers. SHP physician members share in our vision to transform healthcare delivery through coordinated, patient centered care of the highest quality and value.</p>
+				</div>
+			</div>
+			{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}
+			<div id="results" class="row"></div>
+		</div>
+	</section>
 {% endblock %}

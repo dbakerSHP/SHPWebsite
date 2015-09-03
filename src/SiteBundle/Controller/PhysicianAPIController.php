@@ -22,7 +22,7 @@ class PhysicianAPIController extends FOSRestController
 		$view = View::create()
 			->setFormat('json')
 			->setStatusCode(200)
-			->setData(['val' => $practices])
+			->setData(['practices' => $practices])
 		;
 
 		return $this->get('fos_rest.view_handler')->handle($view);
