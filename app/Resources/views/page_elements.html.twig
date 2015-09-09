@@ -14,7 +14,7 @@
 							 data-easing="Power4.easeOut"
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
-							 style="z-index: 4">
+							 style="z-index: 4; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<img src="{{ asset('bundles/site/images/sections/slider/slide-1.png') }}" alt="">
 						</div>
 						<h2 class="tp-caption lft skewtotop title bold"
@@ -24,7 +24,8 @@
 							data-start="1700"
 							data-easing="Power4.easeOut"
 							data-endspeed="500"
-							data-endeasing="Power1.easeIn">
+							data-endeasing="Power1.easeIn"
+							style="text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<strong><span class="text-color">Find</span> a <br>Physician</strong>
 						</h2>
 					</div>
@@ -41,7 +42,8 @@
 							data-start="1700"
 							data-easing="Power4.easeOut"
 							data-endspeed="500"
-							data-endeasing="Power1.easeIn">
+							data-endeasing="Power1.easeIn"
+							style="text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<strong>Setting the standard <span class="text-color">for excellence</span><br/>in patient-centered care</strong>
 						</h2>
 						<div class="tp-caption lfr skewtoright description text-left hidden-xs"
@@ -52,7 +54,7 @@
 							 data-easing="Power4.easeOut"
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
-							 style="max-width: 600px">
+							 style="max-width: 600px; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<p>Our Care Coordinators and Transitional Care Managers are here to support you every step of the way.</p>
 						</div>
 					</div>
@@ -70,7 +72,7 @@
 							 data-easing="Power4.easeOut"
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
-							 style="z-index: 4">
+							 style="z-index: 4; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<img src="{{ asset('bundles/site/images/sections/slider/slide-3.png') }}" width="500" alt="">
 						</div>
 						<h2 class="tp-caption lft skewtotop title bold"
@@ -80,7 +82,8 @@
 							data-start="1700"
 							data-easing="Power4.easeOut"
 							data-endspeed="500"
-							data-endeasing="Power1.easeIn">
+							data-endeasing="Power1.easeIn"
+							style="text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<strong><span class="text-color">Join</span> SHP</strong>
 						</h2>
 						<div class="tp-caption lfr skewtoright description text-right hidden-xs"
@@ -91,7 +94,7 @@
 							 data-easing="Power4.easeOut"
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
-							 style="max-width: 600px">
+							 style="max-width: 600px; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
 							<p>Click here to login or to request access<br/>to the SHP physician member website.</p>
 						</div>
 					</div>
@@ -112,74 +115,83 @@
 		<!-- Special Feature Box 1 -->
 		<div class="col-md-3">
 			<div class="s-feature-box text-center">
-				<div class="mask-top">
-					<!-- Icon -->
-					<i class="fa fa-user-md"></i>
-					<!-- Title -->
-					<h4>Physician Directory</h4></div>
-				<div class="mask-bottom">
-					<!-- Icon -->
-					<i class="fa fa-user-md"></i>
-					<!-- Title -->
-					<h4>Physician Directory</h4>
-					<!-- Text -->
-					<p>Search more than 600 local physicians in the SHP network</p></div>
+				<a href="{{ path('physician_directory') }}">
+					<div class="mask-top">
+						<!-- Icon -->
+						<i class="fa fa-user-md"></i>
+						<!-- Title -->
+						<h4>Physician Directory</h4></div>
+					<div class="mask-bottom">
+						<!-- Icon -->
+						<i class="fa fa-user-md"></i>
+						<!-- Title -->
+						<h4>Physician Directory</h4>
+						<!-- Text -->
+						<p>Search more than 600 local physicians in the SHP network</p>
+					</div>
+				</a>
 			</div>
 		</div>
 		<!-- Special Feature Box 2 -->
 		<div class="col-md-3">
 			<div class="s-feature-box text-center">
-				<div class="mask-top">
-					<!-- Icon -->
-					<i class="fa fa-hospital-o"></i>
-					<!-- Title -->
-					<h4>Hospitals</h4></div>
-				<div class="mask-bottom">
-					<!-- Icon -->
-					<i class="fa fa-hospital-o"></i>
-					<!-- Title -->
-					<h4>Hospitals</h4>
-					<!-- Text -->
-					<p>{{ company_name }} is aligned with 5 hospitals in the Phoenix area</p>
-				</div>
+				<a href="">
+					<div class="mask-top">
+						<!-- Icon -->
+						<i class="fa fa-hospital-o"></i>
+						<!-- Title -->
+						<h4>Hospitals</h4></div>
+					<div class="mask-bottom">
+						<!-- Icon -->
+						<i class="fa fa-hospital-o"></i>
+						<!-- Title -->
+						<h4>Hospitals</h4>
+						<!-- Text -->
+						<p>{{ company_name }} is aligned with 5 hospitals in the Phoenix area</p>
+					</div>
+				</a>
 			</div>
 		</div>
 		<!-- Special Feature Box 3 -->
 		<div class="col-md-3">
 			<div class="s-feature-box text-center">
-				<div class="mask-top">
-					<!-- Icon -->
-					<i class="fa fa-heartbeat"></i>
-					<!-- Title -->
-					<h4>Insurance Plans</h4></div>
-				<div class="mask-bottom">
-					<!-- Icon -->
-					<i class="fa fa-heartbeat"></i>
-					<!-- Title -->
-					<h4>Insurance Plans</h4>
-					<!-- Text -->
-					<p>{{ company_name }} has contracts with major insurance companies.</p>
-					<p><a href="">Learn more</a></p>
-				</div>
+				<a href="{{ path('insurance_plans') }}">
+					<div class="mask-top">
+						<!-- Icon -->
+						<i class="fa fa-heartbeat"></i>
+						<!-- Title -->
+						<h4>Insurance Plans</h4></div>
+					<div class="mask-bottom">
+						<!-- Icon -->
+						<i class="fa fa-heartbeat"></i>
+						<!-- Title -->
+						<h4>Insurance Plans</h4>
+						<!-- Text -->
+						<p>{{ company_name }} has contracts with major insurance companies.</p>
+						<p><a href="">Learn more</a></p>
+					</div>
+				</a>
 			</div>
 		</div>
 		<!-- Special Feature Box 3 -->
 		<div class="col-md-3">
 			<div class="s-feature-box text-center">
-				<div class="mask-top">
-					<!-- Icon -->
-					<i class="fa fa-users"></i>
-					<!-- Title -->
-					<h4>Members</h4></div>
-				<div class="mask-bottom">
-					<!-- Icon -->
-					<i class="fa fa-users"></i>
-					<!-- Title -->
-					<h4>Members</h4>
-					<!-- Text -->
-					<p>Would you like to know more about joining the SHP network?</p>
-					<p><a href="#">Log in</a> or <a href="#">request access</a> to the SHP Physician Member website.</p>
-				</div>
+				<a href="https://scottsdalehealthpartners.com/">
+					<div class="mask-top">
+						<!-- Icon -->
+						<i class="fa fa-users"></i>
+						<!-- Title -->
+						<h4>Members</h4></div>
+					<div class="mask-bottom">
+						<!-- Icon -->
+						<i class="fa fa-users"></i>
+						<!-- Title -->
+						<h4>Members</h4>
+						<!-- Text -->
+						<p>Would you like to know more about joining the SHP network?</p>
+						<p><a href="#">Log in</a> or <a href="#">request access</a> to the SHP Physician Member website.</p>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -222,7 +234,7 @@
 			<div class="entry-content">
 				<p>{{ company_name }} was established in the summer of  2012 as a joint venture between Scottsdale Healthcare Hospitals (now HonorHealth) and Scottsdale Physician Organization.</p>
 				<p>SHP launched with 430 physicians, one insurance contract, and about 3,500 patients.</p>
-				<p>Today SHP has seven contracts with major insurance companies and now has over 630 physician members serving more than 30,000 patients in the community.</p>
+				<p>Today SHP has seven contracts with major insurance companies and now has over <strong>630</strong> physician members serving more than <strong></strong>30,000</strong> patients in the community.</p>
 				<p>SHP represents a unique collaboration between independent community physicians and a community hospital system where all parties share a common mission and vision to improve healthcare in the local community.</p>
 				{#<p><a href="#" class="btn btn-default">Read more</a></p>#}
 			</div>
@@ -231,8 +243,119 @@
 {% endblock %}
 
 
-{# TESTIMONIALS#}
-{% block pe_testimonials %}
+{# PATIENT TESTIMONIALS #}
+{% block pe_patient_testimonials %}
+	<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="true" data-pagination="true" data-effect="backSlide">
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					BLESS YOU If it's OK I'm going to leave a US Army Star coin at the front desk for you. The Army has been doing this for over 150 years (Tradition) "for Excellence". I still serve with the Army as their (2 Star -REP: for the State of AZ. )&hellip; And I appreciate how you have helped me and as a Wounded Vet- you have done more than the VA has in 10 years. There is no need to say anything, or thank me- I and the Army thank you for caring for soldiers like myself- who have loss trust in most of the medical profession. (Not you guys- you bring hope). God Bless.
+				</blockquote>
+				{#<div class="star-rating text-center">#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star-half-o  text-color"></i>#}
+				{#</div>#}
+			</div>
+			<div class="client-details text-center">
+				{#<div class="client-image">#}
+				{#<!-- Image -->#}
+				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/1.jpg') }}" width="80" height="80" alt="">#}
+				{#</div>#}
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">John</strong>
+					<!-- Company -->
+					{#<span>Pediatric Surgeon, Honor Health</span>#}
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					I'm writing to thank you for getting me food from the food bank. Your choices were very good for me since I have diabetes and I can't have what the food bank usually has macaroni,stuffing, jelly. You gave me tuna fish,canned chicken and other items that were very good. If it is not too much trouble to go to the food bank again and get me some more items. I would appreciate it. If not it is okay I get meals on wheels once a day at 10 am. I hope you have a very nice day. I want you to know you are being prayed for.
+				</blockquote>
+				{#<div class="star-rating text-center">#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star-half-o  text-color"></i>#}
+				{#</div>#}
+			</div>
+			<div class="client-details text-center">
+				{#<div class="client-image">#}
+				{#<!-- Image -->#}
+				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/2.jpg') }}" width="80" height="80" alt="">#}
+				{#</div>#}
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Anonymous</strong>
+					<!-- Company -->
+					{#<span>Pediatric Surgeon, Honor Health</span>#}
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					I would like to thank for your concern and information while my mom was in Scottsdale Healthcare Hospital on the 5th floor. Your guidance to palliative care, was the best choice. Lund Family Home was a much better environment to see what her body could do to recover. She was there only 4 days, and it was hard to see what was happening, but in the end the Lord put me by her side when she left this world. Your kindness and understanding meant a lot to me and my family. Thank you very much.
+				</blockquote>
+				{#<div class="star-rating text-center">#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star-half-o  text-color"></i>#}
+				{#</div>#}
+			</div>
+			<div class="client-details text-center">
+				{#<div class="client-image">#}
+				{#<!-- Image -->#}
+				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/3.jpg') }}" width="80" height="80" alt="">#}
+				{#</div>#}
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Anonymous</strong>
+					<!-- Company -->
+					{#<span>Pediatric Surgeon, Honor Health</span>#}
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="desc-border bottom-arrow">
+				<blockquote class="small-text text-center">
+					You have been very helpful in helping my mom agree to an assisted living. She has agreed and I have found a place for her. We will both be in the doctor's office tomorrow and just want you to know she will be moving in next week to the assisted living.  I was a little nervous about this experience but I wanted to call you and thank you so very, very, much for all of your help, your kindness, and your understanding. Thank You - Thank You
+				</blockquote>
+				{#<div class="star-rating text-center">#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star  text-color"></i>#}
+				{#<i class="fa fa-star-half-o  text-color"></i>#}
+				{#</div>#}
+			</div>
+			<div class="client-details text-center">
+				{#<div class="client-image">#}
+				{#<!-- Image -->#}
+				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/3.jpg') }}" width="80" height="80" alt="">#}
+				{#</div>#}
+				<div class="client-details">
+					<!-- Name -->
+					<strong class="text-color">Anonymous</strong>
+					<!-- Company -->
+					{#<span>Pediatric Surgeon, Honor Health</span>#}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{# PHYSICIAN TESTIMONIALS #}
+{% block pe_physician_testimonials %}
 	<div class="owl-carousel pagination-1 dark-switch owl-theme animated fadeInRight visible" data-animation="fadeInRight" data-singleitem="true" data-navigation="false" data-autoplay="true" data-pagination="true" data-effect="backSlide">
 		<div class="item">
 			<div class="desc-border bottom-arrow">
@@ -378,7 +501,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					Join SHP / Need Help? <a class="black" href="{{ path('contact') }}">Contact Us </a>
+					Need Help? <a class="black" href="{{ path('contact') }}">Contact Us </a>
 				</div>
 			</div>
 		</div>
