@@ -1,7 +1,42 @@
+{% set title = 'Our Physicians' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:ForPatients:ourPhysicians{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ForPatients:ourPhysicians page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<section id="our-physicians" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Physician Directory</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 col-sm-offset-3">
+					<h5>Physician Directory</h5>
+					<i class="fa fa-user-md i-10x icons-circle text-color light-bg border-color"></i>
+					<div class="row">
+						<div class="col-xs-12">
+							<a target="_blank" href="{{ asset('bundles/site/pdf/SHP-Physician-Directory.pdf') }}"><i class="fa fa-download"></i> Download</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<h5>Pediatric Directory</h5>
+					<i class="fa fa-child i-10x icons-circle text-color light-bg border-color"></i>
+					<div class="row">
+						<div class="col-xs-12">
+							<a target="_blank" href="{{ asset('bundles/site/pdf/SHP-PedDirectory-5_19_15.pdf') }}"><i class="fa fa-download"></i> Download</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}
+			<div id="results" class="row"></div>
+		</div>
+	</section>
 {% endblock %}
