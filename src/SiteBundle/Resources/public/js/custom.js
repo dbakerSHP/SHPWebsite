@@ -1164,6 +1164,8 @@ $(document).ready(function() {
 	appMaster.datePicker();
 	appMaster.timePicker();
 
+	$('[data-toggle="tooltip"]').tooltip();
+
 	/* Practices Search */
 
 	$('input[data-search="true"]').keyup(function(){
