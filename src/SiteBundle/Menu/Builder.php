@@ -148,7 +148,8 @@ class Builder extends ContainerAware
 		/**
 		 * Locate a Physician
 		 */
-		$menu->addChild('Locate a Physician', array('route' => 'physician_directory'));
+//		$menu->addChild('Locate a Physician', array('route' => 'physician_directory'));
+		$menu->addChild('Locate a Physician', array('route' => 'our_physicians'));
 
 		/**
 		 * Terms of Use
