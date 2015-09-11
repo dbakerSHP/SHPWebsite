@@ -131,33 +131,38 @@ class Builder extends ContainerAware
 		/**
 		 * Frequently Asked Questions
 		 */
-		$menu->addChild('Frequently Asked Questions', array('route' => 'faq'));
+//		$menu->addChild('Frequently Asked Questions', array('route' => 'faq'));
 
 		/**
 		 * Request Access
 		 */
-		$menu->addChild('Request Access', array('route' => 'request_access'));
+//		$menu->addChild('Request Access', array('route' => 'request_access'));
 
 		/**
 		 * Client Portal
 		 */
-		$menu->addChild('Client Portal', array('uri' => '#'));
+//		$menu->addChild('Client Portal', array('uri' => '#'));
 
 		/**
 		 * Locate a Physician
 		 */
-		$menu->addChild('Locate a Physician', array('route' => 'locate_physician'));
+		$menu->addChild('Locate a Physician', array('route' => 'physician_directory'));
 
 		/**
 		 * Terms of Use
 		 */
-		$menu->addChild('Terms of Use', array('route' => 'tos'));
+//		$menu->addChild('Terms of Use', array('route' => 'tos'));
 
 		/**
 		 * Privacy Policy
 		 */
-		$menu->addChild('Privacy Policy', array('route' => 'privacy_policy'));
+//		$menu->addChild('Privacy Policy', array('route' => 'privacy_policy'));
 
+
+		/**
+		 * Physician Member Login
+		 */
+		$menu->addChild('Physician Member Login', array('uri' => 'http://www.scottsdalehealthpartners.com'));
 		return $menu;
 
 	}

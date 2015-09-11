@@ -9,12 +9,12 @@
 						<h3 class="title">About Us</h3>
 					</div>
 					<!-- Text -->
-					<p> We like to provide great site with complete features what you want to impletement in your business!</p>
+					{#<p> We like to provide great site with complete features what you want to impletement in your business!</p>#}
 					<!-- Address -->
 					<p><strong>Office:</strong> {{ company_name }}<br> {{ company_address1 }}{% if company_address2 != '' %}, {{ company_address2 }}{% endif %}<br/>{{ company_city }}, {{ company_state }} {{ company_zip_code }}</p>
 					<!-- Phone -->
 					<p><strong>Call Us:</strong> {{ company_phone }}</p>
-					<p><strong>Follow Us:</strong> <span class="social-icon gray-bg icons-circle i-2x"><a href="#"><i class="fa fa-linkedin"></i></a></span></p>
+					<p><strong>Follow Us:</strong> <span class="social-icon gray-bg icons-circle i-2x"><a href="https://www.linkedin.com/company/scottsdale-health-partners" target="_blank"><i class="fa fa-linkedin"></i></a></span></p>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-3 widget bottom-xs-pad-20">
 					<div class="widget-title">
@@ -31,9 +31,9 @@
 					<nav>
 						<ul class="footer-blog">
 							<!-- List Items -->
-							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
-							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
-							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a></li>
+							<li><a href="{{ path('news') }}">Medicare ACOs Continue to Improve Quality of Care, Generate Shared Savings</a></li>
+							<li><a href="{{ path('news') }}">The One Thing That's Impeding Your Hospital from Moving to the New Health Care Paradigm</a></li>
+							<li><a href="{{ path('news') }}">Leading ACO, Scottsdale Health Partners, Reduces Care Coordination Costs by 10% with TigerText</a></li>
 						</ul>
 					</nav>
 				</div>

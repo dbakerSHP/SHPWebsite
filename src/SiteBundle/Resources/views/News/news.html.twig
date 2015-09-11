@@ -1,7 +1,135 @@
+{% set title = 'News' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:News:news{% endblock %}
 
 {% block body %}
-<h1>Welcome to the News:news page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<section class="page-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="timeliner blog">
+						<li>
+							<div class="timeline-meta">
+								<div class="meta_details">by Dr. Jim Whitfill / MD</div>
+							</div>
+							<div class="timeline-icon">
+								<div class="date">August
+									<span>26</span></div>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-body">
+									<div class="post-item">
+										<h2 class="post-title">
+											<a href="{{ asset('bundles/site/pdf/News-2015-Shared-Savings-Program-ACOTemplate-Press-Release-for-PY14-Results.pdf') }}">Medicare ACOs Continue to Improve Quality of Care, Generate Shared Savings</a>
+										</h2>
+										<div class="post-content">The Centers for Medicare & Medicaid Services today issued 2014 quality and financial performance results showing that more Medicare Accountable Care Organizations (ACOs) continue to generate financial savings while improving the quality of care for Medicare beneficiaries by fostering greater collaboration between doctors, hospitals, and health care providers.</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="timeline-meta">
+								<div class="meta_details">by HiMSS</div>
+							</div>
+							<div class="timeline-icon">
+								<div class="date">Jun
+									<span>30</span></div>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-body">
+									<div class="post-item">
+										<h2 class="post-title">
+											<a href="http://www.himss.org/Events/EventDetail.aspx?ItemNumber=42376">How Secure Texting Supports Readmission Reduction</a>
+										</h2>
+										<div class="post-content">Sending important patient information via emails or pages can cause a lag time on responses, a longer stay for patients and added costs for the facility. But by utilizing a text messaging technology that physicians and staff already use, you can streamline the entire process from when a patient is admitted to your facility until discharge.</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="timeline-meta">
+								<div class="meta_details">by Marty Stempniak / Staff Writer</div>
+							</div>
+							<div class="timeline-icon">
+								<div class="date">April
+									<span>16</span></div>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-body">
+									<div class="post-item">
+										<h2 class="post-title">
+											<a href="http://www.hhnmag.com/Daily/2015/April/HIMMS-new-health-care-impediment-blog-stempniak">The One Thing That's Impeding Your Hospital from Moving to the New Health Care Paradigm</a>
+										</h2>
+										<div class="post-content">
+											<p>During a panel at HIMSS this week, payer, pharmacist, physician and hospital folks all came together to chew over what's blocking their organizations from transitioning into value-based care.</p>
+											<p>CHICAGO — Everyone is maneuvering into a position of strength in the new world of health care — be it payers, pharmacists, hospitals or doctors — while still paying the bills in the old one. What's the biggest obstacle standing in each organization's path, and is it the same from field to field?</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="timeline-meta">
+								<div class="meta_details">by tiger text</div>
+							</div>
+							<div class="timeline-icon">
+								<div class="date">March
+									<span>25</span></div>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-body">
+									<div class="post-item">
+										<h2 class="post-title">
+											<a href="http://www.tigertext.com/wp-content/uploads/Scottsdale-Health-Partners-Case-Study.pdf">Leading ACO, Scottsdale Health Partners, Reduces Care Coordination Costs by 10% with TigerText</a>
+										</h2>
+										<div class="post-content">
+											<p>Scottsdale Health Partners (SHP) is a physician-led Clinical Integration Network and Accountable Care Organization (ACO) aiming to transform care delivery in the Arizona community. It is a joint venture formed by Scottsdale Lincoln Health Network (SLHN) and the Scottsdale Physician Organization, which is comprised of over 600 community physicians. SHP's network oers a world-class healthcare network of hospitals, physicians and clinicians that provides patients with a comprehensive, cohesive and integrated experience from their doctor’s oce to the hospital to ongoing care settings.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="timeline-icon">
+								<div class="date"><br/><span>'15</span></div>
+							</div>
+						</li>
+						<li>
+							<div class="timeline-meta">
+								<div class="meta_details">by Angela Gonzales / Senior Reporter</div>
+							</div>
+							<div class="timeline-icon">
+								<div class="date">Jun
+									<span>13</span></div>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-body">
+									<div class="post-item">
+										<h2 class="post-title">
+											<a href="http://www.bizjournals.com/phoenix/blog/health-care-daily/2013/06/scottsdale-health-partners-cigna-team.html">Scottsdale Health Partners, Cigna team on accountable care initiative</a>
+										</h2>
+										<div class="post-content">
+											<p>Scottsdale Health Partners and Cigna Corp. are teaming up to launch a collaborative accountable care initiative.</p>
+											<p>Collaborative accountable care is Cigna’s approach to accomplishing the same goals as accountable care organizations, without creating a formal ACO. The initiative is designed to improve patient access to health care, enhance care coordination and reduce costs.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="timeline-icon">
+								<div class="date"><br/><span>'13</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
