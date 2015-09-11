@@ -48,17 +48,19 @@ class Builder extends ContainerAware
 		 */
 		$menu->addChild('For Patients', array('route' => 'for_patients'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
 //			->addChild('Our Philosophy', array('route' => 'our_philosophy'))->getParent()
-			->addChild('Our Physicians', array('route' => 'our_physicians'))->getParent()->setAttribute('dropdown', true)
+			->addChild('Our Physicians', array('route' => 'our_physicians'))->getParent()
+//			->addChild('Our Physicians', array('route' => 'our_physicians'))->getParent()->setAttribute('dropdown', true)
 			->addChild('Insurance Plans', array('route' => 'insurance_plans'))->getParent()
 			->addChild('Care Management', array('route' => 'care_management'))->getParent()
+			->addChild('Hospitals', array('route' => 'hospitals'))->getParent()
 		;
 
 		/**
 		 * For Patients > Our Physicians
 		 */
-		$menu['For Patients']['Our Physicians']->setChildrenAttributes(array('class' => 'dropdown-menu'))
-			->addChild('Physician Directory', array('route' => 'physician_directory'))->getParent()
-		;
+//		$menu['For Patients']['Our Physicians']->setChildrenAttributes(array('class' => 'dropdown-menu'))
+//			->addChild('Physician Directory', array('route' => 'physician_directory'))->getParent()
+//		;
 
 		/**
 		 * For Physicians

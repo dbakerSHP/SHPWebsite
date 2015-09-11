@@ -24,7 +24,6 @@ board_of_directors:
     defaults: { _controller: SiteBundle:About:boardOfDirectors }
 
 
-
 _a_c_o:
     path:     /ACO
     defaults: { _controller: SiteBundle:ACO:ACO }
@@ -82,6 +81,10 @@ care_management:
 for_physicians:
     path:     /for-physicians
     defaults: { _controller: SiteBundle:ForPhysicians:forPhysicians }
+
+hospitals:
+    path:     /hospitals
+    defaults: { _controller: SiteBundle:ForPatients:hospitals }
 
 
 

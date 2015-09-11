@@ -48,4 +48,12 @@ class ForPatientsController extends Controller
             ));
     }
 
+    public function hospitalsAction()
+    {
+        return $this->render('SiteBundle:ForPatients:hospitals.html.twig', array(
+                // ...
+            )
+        );
+    }
+
 }
