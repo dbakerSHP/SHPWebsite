@@ -1,7 +1,71 @@
+{% set title = 'Care Management' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:ForPatients:careManagement{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ForPatients:careManagement page</h1>
+
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<section id="care-management" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">SHP Care Management Program</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>The SHP Care Management Program has two distinct yet highly integrated services: the Transitional Case Management program and the Comprehensive Care Coordination program.</p>
+					<p>These two innovative programs serve our patients and physicians with highly collaborative, effective, and evidence-based service coordination designed to improve patient outcomes and make the healthcare experience less complex and more satisfying for our patients.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="transitional-case-management" class="page-section no-pad light-bg border-tb">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 pad-60">
+					<div class="section-title text-left">
+						<!-- Title -->
+						<h2 class="title">Transitional Case Management</h2>
+					</div>
+					<ul class="list-style">
+						<li>Provided to hospitalized patients or those recently discharged from the hospital</li>
+						<li>Assist with the needs of SHP patients as they prepare to transition from an SHP network hospital or emergency department</li>
+						<li>Focus on maintaining clear communications between patients and family members, the primary care physician, specialist physicians, and post-acute facilities about treatment plans during and post hospitalizations</li>
+					</ul>
+				</div>
+				<div class="col-md-6 pad-60">
+					<div class="section-title text-left">
+						<!-- Title -->
+						<h2 class="title">Comprehensive Care Coordination</h2>
+					</div>
+					<ul class="list-style">
+						<li>An intensive outpatient care coordination program using a specially trained care coordinator working with primary care physicians</li>
+						<li>Creates close relationships with medically complex patients and delivers highly individualized and accessible primary care</li>
+						<li>Develops a patient-centered, goal-orientated treatment plan and maintains close communication with the patient; supporting their efforts as they move to a more advanced state of emotional or physical wellness</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="care-management" class="page-section">
+		<div class="container text-center">
+			<div class="section-title">
+				<!-- Heading -->
+				<h2 class="title">Care Management Team</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Our Care Management Team collaborates with patients and their primary care physicians to assist in coordination of care helping to demystify the complexities of the healthcare system. Our Care Management   services span from assisting in transitioning from the hospital, providing support and guidance, researching community programs, and helping patients establish health care goals.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
 {% endblock %}
