@@ -1,7 +1,103 @@
+{% set title = 'Accountable Care Organization' %}
 {% extends "::base.html.twig" %}
 
 {% block title %}SiteBundle:ACO:ACO{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ACO:ACO page</h1>
+	<div class="page-header">
+		<div class="container">
+			<h1 class="title">{{ title }}</h1>
+		</div>
+	</div>
+	<section id="aco" class="page-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="section-title">
+						<h2 class="title">What is an ACO?</h2>
+					</div>
+					<p class="lead">Scottsdale Health Partners (SHP) is a physician-led Accountable Care Organization whose mission is to transform care delivery in the Scottsdale Community. SHP is a joint venture formed by Scottsdale Healthcare (SHC) and Scottsdale Physician Organization. Scottsdale Physician Organization is comprised of over 500 community physicians.</p>
+					<p>SHP's network offers the strength of a world class hospital system (Scottsdale Healthcare) with three hospitals serving the Scottsdale community along with a broad network of physicians representing the full spectrum of specialties including over 80 primary care physicians.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="participant" class="page-section light-bg">
+		<div class="container">
+			<div class="section-title text-left">
+				<h2 class="title">SHP is a participant</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<p>Effective January 1, 2014, SHP is a participant in the Medicare Shared Savings Program. As an MSSP participant, SHP has over 12,000 Medicare Fee-for-Service patients that are attributed to SHP physicians. SHP is improving the health and outcomes of patients while reducing the cost of healthcare through the following methods and philosophies:</p>
+				</div>
+				<div class="col-md-8">
+					<ul class="features-list condensed features-list-left no-pad">
+						<li class="features-list-item">
+							<!-- Icon -->
+							<i class="fa fa-check border-black"></i>
+							<div class="features-content">
+								<!-- Title -->
+								<p>Strong relationships between primary care providers and patients</p>
+							</div>
+						</li>
+						<li class="features-list-item">
+							<!-- Icon -->
+							<i class="fa fa-check border-black"></i>
+							<div class="features-content">
+								<!-- Title -->
+								<p>Developing and following evidence-based care guidelines</p>
+							</div>
+						</li>
+						<li class="features-list-item">
+							<!-- Icon -->
+							<i class="fa fa-check border-black"></i>
+							<div class="features-content">
+								<!-- Title -->
+								<p>Providing care coordination services for patients to ensure that patients get the right care at the right time </p>
+							</div>
+						</li>
+						<li class="features-list-item">
+							<!-- Icon -->
+							<i class="fa fa-check border-black"></i>
+							<div class="features-content">
+								<!-- Title -->
+								<p>Collaborating, coordinating and communicating within an integrated community of care providers</p>
+							</div>
+						</li>
+						<li class="features-list-item">
+							<!-- Icon -->
+							<i class="fa fa-check border-black"></i>
+							<div class="features-content">
+								<!-- Title -->
+								<p>Obtaining, analyzing, and leveraging clinical and quality data for better health outcomes</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="more-information" class="page-section">
+		<div class="container text-center">
+			<div class="section-title text-center">
+				<h2 class="title">For more information</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>For general questions or additional information about Accountable Care Organizations.</p>
+					<p>Please visit <a href="http://www.medicare.gov/acos.html" target="_blank">www.medicare.gov/acos.html</a> or call 1-800-MEDICARE (1-800-633-4227) TTY users should call 1-877-486-2048.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="learn-more" class="light-bg call-to-action black text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					SHP Accountable Care Organization <a class="black" href="{{ path('_a_c_o_reporting') }}">Reporting</a>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

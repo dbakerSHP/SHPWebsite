@@ -19,9 +19,9 @@ class ACOController extends Controller
      * NEW ACTIONS
      */
 
-    public function ACORepositoryAction()
+    public function ACOReportingAction()
     {
-        return $this->render('SiteBundle:Aco:acoRepository.html.twig', array(
+        return $this->render('SiteBundle:Aco:acoReporting.html.twig', array(
             // ...
         ));
     }

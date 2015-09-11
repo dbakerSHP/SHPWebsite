@@ -29,9 +29,9 @@ _a_c_o:
     path:     /ACO
     defaults: { _controller: SiteBundle:ACO:ACO }
 
-what_is_an_a_c_o:
-    path:     /what-is-an-aco
-    defaults: { _controller: SiteBundle:ACO:whatIsAnACO }
+_a_c_o_reporting:
+    path:     /ACO/PublicReporting
+    defaults: { _controller: SiteBundle:ACO:ACOReporting }
 
 contact:
     path:     /contact

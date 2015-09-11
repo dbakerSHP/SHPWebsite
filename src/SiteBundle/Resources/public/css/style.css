@@ -226,6 +226,33 @@ ul.list-style li::before {
 	left: -10px;
 }
 
+ul.column-list-2 {
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+ul.column-list-3 {
+	-moz-column-count: 3;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 20px;
+	column-count: 3;
+	column-gap: 20px;
+}
+
+ul.column-list-4 {
+	-moz-column-count: 4;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 4;
+	-webkit-column-gap: 20px;
+	column-count: 4;
+	column-gap: 20px;
+}
+
 .arrow-style {
 	margin: 0 0 22px;
 	padding: 0 0 0 60px;
