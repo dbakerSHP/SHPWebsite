@@ -1348,6 +1348,7 @@ i.fa-1x{
 }
 .image-bg.fixed{
 	background-attachment: fixed;
+	-webkit-transform-style: preserve-3d;
 }
 .image-bg.content-in{
 	background-repeat: no-repeat;

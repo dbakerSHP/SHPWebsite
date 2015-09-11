@@ -57,7 +57,7 @@ contact_process:
 
 for_patients:
     path:     /for-patients
-    defaults: { _controller: SiteBundle:ForPatients:forPatients }
+    defaults: { _controller: SiteBundle:ForPatients:ourPhilosophy }
 
 our_philosophy:
     path:     /our-philosophy

@@ -55,7 +55,8 @@
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
 							 style="max-width: 600px; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
-							<h4>Our Care Coordinators and Transitional Care Managers are here to support you every step of the way. <a href="{{ path('care_management') }}"><span style="background: #8EB4E6; padding: 5px 20px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">Learn More</span></a></h4>
+							<h4>Our Care Coordinators and Transitional Care Managers are here to support you every step of the way<br/>
+							<a href="{{ path('care_management') }}"><span style="background: #8EB4E6; padding: 5px 20px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">Learn More</span></a></>
 						</div>
 					</div>
 					<img src="{{ asset('bundles/site/images/sections/slider/slide-2.jpg') }}" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
@@ -95,7 +96,7 @@
 							 data-endspeed="500"
 							 data-endeasing="Power1.easeIn"
 							 style="max-width: 600px; text-shadow: 0px 0px 20px #ffffff, 0px 0px 15px #ffffff, 0px 0px 10px #ffffff, 0px 0px 5px #ffffff;">
-							<h4>More than 600 local healthcare providers have joined Scottsdale Health Partners<br/><a href="http://www.scottsdalehealthpartners.com/"><span style="background: #8EB4E6; padding: 5px 20px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">Click here</span></a> to login or to request access<br/>to the SHP physician member website.</h4>
+							<h4>More than 600 local healthcare providers have joined Scottsdale Health Partners<br/><a href="http://www.scottsdalehealthpartners.com/"><span style="background: #8EB4E6; padding: 5px 20px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">Click here</span></a> to login or to request access<br/>to the SHP physician member website</h4>
 						</div>
 					</div>
 					<img src="{{ asset('bundles/site/images/sections/slider/slide-3-back.jpg') }}" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
@@ -135,7 +136,7 @@
 		<!-- Special Feature Box 2 -->
 		<div class="col-xs-6 col-sm-3">
 			<div class="s-feature-box text-center">
-				<a href="#">
+				<a href="{{ path('for_patients') }}">
 					<div class="mask-top">
 						<!-- Icon -->
 						<i class="fa fa-hospital-o"></i>
@@ -175,7 +176,7 @@
 		<!-- Special Feature Box 3 -->
 		<div class="col-xs-6 col-sm-3">
 			<div class="s-feature-box text-center">
-				<a href="https://scottsdalehealthpartners.com/">
+				<a href="https://scottsdalehealthpartners.com/" target="_blank">
 					<div class="mask-top">
 						<!-- Icon -->
 						<i class="fa fa-users"></i>
@@ -245,7 +246,7 @@
 		<div class="item">
 			<div class="desc-border bottom-arrow">
 				<blockquote class="small-text text-center">
-					BLESS YOU If it's OK I'm going to leave a US Army Star coin at the front desk for you. The Army has been doing this for over 150 years (Tradition) "for Excellence". I still serve with the Army as their (2 Star -REP: for the State of AZ. )&hellip; And I appreciate how you have helped me and as a Wounded Vet- you have done more than the VA has in 10 years. There is no need to say anything, or thank me- I and the Army thank you for caring for soldiers like myself- who have loss trust in most of the medical profession. (Not you guys- you bring hope). God Bless.
+					I appreciate how you have helped me, and as a Wounded Vet you have done more for me than the VA has in 10 years...I and the Army thank you for caring for soldiers like myself, who have loss trust in most of the medical profession. (Not you guys- you bring hope).
 				</blockquote>
 				{#<div class="star-rating text-center">#}
 				{#<i class="fa fa-star  text-color"></i>#}
@@ -255,23 +256,23 @@
 				{#<i class="fa fa-star-half-o  text-color"></i>#}
 				{#</div>#}
 			</div>
-			<div class="client-details text-center">
+			{#<div class="client-details text-center">#}
 				{#<div class="client-image">#}
 				{#<!-- Image -->#}
 				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/1.jpg') }}" width="80" height="80" alt="">#}
 				{#</div>#}
-				<div class="client-details">
+				{#<div class="client-details">#}
 					<!-- Name -->
-					<strong class="text-color">John</strong>
+					{#<strong class="text-color">John</strong>#}
 					<!-- Company -->
 					{#<span>Pediatric Surgeon, Honor Health</span>#}
-				</div>
-			</div>
+				{#</div>#}
+			{#</div>#}
 		</div>
 		<div class="item">
 			<div class="desc-border bottom-arrow">
 				<blockquote class="small-text text-center">
-					I'm writing to thank you for getting me food from the food bank. Your choices were very good for me since I have diabetes and I can't have what the food bank usually has macaroni,stuffing, jelly. You gave me tuna fish,canned chicken and other items that were very good. If it is not too much trouble to go to the food bank again and get me some more items. I would appreciate it. If not it is okay I get meals on wheels once a day at 10 am. I hope you have a very nice day. I want you to know you are being prayed for.
+					I would like to thank you for your concern and information while my mom was in Scottsdale Healthcare Hospital. Your guidance to palliative care was the best choice. Your kindness and understanding meant a lot to me and my family. Thank you very much.
 				</blockquote>
 				{#<div class="star-rating text-center">#}
 				{#<i class="fa fa-star  text-color"></i>#}
@@ -281,23 +282,23 @@
 				{#<i class="fa fa-star-half-o  text-color"></i>#}
 				{#</div>#}
 			</div>
-			<div class="client-details text-center">
+			{#<div class="client-details text-center">#}
 				{#<div class="client-image">#}
 				{#<!-- Image -->#}
 				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/2.jpg') }}" width="80" height="80" alt="">#}
 				{#</div>#}
-				<div class="client-details">
+				{#<div class="client-details">#}
 					<!-- Name -->
-					<strong class="text-color">Anonymous</strong>
+					{#<strong class="text-color">Anonymous</strong>#}
 					<!-- Company -->
 					{#<span>Pediatric Surgeon, Honor Health</span>#}
-				</div>
-			</div>
+				{#</div>#}
+			{#</div>#}
 		</div>
 		<div class="item">
 			<div class="desc-border bottom-arrow">
 				<blockquote class="small-text text-center">
-					I would like to thank for your concern and information while my mom was in Scottsdale Healthcare Hospital on the 5th floor. Your guidance to palliative care, was the best choice. Lund Family Home was a much better environment to see what her body could do to recover. She was there only 4 days, and it was hard to see what was happening, but in the end the Lord put me by her side when she left this world. Your kindness and understanding meant a lot to me and my family. Thank you very much.
+					You have been very helpful in helping my mom agree to an assisted living.  She has agreed and I have found a place for her.  I was a little nervous about this experience but I wanted to call you and thank you so very, very, much for all of your help, your kindness, and your understanding.  Thank You  - Thank You
 				</blockquote>
 				{#<div class="star-rating text-center">#}
 				{#<i class="fa fa-star  text-color"></i>#}
@@ -307,44 +308,18 @@
 				{#<i class="fa fa-star-half-o  text-color"></i>#}
 				{#</div>#}
 			</div>
-			<div class="client-details text-center">
+			{#<div class="client-details text-center">#}
 				{#<div class="client-image">#}
 				{#<!-- Image -->#}
 				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/3.jpg') }}" width="80" height="80" alt="">#}
 				{#</div>#}
-				<div class="client-details">
+				{#<div class="client-details">#}
 					<!-- Name -->
-					<strong class="text-color">Anonymous</strong>
+					{#<strong class="text-color">Anonymous</strong>#}
 					<!-- Company -->
 					{#<span>Pediatric Surgeon, Honor Health</span>#}
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="desc-border bottom-arrow">
-				<blockquote class="small-text text-center">
-					You have been very helpful in helping my mom agree to an assisted living. She has agreed and I have found a place for her. We will both be in the doctor's office tomorrow and just want you to know she will be moving in next week to the assisted living.  I was a little nervous about this experience but I wanted to call you and thank you so very, very, much for all of your help, your kindness, and your understanding. Thank You - Thank You
-				</blockquote>
-				{#<div class="star-rating text-center">#}
-				{#<i class="fa fa-star  text-color"></i>#}
-				{#<i class="fa fa-star  text-color"></i>#}
-				{#<i class="fa fa-star  text-color"></i>#}
-				{#<i class="fa fa-star  text-color"></i>#}
-				{#<i class="fa fa-star-half-o  text-color"></i>#}
 				{#</div>#}
-			</div>
-			<div class="client-details text-center">
-				{#<div class="client-image">#}
-				{#<!-- Image -->#}
-				{#<img class="img-circle" src="{{ asset('bundles/site/images/sections/grid/3.jpg') }}" width="80" height="80" alt="">#}
-				{#</div>#}
-				<div class="client-details">
-					<!-- Name -->
-					<strong class="text-color">Anonymous</strong>
-					<!-- Company -->
-					{#<span>Pediatric Surgeon, Honor Health</span>#}
-				</div>
-			</div>
+			{#</div>#}
 		</div>
 	</div>
 {% endblock %}
