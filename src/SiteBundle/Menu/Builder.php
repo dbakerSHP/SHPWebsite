@@ -46,8 +46,8 @@ class Builder extends ContainerAware
 		/**
 		 * For Patients
 		 */
-		$menu->addChild('For Patients', array('route' => 'for_patients'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
-			->addChild('Our Philosophy', array('route' => 'our_philosophy'))->getParent()
+		$menu->addChild('For Patients', array('route' => 'our_philosophy'))->setAttribute('dropdown', true)->setChildrenAttributes(array('class' => 'dropdown-menu'))
+//			->addChild('Our Philosophy', array('route' => 'our_philosophy'))->getParent()
 			->addChild('Our Physicians', array('route' => 'our_physicians'))->getParent()->setAttribute('dropdown', true)
 			->addChild('Insurance Plans', array('route' => 'insurance_plans'))->getParent()
 			->addChild('Care Management', array('route' => 'care_management'))->getParent()
