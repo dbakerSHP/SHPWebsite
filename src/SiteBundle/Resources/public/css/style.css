@@ -273,6 +273,59 @@ ul.arrow-style li:before{
 	position: absolute;
 	top: 5px;
 }
+.check-style {
+	margin: 0 0 22px;
+	padding: 0 0;
+}
+
+.check-style li{
+	list-style: outside none none;
+	padding-bottom: 2px;
+	padding-left: 2em;
+	padding-top: 2px;
+	position: relative;
+}
+ul.check-style li:before{
+	content: "\f00c";
+	display: block;
+	font-family: FontAwesome;
+	left: 0;
+	position: absolute;
+	transition:all 350ms ease-in-out 0s;
+	-moz-transition:all 350ms ease-in-out 0s;
+	-webkit-transition:all 350ms ease-in-out 0s;
+	-o-transition:all 350ms ease-in-out 0s;
+	-ms-transition:all 350ms ease-in-out 0s;
+}
+
+ul.check-style.f-2x li {
+	font-size:10px;
+}
+ul.check-style.f-3x li {
+	font-size: 13px;
+}
+ul.check-style.f-4x li {
+	font-size:16px;
+}
+ul.check-style.f-5x li {
+	font-size:19px;
+}
+ul.check-style.f-6x li {
+	font-size:21px;
+}
+ul.check-style.f-7x li {
+	font-size:23px;
+}
+ul.check-style.f-8x li {
+	font-size:25px;
+}
+ul.check-style.f-9x li {
+	font-size:27px;
+}
+ul.check-style.f-10x li {
+	font-size:30px;
+}
+
 .product-page .description {
 	color: #7f7f7f;
 	margin-bottom:20px;
@@ -1557,7 +1610,9 @@ i,
 .icon-6 span,
 .icon-6 span:hover,
 .blog.timeliner>li:hover .timeline-image,
-.blog.timeliner>li:hover .timeline-icon{
+.blog.timeliner>li:hover .timeline-icon,
+ul.check-style li:hover:before
+{
 	transition:all 350ms ease-in-out 0s;
 	-moz-transition:all 350ms ease-in-out 0s;
 	-webkit-transition:all 350ms ease-in-out 0s;

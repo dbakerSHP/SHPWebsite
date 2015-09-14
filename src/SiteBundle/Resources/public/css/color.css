@@ -37,7 +37,8 @@
 .travel-block i,
 .side-navbar .top-contact.link-hover-black > a:hover,
 .side-navbar .top-social-icon > a:hover i,
-header .nav .open > a.highlighteds
+header .nav .open > a.highlighteds,
+ul.check-style li:hover:before
 {
 	color: #8EB4E3;
 }
