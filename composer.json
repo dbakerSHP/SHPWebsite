@@ -25,7 +25,8 @@
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "jms/serializer-bundle": "0.13.*",
-        "friendsofsymfony/rest-bundle": "^1.7"
+        "friendsofsymfony/rest-bundle": "^1.7",
+        "salva/pdfjs-bundle": "1.0.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

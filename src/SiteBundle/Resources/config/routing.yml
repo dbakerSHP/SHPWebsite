@@ -95,3 +95,7 @@ api_physician_directory:
     prefix: /api
     resource: @SiteBundle/Controller/PhysicianAPIController.php
 
+
+_p_d_f_view:
+    path:     /pdf-viewer/{file}
+    defaults: { _controller: SiteBundle:PDFViewer:PDFView }

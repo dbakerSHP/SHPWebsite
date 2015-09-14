@@ -1,0 +1,7 @@
+{% set title = 'Physician Directory' %}
+{% extends "::base.html.twig" %}
+
+{% block title %}SiteBundle:pdfViewer{% endblock %}
+
+{% block body %}
+<iframe src = "/bundles/site/js/viewer-js/#../{{ asset('bundles/site/pdf/SHP-Physician-Directory.pdf') }}" width='400' height='300' allowfullscreen webkitallowfullscreen></iframe>

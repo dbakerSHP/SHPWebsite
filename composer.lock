@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5319bf60e36cace22ef1211491db292",
+    "hash": "fc31b969eb982045a795db78aa3ab7d4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -807,12 +807,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "4e85ba638acf62e1afe735f94b0c51aa971f8773"
+                "reference": "a97d1f4140c6c96e6e706b248e4105d242d16ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/4e85ba638acf62e1afe735f94b0c51aa971f8773",
-                "reference": "4e85ba638acf62e1afe735f94b0c51aa971f8773",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/a97d1f4140c6c96e6e706b248e4105d242d16ac9",
+                "reference": "a97d1f4140c6c96e6e706b248e4105d242d16ac9",
                 "shasum": ""
             },
             "require": {
@@ -842,8 +842,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\DBAL\\Migrations": "lib"
+                "psr-4": {
+                    "Doctrine\\DBAL\\Migrations\\": "lib/Doctrine/DBAL/Migrations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -866,7 +866,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-08-27 12:05:11"
+            "time": "2015-09-13 17:28:16"
         },
         {
             "name": "doctrine/orm",
@@ -1764,6 +1764,52 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "salva/pdfjs-bundle",
+            "version": "dev-master",
+            "target-dir": "Salva/PdfJsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nibsirahsieu/SalvaPdfJsBundle.git",
+                "reference": "bed55d8e29c2f8b66bdd88147287c325db0292ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nibsirahsieu/SalvaPdfJsBundle/zipball/bed55d8e29c2f8b66bdd88147287c325db0292ae",
+                "reference": "bed55d8e29c2f8b66bdd88147287c325db0292ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Salva\\PdfJsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nibsirahsieu",
+                    "email": "nibsirahsieu@gmail.com"
+                }
+            ],
+            "description": "This bundle provides a simple integration of pdfjs from mozilla into Symfony2.",
+            "keywords": [
+                "pdfjs"
+            ],
+            "time": "2013-04-25 15:36:39"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v4.0.1",
             "target-dir": "Sensio/Bundle/DistributionBundle",
@@ -2285,16 +2331,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.21.2",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3"
+                "reference": "204a6c94907c2c2225322c267e09adbb2b1c04fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/204a6c94907c2c2225322c267e09adbb2b1c04fd",
+                "reference": "204a6c94907c2c2225322c267e09adbb2b1c04fd",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2353,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.21-dev"
+                    "dev-master": "1.22-dev"
                 }
             },
             "autoload": {
@@ -2342,7 +2388,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-09 05:28:51"
+            "time": "2015-09-13 17:12:38"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -2489,7 +2535,8 @@
     "stability-flags": {
         "doctrine/migrations": 20,
         "doctrine/doctrine-migrations-bundle": 20,
-        "doctrine/doctrine-fixtures-bundle": 20
+        "doctrine/doctrine-fixtures-bundle": 20,
+        "salva/pdfjs-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
