@@ -273,6 +273,7 @@ ul.arrow-style li:before{
 	position: absolute;
 	top: 5px;
 }
+
 .check-style {
 	margin: 0 0 22px;
 	padding: 0 0;
@@ -285,6 +286,7 @@ ul.arrow-style li:before{
 	padding-top: 2px;
 	position: relative;
 }
+
 ul.check-style li:before{
 	content: "\f00c";
 	display: block;
