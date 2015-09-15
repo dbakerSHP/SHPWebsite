@@ -4402,6 +4402,9 @@ ul.tags li{
 	font-weight: bold;
 	line-height: 20px;
 }
+.blog.timeliner > li .timeline-icon .date.year span {
+	line-height: 65px;
+}
 .blog.timeliner >li  .timeline-panel:before,
 .blog.timeliner >li  .timeline-panel:after {
 	content: "";
