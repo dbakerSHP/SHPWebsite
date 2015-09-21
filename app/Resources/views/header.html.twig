@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<meta name="keywords" content="aco, accountable, care, organization, health, partners, scottsdale, arizona" />
-	<meta name="description" content="Scottsdale Health Partners is a physician-led Clinical Integration Network and Accountable Care Organization. We are dedicated to improving patient health and reducing healthcare spend through collaboration, coordination, and communication in the community." />
-	<meta name="author" content="omedix.com" />
+	<meta name="keywords" content="{% if meta_keywords is defined and meta_keywords | length > 0 %}{{ meta_keywords }}{% else %}{{ meta_keywords_default }}{% endif %}" />
+	<meta name="description" content="{% if meta_description is defined and meta_description | length > 0 %}{{ meta_description }}{% else %}{{ meta_description_default }}{% endif %}" />
+	<meta name="author" content="{% if meta_author is defined and meta_author | length > 0 %}{{ meta_author }}{% else %}{{ meta_author_default }}{% endif %}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<title>{{ company_name }}{% if title is defined %} | {{ title }}{% endif %}</title>

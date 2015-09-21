@@ -47,6 +47,9 @@ twig:
         company_location_latitude: %company_location_latitude%
         company_location_longitude: %company_location_longitude%
         support_email: %send_emails_to%
+        meta_keywords_default: %meta_keywords_default%
+        meta_description_default: %meta_description_default%
+        meta_author_default: %meta_author_default%
 
 # Assetic Configuration
 assetic:
