@@ -28,6 +28,7 @@ var appMaster = {
 		}
 	},
 
+
 	/* --------------------------
 	 HeaderSearch, Phone & Social Icons Toggle
 	 -------------------------- */
@@ -62,6 +63,8 @@ var appMaster = {
 			})
 		});
 	},
+
+
 	/* ---------------------
 	 Owl Slider
 	 /* --------------------- */
@@ -90,10 +93,6 @@ var appMaster = {
 			}
 		})(jQuery);
 	},
-
-
-
-
 
 
 	owlCarousel: function(){
@@ -1016,6 +1015,8 @@ var appMaster = {
 		});
 
 	},
+
+
 	/* --------------------------------------------
 	 Product Zoom
 	 -------------------------------------------- */
@@ -1060,6 +1061,7 @@ var appMaster = {
 		}
 	},
 
+
 	/* --------------------------------------------
 	 Local Hosted Video Player
 	 -------------------------------------------- */
@@ -1078,6 +1080,7 @@ var appMaster = {
 			});
 		}
 	},
+
 
 	/* --------------------------------------------
 	 Local Hosted Video Player
@@ -1100,6 +1103,7 @@ var appMaster = {
 		}
 	},
 
+
 	/* --------------------------------------------
 	 Local Hosted Video Player
 	 -------------------------------------------- */
@@ -1112,6 +1116,8 @@ var appMaster = {
 			});
 		}
 	},
+
+
 	timePicker: function(){
 		if ( $( ".time-picker" ).length !== 0 ) {
 			$(function () {
