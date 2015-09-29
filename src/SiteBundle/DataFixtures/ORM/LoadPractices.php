@@ -1451,10 +1451,6 @@ class LoadPractices extends Controller implements FixtureInterface
 
 
 
-//		$practice->setPractice("Arizona Orthopedic Associates")->setAddress1("2905 W. Warner Road")->setAddress2("Suite 23")->setCity("Chandler")->setState("AZ")->setZip("85224")->setLatitude("33.33392")->setLongitude("-111.89129")->setPhone("(480) 345-2031");
-//		$practice->setPractice("Arizona Pain Specialists")->setAddress1("20940 North Tatum Blvd")->setAddress2("Suite B210")->setCity("Phoenix")->setState("AZ")->setZip("85050")->setLatitude("33.67568")->setLongitude("-111.97936")->setPhone("(480) 563-6400");
-//		$practice->setPractice("Arizona Pain Specialists")->setAddress1("9787 North 91st Street")->setAddress2("Ste 101")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57463")->setLongitude("-111.88249")->setPhone("(480) 563-6400");
-//		$practice->setPractice("Arizona Prostate Cancer Center")->setAddress1("11000 N. Scottsdale Rd.")->setAddress2("Ste. 120")->setCity("Scottsdale")->setState("AZ")->setZip("85254")->setLatitude("33.58693")->setLongitude("-111.92674")->setPhone("(480) 455-3000");
 //		$practice->setPractice("Arizona Pulmonary Specialists")->setAddress1("9700 N. 91st St.")->setAddress2("Ste. A200")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57369")->setLongitude("-111.88347")->setPhone("(480) 614-2000");
 //		$practice->setPractice("Arizona State Urology")->setAddress1("20201 N. Scottsdale Healthcare Dr.")->setAddress2("Ste. 240")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.67102")->setLongitude("-111.92038")->setPhone("(602) 357-2400");
 //		$practice->setPractice("Arizona Transplant Associates")->setAddress1("2218 N 3rd Street")->setCity("Phoenix")->setState("AZ")->setZip("85004")->setLatitude("33.47188")->setLongitude("-112.06993")->setPhone("(602) 252-2543");

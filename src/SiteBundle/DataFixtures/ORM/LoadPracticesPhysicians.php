@@ -1844,6 +1844,183 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 
 		$manager->flush();
 
+
+		/**
+		 * Arizona Pain Specialists
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Paul")->setLastName("Lynch");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.67568","-111.97936"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57463","-111.88249"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Tory")->setLastName("McJunkin");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.67568","-111.97936"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57463","-111.88249"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Arizona Prostate Cancer Center
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Thomas")->setLastName("Canty");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Prostate Cancer Center"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Arizona Pulmonary Specialists
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lorie")->setLastName("Loreman");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ewa")->setLastName("Lupa-Laskus");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bridgett")->setLastName("Ronan");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Jonathan")->setLastName("Ruzi");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sabitha")->setLastName("Setty");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lawrence")->setLastName("Slama");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Paul")->setLastName("Steinmetz");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonary-Critical Care"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Judson")->setLastName("Tillinghast");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonary-Critical Care"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
 	}
 
 }
