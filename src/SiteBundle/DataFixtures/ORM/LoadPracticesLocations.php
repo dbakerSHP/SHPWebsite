@@ -469,12 +469,22 @@ class LoadPracticesLocations extends Controller implements FixtureInterface
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("Armity Simon M.D."))->setAddress1("16421 N. Tatum Blvd.")->setAddress2("Ste. 201")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63598")->setLongitude("-111.97742")->setPhone("(602) 904-1111");
+		$practiceLocation->setPractice($this->getPractice("Arizona Urology Specialists"))->setAddress1("1313 E. Osborn Rd.")->setAddress2("Suite B150")->setCity("Phoenix")->setState("AZ")->setZip("85014")->setLatitude("33.487005")->setLongitude("-112.054081")->setPhone("(480) 661-2662");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("Armity Simon M.D."))->setAddress1("9070 E. Desert Cove Ave.")->setAddress2("Ste. 102")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.58561")->setLongitude("-111.88497")->setPhone("(480) 860-2322");
+		$practiceLocation->setPractice($this->getPractice("Arizona Urology Specialists"))->setAddress1("20201 N. Scottsdale Healthcare Dr.")->setAddress2("Suite 280 & 290")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.671015")->setLongitude("-111.920379")->setPhone("(480) 661-2662");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($this->getPractice("GyneMedic"))->setAddress1("16421 N. Tatum Blvd.")->setAddress2("Ste. 201")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63598")->setLongitude("-111.97742")->setPhone("(602) 904-1111");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($this->getPractice("GyneMedic"))->setAddress1("9070 E. Desert Cove Ave.")->setAddress2("Ste. 102")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.58561")->setLongitude("-111.88497")->setPhone("(480) 860-2322");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
@@ -539,12 +549,12 @@ class LoadPracticesLocations extends Controller implements FixtureInterface
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("Cactus Pediatric Orthopedics"))->setAddress1("1500 S. Dobson Rd.")->setAddress2("Ste. 200")->setCity("Mesa")->setState("AZ")->setZip("85202")->setLatitude("33.38739")->setLongitude("-111.87628")->setPhone("(480) 551-0300");
+		$practiceLocation->setPractice($this->getPractice("Cactus Pediatrics Orthopaedics"))->setAddress1("1500 S. Dobson Rd.")->setAddress2("Ste. 200")->setCity("Mesa")->setState("AZ")->setZip("85202")->setLatitude("33.38739")->setLongitude("-111.87628")->setPhone("(480) 551-0300");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("Cactus Pediatric Orthopedics"))->setAddress1("9003 E. Shea Blvd")->setCity("Scottsdale")->setState("AZ")->setZip("85252")->setLatitude("33.58095")->setLongitude("-111.88525")->setPhone("(480) 551-0300");
+		$practiceLocation->setPractice($this->getPractice("Cactus Pediatrics Orthopaedics"))->setAddress1("9003 E. Shea Blvd")->setCity("Scottsdale")->setState("AZ")->setZip("85252")->setLatitude("33.58095")->setLongitude("-111.88525")->setPhone("(480) 551-0300");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
@@ -960,16 +970,6 @@ class LoadPracticesLocations extends Controller implements FixtureInterface
 
 		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($this->getPractice("Gynecology Today, PLLC"))->setAddress1("10210 N 92nd Street")->setAddress2("Suite 201")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57927")->setLongitude("-111.88255")->setPhone("(480) 291-6600");
-		$manager->persist($practiceLocation);
-		$manager->flush();
-
-		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("GyneMedic"))->setAddress1("16421 N. Tatum Blvd.")->setAddress2("Ste. 201")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63598")->setLongitude("-111.97742")->setPhone("(602) 904-1111");
-		$manager->persist($practiceLocation);
-		$manager->flush();
-
-		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($this->getPractice("GyneMedic"))->setAddress1("9070 E. Desert Cove Ave.")->setAddress2("Ste. 102")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.585610")->setLongitude("-111.884972")->setPhone("(480) 860-2322");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
