@@ -5,12 +5,12 @@ namespace SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Practices
+ * Specialties
  *
- * @ORM\Table(name="practices")
- * @ORM\Entity(repositoryClass="SiteBundle\Entity\PracticesRepository")
+ * @ORM\Table(name="specialties")
+ * @ORM\Entity(repositoryClass="SiteBundle\Entity\SpecialtiesRepository")
  */
-class Practices
+class Specialties
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Practices
     /**
      * @var string
      *
-     * @ORM\Column(name="practice", type="string", length=255)
+     * @ORM\Column(name="speciality", type="string", length=255)
      */
-    private $practice;
+    private $speciality;
 
     /**
      * @var \DateTime
@@ -60,33 +60,33 @@ class Practices
     }
 
     /**
-     * Set practice
+     * Set speciality
      *
-     * @param string $practice
-     * @return Practices
+     * @param string $speciality
+     * @return Specialties
      */
-    public function setPractice($practice)
+    public function setSpeciality($speciality)
     {
-        $this->practice = $practice;
+        $this->speciality = $speciality;
 
         return $this;
     }
 
     /**
-     * Get practice
+     * Get speciality
      *
      * @return string 
      */
-    public function getPractice()
+    public function getSpeciality()
     {
-        return $this->practice;
+        return $this->speciality;
     }
 
     /**
      * Set createdDate
      *
      * @param \DateTime $createdDate
-     * @return Practices
+     * @return Specialties
      */
     public function setCreatedDate($createdDate)
     {
@@ -98,7 +98,7 @@ class Practices
     /**
      * Get createdDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedDate()
     {
@@ -109,7 +109,7 @@ class Practices
      * Set deletedDate
      *
      * @param \DateTime $deletedDate
-     * @return Practices
+     * @return Specialties
      */
     public function setDeletedDate($deletedDate)
     {
@@ -121,7 +121,7 @@ class Practices
     /**
      * Get deletedDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDeletedDate()
     {

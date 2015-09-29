@@ -5,12 +5,12 @@ namespace SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Practices
+ * Physicians
  *
- * @ORM\Table(name="practices")
- * @ORM\Entity(repositoryClass="SiteBundle\Entity\PracticesRepository")
+ * @ORM\Table(name="physicians")
+ * @ORM\Entity(repositoryClass="SiteBundle\Entity\PhysiciansRepository")
  */
-class Practices
+class Physicians
 {
     /**
      * @var integer
@@ -24,9 +24,16 @@ class Practices
     /**
      * @var string
      *
-     * @ORM\Column(name="practice", type="string", length=255)
+     * @ORM\Column(name="first_name", type="string", length=255)
      */
-    private $practice;
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=255)
+     */
+    private $lastName;
 
     /**
      * @var \DateTime
@@ -60,33 +67,56 @@ class Practices
     }
 
     /**
-     * Set practice
+     * Set firstName
      *
-     * @param string $practice
-     * @return Practices
+     * @param string $firstName
+     * @return Physicians
      */
-    public function setPractice($practice)
+    public function setFirstName($firstName)
     {
-        $this->practice = $practice;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Get practice
+     * Get firstName
      *
      * @return string 
      */
-    public function getPractice()
+    public function getFirstName()
     {
-        return $this->practice;
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return Physicians
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string 
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
     }
 
     /**
      * Set createdDate
      *
      * @param \DateTime $createdDate
-     * @return Practices
+     * @return Physicians
      */
     public function setCreatedDate($createdDate)
     {
@@ -98,7 +128,7 @@ class Practices
     /**
      * Get createdDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedDate()
     {
@@ -109,7 +139,7 @@ class Practices
      * Set deletedDate
      *
      * @param \DateTime $deletedDate
-     * @return Practices
+     * @return Physicians
      */
     public function setDeletedDate($deletedDate)
     {
@@ -121,7 +151,7 @@ class Practices
     /**
      * Get deletedDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDeletedDate()
     {

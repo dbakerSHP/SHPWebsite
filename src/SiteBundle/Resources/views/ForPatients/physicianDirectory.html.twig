@@ -23,8 +23,35 @@
 					<p><input type="email" class="form-control input-lg" id="search" data-search="true" placeholder="Start typing..."></p>
 				</div>
 			</div>
-			{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}
-			<div id="results" class="row"></div>
 		</div>
 	</section>
+	<section id="results" class="no-pad-top">
+		<div class="container">
+			{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}
+		</div>
+	</section>
+
+	<div id="myMapModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel"></h3>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row">
+								<div id="modal-map-canvas" style="height: 376px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

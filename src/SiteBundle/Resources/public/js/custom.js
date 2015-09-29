@@ -1138,6 +1138,30 @@ var delay = (function(){
 	};
 })();
 
+
+var map;
+
+function initialize(myCenter) {
+	var marker = new google.maps.Marker({
+		position: myCenter
+	});
+
+	console.log(myCenter);
+
+	var mapProp = {
+		center: myCenter,
+		zoom: 15,
+		//draggable: false,
+		//scrollwheel: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+	map = new google.maps.Map(document.getElementById("modal-map-canvas"), mapProp);
+	marker.setMap(map);
+
+};
+
+
 $(document).ready(function() {
 	appMaster.pageLoader();
 	appMaster.navBar();
@@ -1177,43 +1201,125 @@ $(document).ready(function() {
 	$('input[data-search="true"]').keyup(function(){
 		var searchField = $(this).val();
 		var regex = new RegExp(searchField, "i");
-		var output = '<div class="row">';
+		var output = '';
 		var count = 1;
 		$.getJSON('/api/physician-directory', function(data) {
 			$.each(data, function() {
 				$.each(this, function(key, value) {
 					if ((value.practice.search(regex) != -1) || (value.address1.search(regex) != -1)) {
-						output += '<div class="col-sm-12">';
 
-						//output += '<div class="map-section">';
+						var map_link = 'https://www.google.com/maps/place/';
+						var full_address = '';
+
+						var practice_name		= null,
+							practice_address1	= null,
+							practice_address2	= null,
+							practice_city		= null,
+							practice_state		= null,
+							practice_zip		= null,
+							practice_phone		= null,
+							practice_latitude	= null,
+							practice_longitude	= null;
+
+						if ( value.practice ) {
+							practice_name		= value.practice;
+						}
+
+						if ( value.address1 ) {
+							practice_address1	= value.address1;
+							map_link 		   += practice_address1;
+							if ( value.address1 && value.address2 ) {
+								practice_address1 		   = practice_address1 + ' ';
+							}
+							full_address	   += practice_address1;
+						}
+
+						if ( value.address2 ) {
+							practice_address2	= value.address2;
+							full_address	   += practice_address2;
+						}
+
+						if ( value.city ) {
+							practice_city		= value.city;
+							map_link 		   += ', ' + practice_city;
+							full_address	   += ', ' + practice_city;
+						}
+
+						if ( value.state ) {
+							practice_state		= value.state;
+							map_link 		   += ', ' + practice_state;
+							full_address	   += ', ' + practice_state;
+						}
+
+						if ( value.zip ) {
+							practice_zip		= value.zip;
+							map_link 		   += ' ' + practice_zip;
+							full_address	   += ' ' + practice_zip;
+						}
+
+						if ( value.phone ) {
+							practice_phone		= value.phone;
+						}
+
+						if ( value.latitude ) {
+							practice_latitude	= value.latitude;
+							map_link 		   += '@' + practice_latitude;
+						}
+
+						if ( value.longitude ) {
+							practice_longitude	= value.longitude;
+							map_link 		   += ',' + practice_longitude;
+						}
+
+						//console.log(map_link);
+
+						output += '<div class="row">';
+						//output += '<div class="col-sm-2">';
+						//
 						//output += '<div class="map-canvas"';
 						//output += 'data-zoom="15"';
 						//output += 'data-zoomcontrol="false"';
-						//output += 'data-lat="' + value.latitude + '"';
-						//output += 'data-lng="' + value.longitude + '"';
+						//output += 'data-lat="' + practice_latitude + '"';
+						//output += 'data-lng="' + practice_longitude + '"';
 						//output += 'data-type="roadmap"';
 						//output += 'data-hue="#8eb4e3"';
-						//output += 'data-title="' + value.practice + '"';
-						//output += 'data-content="Address: ' + value.address1 + '"';
-						//output += 'style="height: 376px;">';
+						//output += 'data-title="' + practice_name + '"';
+						//output += 'style="height: 100px;">';
 						//output += '</div>';
+						//
 						//output += '</div>';
 
-						output += '<h5>' + value.practice + '</h5>';
-						output += '<p>' + value.address1 + '</p>';
+						output += '<div class="col-sm-12">';
+						//output += '<h5><a target="_blank" href="' + map_link.split(' ').join('+') + '">' + practice_name + '</a></h5>';
+						output += '<h5><a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal">' + practice_name + '</a></h5>';
+						output += '<p>' + full_address + '</p>';
 						output += '</div>';
 						output += '</div>';
-						if (count % 1 == 0) {
-							output += '</div><div class="row">';
-						}
 						count++;
 					}
 				});
 			});
-			output += '</div>';
-			$('#results').html(output);
+			$('#results').addClass('page-section').find('.container').html(output);
 		});
+		//GmapInit();
 	});
+
+
+	$('#myMapModal').on('shown.bs.modal', function(e) {
+		var element = $(e.relatedTarget);
+		var data = element.data("coordinates").split(',');
+		console.log(data[0]);
+		console.log(data[1]);
+		$("#myMapModal").find("#myModalLabel").html(element.data("title"));
+		initialize(new google.maps.LatLng(data[0], data[1]));
+	});
+
+
+	$('#myMapModal').on('hidden.bs.modal', function(e) {
+		$("#myMapModal").find("#myModalLabel").html('');
+		$("#myMapModal").find("#modal-map-canvas").html('');
+	});
+
 
 	//$('input').keyup(function() {
 	//	delay(function(){
@@ -1324,6 +1430,8 @@ function GmapInit() {
 		if( navigator.userAgent.match(/iPad|iPhone|Android/i) ) {
 			draggable = false;
 		}
+
+		console.log(lat + ',' + lng);
 
 		var mapOptions = {
 			zoom        : zoom,

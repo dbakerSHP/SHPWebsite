@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class PracticesRepository extends EntityRepository
 {
+
 	public function getAllPractices() {
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices");
 		$queryBuilder->select(
@@ -30,4 +31,5 @@ class PracticesRepository extends EntityRepository
 		;
 		return $queryBuilder->getQuery()->getResult();
 	}
+
 }
