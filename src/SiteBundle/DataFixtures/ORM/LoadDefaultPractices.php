@@ -1,8 +1,9 @@
 <?php
 /**
- * Created by Justin St. Germain
- * Date: 6/9/15
- * Time: 8:29 PM
+ * Created by PhpStorm.
+ * User: jstgermain
+ * Date: 9/29/15
+ * Time: 10:13 AM
  */
 
 namespace SiteBundle\Bundle\DataFixtures\ORM;
@@ -10,13 +11,9 @@ namespace SiteBundle\Bundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SiteBundle\Entity\Practices;
-use SiteBundle\Entity\Physicians;
-use SiteBundle\Entity\PracticesHasPhysicians;
 use SiteBundle\Entity\Specialties;
-use SiteBundle\Entity\PhysiciansHasSpecialties;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class LoadPractices extends Controller implements FixtureInterface
+class LoadDefaultPractices implements FixtureInterface
 {
 
 	public function load(ObjectManager $manager)
@@ -1447,7 +1444,6 @@ class LoadPractices extends Controller implements FixtureInterface
 
 
 
-//		$practice->setPractice("Deborah Trojanowski, MD")->setAddress1("10617 N. Hayden Road")->setAddress2("B102")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.58443")->setLongitude("-111.90692")->setPhone("(480) 481-0133");
 //		$practice->setPractice("Deer Valley OB/GYN")->setAddress1("2033 North 19th Ave.")->setAddress2("Building 4 Suite 100")->setCity("Phoenix")->setState("AZ")->setZip("85027")->setLatitude("33.68340")->setLongitude("-112.09976")->setPhone("(623) 879-8161");
 //		$practice->setPractice("Dermatique")->setAddress1("6900 E. Camelback Rd.")->setAddress2("Ste. 900")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.50269")->setLongitude("-111.93209")->setPhone("(480) 619-5540");
 //		$practice->setPractice("Derosa Medical")->setAddress1("9377 E. Bell Rd.")->setAddress2("Ste. 143")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.63735")->setLongitude("-111.88224")->setPhone("(480) 619-4097");
