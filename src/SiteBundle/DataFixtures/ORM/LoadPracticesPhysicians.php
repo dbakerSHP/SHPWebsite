@@ -3230,6 +3230,25 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 
 		$manager->flush();
 
+
+		/**
+		 * Deer Valley OB/GYN
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Victor")->setLastName("Kissil");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPracticeId($this->getPractice("Deer Valley OB/GYN"))->setPracticeLocationId($this->getPracticeByLocation("33.68340","-112.09976"))->setPhysicianId($physician);
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
 	}
 
 }

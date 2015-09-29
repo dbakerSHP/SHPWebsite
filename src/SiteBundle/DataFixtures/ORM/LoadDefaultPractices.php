@@ -1444,8 +1444,6 @@ class LoadDefaultPractices implements FixtureInterface
 
 
 
-//		$practice->setPractice("Deer Valley OB/GYN")->setAddress1("2033 North 19th Ave.")->setAddress2("Building 4 Suite 100")->setCity("Phoenix")->setState("AZ")->setZip("85027")->setLatitude("33.68340")->setLongitude("-112.09976")->setPhone("(623) 879-8161");
-//		$practice->setPractice("Dermatique")->setAddress1("6900 E. Camelback Rd.")->setAddress2("Ste. 900")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.50269")->setLongitude("-111.93209")->setPhone("(480) 619-5540");
 //		$practice->setPractice("Derosa Medical")->setAddress1("9377 E. Bell Rd.")->setAddress2("Ste. 143")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.63735")->setLongitude("-111.88224")->setPhone("(480) 619-4097");
 //		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("3815 East Bell Road")->setAddress2("Suite 4400")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63850")->setLongitude("-111.99909")->setPhone("(602) 788-7211");
 //		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("8575 E. Princess Dr.")->setAddress2("Ste. 201")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.64493")->setLongitude("-111.89382")->setPhone("(602) 222-2736");
