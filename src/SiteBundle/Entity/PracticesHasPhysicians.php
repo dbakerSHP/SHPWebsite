@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class PracticesHasPhysicians
  *
  * @ORM\Table(name="practices_has_physicians", uniqueConstraints={@ORM\UniqueConstraint(name="id_UNIQUE", columns={"id"})})
- * @ORM\Entity(repositoryClass="")
+ * @ORM\Entity(repositoryClass="SiteBundle\Entity\PracticesHasPhysiciansRepository")
  */
 class PracticesHasPhysicians
 {

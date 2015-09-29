@@ -546,11 +546,6 @@ class LoadDefaultPractices implements FixtureInterface
 		$manager->flush();
 
 		$practice = new Practices();
-		$practice->setPractice("Armity Simon M.D.");
-		$manager->persist($practice);
-		$manager->flush();
-
-		$practice = new Practices();
 		$practice->setPractice("Arrow Surgical Associates");
 		$manager->persist($practice);
 		$manager->flush();
@@ -666,7 +661,7 @@ class LoadDefaultPractices implements FixtureInterface
 		$manager->flush();
 
 		$practice = new Practices();
-		$practice->setPractice("Derosa Medical");
+		$practice->setPractice("DeRosa Medical");
 		$manager->persist($practice);
 		$manager->flush();
 
@@ -1302,11 +1297,6 @@ class LoadDefaultPractices implements FixtureInterface
 
 		$practice = new Practices();
 		$practice->setPractice("Southwest Kidney Institute");
-		$manager->persist($practice);
-		$manager->flush();
-
-		$practice = new Practices();
-		$practice->setPractice("Specialty Orthopedic Surgery");
 		$manager->persist($practice);
 		$manager->flush();
 

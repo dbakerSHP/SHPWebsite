@@ -1271,30 +1271,24 @@ $(document).ready(function() {
 							map_link 		   += ',' + practice_longitude;
 						}
 
-						//console.log(map_link);
-
-						output += '<div class="row">';
-						//output += '<div class="col-sm-2">';
-						//
-						//output += '<div class="map-canvas"';
-						//output += 'data-zoom="15"';
-						//output += 'data-zoomcontrol="false"';
-						//output += 'data-lat="' + practice_latitude + '"';
-						//output += 'data-lng="' + practice_longitude + '"';
-						//output += 'data-type="roadmap"';
-						//output += 'data-hue="#8eb4e3"';
-						//output += 'data-title="' + practice_name + '"';
-						//output += 'style="height: 100px;">';
-						//output += '</div>';
-						//
-						//output += '</div>';
-
-						output += '<div class="col-sm-12">';
-						//output += '<h5><a target="_blank" href="' + map_link.split(' ').join('+') + '">' + practice_name + '</a></h5>';
-						output += '<h5><a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal">' + practice_name + '</a></h5>';
-						output += '<p>' + full_address + '</p>';
+						output += '<address class="row">';
+						output += '<div class="col-xs-2 col-height col-middle">';
+						output += '<div class="inside">';
+						output += '<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
 						output += '</div>';
 						output += '</div>';
+						output += '<div class="col-xs-10 col-height col-middle">';
+						output += '<div class="inside">';
+						output += '<div class="title"><h6 class="no-margin">' + practice_name + '</h6></div>';
+						output += '<p>' + full_address;
+						if (practice_phone != null) {
+							output += '<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';
+						}
+						output += '</p>';
+						output += '</div>';
+						output += '</div>';
+						output += '</div>';
+						output += '</address>';
 						count++;
 					}
 				});

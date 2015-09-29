@@ -744,6 +744,10 @@ i.pull-left{
 	background:transparent;
 	color:#ffffff;
 }
+.map-marker-link {
+	float: left;
+	margin-right: 10px;
+}
 .glyph {
 	float: left;
 	margin-bottom: 1em;
@@ -887,6 +891,9 @@ i.fa-1x{
 	margin:80px;
 }
 /* Top Padding */
+.top-pad-5{
+	padding-top:5px;
+}
 .top-pad-10{
 	padding-top:10px;
 }
@@ -912,6 +919,9 @@ i.fa-1x{
 	padding-top:80px;
 }
 /* Top Margin */
+.top-margin-5{
+	margin-top:5px;
+}
 .top-margin-10{
 	margin-top:10px;
 }

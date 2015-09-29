@@ -102,25 +102,6 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->flush();
 
 
-		$physician = new Physicians();
-		$physician->setFirstName("Vershalee")->setLastName("Shukla");
-		$manager->persist($physician);
-
-		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.57170","-112.06798"))->setPhysicianId($physician);
-		$manager->persist($practicesHasPhysicians);
-
-		$practicesHasPhysicians2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians2->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.48080","-111.92263"))->setPhysicianId($physician);
-		$manager->persist($practicesHasPhysicians2);
-
-		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
-		$manager->persist($physicianHasSpecialties);
-
-		$manager->flush();
-
-
 		/**
 		 * 4C Medical Group
 		 */

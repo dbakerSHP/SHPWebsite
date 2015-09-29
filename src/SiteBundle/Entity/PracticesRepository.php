@@ -14,20 +14,22 @@ class PracticesRepository extends EntityRepository
 {
 
 	public function getAllPractices() {
-		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices");
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices", "practices_locations");
 		$queryBuilder->select(
 			"practices.practice",
-			"practices.address1",
-			"practices.address2",
-			"practices.city",
-			"practices.state",
-			"practices.zip",
-			"practices.phone",
-			"practices.latitude",
-			"practices.longitude"
+			"practices_locations.address1",
+			"practices_locations.address2",
+			"practices_locations.city",
+			"practices_locations.state",
+			"practices_locations.zip",
+			"practices_locations.phone",
+			"practices_locations.latitude",
+			"practices_locations.longitude"
 		)
 			->from("SiteBundle:Practices", "practices")
 			->where("practices.deletedDate IS NULL")
+			->leftJoin("SiteBundle:PracticesLocations", "practices_locations")
+			->where("practices.id = practices_locations.practice")
 		;
 		return $queryBuilder->getQuery()->getResult();
 	}

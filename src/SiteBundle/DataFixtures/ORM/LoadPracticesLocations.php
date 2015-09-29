@@ -159,6 +159,11 @@ class LoadPracticesLocations extends Controller implements FixtureInterface
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($this->getPractice("Allergy, Ear, Nose, and Throat Center Ltd."))->setAddress1("7245 E. Osborn Rd.")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.4873294")->setLongitude("-111.9251589")->setPhone("(480) 994-0308");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($this->getPractice("Mittel"))->setAddress1("7245 East Osborn Road")->setAddress2("Suite 1")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48736")->setLongitude("-111.92507")->setPhone("(480) 994-0308");
 		$manager->persist($practiceLocation);
 		$manager->flush();
