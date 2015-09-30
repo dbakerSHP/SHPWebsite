@@ -11,6 +11,7 @@ namespace SiteBundle\Bundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SiteBundle\Entity\Practices;
+use SiteBundle\Entity\Specialties;
 use SiteBundle\Entity\PracticesLocations;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
