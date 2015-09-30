@@ -14,7 +14,7 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 {
 
 	public function getPracticebyLocationId($practiceId, $practiceLocationId) {
-		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices_has_physicians", "practices", "practices_locations");
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select(
 			"physicians.firstName",
 			"physicians.lastName"

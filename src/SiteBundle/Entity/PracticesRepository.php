@@ -16,6 +16,8 @@ class PracticesRepository extends EntityRepository
 	public function getAllPractices() {
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices", "practices_locations");
 		$queryBuilder->select(
+			"practices.id",
+			"practices_locations.id",
 			"practices.practice",
 			"practices_locations.address1",
 			"practices_locations.address2",
@@ -31,6 +33,17 @@ class PracticesRepository extends EntityRepository
 			->leftJoin("SiteBundle:PracticesLocations", "practices_locations")
 			->where("practices.id = practices_locations.practice")
 		;
+		return $queryBuilder->getQuery()->getResult();
+	}
+
+	public function getAllPracticesAndPhysicians() {
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
+		$queryBuilder->select(
+			"practices_has_physicians"
+		)
+			->from("SiteBundle:PracticesHasPhysicians", "practices_has_physicians")
+		;
+
 		return $queryBuilder->getQuery()->getResult();
 	}
 

@@ -17,7 +17,8 @@ class PhysicianAPIController extends FOSRestController
 	{
 		$practices = $this->getDoctrine()
 			->getRepository('SiteBundle:Practices')
-			->getAllPractices();
+			->getAllPracticesAndPhysicians();
+//			->getAllPractices();
 
 		$view = View::create()
 			->setFormat('json')
