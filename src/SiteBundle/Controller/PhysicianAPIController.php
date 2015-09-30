@@ -29,13 +29,13 @@ class PhysicianAPIController extends FOSRestController
 	}
 
 	/**
-	 * @Get("/physician-directory/{practiceId}")
+	 * @Get("/physician-directory/{practiceId}/{practiceLocationId}")
 	 */
-	public function apiAllPhysiciansByBusinessAction($practiceId)
+	public function apiAllPhysiciansByBusinessAction($practiceId, $practiceLocationId)
 	{
 		$practices = $this->getDoctrine()
 			->getRepository('SiteBundle:PracticesHasPhysicians')
-			->getPracticebyBusinessId($practiceId);
+			->getPracticebyLocationId($practiceId, $practiceLocationId);
 
 		$view = View::create()
 			->setFormat('json')

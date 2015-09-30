@@ -13,35 +13,25 @@ use Doctrine\ORM\EntityRepository;
 class PracticesHasPhysiciansRepository extends EntityRepository
 {
 
-	public function getPracticebyBusinessId($practiceId) {
+	public function getPracticebyLocationId($practiceId, $practiceLocationId) {
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices_has_physicians", "practices", "practices_locations");
 		$queryBuilder->select(
-			"practices.practice"
+			"physicians.firstName",
+			"physicians.lastName"
 		)
 			->from("SiteBundle:PracticesHasPhysicians", "practices_has_physicians")
-			->leftJoin("SiteBundle:Practices", "practices")
-			->where("practices_has_physicians.practiceId = :practiceId")
-			->setParameter("practiceId", $practiceId)
-			->leftJoin("SiteBundle:PracticesHasLocations", "practices_locations")
-			->where("practices_locations.practice_id = practices.id")
+			->leftJoin("SiteBundle:Practices", "practices", "WITH", "practices.id = practices_has_physicians.practiceId")
+			->leftJoin("SiteBundle:PracticesLocations", "practices_locations", "WITH", "practices_locations.id = practices_has_physicians.practiceLocationId")
+			->leftJoin("SiteBundle:Physicians", "physicians", "WITH", "physicians.id = practices_has_physicians.physicianId")
+			->where("practices_has_physicians.practiceId = :practices_id")
+			->andWhere("practices_has_physicians.practiceLocationId = :practice_location_id")
+			->setParameters(
+				array(
+					"practices_id" => $practiceId,
+					"practice_location_id" => $practiceLocationId
+				)
+			)
 		;
-
-//		$queryBuilder = $this->getEntityManager()->createQueryBuilder("fos_user_bus_xref", "fos_user", "business", "user_details");
-//		$queryBuilder->select(
-//			"fos_user_bus_xref.id as DT_RowId",
-//			"fos_user.username",
-//			"user_details.firstName",
-//			"user_details.lastName",
-//			"user_details.phone"
-//		)
-//			->from("AdminBundle:FosUserHasBusiness", "fos_user_bus_xref")
-//			->innerJoin("fos_user_bus_xref.fosUser", "fos_user")
-//			->where("fos_user_bus_xref.fosUser = fos_user.id")
-//			->leftJoin("AdminBundle:UserDetails", "user_details", "WITH", "user_details.fosUser = fos_user.id")
-//			->innerJoin("fos_user_bus_xref.business", "business")
-//			->where("fos_user_bus_xref.business = :businessId")
-//			->setParameter("businessId", $businessId)
-//		;
 
 		return $queryBuilder->getQuery()->getResult();
 	}
