@@ -35,7 +35,7 @@ class PracticesHasPhysicians
 	 * 	@ORM\JoinColumn(name="practice_id", referencedColumnName="id")
 	 * })
 	 */
-	private $practiceId;
+	private $practice;
 
 	/**
 	 * @var \SiteBundle\Entity\PracticesLocations
@@ -45,7 +45,7 @@ class PracticesHasPhysicians
 	 * 	@ORM\JoinColumn(name="practice_location_id", referencedColumnName="id")
 	 * })
 	 */
-	private $practiceLocationId;
+	private $practiceLocation;
 
 	/**
 	 * @var \SiteBundle\Entity\Physicians
@@ -55,7 +55,7 @@ class PracticesHasPhysicians
 	 *	@ORM\JoinColumn(name="physician_id", referencedColumnName="id")
 	 * })
 	 */
-	private $physicianId;
+	private $physician;
 
 	/**
 	 * @return int
@@ -79,20 +79,20 @@ class PracticesHasPhysicians
 	/**
 	 * @return Practices
 	 */
-	public function getPracticeId()
+	public function getPractice()
 	{
-		return $this->practiceId;
+		return $this->practice;
 	}
 
 	/**
 	 * Set practice
 	 *
-	 * @param \SiteBundle\Entity\Practices $practiceId
+	 * @param \SiteBundle\Entity\Practices $practice
 	 * @return PracticesHasPhysicians
 	 */
-	public function setPracticeId(\SiteBundle\Entity\Practices $practiceId)
+	public function setPractice(\SiteBundle\Entity\Practices $practice)
 	{
-		$this->practiceId = $practiceId;
+		$this->practice = $practice;
 
 		return $this;
 	}
@@ -100,20 +100,20 @@ class PracticesHasPhysicians
 	/**
 	 * @return PracticesLocations
 	 */
-	public function getPracticeLocationId()
+	public function getPracticeLocation()
 	{
-		return $this->practiceLocationId;
+		return $this->practiceLocation;
 	}
 
 	/**
 	 * Set practice location
 	 *
-	 * @param \SiteBundle\Entity\PracticesLocations $practiceLocationId
+	 * @param \SiteBundle\Entity\PracticesLocations $practiceLocation
 	 * @return PracticesLocations
 	 */
-	public function setPracticeLocationId(\SiteBundle\Entity\PracticesLocations $practiceLocationId)
+	public function setPracticeLocation(\SiteBundle\Entity\PracticesLocations $practiceLocation)
 	{
-		$this->practiceLocationId = $practiceLocationId;
+		$this->practiceLocation = $practiceLocation;
 
 		return $this;
 	}
@@ -121,20 +121,20 @@ class PracticesHasPhysicians
 	/**
 	 * @return Physicians
 	 */
-	public function getPhysicianId()
+	public function getPhysician()
 	{
-		return $this->physicianId;
+		return $this->physician;
 	}
 
 	/**
 	 * Set physician
 	 *
-	 * @param \SiteBundle\Entity\Physicians $physicianId
+	 * @param \SiteBundle\Entity\Physicians $physician
 	 * @return PracticesHasPhysicians
 	 */
-	public function setPhysicianId(\SiteBundle\Entity\Physicians $physicianId)
+	public function setPhysician(\SiteBundle\Entity\Physicians $physician)
 	{
-		$this->physicianId = $physicianId;
+		$this->physician = $physician;
 
 		return $this;
 	}

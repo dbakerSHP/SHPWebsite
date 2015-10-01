@@ -23,50 +23,7 @@
 					</div>
 					{{ knp_menu_render("SiteBundle:Builder:footerMenu") }}
 				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 widget">
-					<div class="widget-title">
-						<!-- Title -->
-						<h3 class="title">Latest News</h3>
-					</div>
-					<nav>
-						<ul class="footer-blog">
-							<!-- List Items -->
-							<li><a href="{{ path('news') }}">Medicare ACOs Continue to Improve Quality of Care, Generate Shared Savings</a></li>
-							<li><a href="{{ path('news') }}">The One Thing That's Impeding Your Hospital from Moving to the New Health Care Paradigm</a></li>
-							<li><a href="{{ path('news') }}">Leading ACO, {{ company_name }}, Reduces Care Coordination Costs by 10% with TigerText</a></li>
-						</ul>
-					</nav>
-				</div>
-				{#<div class="col-xs-12 col-sm-6 col-md-3 widget newsletter bottom-xs-pad-20">#}
-					{#<div class="widget-title">#}
-						{#<!-- Title -->#}
-						{#<h3 class="title">Newsletter Signup</h3>#}
-					{#</div>#}
-					{#<div>#}
-						{#<!-- Text -->#}
-						{#<p>Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>#}
-						{#<p class="form-message1" style="display: none;"></p>#}
-						{#<div class="clearfix"></div>#}
-						{#<!-- Form -->#}
-						{#<form id="subscribe_form" action="subscription.php" method="post" name="subscribe_form" role="form">#}
-							{#<div class="input-text form-group has-feedback">#}
-								{#<input class="form-control" type="email" value="" name="subscribe_email">#}
-								{#<button class="submit bg-color" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>#}
-							{#</div>#}
-						{#</form>#}
-					{#</div>#}
-					{#<div class="widget-title">#}
-						{#<!-- Title -->#}
-						{#<h3 class="title">Join the Conversation</h3>#}
-					{#</div>#}
-					{#<!-- Social Links -->#}
-					{#<div class="social-icon gray-bg icons-circle i-3x">#}
-						{#<a href="#"><i class="fa fa-facebook"></i></a>#}
-						{#<a href="#"><i class="fa fa-twitter"></i></a>#}
-						{#<a href="#"><i class="fa fa-linkedin"></i></a>#}
-					{#</div>#}
-				{#</div>#}
-				<!-- .newsletter -->
+				{{ block('pe_footer_news') }}
 			</div>
 		</div>
 	</div>

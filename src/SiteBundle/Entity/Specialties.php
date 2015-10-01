@@ -24,9 +24,9 @@ class Specialties
     /**
      * @var string
      *
-     * @ORM\Column(name="speciality", type="string", length=255)
+     * @ORM\Column(name="specialty", type="string", length=255)
      */
-    private $speciality;
+    private $specialty;
 
     /**
      * @var \DateTime
@@ -60,26 +60,26 @@ class Specialties
     }
 
     /**
-     * Set speciality
+     * Set specialty
      *
-     * @param string $speciality
+     * @param string $specialty
      * @return Specialties
      */
-    public function setSpeciality($speciality)
+    public function setSpecialty($specialty)
     {
-        $this->speciality = $speciality;
+        $this->specialty = $specialty;
 
         return $this;
     }
 
     /**
-     * Get speciality
+     * Get specialty
      *
      * @return string 
      */
-    public function getSpeciality()
+    public function getSpecialty()
     {
-        return $this->speciality;
+        return $this->specialty;
     }
 
     /**

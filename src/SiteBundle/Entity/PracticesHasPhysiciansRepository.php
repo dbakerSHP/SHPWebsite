@@ -15,16 +15,17 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 
 	public function getPracticebyLocationId($practiceId, $practiceLocationId) {
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
-		$queryBuilder->select(
+		$queryBuilder->select([
+			"practices.practice",
 			"physicians.firstName",
 			"physicians.lastName"
-		)
+		])
 			->from("SiteBundle:PracticesHasPhysicians", "practices_has_physicians")
-			->leftJoin("SiteBundle:Practices", "practices", "WITH", "practices.id = practices_has_physicians.practiceId")
-			->leftJoin("SiteBundle:PracticesLocations", "practices_locations", "WITH", "practices_locations.id = practices_has_physicians.practiceLocationId")
-			->leftJoin("SiteBundle:Physicians", "physicians", "WITH", "physicians.id = practices_has_physicians.physicianId")
-			->where("practices_has_physicians.practiceId = :practices_id")
-			->andWhere("practices_has_physicians.practiceLocationId = :practice_location_id")
+			->leftJoin("SiteBundle:Practices", "practices", "WITH", "practices.id = practices_has_physicians.practice")
+			->leftJoin("SiteBundle:PracticesLocations", "practices_locations", "WITH", "practices_locations.id = practices_has_physicians.practiceLocation")
+			->leftJoin("SiteBundle:Physicians", "physicians", "WITH", "physicians.id = practices_has_physicians.physician")
+			->where("practices_has_physicians.practice = :practices_id")
+			->andWhere("practices_has_physicians.practiceLocation = :practice_location_id")
 			->setParameters(
 				array(
 					"practices_id" => $practiceId,

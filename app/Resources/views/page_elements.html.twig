@@ -508,6 +508,23 @@
 	</section>
 {% endblock %}
 
+{% block pe_footer_news %}
+	<div class="col-xs-12 col-sm-4 col-md-6 widget">
+		<div class="widget-title">
+			<!-- Title -->
+			<h3 class="title">Latest News</h3>
+		</div>
+		<nav>
+			<ul class="footer-blog">
+				<!-- List Items -->
+				<li><a href="{{ path('news') }}">Medicare "Accountable Care" Reforms Bring Mixed Results</a></li>
+				<li><a href="{{ path('news') }}">Medicare ACOs Continue to Improve Quality of Care, Generate Shared Savings</a></li>
+				<li><a href="{{ path('news') }}">CMS Releases MSSP ACO Performance Report for 2014</a></li>
+			</ul>
+		</nav>
+	</div>
+{% endblock %}
+
 {% block pe_googe_tracking %}
 	{#put google code here#}
 {% endblock %}

@@ -1279,7 +1279,7 @@ $(document).ready(function() {
 						output += '</div>';
 						output += '<div class="col-xs-10 col-height col-middle">';
 						output += '<div class="inside">';
-						output += '<div class="title"><h6 class="no-margin">' + practice_name + '</h6></div>';
+						output += '<div class="title"><a href="' + $(location).attr('href') + '/' + value.practice_id + '/' + value.location_id + '" class="text-color"><h6 class="no-margin">' + practice_name + '</h6></a></div>';
 						output += '<p>' + full_address;
 						if (practice_phone != null) {
 							output += '<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';

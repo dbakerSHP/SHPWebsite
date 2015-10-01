@@ -29,8 +29,18 @@ class ForPatientsController extends Controller
 
     public function physicianDirectoryAction()
     {
+        return $this->render('SiteBundle:ForPatients:physicianDirectory.html.twig', array());
+    }
+
+    public function physiciansInPracticeAction($practiceId, $practiceLocationId)
+    {
+
+        $physicians = $this->getDoctrine()
+            ->getRepository('SiteBundle:PracticesHasPhysicians')
+            ->getPracticebyLocationId($practiceId, $practiceLocationId);
+
         return $this->render('SiteBundle:ForPatients:physicianDirectory.html.twig', array(
-                // ...
+                "physicians"  => $physicians
             ));
     }
 

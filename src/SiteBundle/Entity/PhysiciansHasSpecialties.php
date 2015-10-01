@@ -35,7 +35,7 @@ class PhysiciansHasSpecialties
 	 *	@ORM\JoinColumn(name="physician_id", referencedColumnName="id")
 	 * })
 	 */
-	private $physicianId;
+	private $physician;
 
 	/**
 	 * @var \SiteBundle\Entity\Specialties
@@ -45,7 +45,7 @@ class PhysiciansHasSpecialties
 	 *	@ORM\JoinColumn(name="specialty_id", referencedColumnName="id")
 	 * })
 	 */
-	private $specialtyId;
+	private $specialty;
 
 	/**
 	 * @return int
@@ -69,20 +69,20 @@ class PhysiciansHasSpecialties
 	/**
 	 * @return Physicians
 	 */
-	public function getPhysicianId()
+	public function getPhysician()
 	{
-		return $this->physicianId;
+		return $this->physician;
 	}
 
 	/**
 	 * Set physician
 	 *
-	 * @param \SiteBundle\Entity\Physicians $physicianId
+	 * @param \SiteBundle\Entity\Physicians $physician
 	 * @return PhysiciansHasSpecialties
 	 */
-	public function setPhysicianId(\SiteBundle\Entity\Physicians $physicianId)
+	public function setPhysician(\SiteBundle\Entity\Physicians $physician)
 	{
-		$this->physicianId = $physicianId;
+		$this->physician = $physician;
 
 		return $this;
 	}
@@ -90,20 +90,20 @@ class PhysiciansHasSpecialties
 	/**
 	 * @return Specialties
 	 */
-	public function getSpecialtyId()
+	public function getSpecialty()
 	{
-		return $this->specialtyId;
+		return $this->specialty;
 	}
 
 	/**
 	 * Set specialty
 	 *
-	 * @param \SiteBundle\Entity\Specialties $specialtyId
+	 * @param \SiteBundle\Entity\Specialties $specialty
 	 * @return PhysiciansHasSpecialties
 	 */
-	public function setSpecialtyId(\SiteBundle\Entity\Specialties $specialtyId)
+	public function setSpecialty(\SiteBundle\Entity\Specialties $specialty)
 	{
-		$this->specialtyId = $specialtyId;
+		$this->specialty = $specialty;
 
 		return $this;
 	}

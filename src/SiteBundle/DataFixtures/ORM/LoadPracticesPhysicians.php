@@ -7,53 +7,26 @@
  * Time: 2:03 PM
  */
 
-namespace SiteBundle\Bundle\DataFixtures\ORM;
+namespace SiteBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use SiteBundle\Entity\Practices;
 use SiteBundle\Entity\PracticesLocations;
 use SiteBundle\Entity\Physicians;
 use SiteBundle\Entity\PracticesHasPhysicians;
 use SiteBundle\Entity\Specialties;
 use SiteBundle\Entity\PhysiciansHasSpecialties;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class LoadPracticesPhysicians extends Controller implements FixtureInterface
+class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureInterface
 {
 	
-	private function getPractice($find_practice)
+	public function getOrder()
 	{
-		return $this->getDoctrine()
-			->getRepository("SiteBundle:Practices")
-			->findOneBy(
-				array(
-					'practice' => $find_practice
-				)
-			);
-	}
-
-	private function getPracticeByLocation($lat, $long)
-	{
-		return $this->getDoctrine()
-			->getRepository("SiteBundle:PracticesLocations")
-			->findOneBy(
-				array(
-					'latitude' => $lat,
-					'longitude' => $long
-				)
-			);
-	}
-
-	private function getSpecialty($find_specialty)
-	{
-		return $this->getDoctrine()
-			->getRepository("SiteBundle:Specialties")
-			->findOneBy(
-				array(
-					'speciality' => $find_specialty
-				)
-			);
+		return 4;
 	}
 
 
@@ -67,17 +40,17 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$physician = new Physicians();
 		$physician->setFirstName("Ajay")->setLastName("Bhatnagar");
 		$manager->persist($physician);
-
+		
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.57170","-112.06798"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "21st Century Oncology of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57170", "longitude" => "-112.06798")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians2->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.48080","-111.92263"))->setPhysicianId($physician);
+		$practicesHasPhysicians2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "21st Century Oncology of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48080", "longitude" => "-111.92263")));
 		$manager->persist($practicesHasPhysicians2);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$manager->flush();
@@ -88,15 +61,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.57170","-112.06798"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "21st Century Oncology of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57170", "longitude" => "-112.06798")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians2->setPracticeId($this->getPractice("21st Century Oncology of Arizona"))->setPracticeLocationId($this->getPracticeByLocation("33.48080","-111.92263"))->setPhysicianId($physician);
+		$practicesHasPhysicians2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "21st Century Oncology of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48080", "longitude" => "-111.92263")));
 		$manager->persist($practicesHasPhysicians2);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$manager->flush();
@@ -127,43 +100,43 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician_5);
 
 		$physician_1_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_1_HasSpecialties->setPhysicianId($physician_1)->setSpecialtyId($this->getSpecialty("Hospitalist"));
+		$physician_1_HasSpecialties->setPhysician($physician_1)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
 		$manager->persist($physician_1_HasSpecialties);
 
 		$physician_2_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_2_HasSpecialties->setPhysicianId($physician_2)->setSpecialtyId($this->getSpecialty("Internal Medicine"));
+		$physician_2_HasSpecialties->setPhysician($physician_2)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physician_2_HasSpecialties);
 
 		$physician_3_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_3_HasSpecialties->setPhysicianId($physician_3)->setSpecialtyId($this->getSpecialty("Internal Medicine"));
+		$physician_3_HasSpecialties->setPhysician($physician_3)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physician_3_HasSpecialties);
 
 		$physician_4_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_4_HasSpecialties->setPhysicianId($physician_4)->setSpecialtyId($this->getSpecialty("Family Medicine"));
+		$physician_4_HasSpecialties->setPhysician($physician_4)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physician_4_HasSpecialties);
 
 		$physician_5_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_5_HasSpecialties->setPhysicianId($physician_5)->setSpecialtyId($this->getSpecialty("Hospitalist"));
+		$physician_5_HasSpecialties->setPhysician($physician_5)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
 		$manager->persist($physician_5_HasSpecialties);
 
 		$practicesHasPhysicians_1 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_1->setPracticeId($this->getPractice("4C Medical Group"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician_1);
+		$practicesHasPhysicians_1->setPhysician($physician_1)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "4C Medical Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians_1);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("4C Medical Group"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician_2);
+		$practicesHasPhysicians_2->setPhysician($physician_2)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "4C Medical Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("4C Medical Group"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician_3);
+		$practicesHasPhysicians_3->setPhysician($physician_3)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "4C Medical Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$practicesHasPhysicians_4 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_4->setPracticeId($this->getPractice("4C Medical Group"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician_4);
+		$practicesHasPhysicians_4->setPhysician($physician_4)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "4C Medical Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians_4);
 
 		$practicesHasPhysicians_5 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_5->setPracticeId($this->getPractice("4C Medical Group"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician_5);
+		$practicesHasPhysicians_5->setPhysician($physician_5)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "4C Medical Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians_5);
 
 		$manager->flush();
@@ -190,35 +163,35 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician_4);
 
 		$physician_1_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_1_HasSpecialties->setPhysicianId($physician_1)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physician_1_HasSpecialties->setPhysician($physician_1)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physician_1_HasSpecialties);
 
 		$physician_2_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_2_HasSpecialties->setPhysicianId($physician_2)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physician_2_HasSpecialties->setPhysician($physician_2)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physician_2_HasSpecialties);
 
 		$physician_3_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_3_HasSpecialties->setPhysicianId($physician_3)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physician_3_HasSpecialties->setPhysician($physician_3)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physician_3_HasSpecialties);
 
 		$physician_4_HasSpecialties = new PhysiciansHasSpecialties();
-		$physician_4_HasSpecialties->setPhysicianId($physician_4)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physician_4_HasSpecialties->setPhysician($physician_4)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physician_4_HasSpecialties);
 
 		$practicesHasPhysicians_1 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_1->setPracticeId($this->getPractice("A.O.A. Paradise Valley OBGYN"))->setPracticeLocationId($this->getPracticeByLocation("33.57900","-111.87908"))->setPhysicianId($physician_1);
+		$practicesHasPhysicians_1->setPhysician($physician_1)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "A.O.A. Paradise Valley OBGYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57900", "longitude" => "-111.87908")));
 		$manager->persist($practicesHasPhysicians_1);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("A.O.A. Paradise Valley OBGYN"))->setPracticeLocationId($this->getPracticeByLocation("33.57900","-111.87908"))->setPhysicianId($physician_2);
+		$practicesHasPhysicians_2->setPhysician($physician_2)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "A.O.A. Paradise Valley OBGYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57900", "longitude" => "-111.87908")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("A.O.A. Paradise Valley OBGYN"))->setPracticeLocationId($this->getPracticeByLocation("33.57900","-111.87908"))->setPhysicianId($physician_3);
+		$practicesHasPhysicians_3->setPhysician($physician_3)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "A.O.A. Paradise Valley OBGYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57900", "longitude" => "-111.87908")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$practicesHasPhysicians_4 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_4->setPracticeId($this->getPractice("A.O.A. Paradise Valley OBGYN"))->setPracticeLocationId($this->getPracticeByLocation("33.57900","-111.87908"))->setPhysicianId($physician_4);
+		$practicesHasPhysicians_4->setPhysician($physician_4)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "A.O.A. Paradise Valley OBGYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57900", "longitude" => "-111.87908")));
 		$manager->persist($practicesHasPhysicians_4);
 
 		$manager->flush();
@@ -233,11 +206,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Admire Plastic Surgery"))->setPracticeLocationId($this->getPracticeByLocation("33.64671","-111.92208"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Admire Plastic Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64671", "longitude" => "-111.92208")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -252,19 +225,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Fertility"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Advanced Fertility Care"))->setPracticeLocationId($this->getPracticeByLocation("33.38791","-111.85828"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Advanced Fertility Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.38791", "longitude" => "-111.85828")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Advanced Fertility Care"))->setPracticeLocationId($this->getPracticeByLocation("33.47995","-112.04486"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Advanced Fertility Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.47995", "longitude" => "-112.04486")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Advanced Fertility Care"))->setPracticeLocationId($this->getPracticeByLocation("33.57561","-111.87506"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Advanced Fertility Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57561", "longitude" => "-111.87506")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -274,15 +247,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Fertility"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Advanced Fertility Care"))->setPracticeLocationId($this->getPracticeByLocation("33.38791","-111.85828"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Advanced Fertility Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.38791", "longitude" => "-111.85828")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Advanced Fertility Care"))->setPracticeLocationId($this->getPracticeByLocation("33.57561","-111.87506"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Advanced Fertility Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57561", "longitude" => "-111.87506")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -297,11 +270,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Affiliated Allergy & Pulmonary Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.79867","-111.95135"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Allergy & Pulmonary Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.79867", "longitude" => "-111.95135")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -316,19 +289,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.62871","-112.36137"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62871", "longitude" => "-112.36137")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.67300","-111.92368"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67300", "longitude" => "-111.92368")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.86411","-112.14240"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.86411", "longitude" => "-112.14240")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -338,19 +311,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.66550","-112.11826"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.66550", "longitude" => "-112.11826")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.67300","-111.92368"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67300", "longitude" => "-111.92368")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.86411","-112.14240"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.86411", "longitude" => "-112.14240")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -360,15 +333,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.67300","-111.92368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67300", "longitude" => "-111.92368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Affiliated Dermatology"))->setPracticeLocationId($this->getPracticeByLocation("33.86411","-112.14240"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.86411", "longitude" => "-112.14240")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -383,15 +356,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.65186","-111.92970"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.65186", "longitude" => "-111.92970")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.48019","-111.92278"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48019", "longitude" => "-111.92278")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -401,15 +374,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.65186","-111.92970"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.65186", "longitude" => "-111.92970")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.48019","-111.92278"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48019", "longitude" => "-111.92278")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -419,15 +392,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pediatrics"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.65186","-111.92970"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.65186", "longitude" => "-111.92970")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Agave Pediatrics"))->setPracticeLocationId($this->getPracticeByLocation("33.48019","-111.92278"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Agave Pediatrics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48019", "longitude" => "-111.92278")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -442,19 +415,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("General Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Ali Ghazanfare MD PLLC"))->setPracticeLocationId($this->getPracticeByLocation("33.3086789","-111.8755867"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Ali Ghazanfare MD PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.3086789", "longitude" => "-111.8755867")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Ali Ghazanfare MD PLLC"))->setPracticeLocationId($this->getPracticeByLocation("33.41370","-111.69850"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Ali Ghazanfare MD PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.41370", "longitude" => "-111.69850")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Ali Ghazanfare MD PLLC"))->setPracticeLocationId($this->getPracticeByLocation("33.49146","-111.91811"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Ali Ghazanfare MD PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.49146", "longitude" => "-111.91811")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -469,11 +442,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Family Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Allergy & Environmental Treatment Center, LLC"))->setPracticeLocationId($this->getPracticeByLocation("33.58560","-111.88839"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Allergy & Environmental Treatment Center, LLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58560", "longitude" => "-111.88839")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -488,11 +461,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Allergy, Asthma, and Immunology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.57833","-111.88141"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Allergy, Asthma, and Immunology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57833", "longitude" => "-111.88141")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -502,15 +475,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Allergy, Asthma, and Immunology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.57833","-111.88141"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Allergy, Asthma, and Immunology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57833", "longitude" => "-111.88141")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Allergy, Asthma, and Immunology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.48617","-111.91872"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Allergy, Asthma, and Immunology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48617", "longitude" => "-111.91872")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -525,19 +498,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ear"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nose"));
+		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nose")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$physicianHasSpecialties_3 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_3->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Throat"));
+		$physicianHasSpecialties_3->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Throat")));
 		$manager->persist($physicianHasSpecialties_3);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Allergy, Ear, Nose, and Throat Center Ltd."))->setPracticeLocationId($this->getPracticeByLocation("33.48736","-111.92507"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Allergy, Ear, Nose, and Throat Center Ltd.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48736", "longitude" => "-111.92507")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -552,11 +525,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("General Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("American Advanced Surgery"))->setPracticeLocationId($this->getPracticeByLocation("33.48898","-111.92584"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "American Advanced Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48898", "longitude" => "-111.92584")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -571,11 +544,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiac Electrophysiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57821","-111.88016"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -585,11 +558,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiac Electrophysiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57821","-111.88016"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -599,15 +572,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiac Electrophysiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57821","-111.88016"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.48517","-111.92141"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48517", "longitude" => "-111.92141")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -617,15 +590,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiac Electrophysiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57821","-111.88016"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Arrhythmia Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.48517","-111.92141"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Arrhythmia Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48517", "longitude" => "-111.92141")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -640,15 +613,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.61185","-111.89742"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61185", "longitude" => "-111.89742")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.37854","-111.89359"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.37854", "longitude" => "-111.89359")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -658,15 +631,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.61185","-111.89742"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61185", "longitude" => "-111.89742")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.60708","-112.18150"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.60708", "longitude" => "-112.18150")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -676,15 +649,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Allergy"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.61185","-111.89742"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61185", "longitude" => "-111.89742")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Asthma and Allergy Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.51071","-112.01162"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Asthma and Allergy Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.51071", "longitude" => "-112.01162")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -699,15 +672,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61099","-112.06601"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61099", "longitude" => "-112.06601")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.64081","-111.95928"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64081", "longitude" => "-111.95928")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -717,11 +690,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61099","-112.06601"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61099", "longitude" => "-112.06601")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -731,11 +704,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61099","-112.06601"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61099", "longitude" => "-112.06601")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -745,11 +718,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61099","-112.06601"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61099", "longitude" => "-112.06601")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -759,11 +732,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Bone and Joint Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61099","-112.06601"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Bone and Joint Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61099", "longitude" => "-112.06601")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -778,15 +751,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.37909","-111.90104"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.37909", "longitude" => "-111.90104")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.46994","-112.06835"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.46994", "longitude" => "-112.06835")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -796,11 +769,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.46994","-112.06835"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.46994", "longitude" => "-112.06835")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -810,11 +783,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -824,11 +797,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -838,11 +811,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -852,11 +825,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiology Group"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiology Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -871,11 +844,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiovascular Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiovascular and Thoracic Surgeons"))->setPracticeLocationId($this->getPracticeByLocation("33.58246","-111.87362"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiovascular and Thoracic Surgeons")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58246", "longitude" => "-111.87362")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -885,11 +858,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiovascular Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Cardiovascular and Thoracic Surgeons"))->setPracticeLocationId($this->getPracticeByLocation("33.58246","-111.87362"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Cardiovascular and Thoracic Surgeons")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58246", "longitude" => "-111.87362")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -904,15 +877,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gynecologic Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -922,11 +895,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -936,11 +909,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -950,11 +923,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -964,19 +937,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.67602","-112.12079"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67602", "longitude" => "-112.12079")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.49120","-111.92369"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.49120", "longitude" => "-111.92369")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -986,15 +959,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gynecologic Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1004,11 +977,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1018,11 +991,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58115","-111.88368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58115", "longitude" => "-111.88368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1032,11 +1005,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1046,11 +1019,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1060,15 +1033,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.65542","-112.37668"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.65542", "longitude" => "-112.37668")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1078,15 +1051,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.61281","-112.23679"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61281", "longitude" => "-112.23679")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.65542","-112.37668"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.65542", "longitude" => "-112.37668")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1096,11 +1069,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.67602","-112.12079"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67602", "longitude" => "-112.12079")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1110,11 +1083,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.49120","-111.92369"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.49120", "longitude" => "-111.92369")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1124,11 +1097,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.49120","-111.92369"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.49120", "longitude" => "-111.92369")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1138,11 +1111,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.49120","-111.92369"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.49120", "longitude" => "-111.92369")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1152,11 +1125,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.28478","-111.75031"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.28478", "longitude" => "-111.75031")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1166,11 +1139,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Cancer Care"))->setPracticeLocationId($this->getPracticeByLocation("33.28478","-111.75031"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Cancer Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.28478", "longitude" => "-111.75031")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1185,11 +1158,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Pain Relief"))->setPracticeLocationId($this->getPracticeByLocation("33.67619","-111.97836"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Pain Relief")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67619", "longitude" => "-111.97836")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1199,15 +1172,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Pain Relief"))->setPracticeLocationId($this->getPracticeByLocation("33.67619","-111.97836"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Pain Relief")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67619", "longitude" => "-111.97836")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1217,11 +1190,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Center for Pain Relief"))->setPracticeLocationId($this->getPracticeByLocation("33.67619","-111.97836"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Pain Relief")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67619", "longitude" => "-111.97836")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1236,11 +1209,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Digestive Health"))->setPracticeLocationId($this->getPracticeByLocation("33.58024","-111.88379"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Digestive Health")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58024", "longitude" => "-111.88379")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1250,11 +1223,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Digestive Health"))->setPracticeLocationId($this->getPracticeByLocation("33.55708","-111.89074"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Digestive Health")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.55708", "longitude" => "-111.89074")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1264,11 +1237,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Digestive Health"))->setPracticeLocationId($this->getPracticeByLocation("33.57460","-111.88569"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Digestive Health")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57460", "longitude" => "-111.88569")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1278,11 +1251,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Digestive Health"))->setPracticeLocationId($this->getPracticeByLocation("33.57394","-111.88239"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Digestive Health")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57394", "longitude" => "-111.88239")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1297,15 +1270,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48799","-112.06880"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48799", "longitude" => "-112.06880")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48736","-111.92507"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48736", "longitude" => "-111.92507")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1315,19 +1288,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48799","-112.06880"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48799", "longitude" => "-112.06880")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.37887","-111.83471"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.37887", "longitude" => "-111.83471")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48736","-111.92507"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48736", "longitude" => "-111.92507")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -1337,19 +1310,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48799","-112.06880"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48799", "longitude" => "-112.06880")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61167","-112.17987"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61167", "longitude" => "-112.17987")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48736","-111.92507"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48736", "longitude" => "-111.92507")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -1359,15 +1332,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48799","-112.06880"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48799", "longitude" => "-112.06880")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Eye Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.48736","-111.92507"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Eye Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48736", "longitude" => "-111.92507")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1382,11 +1355,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Gastrointestinal Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.63918","-111.89318"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Gastrointestinal Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63918", "longitude" => "-111.89318")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1396,11 +1369,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gastroenterology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Gastrointestinal Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.63918","-111.89318"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Gastrointestinal Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63918", "longitude" => "-111.89318")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1415,15 +1388,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hand Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Hand and Wrist Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.38416","-111.72574"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Hand and Wrist Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.38416", "longitude" => "-111.72574")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Hand and Wrist Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.45551","-111.99031"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Hand and Wrist Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.45551", "longitude" => "-111.99031")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1433,15 +1406,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hand Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Hand and Wrist Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.45551","-111.99031"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Hand and Wrist Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.45551", "longitude" => "-111.99031")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Hand and Wrist Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.55411","-111.89538"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Hand and Wrist Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.55411", "longitude" => "-111.89538")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1456,11 +1429,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiovascular Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Heart and Lung Surgery"))->setPracticeLocationId($this->getPracticeByLocation("33.57821","-111.88016"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Heart and Lung Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1475,15 +1448,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.640261","-111.999902"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.640261", "longitude" => "-111.999902")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1493,11 +1466,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.640261","-111.999902"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.640261", "longitude" => "-111.999902")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1507,11 +1480,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1521,11 +1494,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1535,11 +1508,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1549,11 +1522,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1563,11 +1536,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1577,11 +1550,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1591,11 +1564,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1605,11 +1578,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Nephrology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Kidney Disease and Hypertension Center"))->setPracticeLocationId($this->getPracticeByLocation("33.48764","-111.92426"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Kidney Disease and Hypertension Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48764", "longitude" => "-111.92426")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1624,11 +1597,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Neurology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Neurological Institute"))->setPracticeLocationId($this->getPracticeByLocation("33.605566","-112.283898"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Neurological Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.605566", "longitude" => "-112.283898")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1643,11 +1616,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Neurology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Neurology and Sleep Center"))->setPracticeLocationId($this->getPracticeByLocation("33.58024","-111.88379"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Neurology and Sleep Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58024", "longitude" => "-111.88379")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1662,11 +1635,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Ocular and Facial Plastic Surgery"))->setPracticeLocationId($this->getPracticeByLocation("33.48898","-111.92584"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Ocular and Facial Plastic Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48898", "longitude" => "-111.92584")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1681,19 +1654,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oculoplastic Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oculoplastic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Oculoplastic Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.37833","-111.89361"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oculoplastic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.37833", "longitude" => "-111.89361")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1708,11 +1681,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.57820","-111.87864"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57820", "longitude" => "-111.87864")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1722,11 +1695,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gynecologic Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.57820","-111.87864"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57820", "longitude" => "-111.87864")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1736,11 +1709,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1750,11 +1723,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1764,11 +1737,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1778,11 +1751,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Hematology-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.50634","-112.03388"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.50634", "longitude" => "-112.03388")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1797,11 +1770,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Oncology Services"))->setPracticeLocationId($this->getPracticeByLocation("33.66550","-112.11826"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Oncology Services")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.66550", "longitude" => "-112.11826")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1816,11 +1789,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Orthopedic and Sports Medicine Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.50634","-112.03388"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Orthopedic and Sports Medicine Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.50634", "longitude" => "-112.03388")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1835,15 +1808,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.67568","-111.97936"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pain Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67568", "longitude" => "-111.97936")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57463","-111.88249"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pain Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57463", "longitude" => "-111.88249")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1853,15 +1826,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.67568","-111.97936"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pain Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67568", "longitude" => "-111.97936")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Pain Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57463","-111.88249"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pain Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57463", "longitude" => "-111.88249")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -1876,11 +1849,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Radiation-Oncology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Prostate Cancer Center"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Prostate Cancer Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1895,11 +1868,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1909,11 +1882,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1923,11 +1896,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1937,11 +1910,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1951,11 +1924,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1965,11 +1938,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1979,11 +1952,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonary-Critical Care"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -1993,11 +1966,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pulmonary-Critical Care"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Pulmonary Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57369","-111.88347"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Pulmonary Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57369", "longitude" => "-111.88347")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2012,11 +1985,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona State Urology"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona State Urology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2026,11 +1999,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona State Urology"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona State Urology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2040,11 +2013,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona State Urology"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona State Urology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2059,11 +2032,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Transplant Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Transplant Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Transplant Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.47188","-112.06993"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Transplant Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.47188", "longitude" => "-112.06993")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2078,11 +2051,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2092,15 +2065,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.671015","-111.920379"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.671015", "longitude" => "-111.920379")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2110,11 +2083,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2124,11 +2097,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2138,11 +2111,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2152,15 +2125,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.671015","-111.920379"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.671015", "longitude" => "-111.920379")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2170,15 +2143,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.671015","-111.920379"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.671015", "longitude" => "-111.920379")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2188,11 +2161,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.57954","-111.88126"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57954", "longitude" => "-111.88126")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2202,11 +2175,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.487005","-112.054081"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.487005", "longitude" => "-112.054081")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2216,11 +2189,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.487005","-112.054081"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.487005", "longitude" => "-112.054081")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2230,11 +2203,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.487005","-112.054081"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.487005", "longitude" => "-112.054081")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2244,11 +2217,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arizona Urology Specialists"))->setPracticeLocationId($this->getPracticeByLocation("33.671015","-111.920379"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Urology Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.671015", "longitude" => "-111.920379")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2263,15 +2236,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("GyneMedic"))->setPracticeLocationId($this->getPracticeByLocation("33.63598","-111.97742"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "GyneMedic")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63598", "longitude" => "-111.97742")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("GyneMedic"))->setPracticeLocationId($this->getPracticeByLocation("33.58561","-111.88497"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "GyneMedic")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58561", "longitude" => "-111.88497")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2281,15 +2254,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("GyneMedic"))->setPracticeLocationId($this->getPracticeByLocation("33.63598","-111.97742"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "GyneMedic")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63598", "longitude" => "-111.97742")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("GyneMedic"))->setPracticeLocationId($this->getPracticeByLocation("33.58561","-111.88497"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "GyneMedic")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58561", "longitude" => "-111.88497")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2305,11 +2278,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("General Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arrow Surgical Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.58175","-111.97753"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arrow Surgical Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58175", "longitude" => "-111.97753")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2319,11 +2292,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("General Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Arrow Surgical Associates"))->setPracticeLocationId($this->getPracticeByLocation("33.58175","-111.97753"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arrow Surgical Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58175", "longitude" => "-111.97753")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2338,15 +2311,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.62364","-112.25404"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62364", "longitude" => "-112.25404")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2356,15 +2329,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.62364","-112.25404"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62364", "longitude" => "-112.25404")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2374,15 +2347,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.62364","-112.25404"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62364", "longitude" => "-112.25404")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2392,15 +2365,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.62364","-112.25404"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62364", "longitude" => "-112.25404")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2410,15 +2383,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.62364","-112.25404"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.62364", "longitude" => "-112.25404")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2428,11 +2401,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2442,11 +2415,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2456,11 +2429,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2470,11 +2443,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2484,11 +2457,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Ophthalmology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Associated Retina Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.53888","-112.04424"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Associated Retina Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.53888", "longitude" => "-112.04424")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2503,15 +2476,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Internal Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Atria Heart, PPL"))->setPracticeLocationId($this->getPracticeByLocation("33.63679","-111.92356"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Atria Heart, PPL")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63679", "longitude" => "-111.92356")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2521,15 +2494,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Internal Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Atria Heart, PPL"))->setPracticeLocationId($this->getPracticeByLocation("33.63679","-111.92356"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Atria Heart, PPL")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63679", "longitude" => "-111.92356")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2544,11 +2517,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Urology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("BCG Oncology"))->setPracticeLocationId($this->getPracticeByLocation("33.63850","-111.99909"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "BCG Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63850", "longitude" => "-111.99909")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2563,11 +2536,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Berardi Aesthetics and Plastic Surgery"))->setPracticeLocationId($this->getPracticeByLocation("33.58693","-111.92674"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Berardi Aesthetics and Plastic Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58693", "longitude" => "-111.92674")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2582,15 +2555,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Orthopedic Surgeon"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Bertrand P Kaper, MD PC"))->setPracticeLocationId($this->getPracticeByLocation("33.67300","-111.92368"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Bertrand P Kaper, MD PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67300", "longitude" => "-111.92368")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Bertrand P Kaper, MD PC"))->setPracticeLocationId($this->getPracticeByLocation("34.59663","-112.46709"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Bertrand P Kaper, MD PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "34.59663", "longitude" => "-112.46709")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2605,11 +2578,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("General Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Bruce Freedman M.D."))->setPracticeLocationId($this->getPracticeByLocation("33.58047","-111.88277"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Bruce Freedman M.D.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58047", "longitude" => "-111.88277")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2624,15 +2597,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pediatric Orthopedics"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatric Orthopedics")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cactus Pediatrics Orthopaedics"))->setPracticeLocationId($this->getPracticeByLocation("33.38739","-111.87628"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cactus Pediatrics Orthopaedics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.38739", "longitude" => "-111.87628")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Cactus Pediatrics Orthopaedics"))->setPracticeLocationId($this->getPracticeByLocation("33.58095","-111.88525"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cactus Pediatrics Orthopaedics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58095", "longitude" => "-111.88525")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2647,11 +2620,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiologists of Scottsdale"))->setPracticeLocationId($this->getPracticeByLocation("33.67149","-111.90994"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiologists of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67149", "longitude" => "-111.90994")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2666,19 +2639,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57927","-111.88255"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57927", "longitude" => "-111.88255")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.33392","-111.89129"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.33392", "longitude" => "-111.89129")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.48898","-111.92584"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48898", "longitude" => "-111.92584")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -2688,19 +2661,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57927","-111.88255"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57927", "longitude" => "-111.88255")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.48898","-111.92584"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48898", "longitude" => "-111.92584")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.64026","-111.99990"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64026", "longitude" => "-111.99990")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -2710,11 +2683,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.57927","-111.88255"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57927", "longitude" => "-111.88255")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2724,11 +2697,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Vascular Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.33392","-111.89129"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.33392", "longitude" => "-111.89129")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2738,11 +2711,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiac Electrophysiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.33392","-111.89129"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.33392", "longitude" => "-111.89129")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2752,19 +2725,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.33392","-111.89129"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.33392", "longitude" => "-111.89129")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.42648","-111.84034"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.42648", "longitude" => "-111.84034")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -2774,11 +2747,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.64026","-111.99990"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64026", "longitude" => "-111.99990")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2788,15 +2761,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.64026","-111.99990"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64026", "longitude" => "-111.99990")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.42648","-111.84034"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.42648", "longitude" => "-111.84034")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2806,11 +2779,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2820,11 +2793,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2834,11 +2807,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Vascular Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2848,11 +2821,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2862,11 +2835,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2876,11 +2849,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2890,11 +2863,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Consultants"))->setPracticeLocationId($this->getPracticeByLocation("33.52577","-112.10059"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.52577", "longitude" => "-112.10059")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2909,11 +2882,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Cardiology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Cardiovascular Institute of Scottsdale"))->setPracticeLocationId($this->getPracticeByLocation("33.57763","-111.87763"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.57763", "longitude" => "-111.87763")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -2928,15 +2901,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Family Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Care MD PLC"))->setPracticeLocationId($this->getPracticeByLocation("33.48010","-111.89216"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Care MD PLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48010", "longitude" => "-111.89216")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Care MD PLC"))->setPracticeLocationId($this->getPracticeByLocation("33.61109","-111.97554"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Care MD PLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61109", "longitude" => "-111.97554")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2946,15 +2919,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Family Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Care MD PLC"))->setPracticeLocationId($this->getPracticeByLocation("33.48010","-111.89216"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Care MD PLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.48010", "longitude" => "-111.89216")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Care MD PLC"))->setPracticeLocationId($this->getPracticeByLocation("33.61109","-111.97554"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Care MD PLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61109", "longitude" => "-111.97554")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2969,15 +2942,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.50599","-112.06338"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.50599", "longitude" => "-112.06338")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -2987,15 +2960,15 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.60797","-111.71666"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.60797", "longitude" => "-111.71666")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$manager->flush();
@@ -3005,11 +2978,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3019,19 +2992,19 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.61537","-111.89242"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.61537", "longitude" => "-111.89242")));
 		$manager->persist($practicesHasPhysicians);
 
 		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_2->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.21740","-111.88403"))->setPhysicianId($physician);
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.21740", "longitude" => "-111.88403")));
 		$manager->persist($practicesHasPhysicians_2);
 
 		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
-		$practicesHasPhysicians_3->setPracticeId($this->getPractice("Center for Dermatology, PC"))->setPracticeLocationId($this->getPracticeByLocation("33.50599","-112.06338"))->setPhysicianId($physician);
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Dermatology, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.50599", "longitude" => "-112.06338")));
 		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
@@ -3046,11 +3019,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Pain and Supportive Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58236","-111.98187"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Pain and Supportive Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58236", "longitude" => "-111.98187")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3060,11 +3033,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Pain Management"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Center for Pain and Supportive Care"))->setPracticeLocationId($this->getPracticeByLocation("33.58236","-111.98187"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Center for Pain and Supportive Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58236", "longitude" => "-111.98187")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3079,11 +3052,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Dermatology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Clear Dermatology and Aesthetics Center"))->setPracticeLocationId($this->getPracticeByLocation("33.67102","-111.92038"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Clear Dermatology and Aesthetics Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67102", "longitude" => "-111.92038")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3098,11 +3071,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Colorectal Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Colon and Rectal Clinic of Scottsdale"))->setPracticeLocationId($this->getPracticeByLocation("33.55709","-111.89074"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Colon and Rectal Clinic of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.55709", "longitude" => "-111.89074")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3112,11 +3085,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Colorectal Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Colon and Rectal Clinic of Scottsdale"))->setPracticeLocationId($this->getPracticeByLocation("33.55709","-111.89074"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Colon and Rectal Clinic of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.55709", "longitude" => "-111.89074")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3131,11 +3104,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Family Medicine"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("DC Ranch Family Medicine, PLLC"))->setPracticeLocationId($this->getPracticeByLocation("33.67614","-111.88881"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "DC Ranch Family Medicine, PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.67614", "longitude" => "-111.88881")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3150,11 +3123,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Deborah D. Wilson, MD"))->setPracticeLocationId($this->getPracticeByLocation("33.58047","-111.88277"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deborah D. Wilson, MD")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58047", "longitude" => "-111.88277")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3164,11 +3137,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Gynecology"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Deborah D. Wilson, MD"))->setPracticeLocationId($this->getPracticeByLocation("33.58047","-111.88277"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deborah D. Wilson, MD")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58047", "longitude" => "-111.88277")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3183,11 +3156,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("Plastic Surgery"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Deborah Trojanowski, MD"))->setPracticeLocationId($this->getPracticeByLocation("33.58047","-111.88277"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deborah Trojanowski, MD")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.58047", "longitude" => "-111.88277")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3202,11 +3175,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Deer Valley OB/GYN"))->setPracticeLocationId($this->getPracticeByLocation("33.68340","-112.09976"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deer Valley OB/GYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.68340", "longitude" => "-112.09976")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
@@ -3221,11 +3194,11 @@ class LoadPracticesPhysicians extends Controller implements FixtureInterface
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setPhysicianId($physician)->setSpecialtyId($this->getSpecialty("OB/GYN"));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPracticeId($this->getPractice("Deer Valley OB/GYN"))->setPracticeLocationId($this->getPracticeByLocation("33.68340","-112.09976"))->setPhysicianId($physician);
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deer Valley OB/GYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.68340", "longitude" => "-112.09976")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
