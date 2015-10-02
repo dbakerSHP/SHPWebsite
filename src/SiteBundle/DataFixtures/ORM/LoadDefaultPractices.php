@@ -1120,12 +1120,6 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 
 
 
-//		$practice->setPractice("DeRosa Medical")->setAddress1("9377 E. Bell Rd.")->setAddress2("Ste. 143")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.63735")->setLongitude("-111.88224")->setPhone("(480) 619-4097");
-//		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("3815 East Bell Road")->setAddress2("Suite 4400")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63850")->setLongitude("-111.99909")->setPhone("(602) 788-7211");
-//		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("8575 E. Princess Dr.")->setAddress2("Ste. 201")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.64493")->setLongitude("-111.89382")->setPhone("(602) 222-2736");
-//		$practice->setPractice("Desert Institute for Spine Care, PC")->setAddress1("1635 East Myrtle Ave")->setAddress2("Suite 400")->setCity("Phoenix")->setState("AZ")->setZip("85020")->setLatitude("33.54160")->setLongitude("-112.04595")->setPhone("(602) 944-2900");
-//		$practice->setPractice("Desert Institute for Spine Care, PC")->setAddress1("3487 South Mercy Road")->setCity("Gilbert")->setState("AZ")->setZip("85297")->setLatitude("33.28600")->setLongitude("-111.74989")->setPhone("(602) 944-2900");
-//		$practice->setPractice("Desert Institute for Spine Care, PC")->setAddress1("8630 East Via De Ventura")->setAddress2("Suite 210")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.55411")->setLongitude("-111.89538")->setPhone("(602) 944-2900");
 //		$practice->setPractice("Desert Jewel Obstetrics & Gynecology")->setAddress1("3501 N. Scottsdale Rd.")->setAddress2("Ste. 230")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 970-1937");
 //		$practice->setPractice("Desert Kidney Associates, PLC")->setAddress1("1600 W Chandler Blvd")->setAddress2("Ste 110")->setCity("Chandler")->setState("AZ")->setZip("85224")->setLatitude("33.30694")->setLongitude("-111.86931")->setPhone("(480) 834-9039");
 //		$practice->setPractice("Desert Kidney Associates, PLC")->setAddress1("3511 S Mercy Rd")->setAddress2("Ste 102")->setCity("Gilbert")->setState("AZ")->setZip("85296")->setLatitude("33.28553")->setLongitude("-111.75005")->setPhone("(480) 834-9039");

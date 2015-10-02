@@ -50,7 +50,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($practicesHasPhysicians2);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$manager->flush();
@@ -69,7 +69,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($practicesHasPhysicians2);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$manager->flush();
@@ -206,7 +206,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -225,7 +225,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -247,7 +247,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Fertility")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -270,7 +270,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -289,7 +289,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -311,7 +311,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -333,7 +333,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -356,7 +356,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -374,7 +374,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -392,7 +392,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -415,7 +415,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -442,7 +442,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -461,7 +461,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -475,7 +475,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -498,15 +498,15 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nose")));
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nose")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$physicianHasSpecialties_3 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_3->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Throat")));
+		$physicianHasSpecialties_3->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Throat")));
 		$manager->persist($physicianHasSpecialties_3);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -525,7 +525,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -544,7 +544,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -558,7 +558,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -572,7 +572,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -590,7 +590,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -613,7 +613,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -631,7 +631,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -649,7 +649,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -672,7 +672,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -690,7 +690,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -704,7 +704,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -718,7 +718,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -732,7 +732,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -751,7 +751,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -769,7 +769,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -783,7 +783,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -797,7 +797,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -811,7 +811,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -825,7 +825,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -844,7 +844,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -858,7 +858,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -877,7 +877,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -895,7 +895,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -909,7 +909,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -923,7 +923,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -937,7 +937,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -959,7 +959,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -977,7 +977,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -991,7 +991,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1005,7 +1005,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1019,7 +1019,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1033,7 +1033,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1051,7 +1051,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1069,7 +1069,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1083,7 +1083,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1097,7 +1097,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1111,7 +1111,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1125,7 +1125,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1139,7 +1139,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1158,7 +1158,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1172,11 +1172,11 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1190,7 +1190,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1209,7 +1209,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1223,7 +1223,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1237,7 +1237,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1251,7 +1251,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1270,7 +1270,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1288,7 +1288,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1310,7 +1310,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1332,7 +1332,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1355,7 +1355,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1369,7 +1369,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gastroenterology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1388,7 +1388,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1406,7 +1406,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hand Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1429,7 +1429,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1448,7 +1448,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1466,7 +1466,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1480,7 +1480,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1494,7 +1494,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1508,7 +1508,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1522,7 +1522,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1536,7 +1536,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1550,7 +1550,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1564,7 +1564,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1578,7 +1578,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1597,7 +1597,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1616,7 +1616,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Neurology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1635,7 +1635,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1654,11 +1654,11 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1681,7 +1681,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1695,7 +1695,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecologic Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1709,7 +1709,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1723,7 +1723,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1737,7 +1737,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1751,7 +1751,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1770,7 +1770,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1789,7 +1789,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1808,7 +1808,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1826,7 +1826,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1849,7 +1849,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Radiation-Oncology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1868,7 +1868,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1882,7 +1882,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1896,7 +1896,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1910,7 +1910,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1924,7 +1924,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1938,7 +1938,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1952,7 +1952,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1966,7 +1966,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonary-Critical Care")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1985,7 +1985,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -1999,7 +1999,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2013,7 +2013,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2032,7 +2032,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Transplant Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Transplant Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2051,7 +2051,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2065,7 +2065,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2083,7 +2083,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2097,7 +2097,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2111,7 +2111,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2125,7 +2125,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2143,7 +2143,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2161,7 +2161,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2175,7 +2175,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2189,7 +2189,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2203,7 +2203,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2217,7 +2217,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2236,7 +2236,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2254,7 +2254,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2278,7 +2278,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2292,7 +2292,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2311,7 +2311,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2329,7 +2329,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2347,7 +2347,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2365,7 +2365,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2383,7 +2383,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2401,7 +2401,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2415,7 +2415,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2429,7 +2429,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2443,7 +2443,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2457,7 +2457,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ophthalmology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2476,11 +2476,11 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2494,11 +2494,11 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties_2->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties_2);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2517,7 +2517,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2536,7 +2536,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2555,7 +2555,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2578,7 +2578,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2597,7 +2597,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatric Orthopedics")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatric Orthopedics")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2620,7 +2620,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2639,7 +2639,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2661,7 +2661,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2683,7 +2683,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2697,7 +2697,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2711,7 +2711,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiac Electrophysiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2725,7 +2725,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2747,7 +2747,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2761,7 +2761,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2779,7 +2779,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2793,7 +2793,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2807,7 +2807,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Vascular Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2821,7 +2821,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2835,7 +2835,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2849,7 +2849,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2863,7 +2863,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2882,7 +2882,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2901,7 +2901,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2919,7 +2919,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2942,7 +2942,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2960,7 +2960,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2978,7 +2978,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -2992,7 +2992,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3019,7 +3019,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3033,7 +3033,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3052,7 +3052,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3071,7 +3071,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3085,7 +3085,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Colorectal Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3104,7 +3104,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3123,7 +3123,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3137,7 +3137,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecology")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Gynecology")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3156,7 +3156,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3175,7 +3175,7 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
@@ -3194,12 +3194,80 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
 		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "DeRosa Medical")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63735", "longitude" => "-111.88224")));
 		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Desert Center for Allergy and Chest Diseases
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Gregory")->setLastName("Cowan");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Center for Allergy and Chest Diseases")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63850", "longitude" => "-111.99909")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Center for Allergy and Chest Diseases")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64493", "longitude" => "-111.89382")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stephen")->setLastName("Finberg");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Allergy")));
+		$manager->persist($physicianHasSpecialties);
+
+		$physicianHasSpecialties_2 = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties_2->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pulmonology")));
+		$manager->persist($physicianHasSpecialties_2);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Center for Allergy and Chest Diseases")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.64493", "longitude" => "-111.89382")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Desert Institute for Spine Care, PC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Nima")->setLastName("Salari");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ortho - Spine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Institute for Spine Care, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.54160", "longitude" => "-112.04595")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Institute for Spine Care, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.28600", "longitude" => "-111.74989")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Institute for Spine Care, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.55411", "longitude" => "-111.89538")));
+		$manager->persist($practicesHasPhysicians_3);
 
 		$manager->flush();
 
