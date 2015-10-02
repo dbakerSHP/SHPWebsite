@@ -46,5 +46,5 @@ parameters:
     # JWT PARAMETERS
     jwt_private_key_path: %kernel.root_dir%/var/jwt/private.pem   # ssh private key path
     jwt_public_key_path:  %kernel.root_dir%/var/jwt/public.pem    # ssh public key path
-    jwt_key_pass_phrase:  ''                                      # ssh key pass phrase
+    jwt_key_pass_phrase:  'T|-|1$*i$-@-p|2i\/@t3-|<3y-20!5'       # ssh key pass phrase
     jwt_token_ttl:        86400
