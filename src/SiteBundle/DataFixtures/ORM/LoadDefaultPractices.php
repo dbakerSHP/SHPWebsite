@@ -1120,7 +1120,7 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 
 
 
-//		$practice->setPractice("Derosa Medical")->setAddress1("9377 E. Bell Rd.")->setAddress2("Ste. 143")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.63735")->setLongitude("-111.88224")->setPhone("(480) 619-4097");
+//		$practice->setPractice("DeRosa Medical")->setAddress1("9377 E. Bell Rd.")->setAddress2("Ste. 143")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.63735")->setLongitude("-111.88224")->setPhone("(480) 619-4097");
 //		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("3815 East Bell Road")->setAddress2("Suite 4400")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63850")->setLongitude("-111.99909")->setPhone("(602) 788-7211");
 //		$practice->setPractice("Desert Center for Allergy and Chest Diseases")->setAddress1("8575 E. Princess Dr.")->setAddress2("Ste. 201")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.64493")->setLongitude("-111.89382")->setPhone("(602) 222-2736");
 //		$practice->setPractice("Desert Institute for Spine Care, PC")->setAddress1("1635 East Myrtle Ave")->setAddress2("Suite 400")->setCity("Phoenix")->setState("AZ")->setZip("85020")->setLatitude("33.54160")->setLongitude("-112.04595")->setPhone("(602) 944-2900");

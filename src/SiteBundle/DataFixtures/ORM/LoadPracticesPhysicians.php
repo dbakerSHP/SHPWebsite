@@ -3186,19 +3186,19 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 
 
 		/**
-		 * Deer Valley OB/GYN
+		 * DeRosa Medical
 		 */
 
 		$physician = new Physicians();
-		$physician->setFirstName("Victor")->setLastName("Kissil");
+		$physician->setFirstName("Angela")->setLastName("DeRosa");
 		$manager->persist($physician);
 
 		$physicianHasSpecialties = new PhysiciansHasSpecialties();
-		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$physicianHasSpecialties->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
 		$manager->persist($physicianHasSpecialties);
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
-		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Deer Valley OB/GYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.68340", "longitude" => "-112.09976")));
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "DeRosa Medical")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("latitude" => "33.63735", "longitude" => "-111.88224")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();
