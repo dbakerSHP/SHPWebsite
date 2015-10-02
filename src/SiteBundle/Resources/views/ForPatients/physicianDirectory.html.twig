@@ -9,7 +9,16 @@
 {% block body %}
 	<div class="page-header">
 		<div class="container">
-			<h1 class="title">{% if physicians is defined %}{{ physicians[0].practice }}{% else %}{{ title }}{% endif %}</h1>
+			<h1 class="title">
+				{% if physicians is defined %}
+					{{ physicians[0].practice }}
+				{% else %}
+					{{ title }}
+				{% endif %}
+			</h1>
+			{% if physicians is defined %}
+				<h5>{{ physicians[0].address1 }}{% if physicians[0].address2 is defined %}, {{ physicians[0].address2 }}{% endif %}{% if physicians[0].city is defined %}, {{ physicians[0].city }}{% endif %}{% if physicians[0].state is defined %}, {{ physicians[0].state }}{% endif %}{% if physicians[0].zip is defined %} {{ physicians[0].zip }}{% endif %}</h5>
+			{% endif %}
 		</div>
 	</div>
 	{% if physicians is defined %}

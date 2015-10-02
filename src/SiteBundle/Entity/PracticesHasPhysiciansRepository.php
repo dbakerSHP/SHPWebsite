@@ -17,8 +17,14 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select([
 			"practices.practice",
+			"practices_locations.address1",
+			"practices_locations.address2",
+			"practices_locations.city",
+			"practices_locations.state",
+			"practices_locations.zip",
+			"practices_locations.phone",
 			"physicians.firstName",
-			"physicians.lastName"
+			"physicians.lastName",
 		])
 			->from("SiteBundle:PracticesHasPhysicians", "practices_has_physicians")
 			->leftJoin("SiteBundle:Practices", "practices", "WITH", "practices.id = practices_has_physicians.practice")
