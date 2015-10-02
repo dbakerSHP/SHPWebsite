@@ -26,7 +26,8 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "jms/serializer-bundle": "0.13.*",
         "friendsofsymfony/rest-bundle": "^1.7",
-        "salva/pdfjs-bundle": "1.0.*@dev"
+        "salva/pdfjs-bundle": "1.0.*@dev",
+        "lexik/jwt-authentication-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

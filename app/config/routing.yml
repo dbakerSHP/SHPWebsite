@@ -2,3 +2,6 @@ site:
     resource: "@SiteBundle/Resources/config/routing.yml"
     prefix:   /
 
+api_login_check:
+   path: /api/login_check
+

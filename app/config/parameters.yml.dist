@@ -42,3 +42,9 @@ parameters:
     meta_keywords_default: "aco, accountable, care, organization, health, partners, scottsdale, arizona"
     meta_description_default: "Scottsdale Health Partners is a physician-led Clinical Integration Network and Accountable Care Organization. We are dedicated to improving patient health and reducing healthcare spend through collaboration, coordination, and communication in the community."
     meta_author_default: "omedix.com"
+
+    # JWT PARAMETERS
+    jwt_private_key_path: %kernel.root_dir%/var/jwt/private.pem   # ssh private key path
+    jwt_public_key_path:  %kernel.root_dir%/var/jwt/public.pem    # ssh public key path
+    jwt_key_pass_phrase:  ''                                      # ssh key pass phrase
+    jwt_token_ttl:        86400
