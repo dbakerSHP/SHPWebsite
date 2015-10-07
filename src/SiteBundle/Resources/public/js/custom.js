@@ -5,26 +5,25 @@ var appMaster = {
 	/* ---------------------
 	 Page Loader
 	 --------------------- */
-	pageLoader: function(){
+	pageLoader: function () {
 		$(".loader-item").delay(700).fadeOut();
 		$("#pageloader").delay(800).fadeOut("slow");
 	},
 	/* ---------------------
 	 Navigation Menu
 	 --------------------- */
-	navBar: function(){
+	navBar: function () {
 		/* ---------------------
 		 Sticky
 		 --------------------- */
 		if ($('#sticker').length) {
-			$("#sticker").sticky({topSpacing:0});
+			$("#sticker").sticky({topSpacing: 0});
 		}
 		/* --------------------------
 		 Home Background Super Slider
 		 -------------------------- */
 		if ($('#slides').length) {
-			$('#slides').superslides({
-			});
+			$('#slides').superslides({});
 		}
 	},
 
@@ -32,34 +31,40 @@ var appMaster = {
 	/* --------------------------
 	 HeaderSearch, Phone & Social Icons Toggle
 	 -------------------------- */
-	toggleNav: function(){
+	toggleNav: function () {
 
 		/* header Contact (Phone) */
-		$( ".header-contact" ).click(function() {
-			$( ".header-contact-content" ).show( "fast", function() {});
+		$(".header-contact").click(function () {
+			$(".header-contact-content").show("fast", function () {
+			});
 
-			$(".close").click(function() {
-				$(".header-contact-content").hide("fast", function() {});
+			$(".close").click(function () {
+				$(".header-contact-content").hide("fast", function () {
+				});
 			})
 		});
 
 
 		/* header Search (Search Form) */
-		$( ".header-search" ).click(function() {
-			$( ".header-search-content" ).show( "fast", function() {});
+		$(".header-search").click(function () {
+			$(".header-search-content").show("fast", function () {
+			});
 
-			$(".close").click(function() {
-				$(".header-search-content").hide("fast", function() {});
+			$(".close").click(function () {
+				$(".header-search-content").hide("fast", function () {
+				});
 			})
 		});
 
 
 		/* header Share (Search Form) */
-		$( ".header-share" ).click(function() {
-			$( ".header-share-content" ).show( "fast", function() {});
+		$(".header-share").click(function () {
+			$(".header-share-content").show("fast", function () {
+			});
 
-			$(".close").click(function() {
-				$(".header-share-content").hide("fast", function() {});
+			$(".close").click(function () {
+				$(".header-share-content").hide("fast", function () {
+				});
 			})
 		});
 	},
@@ -68,8 +73,8 @@ var appMaster = {
 	/* ---------------------
 	 Owl Slider
 	 /* --------------------- */
-	owlCarousel: function(){
-		(function($) {
+	owlCarousel: function () {
+		(function ($) {
 			"use strict";
 			if ($('.owl-carousel').length) {
 				$(".owl-carousel").each(function (index) {
@@ -83,10 +88,10 @@ var appMaster = {
 					$(this).owlCarousel({
 						transitionStyle: effect_mode,
 						autoplay: autoplay,
-						navigation : navigation,
-						pagination : pagination,
-						singleItem : singleitem,
-						items : items,
+						navigation: navigation,
+						pagination: pagination,
+						singleItem: singleitem,
+						items: items,
 						navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 					});
 				});
@@ -95,8 +100,8 @@ var appMaster = {
 	},
 
 
-	owlCarousel: function(){
-		(function($) {
+	owlCarousel: function () {
+		(function ($) {
 			"use strict";
 			if ($('.owl-carousel').length) {
 				$(".owl-carousel").each(function (index) {
@@ -110,33 +115,29 @@ var appMaster = {
 					var itemsdesktopsmall = $(this).data('desktopsmall');
 					var itemstablet = $(this).data('tablet');
 					var itemsmobile = $(this).data('mobile');
-					if( itemsdesktop > 0 )
-					{
+					if (itemsdesktop > 0) {
 						itemsdesktop = [1199, itemsdesktop];
 					}
-					if( itemsdesktopsmall > 0 )
-					{
+					if (itemsdesktopsmall > 0) {
 						itemsdesktopsmall = [979, itemsdesktopsmall];
 					}
-					if( itemstablet > 0 )
-					{
+					if (itemstablet > 0) {
 						itemstablet = [768, itemstablet];
 					}
-					if( itemsmobile > 0 )
-					{
+					if (itemsmobile > 0) {
 						itemsmobile = [479, itemsmobile];
 					}
 					$(this).owlCarousel({
 						transitionStyle: effect_mode,
-						autoPlay : autoplay,
-						navigation : navigation,
-						pagination : pagination,
-						singleItem : singleitem,
-						items : items,
-						itemsDesktop : itemsdesktop,
-						itemsDesktopSmall : itemsdesktopsmall,
-						itemsTablet : itemstablet,
-						itemsMobile : itemsmobile,
+						autoPlay: autoplay,
+						navigation: navigation,
+						pagination: pagination,
+						singleItem: singleitem,
+						items: items,
+						itemsDesktop: itemsdesktop,
+						itemsDesktopSmall: itemsdesktopsmall,
+						itemsTablet: itemstablet,
+						itemsMobile: itemsmobile,
 						navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
 					});
 				});
@@ -148,16 +149,16 @@ var appMaster = {
 	/* ---------------------
 	 Animation
 	 /* --------------------- */
-	dataAnimations: function() {
-		$('[data-animation]').each(function() {
+	dataAnimations: function () {
+		$('[data-animation]').each(function () {
 			var element = $(this);
 			element.addClass('animated');
-			element.appear(function() {
+			element.appear(function () {
 
 				var delay = ( element.data('delay') ? element.data('delay') : 1 );
-				if( delay > 1 ) element.css('animation-delay', delay + 'ms');
-				element.addClass( element.data('animation') );
-				setTimeout(function() {
+				if (delay > 1) element.css('animation-delay', delay + 'ms');
+				element.addClass(element.data('animation'));
+				setTimeout(function () {
 					element.addClass('visible');
 				}, delay);
 
@@ -167,12 +168,12 @@ var appMaster = {
 	/* ---------------------
 	 Owl Slider
 	 /* --------------------- */
-	progressBar: function(){
+	progressBar: function () {
 		if ($('.progress-bar').length) {
-			$('.progress-bar').each(function() {
-				$(this).appear(function(){
+			$('.progress-bar').each(function () {
+				$(this).appear(function () {
 					var datavl = $(this).attr('data-percentage');
-					$(this).animate({ "width" : datavl + "%"}, '1200');
+					$(this).animate({"width": datavl + "%"}, '1200');
 				});
 			});
 		}
@@ -180,10 +181,10 @@ var appMaster = {
 	/* ---------------------
 	 Background Image Attribute
 	 /* --------------------- */
-	bgImage: function(){
+	bgImage: function () {
 		var pageSection = $(".image-bg, .parallax-bg");
-		pageSection.each(function(indx){
-			if ($(this).attr("data-background")){
+		pageSection.each(function (indx) {
+			if ($(this).attr("data-background")) {
 				$(this).css("background-image", "url(" + $(this).data("background") + ")");
 			}
 		});
@@ -191,10 +192,10 @@ var appMaster = {
 	/* ---------------------
 	 Fun Factor / Counter
 	 /* --------------------- */
-	funFactor: function(){
-		(function($){
-			$(".count-number").appear(function(){
-				$(this).each(function(){
+	funFactor: function () {
+		(function ($) {
+			$(".count-number").appear(function () {
+				$(this).each(function () {
 					datacount = $(this).attr('data-count');
 					$(this).find('.counter').delay(6000).countTo({
 						from: 10,
@@ -209,8 +210,8 @@ var appMaster = {
 	/* ---------------------
 	 Parallax BG
 	 /* --------------------- */
-	parallaxBg: function(){
-		if($('.image-bg').length != 0 && !navigator.userAgent.match(/iPad|iPhone|Android/i)){
+	parallaxBg: function () {
+		if ($('.image-bg').length != 0 && !navigator.userAgent.match(/iPad|iPhone|Android/i)) {
 			$.stellar({
 				horizontalScrolling: false,
 				verticalOffset: 0,
@@ -224,26 +225,31 @@ var appMaster = {
 	/* ---------------------
 	 Portfolio
 	 /* --------------------- */
-	portfolioFilter: function(){
-		if($('#mix-container').length != 0){
+	portfolioFilter: function () {
+		if ($('#mix-container').length != 0) {
 			$('#mix-container').mixItUp();
 		}
 	},
 	/* ---------------------
 	 Image Popup
 	 /* --------------------- */
-	prettyPhoto: function(){
-		(function($) {
+	prettyPhoto: function () {
+		(function ($) {
 			"use strict";
-			if( $("a[rel^='prettyPhoto'], a[data-rel^='prettyPhoto']").length != 0 ) {
-				$("a[rel^='prettyPhoto'], a[data-rel^='prettyPhoto']").prettyPhoto({hook: 'data-rel', theme: "dark_square", social_tools: false, deeplinking: false});
+			if ($("a[rel^='prettyPhoto'], a[data-rel^='prettyPhoto']").length != 0) {
+				$("a[rel^='prettyPhoto'], a[data-rel^='prettyPhoto']").prettyPhoto({
+					hook: 'data-rel',
+					theme: "dark_square",
+					social_tools: false,
+					deeplinking: false
+				});
 			}
 		})(jQuery);
 	},
 	/* ---------------------
 	 Background Video
 	 /* --------------------- */
-	backgroundVideo: function(){
+	backgroundVideo: function () {
 		if (typeof $.fn.mb_YTPlayer != 'undefined' && $.isFunction($.fn
 				.mb_YTPlayer)) {
 			var m = false;
@@ -255,9 +261,9 @@ var appMaster = {
 			if (m == false) {
 				v.mb_YTPlayer();
 				$('#video-controls a')
-					.each(function() {
+					.each(function () {
 						var t = $(this);
-						t.on('click', (function(e) {
+						t.on('click', (function (e) {
 							e.preventDefault();
 							if (t.hasClass(
 									'fa-volume-off')) {
@@ -305,8 +311,8 @@ var appMaster = {
 	/* ---------------------
 	 Contact Form
 	 /* --------------------- */
-	simplecontactForm: function(){
-		if ( $( "#contactform" ).length !== 0 ) {
+	simplecontactForm: function () {
+		if ($("#contactform").length !== 0) {
 			$('#contactform').bootstrapValidator({
 				container: 'tooltip',
 				feedbackIcons: {
@@ -349,18 +355,18 @@ var appMaster = {
 					},
 				}
 			})
-				.on('success.form.bv', function(e) {
+				.on('success.form.bv', function (e) {
 					e.preventDefault();
-					var $form           = $(e.target),
-						validator       = $form.data('bootstrapValidator'),
-						submitButton    = validator.getSubmitButton();
-					var form_data       = $('#contactform').serialize();
+					var $form = $(e.target),
+						validator = $form.data('bootstrapValidator'),
+						submitButton = validator.getSubmitButton();
+					var form_data = $('#contactform').serialize();
 					$.ajax({
 						type: "POST",
 						dataType: 'json',
 						url: $form.attr('action'),
 						data: form_data,
-						success: function(msg){
+						success: function (msg) {
 							$('.form-message').html(msg.data);
 							//$('.form-message').addClass('alert-success').show();
 
@@ -368,10 +374,10 @@ var appMaster = {
 							$('.form-message')
 								.removeClass('hidden')
 								.addClass('alert-success')
-								.animate({opacity: 1}, 1000, function() {
+								.animate({opacity: 1}, 1000, function () {
 									$('.alert')
 										.delay(2000)
-										.animate({opacity: 0}, 1000, function() {
+										.animate({opacity: 0}, 1000, function () {
 											$('.alert')
 												.html("")
 												.removeClass('alert-success')
@@ -386,7 +392,8 @@ var appMaster = {
 							submitButton.removeAttr("disabled");
 							resetForm($('#contactform'));
 						},
-						error: function(msg){}
+						error: function (msg) {
+						}
 					});
 					return false;
 				});
@@ -411,8 +418,8 @@ var appMaster = {
 	/* --------------------------------------------
 	 Career Form
 	 -------------------------------------------- */
-	careerForm: function(){
-		if ( $( "#careerform" ).length !== 0 ) {
+	careerForm: function () {
+		if ($("#careerform").length !== 0) {
 			$('#careerform').bootstrapValidator({
 				container: 'tooltip',
 				feedbackIcons: {
@@ -460,10 +467,10 @@ var appMaster = {
 					},
 				}
 			})
-				.on('success.form.bv', function(e) {
+				.on('success.form.bv', function (e) {
 					e.preventDefault();
-					var $form        = $(e.target),
-						validator    = $form.data('bootstrapValidator'),
+					var $form = $(e.target),
+						validator = $form.data('bootstrapValidator'),
 						submitButton = validator.getSubmitButton();
 					var form_data = $('#careerform').serialize();
 					$.ajax({
@@ -471,13 +478,14 @@ var appMaster = {
 						dataType: 'json',
 						url: "php/career.php",
 						data: form_data,
-						success: function(msg){
+						success: function (msg) {
 							$('.form-message2').html(msg.data);
 							$('.form-message2').show();
 							submitButton.removeAttr("disabled");
 							resetForm($('#careerform'));
 						},
-						error: function(msg){}
+						error: function (msg) {
+						}
 					});
 					return false;
 				});
@@ -501,8 +509,8 @@ var appMaster = {
 	/* ---------------------
 	 Subscribe Form
 	 /* --------------------- */
-	subscribeForm: function(){
-		if ( $( "#subscribe_form" ).length !== 0 ) {
+	subscribeForm: function () {
+		if ($("#subscribe_form").length !== 0) {
 			$('#subscribe_form').bootstrapValidator({
 				container: 'tooltip',
 				feedbackIcons: {
@@ -524,10 +532,10 @@ var appMaster = {
 					},
 				}
 			})
-				.on('success.form.bv', function(e) {
+				.on('success.form.bv', function (e) {
 					e.preventDefault();
-					var $form        = $(e.target),
-						validator    = $form.data('bootstrapValidator'),
+					var $form = $(e.target),
+						validator = $form.data('bootstrapValidator'),
 						submitButton = validator.getSubmitButton();
 					var form_data = $('#subscribe_form').serialize();
 					$.ajax({
@@ -535,13 +543,14 @@ var appMaster = {
 						dataType: 'json',
 						url: "php/subscription.php",
 						data: form_data,
-						success: function(msg){
+						success: function (msg) {
 							$('.form-message1').html(msg.data);
 							$('.form-message1').show();
 							submitButton.removeAttr("disabled");
 							resetForm($('#subscribe_form'));
 						},
-						error: function(msg){}
+						error: function (msg) {
+						}
 					});
 					return false;
 				});
@@ -564,12 +573,12 @@ var appMaster = {
 	/* --------------------------------------------
 	 Scroll Navigation
 	 -------------------------------------------- */
-	navMenu: function(){
-		jQuery('.scroll').bind('click', function(event) {
+	navMenu: function () {
+		jQuery('.scroll').bind('click', function (event) {
 			var $anchor = jQuery(this);
 			var headerH = jQuery('#navigation').outerHeight();
 			jQuery('html, body').stop().animate({
-				scrollTop : jQuery($anchor.attr('href')).offset().top  - 60 + "px"
+				scrollTop: jQuery($anchor.attr('href')).offset().top - 60 + "px"
 			}, 1200, 'easeInOutExpo');
 			event.preventDefault();
 		});
@@ -584,7 +593,7 @@ var appMaster = {
 		});
 		/* Smooth Scroll Links */
 		jQuery('.page-scroll a')
-			.bind('click', function(event) {
+			.bind('click', function (event) {
 				var $anchor = jQuery(this);
 				jQuery('html, body')
 					.stop()
@@ -600,8 +609,8 @@ var appMaster = {
 	 Scroll Navigation
 	 -------------------------------------------- */
 	/* Text Tying Slider */
-	typedSlider: function() {
-		jQuery(".element").each(function(){
+	typedSlider: function () {
+		jQuery(".element").each(function () {
 			var $this = jQuery(this);
 			$this.typed({
 				strings: $this.attr('data-elements').split(','),
@@ -613,10 +622,10 @@ var appMaster = {
 	/* --------------------------------------------
 	 Video Slider
 	 -------------------------------------------- */
-	videotextSlider: function() {
-		$(function() {
+	videotextSlider: function () {
+		$(function () {
 			"use strict";
-			if ( jQuery( ".video-slider-text" ).length !== 0 ) {
+			if (jQuery(".video-slider-text").length !== 0) {
 				jQuery('.video-slider-text').easyTicker({
 					direction: 'up',
 					speed: 'slow',
@@ -631,8 +640,8 @@ var appMaster = {
 	/* --------------------------------------------
 	 Day Counter
 	 -------------------------------------------- */
-	countDown: function() {
-		$('.daycounter').each(function(){
+	countDown: function () {
+		$('.daycounter').each(function () {
 			var counter_id = $(this).attr('id');
 			var counter_type = $(this).data('counter');
 			var year = $(this).data('year');
@@ -640,14 +649,14 @@ var appMaster = {
 			var date = $(this).data('date');
 			var countDay = new Date();
 			countDay = new Date(year, month - 1, date);
-			if( counter_type == "down" ) {
-				$("#"+counter_id).countdown({
+			if (counter_type == "down") {
+				$("#" + counter_id).countdown({
 					labels: ['Years', 'Months', 'Weeks', 'Days', 'Hours', 'Mins', 'Secs'],
 					labels1: ['Year', 'Month', 'Week', 'Day', 'Hour', 'Min', 'Sec'],
 					until: countDay
 				});
-			} else if( counter_type == "up" ) {
-				$("#"+counter_id).countdown({
+			} else if (counter_type == "up") {
+				$("#" + counter_id).countdown({
 					labels: ['Years', 'Months', 'Weeks', 'Days', 'Hours', 'Mins', 'Secs'],
 					labels1: ['Year', 'Month', 'Week', 'Day', 'Hour', 'Min', 'Sec'],
 					since: countDay
@@ -660,9 +669,9 @@ var appMaster = {
 	/* --------------------------------------------
 	 Social Feeds
 	 -------------------------------------------- */
-	socialPhotostream: function() {
+	socialPhotostream: function () {
 
-		if( $(".my-feeds").length != 0 ) {
+		if ($(".my-feeds").length != 0) {
 			/* ================ FLICKR FEED ================ */
 			$('.flickr-feed').socialstream({
 				socialnetwork: 'flickr',
@@ -717,13 +726,13 @@ var appMaster = {
 	/* --------------------------------------------
 	 Price Range Slier
 	 -------------------------------------------- */
-	priceRange: function() {
-		if( $(".range").length != 0 ) {
+	priceRange: function () {
+		if ($(".range").length != 0) {
 			$('.range').nstSlider({
 				"left_grip_selector": ".leftGrip",
 				"right_grip_selector": ".rightGrip",
 				"value_bar_selector": ".bar",
-				"value_changed_callback": function(cause, leftValue, rightValue) {
+				"value_changed_callback": function (cause, leftValue, rightValue) {
 					var $container = $(this).parent();
 					$container.find('.leftLabel').text(leftValue);
 					$container.find('.rightLabel').text(rightValue);
@@ -733,7 +742,7 @@ var appMaster = {
 					"panel_selector": ".highlightPanel"
 				}
 			});
-			$('#highlightRangeButton').click(function() {
+			$('#highlightRangeButton').click(function () {
 				var highlightMin = Math.random() * 20,
 					highlightMax = highlightMin + Math.random() * 80;
 				$('.nstSlider').nstSlider('highlight_range', highlightMin, highlightMax);
@@ -741,124 +750,124 @@ var appMaster = {
 		}
 	},
 	/*==========Navigation Menu============*/
-	sideNav: function() {
-		$("#navigation-menu").click(function(e) {
+	sideNav: function () {
+		$("#navigation-menu").click(function (e) {
 			e.preventDefault();
-			$("#wrapper .toggle-menu").animate({ right: '0px' }, "slow");
+			$("#wrapper .toggle-menu").animate({right: '0px'}, "slow");
 			return false;
 		});
-		$("#navigation-close").click(function(e) {
+		$("#navigation-close").click(function (e) {
 			e.preventDefault();
-			$("#wrapper .toggle-menu").animate({ right: '-50%' }, "slow");
+			$("#wrapper .toggle-menu").animate({right: '-50%'}, "slow");
 			return false;
 		});
 
 		/* ----------- Menus hide after click -- mobile devices ----------- */
 
 		$('#wrapper .nav li a').click(function () {
-			$("#wrapper .toggle-menu").animate({ right: '-50%' }, "slow");
+			$("#wrapper .toggle-menu").animate({right: '-50%'}, "slow");
 			return false;
 		});
 
-		$('.scroll-2').bind('click', function(event) {
+		$('.scroll-2').bind('click', function (event) {
 			var $anchor = $(this);
 			var headerH = $('#navigation-menu').outerHeight();
 			$('html, body').stop().animate({
-				scrollTop : $($anchor.attr('href')).offset().top  + 1 + "px"
+				scrollTop: $($anchor.attr('href')).offset().top + 1 + "px"
 			}, 1200, 'easeInOutExpo');
 			event.preventDefault();
 		});
 	},
 
 	// Background image height equal to the browser height.
-	fullScreen: function() {
-		$('.full-screen').css({ 'height': $(window).height() });
-		$(window).on('resize', function() {
-			$('.full-screen').css({ 'height': $(window).height() });
+	fullScreen: function () {
+		$('.full-screen').css({'height': $(window).height()});
+		$(window).on('resize', function () {
+			$('.full-screen').css({'height': $(window).height()});
 		});
 	},
 
-	fancySelect: function() {
+	fancySelect: function () {
 		"use strict";
-		if ( $( ".fancy-select" ).length !== 0 ) {
+		if ($(".fancy-select").length !== 0) {
 			$('.fancy-select').fancySelect();
 		}
 	},
 
 
-	hiddenFooter: function() {
+	hiddenFooter: function () {
 		var footer_height = $(".hidden-footer").height();
-		$('#page').css({ 'margin-bottom': footer_height + "px" });
-		$('.hidden-footer').css({ 'height': footer_height + "px" });
-		$('.hidden-footer').css({ 'max-height': footer_height + "px" });
-		$(window).on('resize', function() {
-			$('#page').css({ 'margin-bottom': footer_height + "px" });
-			$('.hidden-footer').css({ 'height': footer_height + "px" });
-			$('.hidden-footer').css({ 'max-height': footer_height + "px" });
+		$('#page').css({'margin-bottom': footer_height + "px"});
+		$('.hidden-footer').css({'height': footer_height + "px"});
+		$('.hidden-footer').css({'max-height': footer_height + "px"});
+		$(window).on('resize', function () {
+			$('#page').css({'margin-bottom': footer_height + "px"});
+			$('.hidden-footer').css({'height': footer_height + "px"});
+			$('.hidden-footer').css({'max-height': footer_height + "px"});
 		});
 	},
 
 	/* --------------------------------------------
 	 Charts
 	 -------------------------------------------- */
-	allCharts: function() {
+	allCharts: function () {
 
-		jQuery(window).load( function(){
+		jQuery(window).load(function () {
 			var lineChartData = {
-				labels : ["January","February","March","April","May","June","July"],
-				datasets : [
+				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				datasets: [
 					{
-						fillColor : "rgba(220,220,220,.5)",
-						strokeColor : "rgba(220,220,220,1)",
-						pointColor : "rgba(220,220,220,1)",
-						pointStrokeColor : "#fff",
-						data : [10,20,40,70,100,90,40]
+						fillColor: "rgba(220,220,220,.5)",
+						strokeColor: "rgba(220,220,220,1)",
+						pointColor: "rgba(220,220,220,1)",
+						pointStrokeColor: "#fff",
+						data: [10, 20, 40, 70, 100, 90, 40]
 					},
 					{
-						fillColor : "rgba(151,187,205,0.5)",
-						strokeColor : "rgba(151,187,205,1)",
-						pointColor : "rgba(151,187,205,1)",
-						pointStrokeColor : "#fff",
-						data : [70,30,60,40,50,30,60]
+						fillColor: "rgba(151,187,205,0.5)",
+						strokeColor: "rgba(151,187,205,1)",
+						pointColor: "rgba(151,187,205,1)",
+						pointStrokeColor: "#fff",
+						data: [70, 30, 60, 40, 50, 30, 60]
 					},
 					{
-						fillColor : "rgba(142, 180, 227,0.5)",
-						strokeColor : "rgba(151,187,205,1)",
-						pointColor : "rgba(151,187,205,1)",
-						pointStrokeColor : "#fff",
-						data : [10,40,100,70,30,80,50]
+						fillColor: "rgba(142, 180, 227,0.5)",
+						strokeColor: "rgba(151,187,205,1)",
+						pointColor: "rgba(151,187,205,1)",
+						pointStrokeColor: "#fff",
+						data: [10, 40, 100, 70, 30, 80, 50]
 					}
 				]
 			};
 
 			var barChartData = {
-				labels : ["January","February","March","April","May","June","July"],
-				datasets : [
+				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				datasets: [
 					{
-						fillColor : "rgba(142, 180, 227,0.5)",
-						strokeColor : "rgba(220,220,220,1)",
-						data : [50,70,90,60,70,40,50]
+						fillColor: "rgba(142, 180, 227,0.5)",
+						strokeColor: "rgba(220,220,220,1)",
+						data: [50, 70, 90, 60, 70, 40, 50]
 					}
 				]
 
 			};
 
 			var radarChartData = {
-				labels : ["Html5","Css3","Jquery","Wordpress","Joomla","Drupal","Design"],
-				datasets : [
+				labels: ["Html5", "Css3", "Jquery", "Wordpress", "Joomla", "Drupal", "Design"],
+				datasets: [
 					{
-						fillColor : "rgba(220,220,220,0.5)",
-						strokeColor : "rgba(220,220,220,1)",
-						pointColor : "rgba(220,220,220,1)",
-						pointStrokeColor : "#fff",
-						data : [65,59,90,81,56,55,40]
+						fillColor: "rgba(220,220,220,0.5)",
+						strokeColor: "rgba(220,220,220,1)",
+						pointColor: "rgba(220,220,220,1)",
+						pointStrokeColor: "#fff",
+						data: [65, 59, 90, 81, 56, 55, 40]
 					},
 					{
-						fillColor : "rgba(142, 180, 227,0.5)",
-						strokeColor : "rgba(142, 180, 227,1)",
-						pointColor : "rgba(142, 180, 227,1)",
-						pointStrokeColor : "#fff",
-						data : [28,48,40,19,96,27,100]
+						fillColor: "rgba(142, 180, 227,0.5)",
+						strokeColor: "rgba(142, 180, 227,1)",
+						pointColor: "rgba(142, 180, 227,1)",
+						pointStrokeColor: "#fff",
+						data: [28, 48, 40, 19, 96, 27, 100]
 					}
 				]
 
@@ -867,50 +876,50 @@ var appMaster = {
 			var pieChartData = [
 				{
 					value: 90,
-					color:"#8EB4E3"
+					color: "#8EB4E3"
 				},
 				{
-					value : 30,
-					color : "#229e05"
+					value: 30,
+					color: "#229e05"
 				},
 				{
-					value : 60,
-					color : "#171717"
+					value: 60,
+					color: "#171717"
 				},
 				{
-					value : 100,
-					color : "#004eff"
+					value: 100,
+					color: "#004eff"
 				},
 				{
-					value : 20,
-					color : "#584A5E"
+					value: 20,
+					color: "#584A5E"
 				}
 
 			];
 
 			var polarAreaChartData = [
 				{
-					value : 60,
+					value: 60,
 					color: "#8EB4E3"
 				},
 				{
-					value : 70,
+					value: 70,
 					color: "#cccccc"
 				},
 				{
-					value : 60,
+					value: 60,
 					color: "#171717"
 				},
 				{
-					value : 30,
+					value: 30,
 					color: "#229e05"
 				},
 				{
-					value : 50,
+					value: 50,
 					color: "#004eff"
 				},
 				{
-					value : 20,
+					value: 20,
 					color: "#584A5E"
 				}
 			];
@@ -918,66 +927,85 @@ var appMaster = {
 			var doughnutChartData = [
 				{
 					value: 30,
-					color:"#8EB4E3"
+					color: "#8EB4E3"
 				},
 				{
-					value : 50,
-					color : "#cccccc"
+					value: 50,
+					color: "#cccccc"
 				},
 				{
-					value : 100,
-					color : "#171717"
+					value: 100,
+					color: "#171717"
 				},
 				{
-					value : 40,
-					color : "#004eff"
+					value: 40,
+					color: "#004eff"
 				},
 				{
-					value : 120,
-					color : "#4D5360"
+					value: 120,
+					color: "#4D5360"
 				}
 			];
 
-			function showLineChart(){
+			function showLineChart() {
 				var ctx = document.getElementById("lineChartmist").getContext("2d");
-				new Chart(ctx).Line(lineChartData, {	responsive: true	});
+				new Chart(ctx).Line(lineChartData, {responsive: true});
 			}
 
-			function showBarChart(){
+			function showBarChart() {
 				var ctx = document.getElementById("barChartmist").getContext("2d");
-				new Chart(ctx).Bar(barChartData, {	responsive: true	});
+				new Chart(ctx).Bar(barChartData, {responsive: true});
 			}
 
-			function showRadarChart(){
+			function showRadarChart() {
 				var ctx = document.getElementById("radarChartmist").getContext("2d");
-				new Chart(ctx).Radar(radarChartData, {	responsive: true	});
+				new Chart(ctx).Radar(radarChartData, {responsive: true});
 			}
 
-			function showPolarAreaChart(){
+			function showPolarAreaChart() {
 				var ctx = document.getElementById("polarAreaChartmist").getContext("2d");
-				new Chart(ctx).PolarArea(polarAreaChartData, {	responsive: true	});
+				new Chart(ctx).PolarArea(polarAreaChartData, {responsive: true});
 			}
 
-			function showPieChart(){
+			function showPieChart() {
 				var ctx = document.getElementById("pieChartmist").getContext("2d");
-				new Chart(ctx).Pie(pieChartData,{	responsive: true	});
+				new Chart(ctx).Pie(pieChartData, {responsive: true});
 			}
-			function showDoughnutChart(){
+
+			function showDoughnutChart() {
 				var ctx = document.getElementById("doughnutChartmist").getContext("2d");
-				new Chart(ctx).Doughnut(doughnutChartData,{	responsive: true	});
+				new Chart(ctx).Doughnut(doughnutChartData, {responsive: true});
 			}
 
-			$('#lineChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showLineChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#lineChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showLineChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
-			$('#barChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showBarChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#barChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showBarChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
-			$('#radarChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showRadarChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#radarChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showRadarChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
-			$('#polarAreaChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showPolarAreaChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#polarAreaChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showPolarAreaChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
-			$('#pieChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showPieChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#pieChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showPieChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
-			$('#doughnutChart').appear( function(){ $(this).css({ opacity: 1 }); setTimeout(showDoughnutChart,300); },{accX: 0, accY: -155},'easeInCubic');
+			$('#doughnutChart').appear(function () {
+				$(this).css({opacity: 1});
+				setTimeout(showDoughnutChart, 300);
+			}, {accX: 0, accY: -155}, 'easeInCubic');
 
 		});
 
@@ -985,14 +1013,14 @@ var appMaster = {
 	/* --------------------------------------------
 	 Masonry Grid
 	 -------------------------------------------- */
-	masonryGrid: function(){
+	masonryGrid: function () {
 
-		$('.masonry-grid').each(function(){
+		$('.masonry-grid').each(function () {
 			var $port_container = $(this);
 
 			var filter_selector = $port_container.parent().find('.works-filters li.active').data('filter');
 
-			$port_container.imagesLoaded(function(){
+			$port_container.imagesLoaded(function () {
 				$port_container.isotope({
 					itemSelector: '.grid-item',
 					filter: filter_selector,
@@ -1004,11 +1032,11 @@ var appMaster = {
 			});
 
 			// Portfolio Filter Items
-			$('.works-filters li').click(function(){
+			$('.works-filters li').click(function () {
 				$(this).parents().find('.works-filters li.active').removeClass('active');
 				$(this).addClass('active');
 				var selector = $(this).parents().find('.works-filters li.active').attr('data-filter');
-				$(this).parents().find('.masonry-grid').isotope({ filter: selector, animationEngine : "css" });
+				$(this).parents().find('.masonry-grid').isotope({filter: selector, animationEngine: "css"});
 
 				return false;
 			});
@@ -1020,43 +1048,47 @@ var appMaster = {
 	/* --------------------------------------------
 	 Product Zoom
 	 -------------------------------------------- */
-	productZoom: function(){
-		if ( $( ".single-product" ).length !== 0 ) {
+	productZoom: function () {
+		if ($(".single-product").length !== 0) {
 			var zoomWindowWidth;
 			var zoomWindowHeight;
 
 			zoomWindowWidth    : 400;
 			zoomWindowHeight   : 470;
-			zoomType   = 'window';
+			zoomType = 'window';
 
 			if ($(window).width() < 992) {
 				zoomWindowWidth    : 0;
 				zoomWindowHeight   : 0;
-				zoomType   = 'inner';
+				zoomType = 'inner';
 			}
 
 			$("#zoom-product").elevateZoom({
-				gallery:'zoom-product-thumb',
+				gallery: 'zoom-product-thumb',
 				cursor: 'pointer',
 				galleryActiveClass: 'active',
 				imageCrossfade: true,
 				responsive: true,
 				scrollZoom: false,
-				zoomWindowWidth    : zoomWindowWidth,
-				zoomWindowHeight   : zoomWindowHeight,
-				zoomType		: zoomType
+				zoomWindowWidth: zoomWindowWidth,
+				zoomWindowHeight: zoomWindowHeight,
+				zoomType: zoomType
 			});
 
-			$("#zoom-product").bind("click", function(e) {
-				var ez =   $('#zoom-product').data('elevateZoom');
+			$("#zoom-product").bind("click", function (e) {
+				var ez = $('#zoom-product').data('elevateZoom');
 				$.fancybox(ez.getGalleryList());
 				return false;
 			});
-			$('#plus').click(function() {
-				$('#output').html(function(i, val) { return val*1+1 });
+			$('#plus').click(function () {
+				$('#output').html(function (i, val) {
+					return val * 1 + 1
+				});
 			});
-			$('#minus').click(function() {
-				$('#output').html(function(i, val) { return val*1-1 });
+			$('#minus').click(function () {
+				$('#output').html(function (i, val) {
+					return val * 1 - 1
+				});
 			});
 		}
 	},
@@ -1066,15 +1098,15 @@ var appMaster = {
 	 Local Hosted Video Player
 	 -------------------------------------------- */
 
-	hostedVideo: function(){
-		if ( $( ".video-section" ).length !== 0 ) {
-			var player = videojs('really-cool-video', { /* Options */ }, function() {
+	hostedVideo: function () {
+		if ($(".video-section").length !== 0) {
+			var player = videojs('really-cool-video', {/* Options */}, function () {
 				console.log('Good to go!');
 
 				this.play(); // if you don't trust autoplay for some reason
 
 				// How about an event listener?
-				this.on('ended', function() {
+				this.on('ended', function () {
 					console.log('awww...over so soon?');
 				});
 			});
@@ -1085,20 +1117,20 @@ var appMaster = {
 	/* --------------------------------------------
 	 Local Hosted Video Player
 	 -------------------------------------------- */
-	gridRotator: function(){
-		if ( $( "#ri-grid" ).length !== 0 ) {
-			$( '#ri-grid' ).gridrotator( {
-				rows : 3,
-				columns : 8,
-				interval : 2000,
-				animType : 'random',
-				animSpeed : 1000,
-				step  : 2,
-				w1024 : { rows : 4, columns : 6 },
-				w768 : {rows : 4,columns : 5 },
-				w480 : {rows : 4,columns : 3 },
-				w320 : {rows : 4,columns : 2 },
-				w240 : {rows : 4,columns : 2 },
+	gridRotator: function () {
+		if ($("#ri-grid").length !== 0) {
+			$('#ri-grid').gridrotator({
+				rows: 3,
+				columns: 8,
+				interval: 2000,
+				animType: 'random',
+				animSpeed: 1000,
+				step: 2,
+				w1024: {rows: 4, columns: 6},
+				w768: {rows: 4, columns: 5},
+				w480: {rows: 4, columns: 3},
+				w320: {rows: 4, columns: 2},
+				w240: {rows: 4, columns: 2},
 			});
 		}
 	},
@@ -1107,8 +1139,8 @@ var appMaster = {
 	/* --------------------------------------------
 	 Local Hosted Video Player
 	 -------------------------------------------- */
-	datePicker: function(){
-		if ( $( ".date-picker" ).length !== 0 ) {
+	datePicker: function () {
+		if ($(".date-picker").length !== 0) {
 			$(function () {
 				$('.date-picker').datetimepicker({
 					format: 'DD/MM/YYYY'
@@ -1118,8 +1150,8 @@ var appMaster = {
 	},
 
 
-	timePicker: function(){
-		if ( $( ".time-picker" ).length !== 0 ) {
+	timePicker: function () {
+		if ($(".time-picker").length !== 0) {
 			$(function () {
 				$('.time-picker').datetimepicker({
 					format: 'LT'
@@ -1130,15 +1162,16 @@ var appMaster = {
 
 };
 
-var delay = (function(){
+var delay = (function () {
 	var timer = 0;
-	return function(callback, ms){
-		clearTimeout (timer);
+	return function (callback, ms) {
+		clearTimeout(timer);
 		timer = setTimeout(callback, ms);
 	};
 })();
 
 
+var geocoder;
 var map;
 
 function initialize(myCenter) {
@@ -1159,10 +1192,43 @@ function initialize(myCenter) {
 	map = new google.maps.Map(document.getElementById("modal-map-canvas"), mapProp);
 	marker.setMap(map);
 
-};
+}
+
+var codedAddress = [];
+
+function initializeGeoCode(address) {
+	//console.log(address); return false;
+	geocoder = new google.maps.Geocoder();
+	geocoder.geocode({'address': address}, function (results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			coordinates = results[0].geometry.location;
+			console.log(coordinates.L);
+			console.log(coordinates.H);
+		} else {
+			console.log("Geocode was not successful for the following reason: " + status);
+		}
+		return codedAddress;
+	});
+}
 
 
-$(document).ready(function() {
+var coords;
+function someFunction(addresses, callback) {
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({'address': addresses}, function (results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			//coords.length = 0;
+			coords = results[0].geometry.location;
+			callback();
+		}
+		else {
+			throw('No results found: ' + status);
+		}
+	});
+}
+
+
+$(document).ready(function () {
 	appMaster.pageLoader();
 	appMaster.navBar();
 	appMaster.toggleNav();
@@ -1198,98 +1264,109 @@ $(document).ready(function() {
 
 	/* Practices Search */
 
-	$('input[data-search="true"]').keyup(function(){
+	$('input[data-search="true"]').keyup(function () {
 		var searchField = $(this).val();
 		var regex = new RegExp(searchField, "i");
 		var output = '';
+		var api = '/api/physician-directory';
 		var count = 1;
-		$.getJSON('/api/physician-directory', function(data) {
-			$.each(data, function() {
-				$.each(this, function(key, value) {
-					if ((value.practice.search(regex) != -1) || (value.address1.search(regex) != -1)) {
+		$.getJSON(api, function (data) {
+			$.each(data, function () {
+				$.each(this, function (key, value) {
+					if ((value.practice.search(regex) != -1) || (value.address1.search(regex) != -1) || (value.zip.search(regex) != -1)) {
 
 						var map_link = 'https://www.google.com/maps/place/';
 						var full_address = '';
 
-						var practice_name		= null,
-							practice_address1	= null,
-							practice_address2	= null,
-							practice_city		= null,
-							practice_state		= null,
-							practice_zip		= null,
-							practice_phone		= null,
-							practice_latitude	= null,
-							practice_longitude	= null;
+						var practice_name = null,
+							practice_address1 = null,
+							practice_address2 = null,
+							practice_city = null,
+							practice_state = null,
+							practice_zip = null,
+							practice_phone = null,
+							practice_latitude = null,
+							practice_longitude = null;
 
-						if ( value.practice ) {
-							practice_name		= value.practice;
+						if (value.practice) {
+							practice_name = value.practice;
 						}
 
-						if ( value.address1 ) {
-							practice_address1	= value.address1;
-							map_link 		   += practice_address1;
-							if ( value.address1 && value.address2 ) {
-								practice_address1 		   = practice_address1 + ' ';
+						if (value.address1) {
+							practice_address1 = value.address1;
+							map_link += practice_address1;
+							if (value.address1 && value.address2) {
+								practice_address1 = practice_address1 + ' ';
 							}
-							full_address	   += practice_address1;
+							full_address += practice_address1;
 						}
 
-						if ( value.address2 ) {
-							practice_address2	= value.address2;
-							full_address	   += practice_address2;
+						if (value.address2) {
+							practice_address2 = value.address2;
+							full_address += practice_address2;
 						}
 
-						if ( value.city ) {
-							practice_city		= value.city;
-							map_link 		   += ', ' + practice_city;
-							full_address	   += ', ' + practice_city;
+						if (value.city) {
+							practice_city = value.city;
+							map_link += ', ' + practice_city;
+							full_address += ', ' + practice_city;
 						}
 
-						if ( value.state ) {
-							practice_state		= value.state;
-							map_link 		   += ', ' + practice_state;
-							full_address	   += ', ' + practice_state;
+						if (value.state) {
+							practice_state = value.state;
+							map_link += ', ' + practice_state;
+							full_address += ', ' + practice_state;
 						}
 
-						if ( value.zip ) {
-							practice_zip		= value.zip;
-							map_link 		   += ' ' + practice_zip;
-							full_address	   += ' ' + practice_zip;
+						if (value.zip) {
+							practice_zip = value.zip;
+							map_link += ' ' + practice_zip;
+							full_address += ' ' + practice_zip;
 						}
 
-						if ( value.phone ) {
-							practice_phone		= value.phone;
-						}
+						//someFunction(full_address, function () {
 
-						if ( value.latitude ) {
-							practice_latitude	= value.latitude;
-							map_link 		   += '@' + practice_latitude;
-						}
+							if (value.phone) {
+								practice_phone = value.phone;
+							}
 
-						if ( value.longitude ) {
-							practice_longitude	= value.longitude;
-							map_link 		   += ',' + practice_longitude;
-						}
+							if (value.latitude) {
+								practice_latitude = value.latitude;//coords.H;
+								map_link += '@' + practice_latitude;
+							}
 
-						output += '<address class="row">';
-						output += '<div class="col-xs-2 col-height col-middle">';
-						output += '<div class="inside">';
-						output += '<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
-						output += '</div>';
-						output += '</div>';
-						output += '<div class="col-xs-10 col-height col-middle">';
-						output += '<div class="inside">';
-						output += '<div class="title"><a href="' + $(location).attr('href') + '/' + value.practice_id + '/' + value.location_id + '" class="text-color"><h6 class="no-margin">' + practice_name + '</h6></a></div>';
-						output += '<p>' + full_address;
-						if (practice_phone != null) {
-							output += '<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';
-						}
-						output += '</p>';
-						output += '</div>';
-						output += '</div>';
-						output += '</div>';
-						output += '</address>';
-						count++;
+							if (value.longitude) {
+								practice_longitude = value.longitude;//coords.L;
+								map_link += ',' + practice_longitude;
+							}
+
+							output += '<address class="row">';
+							output += '<div class="col-xs-2 col-height col-middle">';
+							output += '<div class="inside">';
+							output += '<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
+							output += '</div>';
+							output += '</div>';
+							output += '<div class="col-xs-10 col-height col-middle">';
+							output += '<div class="inside">';
+							output += '<div class="title"><a href="' + $(location).attr('href') + '/' + value.practice_id + '/' + value.location_id + '" class="text-color"><h6 class="no-margin">' + practice_name + '</h6></a></div>';
+							output += '<p>' + full_address;
+							if (practice_phone != null) {
+								output += '<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';
+							}
+							output += '</p>';
+							output += '</div>';
+							output += '</div>';
+							output += '</div>';
+							output += '</address>';
+							count++;
+
+
+							//$('#results').addClass('page-section').find('.container').html(output);
+						//});
+
+
+					//} else {
+					//	$('#results').addClass('page-section').find('.container').html('');
 					}
 				});
 			});
@@ -1299,7 +1376,7 @@ $(document).ready(function() {
 	});
 
 
-	$('#myMapModal').on('shown.bs.modal', function(e) {
+	$('#myMapModal').on('shown.bs.modal', function (e) {
 		var element = $(e.relatedTarget);
 		var data = element.data("coordinates").split(',');
 		console.log(data[0]);
@@ -1309,7 +1386,7 @@ $(document).ready(function() {
 	});
 
 
-	$('#myMapModal').on('hidden.bs.modal', function(e) {
+	$('#myMapModal').on('hidden.bs.modal', function (e) {
 		$("#myMapModal").find("#myModalLabel").html('');
 		$("#myMapModal").find("#modal-map-canvas").html('');
 	});
@@ -1327,12 +1404,12 @@ $(document).ready(function() {
 
  Placeholder for Image
  -------------------------------------------- */
-$(window).load(function(){
+$(window).load(function () {
 
-	$('img:not(".site_logo")').each(function() {
-		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
-			var ieversion=new Number(RegExp.$1)
-			if (ieversion>=9)
+	$('img:not(".site_logo")').each(function () {
+		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+			var ieversion = new Number(RegExp.$1)
+			if (ieversion >= 9)
 				if (typeof this.naturalWidth === "undefined" || this.naturalWidth === 0) {
 					this.src = "http://placehold.it/" + ($(this).attr('width') || this.width || $(this).naturalWidth()) + "x" + (this.naturalHeight || $(this).attr('height') || $(this).height());
 				}
@@ -1343,9 +1420,9 @@ $(window).load(function(){
 		}
 	});
 
-	$('.image-bg').each(function() {
+	$('.image-bg').each(function () {
 		var imageSrc = $(this).data('background');
-		if( imageSrc !== undefined ) {
+		if (imageSrc !== undefined) {
 			var newSrc = imageSrc.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
 		}
 
@@ -1356,8 +1433,8 @@ $(window).load(function(){
 		var width = image.width,
 			height = image.height;
 
-		if( width === 0 || height === 0 ) {
-			$(this).attr('data-background', "http://placehold.it/" + ('1900') + "x" + ('700') + "/2e2e2e/666.jpg" );
+		if (width === 0 || height === 0) {
+			$(this).attr('data-background', "http://placehold.it/" + ('1900') + "x" + ('700') + "/2e2e2e/666.jpg");
 
 			$(this).removeAttr('style');
 			$(this).css("background-image", "url(" + "http://placehold.it/1900x700/2e2e2e/666.jpg" + ")");
@@ -1372,73 +1449,73 @@ $(window).load(function(){
 window.onload = MapLoadScript;
 function GmapInit() {
 	Gmap = $('.map-canvas');
-	Gmap.each(function() {
+	Gmap.each(function () {
 		console.log('triggered');
-		var $this           = $(this),
-			lat             = 33.57338,
-			lng             = -111.88749,
-			zoom            = 12,
-			scrollwheel     = false,
-			zoomcontrol 	= true,
-			draggable       = true,
-			mapType         = google.maps.MapTypeId.ROADMAP,
-			title           = '',
-			contentString   = '',
-			dataLat         = $this.data('lat'),
-			dataLng         = $this.data('lng'),
-			dataZoom        = $this.data('zoom'),
-			dataType        = $this.data('type'),
+		var $this = $(this),
+			lat = 33.57338,
+			lng = -111.88749,
+			zoom = 12,
+			scrollwheel = false,
+			zoomcontrol = true,
+			draggable = true,
+			mapType = google.maps.MapTypeId.ROADMAP,
+			title = '',
+			contentString = '',
+			dataLat = $this.data('lat'),
+			dataLng = $this.data('lng'),
+			dataZoom = $this.data('zoom'),
+			dataType = $this.data('type'),
 			dataScrollwheel = $this.data('scrollwheel'),
 			dataZoomcontrol = $this.data('zoomcontrol'),
-			dataHue         = $this.data('hue'),
-			dataTitle       = $this.data('title'),
-			dataContent     = $this.data('content');
+			dataHue = $this.data('hue'),
+			dataTitle = $this.data('title'),
+			dataContent = $this.data('content');
 
-		if( dataZoom !== undefined && dataZoom !== false ) {
+		if (dataZoom !== undefined && dataZoom !== false) {
 			zoom = parseFloat(dataZoom);
 		}
-		if( dataLat !== undefined && dataLat !== false ) {
+		if (dataLat !== undefined && dataLat !== false) {
 			lat = parseFloat(dataLat);
 		}
-		if( dataLng !== undefined && dataLng !== false ) {
+		if (dataLng !== undefined && dataLng !== false) {
 			lng = parseFloat(dataLng);
 		}
-		if( dataScrollwheel !== undefined && dataScrollwheel !== null ) {
+		if (dataScrollwheel !== undefined && dataScrollwheel !== null) {
 			scrollwheel = dataScrollwheel;
 		}
-		if( dataZoomcontrol !== undefined && dataZoomcontrol !== null ) {
+		if (dataZoomcontrol !== undefined && dataZoomcontrol !== null) {
 			zoomcontrol = dataZoomcontrol;
 		}
-		if( dataType !== undefined && dataType !== false ) {
-			if( dataType == 'satellite' ) {
+		if (dataType !== undefined && dataType !== false) {
+			if (dataType == 'satellite') {
 				mapType = google.maps.MapTypeId.SATELLITE;
-			} else if( dataType == 'hybrid' ) {
+			} else if (dataType == 'hybrid') {
 				mapType = google.maps.MapTypeId.HYBRID;
-			} else if( dataType == 'terrain' ) {
+			} else if (dataType == 'terrain') {
 				mapType = google.maps.MapTypeId.TERRAIN;
 			}
 		}
-		if( dataTitle !== undefined && dataTitle !== false ) {
+		if (dataTitle !== undefined && dataTitle !== false) {
 			title = dataTitle;
 		}
-		if( navigator.userAgent.match(/iPad|iPhone|Android/i) ) {
+		if (navigator.userAgent.match(/iPad|iPhone|Android/i)) {
 			draggable = false;
 		}
 
 		console.log(lat + ',' + lng);
 
 		var mapOptions = {
-			zoom        : zoom,
-			scrollwheel : scrollwheel,
-			zoomControl : zoomcontrol,
-			draggable   : draggable,
-			center      : new google.maps.LatLng(lat, lng),
-			mapTypeId   : mapType
+			zoom: zoom,
+			scrollwheel: scrollwheel,
+			zoomControl: zoomcontrol,
+			draggable: draggable,
+			center: new google.maps.LatLng(lat, lng),
+			mapTypeId: mapType
 		};
 		var map = new google.maps.Map($this[0], mapOptions);
 
 		var image = '/bundles/site/images/map-marker.png';
-		if( dataContent !== undefined && dataContent !== false ) {
+		if (dataContent !== undefined && dataContent !== false) {
 			contentString = '<div class="map-data">' + '<h6>' + title + '</h6>' + '<div class="map-content">' + dataContent + '</div>' + '</div>';
 		}
 		var infowindow = new google.maps.InfoWindow({
@@ -1446,24 +1523,24 @@ function GmapInit() {
 		});
 
 		var marker = new google.maps.Marker({
-			position : new google.maps.LatLng(lat, lng),
-			map      : map,
-			icon     : image,
-			title    : title
+			position: new google.maps.LatLng(lat, lng),
+			map: map,
+			icon: image,
+			title: title
 		});
-		if( dataContent !== undefined && dataContent !== false ) {
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(map,marker);
+		if (dataContent !== undefined && dataContent !== false) {
+			google.maps.event.addListener(marker, 'click', function () {
+				infowindow.open(map, marker);
 			});
 		}
 
-		if( dataHue !== undefined && dataHue !== false ) {
+		if (dataHue !== undefined && dataHue !== false) {
 			var styles = [
 				{
-					stylers : [
-						{ hue : dataHue },
-						{ saturation: 80 },
-						{ lightness: -10 }
+					stylers: [
+						{hue: dataHue},
+						{saturation: 80},
+						{lightness: -10}
 					]
 				}
 			];
@@ -1479,14 +1556,13 @@ function MapLoadScript() {
 }
 
 
-
 /*---------------STICKY NAVIGATION------------------*/
 var header = jQuery('#slider-section'),
 	headerPos = header.offset();
 
-$(window).scroll(function() {
-	if( $(".side-nav").length != 0 ) {
-		if( $(this).scrollTop() > headerPos.top+header.height() ) {
+$(window).scroll(function () {
+	if ($(".side-nav").length != 0) {
+		if ($(this).scrollTop() > headerPos.top + header.height()) {
 			$('#sticky').addClass('nav-fixed').fadeIn('medium');
 		} else {
 			$('#sticky').removeClass('nav-fixed').fadeIn('medium');
@@ -1494,7 +1570,7 @@ $(window).scroll(function() {
 	}
 });
 
-$(window).load(function() {
+$(window).load(function () {
 	appMaster.hiddenFooter();
 	appMaster.masonryGrid();
 });

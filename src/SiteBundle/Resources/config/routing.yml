@@ -71,7 +71,7 @@ physician_directory:
     defaults: { _controller: SiteBundle:ForPatients:physicianDirectory }
 
 physicians_in_practice:
-    path:     /physician-directory/{practiceId}/{practiceLocationId}
+    path:     /physician-directory/practice/{practiceId}/{practiceLocationId}
     defaults: { _controller: SiteBundle:ForPatients:physiciansInPractice }
 
 insurance_plans:

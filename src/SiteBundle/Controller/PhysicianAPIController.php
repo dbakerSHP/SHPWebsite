@@ -18,6 +18,7 @@ class PhysicianAPIController extends FOSRestController
 		$practices = $this->getDoctrine()
 			->getRepository('SiteBundle:Practices')
 //			->getAllPracticesAndPhysicians();
+//			->getAllPracticesByZipRange();
 			->getAllPractices();
 
 		$view = View::create()
@@ -30,7 +31,7 @@ class PhysicianAPIController extends FOSRestController
 	}
 
 	/**
-	 * @Get("/physician-directory/{practiceId}/{practiceLocationId}")
+	 * @Get("/physician-directory/practice/{practiceId}/{practiceLocationId}")
 	 */
 	public function apiAllPhysiciansByBusinessAction($practiceId, $practiceLocationId)
 	{
