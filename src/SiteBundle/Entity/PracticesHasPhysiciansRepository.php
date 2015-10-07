@@ -25,13 +25,17 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 			"practices_locations.phone",
 			"physicians.firstName",
 			"physicians.lastName",
+			"GROUP_CONCAT(specialties.specialty) as specialty",
 		])
 			->from("SiteBundle:PracticesHasPhysicians", "practices_has_physicians")
 			->leftJoin("SiteBundle:Practices", "practices", "WITH", "practices.id = practices_has_physicians.practice")
 			->leftJoin("SiteBundle:PracticesLocations", "practices_locations", "WITH", "practices_locations.id = practices_has_physicians.practiceLocation")
 			->leftJoin("SiteBundle:Physicians", "physicians", "WITH", "physicians.id = practices_has_physicians.physician")
+			->leftJoin("SiteBundle:PhysiciansHasSpecialties", "physicians_has_specialties", "WITH", "physicians_has_specialties.physician = physicians.id")
+			->leftJoin("SiteBundle:Specialties", "specialties", "WITH", "physicians_has_specialties.specialty = specialties.id")
 			->where("practices_has_physicians.practice = :practices_id")
 			->andWhere("practices_has_physicians.practiceLocation = :practice_location_id")
+			->groupBy("physicians.id")
 			->setParameters(
 				array(
 					"practices_id" => $practiceId,
