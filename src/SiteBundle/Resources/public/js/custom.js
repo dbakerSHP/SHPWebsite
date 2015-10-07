@@ -1331,10 +1331,10 @@ function practiceDirectorySearch() {
 
 						var physician = '';
 						for (var i = 0; i < physicians_list.length; i++) {
-							physician += '			<div class="col-sm-6">';
-							physician += '				<p><srtong class="title">Name:</srtong> ' + physicians_list[i].physician + '<br/>';
-							physician += '				<srtong class="title">Specialty:</srtong> ' + physicians_list[i].specialty;
-							physician += '			</div>';
+							physician	+=	'			<div class="col-sm-6">';
+							physician	+=	'				<p><srtong class="title">Name:</srtong> ' + physicians_list[i].physician + '<br/>';
+							physician	+=	'				<srtong class="title">Specialty:</srtong> ' + physicians_list[i].specialty;
+							physician	+=	'			</div>';
 						}
 
 						output	+=	'<address class="row">';
@@ -1358,9 +1358,12 @@ function practiceDirectorySearch() {
 						output	+=	'			</div>';
 						output	+=	'		</div>';
 						if (physicians_list.length) {
-							output += '		<div class="col-sm-6 well">';
-							output += physician;
-							output += '		</div>';
+							output	+=	'		<div class="col-sm-6 well">';
+							output	+=	'			<div class="col-sm-12">';
+							output	+=	'				<h5 class="title">Physician(s)</h5>';
+							output	+=	'			</div>';
+							output	+=	physician;
+							output	+=	'		</div>';
 						}
 						output	+=	'	</div>';
 						output	+=	'</address>';
