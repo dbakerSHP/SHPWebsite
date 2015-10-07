@@ -1256,6 +1256,7 @@ function practiceDirectorySearch() {
 	var output = '';
 	var count = 1;
 	if (searchField.length <= 1) {
+		$('#results').find('.error').hide();
 		$('#results').removeClass('page-section').find('.container').html('');
 	} else {
 		$.getJSON(api_practices, function (data) {
@@ -1332,6 +1333,8 @@ function practiceDirectorySearch() {
 
 							//console.log(physicians_list);
 
+							$('#results').find('.error').hide();
+
 							var physician = '';
 							for (var i = 0; i < physicians_list.length; i++) {
 								physician += '		<div class="col-sm-6">';
@@ -1378,6 +1381,9 @@ function practiceDirectorySearch() {
 
 						//} else {
 						//	$('#results').addClass('page-section').find('.container').html('');
+					} else {
+						$('#results').addClass('page-section').find('.container').html('<div class="col-sm-12 error"><h5>No results found</h5></div>');
+						$('#results').find('.error').show();
 					}
 				});
 			});
