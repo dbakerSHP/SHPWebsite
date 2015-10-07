@@ -1273,8 +1273,6 @@ $(document).ready(function () {
 		$.getJSON(api, function (data) {
 			$.each(data, function () {
 				$.each(this, function (key, value) {
-					if ((value.practice.search(regex) != -1) || (value.address1.search(regex) != -1) || (value.zip.search(regex) != -1)) {
-
 						var map_link = 'https://www.google.com/maps/place/';
 						var full_address = '';
 
@@ -1340,7 +1338,9 @@ $(document).ready(function () {
 								map_link += ',' + practice_longitude;
 							}
 
-							output += '<address class="row">';
+					if ((practice_name.search(regex) != -1) || (practice_address1.search(regex) != -1) || (practice_zip.search(regex) != -1)) {
+
+						output += '<address class="row">';
 							output += '<div class="col-xs-2 col-height col-middle">';
 							output += '<div class="inside">';
 							output += '<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
