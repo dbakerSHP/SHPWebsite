@@ -6172,6 +6172,15 @@ textarea.form-control {
 	font-size: 0.5em;
 }
 
+/* MISC */
+#results address.row {
+	border-bottom: solid 1px #E5E5E5;
+}
+
+#results address.row:last-of-type {
+	border-bottom: none;
+}
+
 
 /******************************************************************************
   Bootstrap Elements

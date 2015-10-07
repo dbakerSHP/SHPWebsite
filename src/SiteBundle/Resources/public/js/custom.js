@@ -1255,136 +1255,136 @@ function practiceDirectorySearch() {
 	var regex = new RegExp(searchField, "i");
 	var output = '';
 	var count = 1;
-	$.getJSON(api_practices, function (data) {
-		$.each(data, function () {
-			$.each(this, function (key, value) {
-				var map_link = 'https://www.google.com/maps/place/';
-				var full_address = '';
+	if (searchField.length <= 1) {
+		$('#results').removeClass('page-section').find('.container').html('');
+	} else {
+		$.getJSON(api_practices, function (data) {
+			$.each(data, function () {
+				$.each(this, function (key, value) {
+					var map_link = 'https://www.google.com/maps/place/';
+					var full_address = '';
 
-				var practice_name = null,
-					practice_address1 = null,
-					practice_address2 = null,
-					practice_city = null,
-					practice_state = null,
-					practice_zip = null,
-					practice_phone = null,
-					practice_latitude = null,
-					practice_longitude = null;
+					var practice_name = null,
+						practice_address1 = null,
+						practice_address2 = null,
+						practice_city = null,
+						practice_state = null,
+						practice_zip = null,
+						practice_phone = null,
+						practice_latitude = null,
+						practice_longitude = null;
 
-				if (value.practice) {
-					practice_name = value.practice;
-				}
-
-				if (value.address1) {
-					practice_address1 = value.address1;
-					map_link += practice_address1;
-					if (value.address1 && value.address2) {
-						practice_address1 = practice_address1 + ' ';
+					if (value.practice) {
+						practice_name = value.practice;
 					}
-					full_address += practice_address1;
-				}
 
-				if (value.address2) {
-					practice_address2 = value.address2;
-					full_address += practice_address2;
-				}
-
-				if (value.city) {
-					practice_city = value.city;
-					map_link += ', ' + practice_city;
-					full_address += ', ' + practice_city;
-				}
-
-				if (value.state) {
-					practice_state = value.state;
-					map_link += ', ' + practice_state;
-					full_address += ', ' + practice_state;
-				}
-
-				if (value.zip) {
-					practice_zip = value.zip;
-					map_link += ' ' + practice_zip;
-					full_address += ' ' + practice_zip;
-				}
-
-				//someFunction(full_address, function () {
-
-				if (value.phone) {
-					practice_phone = value.phone;
-				}
-
-				if (value.latitude) {
-					practice_latitude = value.latitude;//coords.H;
-					map_link += '@' + practice_latitude;
-				}
-
-				if (value.longitude) {
-					practice_longitude = value.longitude;//coords.L;
-					map_link += ',' + practice_longitude;
-				}
-
-				if ((practice_name.search(regex) != -1) || (practice_address1.search(regex) != -1) || (practice_zip.search(regex) != -1)) {
-
-					getPhysiciansForPractice(value.practice_id, value.location_id, function () {
-
-						//console.log(physicians_list);
-
-						var physician = '';
-						for (var i = 0; i < physicians_list.length; i++) {
-							physician	+=	'			<div class="col-sm-6">';
-							physician	+=	'				<p><srtong class="title">Name:</srtong> ' + physicians_list[i].physician + '<br/>';
-							physician	+=	'				<srtong class="title">Specialty:</srtong> ' + physicians_list[i].specialty;
-							physician	+=	'			</div>';
+					if (value.address1) {
+						practice_address1 = value.address1;
+						map_link += practice_address1;
+						if (value.address1 && value.address2) {
+							practice_address1 = practice_address1 + ' ';
 						}
+						full_address += practice_address1;
+					}
 
-						output	+=	'<address class="row">';
-						output	+=	'	<div class="row">';
-						output	+=	'		<div class="col-sm-6">';
-						output	+=	'			<div class="col-xs-2 col-height col-top">';
-						output	+=	'				<div class="inside">';
-						output	+=	'					<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
-						output	+=	'				</div>';
-						output	+=	'			</div>';
-						output	+=	'			<div class="col-xs-10 col-height col-top">';
-						output	+=	'				<div class="inside">';
-						//output	+=	'					<div class="title"><a href="' + $(location).attr('href') + '/practice/' + value.practice_id + '/' + value.location_id + '" class="text-color"><h6 class="no-margin">' + practice_name + '</h6></a></div>';
-						output	+=	'					<div class="title"><h6 class="no-margin">' + practice_name + '</h6></div>';
-						output	+=	'					<p>' + full_address;
-						if (practice_phone != null) {
-							output	+=	'					<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';
-						}
-						output	+=	'					</p>';
-						output	+=	'				</div>';
-						output	+=	'			</div>';
-						output	+=	'		</div>';
-						if (physicians_list.length) {
-							output	+=	'		<div class="col-sm-6 well">';
-							output	+=	'			<div class="col-sm-12">';
-							output	+=	'				<h5 class="title">Physician(s)</h5>';
-							output	+=	'			</div>';
-							output	+=	physician;
-							output	+=	'		</div>';
-						}
-						output	+=	'	</div>';
-						output	+=	'</address>';
-						output	+=	'<hr/>';
-						count++;
+					if (value.address2) {
+						practice_address2 = value.address2;
+						full_address += practice_address2;
+					}
+
+					if (value.city) {
+						practice_city = value.city;
+						map_link += ', ' + practice_city;
+						full_address += ', ' + practice_city;
+					}
+
+					if (value.state) {
+						practice_state = value.state;
+						map_link += ', ' + practice_state;
+						full_address += ', ' + practice_state;
+					}
+
+					if (value.zip) {
+						practice_zip = value.zip;
+						map_link += ' ' + practice_zip;
+						full_address += ' ' + practice_zip;
+					}
+
+					//someFunction(full_address, function () {
+
+					if (value.phone) {
+						practice_phone = value.phone;
+					}
+
+					if (value.latitude) {
+						practice_latitude = value.latitude;//coords.H;
+						map_link += '@' + practice_latitude;
+					}
+
+					if (value.longitude) {
+						practice_longitude = value.longitude;//coords.L;
+						map_link += ',' + practice_longitude;
+					}
+
+					if ((practice_name.search(regex) != -1) || (practice_address1.search(regex) != -1) || (practice_zip.search(regex) != -1)) {
+
+						getPhysiciansForPractice(value.practice_id, value.location_id, function () {
+
+							//console.log(physicians_list);
+
+							var physician = '';
+							for (var i = 0; i < physicians_list.length; i++) {
+								physician += '		<div class="col-sm-6">';
+								physician += '			<p><srtong class="title">Name:</srtong> ' + physicians_list[i].physician + '<br/>';
+								physician += '			<srtong class="title">Specialty:</srtong> ' + physicians_list[i].specialty;
+								physician += '		</div>';
+							}
+
+							output += '<address class="row">';
+							output += '	<div class="col-sm-6">';
+							output += '		<div class="col-xs-2 col-height col-top">';
+							output += '			<div class="inside">';
+							output += '				<a class="text-color" target="_blank" data-title="' + practice_name + '" href="#" data-coordinates="' + practice_latitude + ',' + practice_longitude + '" data-toggle="modal" data-target="#myMapModal"><i class="fa fa-map-marker i-7x icons-circle text-color light-bg hover-black"></i></a>';
+							output += '			</div>';
+							output += '		</div>';
+							output += '		<div class="col-xs-10 col-height col-top">';
+							output += '			<div class="inside">';
+							//output	+=	'				<div class="title"><a href="' + $(location).attr('href') + '/practice/' + value.practice_id + '/' + value.location_id + '" class="text-color"><h6 class="no-margin">' + practice_name + '</h6></a></div>';
+							output += '				<div class="title"><h6 class="no-margin">' + practice_name + '</h6></div>';
+							output += '				<p>' + full_address;
+							if (practice_phone != null) {
+								output += '				<br/><a href="tel:' + practice_phone + '">' + practice_phone + '</a>';
+							}
+							output += '				</p>';
+							output += '			</div>';
+							output += '		</div>';
+							output += '	</div>';
+							if (physicians_list.length) {
+								output += '	<div class="col-sm-6 well">';
+								output += '		<div class="col-sm-12">';
+								output += '			<h5 class="title">Physician(s)</h5>';
+								output += '		</div>';
+								output += physician;
+								output += '	</div>';
+							}
+							output += '</address>';
+							count++;
 
 
-						$('#results').addClass('page-section').find('.container').html(output);
+							$('#results').addClass('page-section').find('.container').html(output);
 
-					});
+						});
 
 
-					//} else {
-					//	$('#results').addClass('page-section').find('.container').html('');
-				}
+						//} else {
+						//	$('#results').addClass('page-section').find('.container').html('');
+					}
+				});
 			});
+			//$('#results').addClass('page-section').find('.container').html(output);
 		});
-		//$('#results').addClass('page-section').find('.container').html(output);
-	});
-	//GmapInit();
-
+		//GmapInit();
+	}
 }
 
 var timer;
