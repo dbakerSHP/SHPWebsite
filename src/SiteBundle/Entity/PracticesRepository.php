@@ -14,27 +14,35 @@ class PracticesRepository extends EntityRepository
 {
 
 	public function getAllPractices() {
-		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices", "practices_locations");
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select([
-			"practices.id as practice_id",
-			"practices_locations.id as location_id",
-			"practices.practice",
-			"practices_locations.address1",
-			"practices_locations.address2",
-			"practices_locations.city",
-			"practices_locations.state",
-			"practices_locations.zip",
-			"practices_locations.phone",
-			"practices_locations.latitude",
-			"practices_locations.longitude",
+			"practice.id as practice_id",
+			"location.id as location_id",
+			"practice.practice",
+			"location.address1",
+			"location.address2",
+			"location.city",
+			"location.state",
+			"location.zip",
+			"location.phone",
+			"location.latitude",
+			"location.longitude",
+			"physician.id as physician_id",
+			"physician.firstName as first_name",
+			"physician.lastName as last_name",
+			"specialties.specialty",
 		])
-			->from("SiteBundle:Practices", "practices")
-			->where("practices.deletedDate IS NULL")
-			->leftJoin("SiteBundle:PracticesLocations", "practices_locations")
-			->where("practices.id = practices_locations.practice")
+			->from("SiteBundle:Practices", "practice")
+			->leftJoin("SiteBundle:PracticesLocations", "location", "WITH", "practice.id = location.practice")
+			->leftJoin("SiteBundle:PracticesHasPhysicians", "xref_practice_physicians", "WITH", "practice.id = xref_practice_physicians.practice and location.id = xref_practice_physicians.practiceLocation")
+			->leftJoin("SiteBundle:Physicians", "physician", "WITH", "physician.id = xref_practice_physicians.physician")
+			->leftJoin("SiteBundle:PhysiciansHasSpecialties", "xref_specialties", "WITH", "physician.id = xref_specialties.physician")
+			->leftJoin("SiteBundle:Specialties", "specialties", "WITH", "specialties.id = xref_specialties.specialty")
+			->where("practice.deletedDate IS NULL")
 		;
-		return $queryBuilder->getQuery()->getResult();
+		return $queryBuilder->distinct()->getQuery()->getResult();
 	}
+
 
 	public function getAllPracticesByZipRange($postalCode, $distance) {
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder("practices", "practices_locations");

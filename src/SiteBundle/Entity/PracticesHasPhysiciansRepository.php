@@ -47,4 +47,22 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 		return $queryBuilder->getQuery()->getResult();
 	}
 
+
+	public function getPhysicianAndSpecialty() {
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
+		$queryBuilder->select([
+			"IDENTITY(xref_practice_physician.practiceLocation) as location_id",
+			"physician.firstName as first_name",
+			"physician.lastName as last_name",
+			"GROUP_CONCAT(specialty.specialty SEPARATOR ', ') as specialties",
+		])
+			->from("SiteBundle:PhysiciansHasSpecialties", "xref_specialties")
+			->innerJoin("SiteBundle:Physicians", "physician", "WITH", "xref_specialties.physician = physician.id")
+			->innerJoin("SiteBundle:Specialties", "specialty", "WITH", "xref_specialties.specialty = specialty.id")
+			->innerJoin("SiteBundle:PracticesHasPhysicians", "xref_practice_physician", "WITH", "xref_specialties.physician = xref_practice_physician.physician")
+			->groupBy("physician.id, xref_practice_physician.practiceLocation")
+		;
+		return $queryBuilder->getQuery()->getResult();
+	}
+
 }
