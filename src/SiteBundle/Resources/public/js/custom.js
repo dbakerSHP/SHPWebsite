@@ -1319,6 +1319,7 @@ function practiceDirectorySearch() {
 					if (
 						(practice_name != null && practice_name.search(regex) != -1)
 						|| (full_address != null && full_address.search(regex) != -1)
+						|| (practice_phone != null && practice_phone.search(regex) != -1)
 						|| (physician_list.length && findPartialStrInArray(physician_list, searchField) != -1)
 					) {
 
