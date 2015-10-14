@@ -33,12 +33,12 @@ class PracticesRepository extends EntityRepository
 			"specialties.specialty",
 		])
 			->from("SiteBundle:Practices", "practice")
+			->where("practice.deletedDate IS NULL")
 			->leftJoin("SiteBundle:PracticesLocations", "location", "WITH", "practice.id = location.practice")
 			->leftJoin("SiteBundle:PracticesHasPhysicians", "xref_practice_physicians", "WITH", "practice.id = xref_practice_physicians.practice and location.id = xref_practice_physicians.practiceLocation")
 			->leftJoin("SiteBundle:Physicians", "physician", "WITH", "physician.id = xref_practice_physicians.physician")
 			->leftJoin("SiteBundle:PhysiciansHasSpecialties", "xref_specialties", "WITH", "physician.id = xref_specialties.physician")
 			->leftJoin("SiteBundle:Specialties", "specialties", "WITH", "specialties.id = xref_specialties.specialty")
-			->where("practice.deletedDate IS NULL")
 		;
 		return $queryBuilder->distinct()->getQuery()->getResult();
 	}

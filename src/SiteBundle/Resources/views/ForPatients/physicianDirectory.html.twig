@@ -50,32 +50,41 @@
 					<h2 class="title">Search for a Physician</h2>
 				</div>
 				<div class="row">
-					<div class="col-sm-12">
-						<p><input type="text" class="form-control input-lg" id="search" data-search="true" placeholder="Search by practice, address, zip code, physician, or specialty..."></p>
-					</div>
-					{#<form name="search-directory-form" id="search-directory-form" action="{{ path('physician_directory') }}" method="post">#}
-						{#<div class="col-sm-12 text-left">#}
-							{#<h5>Search by:</h5>#}
+					{#<div class="col-sm-12">#}
+						{#<p><input type="text" class="form-control input-lg" data-search="true" placeholder="Search by practice, address, zip code, physician, or specialty..."></p>#}
+					{#</div>#}
+					<form name="search-directory-form" id="search-directory-form" action="{{ path('physician_directory') }}" method="post">
+						<div class="col-sm-12 text-left">
+							<h5>Search by:</h5>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<p><input type="text" class="form-control input-lg" id="search-practice" data-search="true" placeholder="Practice"></p>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<p><input type="text" class="form-control input-lg" id="search-physician" data-search="true" placeholder="Physician"></p>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<p><input type="text" class="form-control input-lg" id="search-specialty" data-search="true" placeholder="Specialty"></p>
+						</div>
+						{#<div class="col-xs-6 col-sm-2">#}
+							{#<p><input type="text" class="form-control input-lg" id="search-phone" data-search="true" placeholder="Phone"></p>#}
 						{#</div>#}
-						{#<div class="col-sm-3">#}
-							{#<p><input type="text" class="form-control input-lg" placeholder="Practice"></p>#}
-						{#</div>#}
-						{#<div class="col-sm-3">#}
-							{#<p><input type="text" class="form-control input-lg" placeholder="Address"></p>#}
-						{#</div>#}
-						{#<div class="col-sm-1">#}
-							{#<p><input type="text" class="form-control input-lg" placeholder="Zip"></p>#}
-						{#</div>#}
-						{#<div class="col-sm-2">#}
-							{#<p><input type="text" class="form-control input-lg" placeholder="Physician"></p>#}
-						{#</div>#}
-						{#<div class="col-sm-2">#}
-							{#<p><input type="text" class="form-control input-lg" placeholder="Specialty"></p>#}
-						{#</div>#}
-						{#<div class="col-sm-1">#}
-							{#<p><input type="submit" value="Search" name="search" id="search-directory-btn" class="btn btn-primary" /></p>#}
-						{#</div>#}
-					{#</form>#}
+						<div class="col-xs-6 col-sm-3 col-md-4">
+							<p><input type="text" class="form-control input-lg" id="search-address" data-search="true" placeholder="Street Address"></p>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-1">
+							<p><input type="text" class="form-control input-lg" id="search-suite" data-search="true" placeholder="Suite #"></p>
+						</div>
+						<div class="col-xs-4 col-sm-3 col-md-3">
+							<p><input type="text" class="form-control input-lg" id="search-city" data-search="true" placeholder="City"></p>
+						</div>
+						<div class="col-xs-4 col-sm-2 col-md-3">
+							<p><input type="text" class="form-control input-lg" id="search-state" data-search="true" placeholder="State"></p>
+						</div>
+						<div class="col-xs-4 col-sm-2 col-md-1">
+							<p><input type="text" class="form-control input-lg" id="search-zip" data-search="true" placeholder="Zip"></p>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>
