@@ -41,7 +41,7 @@ class LoadSpecialties extends AbstractFixture implements OrderedFixtureInterface
 		$manager->flush();
 
 		$specialty = new Specialties();
-		$specialty->setSpecialty("Breast Surgery");
+		$specialty->setSpecialty("Breast Surgery, General Surgery");
 		$manager->persist($specialty);
 		$manager->flush();
 
@@ -71,7 +71,7 @@ class LoadSpecialties extends AbstractFixture implements OrderedFixtureInterface
 		$manager->flush();
 
 		$specialty = new Specialties();
-		$specialty->setSpecialty("Ear");
+		$specialty->setSpecialty("Ear, Nose, and Throat");
 		$manager->persist($specialty);
 		$manager->flush();
 
@@ -167,11 +167,6 @@ class LoadSpecialties extends AbstractFixture implements OrderedFixtureInterface
 
 		$specialty = new Specialties();
 		$specialty->setSpecialty("Neurology");
-		$manager->persist($specialty);
-		$manager->flush();
-
-		$specialty = new Specialties();
-		$specialty->setSpecialty("Nose");
 		$manager->persist($specialty);
 		$manager->flush();
 
@@ -302,11 +297,6 @@ class LoadSpecialties extends AbstractFixture implements OrderedFixtureInterface
 
 		$specialty = new Specialties();
 		$specialty->setSpecialty("Surgical Oncology");
-		$manager->persist($specialty);
-		$manager->flush();
-
-		$specialty = new Specialties();
-		$specialty->setSpecialty("Throat");
 		$manager->persist($specialty);
 		$manager->flush();
 

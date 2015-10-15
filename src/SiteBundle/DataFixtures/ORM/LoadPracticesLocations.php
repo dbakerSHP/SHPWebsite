@@ -993,6 +993,11 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Gastroenterology - Osborn")))->setAddress1("10250 N. 92nd St.")->setAddress2("Suite 210")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.580472")->setLongitude("-111.882766")->setPhone("(480) 424-7228");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Gastroenterology - Osborn")))->setAddress1("3501 N. Scottsdale Road")->setAddress2("Suite 320")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 882-5740");
 		$manager->persist($practiceLocation);
 		$manager->flush();
