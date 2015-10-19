@@ -1283,6 +1283,11 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "OrthoArizona Phoenix Orthopedic Consultants")))->setAddress1("20401 N. 73rd St.")->setAddress2("Suite 255")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.673000")->setLongitude("-111.923678")->setPhone("(602) 298-8888");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "OrthoArizona Phoenix Orthopedic Consultants")))->setAddress1("5620 E. Bell Rd.")->setCity("Scottsdale")->setState("AZ")->setZip("85254")->setLatitude("33.64081")->setLongitude("-111.95928")->setPhone("(602) 493-9361");
 		$manager->persist($practiceLocation);
 		$manager->flush();
@@ -1433,7 +1438,7 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Cardiovascular Center")))->setAddress1("3099 Civic Center Plaza")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.58047")->setLongitude("-111.88277")->setPhone("(480) 945-3535");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Cardiovascular Center")))->setAddress1("3099 Civic Center Plaza")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.4837081")->setLongitude("-111.9237455")->setPhone("(480) 945-3535");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
@@ -1498,87 +1503,87 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("10290 N. 92nd St.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58024")->setLongitude("-111.88379")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("10290 N. 92nd St.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58024")->setLongitude("-111.88379")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("10575 N. Tatum Blvd.")->setAddress2("Ste. C-128")->setCity("Paradise Valley")->setState("AZ")->setZip("85253")->setLatitude("33.58175")->setLongitude("-111.97715")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("10575 N. Tatum Blvd.")->setAddress2("Ste. C-128")->setCity("Paradise Valley")->setState("AZ")->setZip("85253")->setLatitude("33.58175")->setLongitude("-111.97715")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("16838 E. Palisades Blvd.")->setAddress2("Ste C-151")->setCity("Fountain Hills")->setState("AZ")->setZip("85268")->setLatitude("33.60797")->setLongitude("-111.71666")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("16838 E. Palisades Blvd.")->setAddress2("Ste C-151")->setCity("Fountain Hills")->setState("AZ")->setZip("85268")->setLatitude("33.60797")->setLongitude("-111.71666")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("20201 N. Scottsdale Healthcare Dr.")->setAddress2("Ste. 190")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.67102")->setLongitude("-111.92038")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("20201 N. Scottsdale Healthcare Dr.")->setAddress2("Ste. 190")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.67102")->setLongitude("-111.92038")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("2222 E. Highland Ave.")->setAddress2("Ste. 120")->setCity("Phoenix")->setState("AZ")->setZip("85016")->setLatitude("33.50634")->setLongitude("-112.03388")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("2222 E. Highland Ave.")->setAddress2("Ste. 120")->setCity("Phoenix")->setState("AZ")->setZip("85016")->setLatitude("33.50634")->setLongitude("-112.03388")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("33755 N. Scottsdale Rd")->setAddress2("Ste. 120")->setCity("Scottsdale")->setState("AZ")->setZip("85262")->setLatitude("33.79924")->setLongitude("-111.92803")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("33755 N. Scottsdale Rd")->setAddress2("Ste. 120")->setCity("Scottsdale")->setState("AZ")->setZip("85262")->setLatitude("33.79924")->setLongitude("-111.92803")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("3501 N. Scottsdale Rd.")->setAddress2("Ste. 130")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("3501 N. Scottsdale Rd.")->setAddress2("Ste. 130")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("3645 S. Rome St.")->setAddress2("Ste. 101")->setCity("Gilbert")->setState("AZ")->setZip("85297")->setLatitude("33.28478")->setLongitude("-111.75031")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("3645 S. Rome St.")->setAddress2("Ste. 101")->setCity("Gilbert")->setState("AZ")->setZip("85297")->setLatitude("33.28478")->setLongitude("-111.75031")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("6501 E. Greenway Parkway")->setAddress2("Ste. 160")->setCity("Scottsdale")->setState("AZ")->setZip("85254")->setLatitude("33.62496")->setLongitude("-111.94189")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("6501 E. Greenway Parkway")->setAddress2("Ste. 160")->setCity("Scottsdale")->setState("AZ")->setZip("85254")->setLatitude("33.62496")->setLongitude("-111.94189")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("7301 E 2nd Street")->setAddress2("Ste. 112 & 114")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.49105")->setLongitude("-111.92413")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("7301 E 2nd Street")->setAddress2("Ste. 112 & 114")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.49105")->setLongitude("-111.92413")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("7331 E. Osborn Road")->setAddress2("Ste. 140")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48764")->setLongitude("-111.92426")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("7331 E. Osborn Road")->setAddress2("Ste. 140")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48764")->setLongitude("-111.92426")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("9003 E. Shea Blvd.")->setAddress2("Ste. PET/Open MRI")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.61603")->setLongitude("-111.89263")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("9003 E. Shea Blvd.")->setAddress2("Ste. PET/Open MRI")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.61603")->setLongitude("-111.89263")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("9220 E. Mountain View Rd.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57633")->setLongitude("-111.87978")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("9220 E. Mountain View Rd.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57633")->setLongitude("-111.87978")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("9700 N. 91st St.")->setAddress2("Ste. B-110")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57369")->setLongitude("-111.88347")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("9700 N. 91st St.")->setAddress2("Ste. B-110")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57369")->setLongitude("-111.88347")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("20940 N. Tatum Blvd.")->setAddress2("Ste. 390")->setCity("Phoenix")->setState("AZ")->setZip("85050")->setLatitude("33.675675")->setLongitude("-111.979357")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("20940 N. Tatum Blvd.")->setAddress2("Ste. 390")->setCity("Phoenix")->setState("AZ")->setZip("85050")->setLatitude("33.675675")->setLongitude("-111.979357")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("13620 N. Saguaro Blvd.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85268")->setLatitude("33.608952")->setLongitude("-111.715067")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("13620 N. Saguaro Blvd.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85268")->setLatitude("33.608952")->setLongitude("-111.715067")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
-		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd. ")))->setAddress1("7400 E. Osborn Rd.")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.488673")->setLongitude("-111.923153")->setPhone("(480) 425-5000");
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setAddress1("7400 E. Osborn Rd.")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.488673")->setLongitude("-111.923153")->setPhone("(480) 425-5000");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
