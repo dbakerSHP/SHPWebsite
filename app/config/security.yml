@@ -2,12 +2,27 @@ security:
 
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    ryan:
+                        password: ryanpass
+                        roles: 'ROLE_USER'
+                    admin:
+                        password: kitten
+                        roles: 'ROLE_ADMIN'
 
     firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
 
         main:
             anonymous: ~
+
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/admin, roles: ROLE_ADMIN }

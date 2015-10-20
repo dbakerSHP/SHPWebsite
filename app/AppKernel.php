@@ -22,6 +22,19 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Salva\PdfJsBundle\SalvaPdfJsBundle(),
+			new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+			new Sonata\jQueryBundle\SonatajQueryBundle(),
+			new Sonata\BlockBundle\SonataBlockBundle(),
+			new Sonata\AdminBundle\SonataAdminBundle(),
+			new Sonata\CoreBundle\SonataCoreBundle(),
+			new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+			new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+			new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+			new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+			new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
+			new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
+			new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
+			new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
