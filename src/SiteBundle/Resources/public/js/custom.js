@@ -1369,7 +1369,15 @@ function practiceDirectorySearch() {
 								});
 							}
 
+							var fullAddress = '';
+
 							$.each(value.location, function (key, value) {
+
+								fullAddress += '				<p>' + value.address1;
+								if (value.address2) {
+									fullAddress += ' ' + value.address2;
+								}
+								fullAddress += ', ' + value.city + ', ' + value.state + ' ' + value.zip;
 
 								output += '<address class="row">';
 								output += '	<div class="col-sm-6">';
@@ -1382,7 +1390,7 @@ function practiceDirectorySearch() {
 								output += '			<div class="inside">';
 								output += '				<div class="title"><h6 class="no-margin">' + practice_name + '</h6></div>';
 
-								output += '				<p>' + value.address1 + ' ' + value.address2 + ', ' + value.city + ', ' + value.state + ' ' + value.zip;
+								output += fullAddress;
 								if (value.phone) {
 									output += '				<br/><a href="tel:' + value.phone + '">' + value.phone + '</a>';
 								}
