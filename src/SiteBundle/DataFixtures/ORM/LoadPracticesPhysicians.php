@@ -4867,6 +4867,25 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 
 
 		/**
+		 * HonorHealth Medical Group - 92nd Street
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Francisco")->setLastName("Pena");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Medical Group - 92nd Street")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Medical Group - 92nd Street")), "latitude" => "33.578634", "longitude" => "-111.879481")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
 		 * HonorHealth Medical Group - Thompson Peak
 		 */
 
@@ -7965,6 +7984,2549 @@ class LoadPracticesPhysicians extends AbstractFixture implements OrderedFixtureI
 
 		$practicesHasPhysicians = new PracticesHasPhysicians();
 		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Medical Imaging, Ltd.")), "latitude" => "33.57369", "longitude" => "-111.88347")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Obstetrics and Gynecology
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Eric")->setLastName("Reuss");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Obstetrics and Gynecology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Obstetrics and Gynecology")), "latitude" => "33.48764", "longitude" => "-111.92426")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Pathology Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ted")->setLastName("Allred");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Cory")->setLastName("Fraser");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sharon")->setLastName("Gburek");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Gurley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bradford")->setLastName("Halliday");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Denise")->setLastName("Haynik");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("James")->setLastName("Newell");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("David")->setLastName("Sedlock");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pathology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pathology Associates")), "latitude" => "33.58095", "longitude" => "-111.88525")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Pediatric Center
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Traci")->setLastName("Hurley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")), "latitude" => "33.58440", "longitude" => "-111.88840")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Wendy")->setLastName("Kaye");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")), "latitude" => "33.58440", "longitude" => "-111.88840")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Russelle")->setLastName("Wallace");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatrics")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Pediatric Center")), "latitude" => "33.58440", "longitude" => "-111.88840")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Perinatal Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Karrie")->setLastName("Francois");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN-Perinatal")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Perinatal Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Perinatal Associates")), "latitude" => "33.65210", "longitude" => "-111.93070")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Cathleen")->setLastName("Harris");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN-Perinatal")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Perinatal Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Perinatal Associates")), "latitude" => "33.65210", "longitude" => "-111.93070")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Physicians Group
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Payam")->setLastName("Azima");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Harjinder")->setLastName("Bal");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Russell")->setLastName("Esquivel");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Gregory")->setLastName("Gargiulo");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Raad")->setLastName("Hindosh");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Peter")->setLastName("Parker");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hospitalist")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Physicians Group")), "latitude" => "33.64286", "longitude" => "-111.89970")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Primary Care
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Julie")->setLastName("Norley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")), "latitude" => "33.49128", "longitude" => "-111.91820")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Michael")->setLastName("Stevens");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")), "latitude" => "33.49128", "longitude" => "-111.91820")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Joseph")->setLastName("Zitar");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Primary Care")), "latitude" => "33.49128", "longitude" => "-111.91820")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Sports Medicine Institute LLC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("David")->setLastName("Carfagno");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine, Sports Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Sports Medicine Institute LLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Sports Medicine Institute LLC")), "latitude" => "33.57821", "longitude" => "-111.87951")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Surgical Consultants
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Tom")->setLastName("Wolvos");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Surgical Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Surgical Consultants")), "latitude" => "33.48898", "longitude" => "-111.92584")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Urologic Surgeons
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Mitchell")->setLastName("Kaye");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Urologic Surgeons")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Urologic Surgeons")), "latitude" => "33.49105", "longitude" => "-111.92413")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Scottsdale Women's Care
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sally")->setLastName("Wareing");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Women's Care")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Scottsdale Women's Care")), "latitude" => "33.49105", "longitude" => "-111.92413")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Shree Physicians
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sadan")->setLastName("Patel");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Shree Physicians")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Shree Physicians")), "latitude" => "33.58246", "longitude" => "-111.87362")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Sonoran Consultants in OB/GYN
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Marilyn")->setLastName("Laughead");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Sonoran Consultants in OB/GYN")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Sonoran Consultants in OB/GYN")), "latitude" => "33.57847", "longitude" => "-111.87626")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Sonoran Foot Specialist, PLLC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lee")->setLastName("Richer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Podiatry")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Sonoran Foot Specialist, PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Sonoran Foot Specialist, PLLC")), "latitude" => "33.57394", "longitude" => "-111.88239")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Southwest Heart and Lung
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Kenneth")->setLastName("Ashton");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Heart and Lung")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Heart and Lung")), "latitude" => "33.58595", "longitude" => "-111.97831")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Kevin")->setLastName("Brady");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiovascular Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Heart and Lung")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Heart and Lung")), "latitude" => "33.58595", "longitude" => "-111.97831")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Southwest Kidney Institute
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Donn")->setLastName("Hogan");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.60797", "longitude" => "-111.71666")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.57391", "longitude" => "-111.88565")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Divya")->setLastName("Malladi");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.60797", "longitude" => "-111.71666")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.57391", "longitude" => "-111.88565")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Pradeep")->setLastName("Mehra");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.60797", "longitude" => "-111.71666")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Robert")->setLastName("Cohen");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.46705", "longitude" => "-112.06764")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.57391", "longitude" => "-111.88565")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Aslam")->setLastName("Pervez");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Nephrology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Southwest Kidney Institute")), "latitude" => "33.57391", "longitude" => "-111.88565")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Specialty Orthopaedic Surgery
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sean")->setLastName("Brimacombe");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Specialty Orthopaedic Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Specialty Orthopaedic Surgery")), "latitude" => "33.57369", "longitude" => "-111.88347")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Frank")->setLastName("Moussa");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Specialty Orthopaedic Surgery")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Specialty Orthopaedic Surgery")), "latitude" => "33.57369", "longitude" => "-111.88347")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Spectrum Dermatology
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brooke")->setLastName("Jeffy");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.67619", "longitude" => "-111.97836")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.51007", "longitude" => "-111.98784")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.58177", "longitude" => "-111.92134")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Carlos")->setLastName("Rodriguez");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.51007", "longitude" => "-111.98784")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.58177", "longitude" => "-111.92134")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Randi")->setLastName("Rubenzik");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.51007", "longitude" => "-111.98784")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.58177", "longitude" => "-111.92134")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Maya")->setLastName("Thosani");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.51007", "longitude" => "-111.98784")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.58177", "longitude" => "-111.92134")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Nancy")->setLastName("Kim");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Dermatology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spectrum Dermatology")), "latitude" => "33.58177", "longitude" => "-111.92134")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Spine and Orthopedic Specialists
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Todd")->setLastName("Doerr");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ortho - Spine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")), "latitude" => "33.60797", "longitude" => "-111.71666")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")), "latitude" => "33.67300", "longitude" => "-111.92368")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Cory")->setLastName("Nelson");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")), "latitude" => "33.60797", "longitude" => "-111.71666")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine and Orthopedic Specialists")), "latitude" => "33.67300", "longitude" => "-111.92368")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Spine Institute of Arizona
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Edward")->setLastName("Dohring");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ortho - Spine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.29721", "longitude" => "-111.99617")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.65519", "longitude" => "-112.20053")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.57329", "longitude" => "-111.88601")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Mark")->setLastName("Wang");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ortho - Spine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.29721", "longitude" => "-111.99617")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.65519", "longitude" => "-112.20053")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.57329", "longitude" => "-111.88601")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Paul")->setLastName("Gause");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ortho - Spine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.65519", "longitude" => "-112.20053")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.28603", "longitude" => "-111.74939")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Spine Institute of Arizona")), "latitude" => "33.57329", "longitude" => "-111.88601")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+
+		/**
+		 * Stephen R. Rosenthal M.D.
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stephen")->setLastName("Rosenthal");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Stephen R. Rosenthal M.D.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Stephen R. Rosenthal M.D.")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Steven H. Turkeltaub, MD, PC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stephen")->setLastName("Turkeltaub");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Plastic Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Steven H. Turkeltaub, MD, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Steven H. Turkeltaub, MD, PC")), "latitude" => "33.58024", "longitude" => "-111.88379")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Talus in Motion
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Serrina")->setLastName("Yozsa");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Podiatry")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Talus in Motion")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Talus in Motion")), "latitude" => "33.49364", "longitude" => "-111.92628")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Tara Brodkin M.D.
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Tara")->setLastName("Brodkin");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tara Brodkin M.D.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tara Brodkin M.D.")), "latitude" => "33.58561", "longitude" => "-111.88497")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Tatum Highlands Medical Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Peter")->setLastName("Levins");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Highlands Medical Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Highlands Medical Associates")), "latitude" => "33.72520", "longitude" => "-111.97795")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Tatum Internal Medicine and Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Vincent")->setLastName("Cariati");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Internal Medicine and Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Internal Medicine and Associates")), "latitude" => "33.65445", "longitude" => "-111.98035")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("George")->setLastName("Landrum");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Internal Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Internal Medicine and Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Tatum Internal Medicine and Associates")), "latitude" => "33.65445", "longitude" => "-111.98035")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * The Heart Clinic PC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ramy")->setLastName("Doss");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")), "latitude" => "33.57900", "longitude" => "-111.87944")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")), "latitude" => "33.82086", "longitude" => "-111.92416")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Imad")->setLastName("Khaled");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Heart Clinic PC")), "latitude" => "33.57900", "longitude" => "-111.87944")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * The Insomnia and Sleep Institute of Arizona
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ruchir")->setLastName("Patel");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Sleep Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Insomnia and Sleep Institute of Arizona")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Insomnia and Sleep Institute of Arizona")), "latitude" => "33.64277", "longitude" => "-111.90017")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * The Pediatric Endocrine and Diabetes Clinic, PC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Mahmoud")->setLastName("Kabbani");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pediatric Endocrinology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")), "latitude" => "33.48003", "longitude" => "-112.07895")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")), "latitude" => "33.65186", "longitude" => "-111.92970")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "The Pediatric Endocrine and Diabetes Clinic, PC")), "latitude" => "33.48038", "longitude" => "-112.25896")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+
+		/**
+		 * Urology Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bruce")->setLastName("Kletscher");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Urology Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Urology Associates")), "latitude" => "33.48700", "longitude" => "-112.05408")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Anesthesiology Consultants
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Kerry")->setLastName("Ando");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology, Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stuart")->setLastName("Bass");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Charles")->setLastName("Beaulieu");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Tom")->setLastName("Beer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Timothy")->setLastName("Berger");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Srinivas")->setLastName("Bollimpalli");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("John")->setLastName("Borrego");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Andrew")->setLastName("Brewer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Kurt")->setLastName("Budenbender");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Robert")->setLastName("Chavez");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lawrence")->setLastName("Drewsen");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brad")->setLastName("Emershad");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("James")->setLastName("Fleck");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Gee");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("James")->setLastName("Gilbert");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Eric")->setLastName("Gordon");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Alan")->setLastName("Greenberg");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ryan")->setLastName("Huffman");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Kallmeyer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lee")->setLastName("Kimball");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Andy")->setLastName("Lee");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ethan")->setLastName("Lu");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Manos");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Aubrey")->setLastName("Maze");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Meraj")->setLastName("Mohiuddin");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Greg")->setLastName("Morris");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("William")->setLastName("Nordlie");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Raymond")->setLastName("Oakes");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stuart")->setLastName("Osmussen");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Ozer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Jon")->setLastName("Pace");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Scott")->setLastName("Pearce");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bruce")->setLastName("Puryear");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Michael")->setLastName("Ray");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Joseph")->setLastName("Sandor");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brent")->setLastName("Silver");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stephen")->setLastName("Smith");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Michael")->setLastName("Stearns");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Gregory")->setLastName("Thorley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Matthew")->setLastName("Waldbusser");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brennan")->setLastName("Watkins");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brian")->setLastName("Williams");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Edward")->setLastName("Wintergalen");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Douglas")->setLastName("Wright");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Yee");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Anesthesiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Anesthesiology Consultants")), "latitude" => "33.46855", "longitude" => "-112.07508")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley ENT, PC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Don")->setLastName("Burgio");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear, Nose, and Throat")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.65519", "longitude" => "-112.20053")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.58481", "longitude" => "-111.88463")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Timothy")->setLastName("Kelsch");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear, Nose, and Throat")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.67102", "longitude" => "-111.92038")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.48898", "longitude" => "-111.92584")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Shepherd")->setLastName("Pryor");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear, Nose, and Throat")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.67102", "longitude" => "-111.92038")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.58560", "longitude" => "-111.88839")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Jordan")->setLastName("Weiner");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear, Nose, and Throat")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.67102", "longitude" => "-111.92038")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.58560", "longitude" => "-111.88839")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Hurley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Ear, Nose, and Throat")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.37702", "longitude" => "-111.87933")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley ENT, PC")), "latitude" => "33.58481", "longitude" => "-111.88463")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Integrated Pain, PLLC
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Steven")->setLastName("Eisenfeld");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Integrated Pain, PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Integrated Pain, PLLC")), "latitude" => "33.48898", "longitude" => "-111.92584")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Integrated Pain, PLLC")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Integrated Pain, PLLC")), "latitude" => "33.57556", "longitude" => "-111.88532")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley OB/GYN Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Dennis")->setLastName("Eckel");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley OB/GYN Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley OB/GYN Associates")), "latitude" => "33.48898", "longitude" => "-111.92584")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Jean")->setLastName("Moon");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "OB/GYN")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley OB/GYN Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley OB/GYN Associates")), "latitude" => "33.48898", "longitude" => "-111.92584")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Pain Consultants
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Mark")->setLastName("Spiro");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.57833", "longitude" => "-111.88141")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Monica")->setLastName("Torres");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management, Physical Medicine and Rehab")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.57833", "longitude" => "-111.88141")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.46335", "longitude" => "-112.06405")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.64002", "longitude" => "-111.96407")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Joseph")->setLastName("Curletta");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.46335", "longitude" => "-112.06405")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Samara")->setLastName("Shipon");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.46335", "longitude" => "-112.06405")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.29061", "longitude" => "-111.87809")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$practicesHasPhysicians_3 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_3->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.28603", "longitude" => "-111.74939")));
+		$manager->persist($practicesHasPhysicians_3);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("William")->setLastName("Thompson");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.29061", "longitude" => "-111.87809")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.28603", "longitude" => "-111.74939")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Choi");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.64002", "longitude" => "-111.96407")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ashu")->setLastName("Goyle");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.64002", "longitude" => "-111.96407")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Choi");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.61104", "longitude" => "-112.20499")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Adam")->setLastName("Kramer");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.61104", "longitude" => "-112.20499")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Marc")->setLastName("Soloman");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Pain Management")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.61104", "longitude" => "-112.20499")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Pain Consultants")), "latitude" => "33.47800", "longitude" => "-112.26038")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Surgical Clinics
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Alan")->setLastName("Bornstein");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.64026", "longitude" => "-111.99990")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Laura")->setLastName("Champagne");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bradford")->setLastName("Doxey");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.64026", "longitude" => "-111.99990")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Rick")->setLastName("Low");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.64026", "longitude" => "-111.99990")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Francisco")->setLastName("Rodriguez");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "General Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.57927", "longitude" => "-111.88255")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Surgical Clinics")), "latitude" => "33.64026", "longitude" => "-111.99990")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Urogynecology Associates, Ltd
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Shazia")->setLastName("Malik");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urogynecology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urogynecology Associates, Ltd")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urogynecology Associates, Ltd")), "latitude" => "33.53124", "longitude" => "-112.04664")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Paul")->setLastName("Marshburn");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urogynecology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urogynecology Associates, Ltd")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urogynecology Associates, Ltd")), "latitude" => "33.53124", "longitude" => "-112.04664")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Valley Urologic Associates
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Shawn")->setLastName("Blick");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")), "latitude" => "33.46390", "longitude" => "-112.35101")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")), "latitude" => "33.63850", "longitude" => "-111.99909")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lipika")->setLastName("McCauley");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")), "latitude" => "33.65857", "longitude" => "-112.20305")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Valley Urologic Associates")), "latitude" => "33.63850", "longitude" => "-111.99909")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+
+		/**
+		 * Vincent J. Russo, M.D.
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Vincent")->setLastName("Russo");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Orthopedic Surgeon")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Vincent J. Russo, M.D.")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Vincent J. Russo, M.D.")), "latitude" => "33.58024", "longitude" => "-111.88379")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Virginia G. Piper Cancer Center Clinical Trials
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Hani")->setLastName("Babiker");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Hematology-Oncology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")), "latitude" => "33.58140", "longitude" => "-111.88313")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Erkut")->setLastName("Borazanci");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Oncology - Clinical Trials")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")), "latitude" => "33.58140", "longitude" => "-111.88313")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Samiel")->setLastName("Ejadi");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Oncology - Clinical Trials")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")), "latitude" => "33.58140", "longitude" => "-111.88313")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Jasgit")->setLastName("Sachdev");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Oncology - Clinical Trials")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Virginia G. Piper Cancer Center Clinical Trials")), "latitude" => "33.58140", "longitude" => "-111.88313")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Affiliated Urologists
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Ali")->setLastName("Borhan");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.67619", "longitude" => "-111.97836")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.48678", "longitude" => "-112.07169")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Cooper");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.67619", "longitude" => "-111.97836")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.48678", "longitude" => "-112.07169")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Mark")->setLastName("Hong");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.67619", "longitude" => "-111.97836")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.48678", "longitude" => "-112.07169")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Stephen")->setLastName("Ponas");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.67619", "longitude" => "-111.97836")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.48678", "longitude" => "-112.07169")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Daniel")->setLastName("Jaffee");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Urology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Affiliated Urologists")), "latitude" => "33.48678", "longitude" => "-112.07169")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Arizona Center for Hematology and Oncology
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Kimberli")->setLastName("Cox");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.6654986", "longitude" => "-112.1204477")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.608436", "longitude" => "-112.257088")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Brenda")->setLastName("Moorthy");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.6654986", "longitude" => "-112.1204477")));
+		$manager->persist($practicesHasPhysicians);
+
+		$practicesHasPhysicians_2 = new PracticesHasPhysicians();
+		$practicesHasPhysicians_2->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.608436", "longitude" => "-112.257088")));
+		$manager->persist($practicesHasPhysicians_2);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Sommer")->setLastName("Gunia");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.577451", "longitude" => "-111.875753")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Linda")->setLastName("Liu");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.577451", "longitude" => "-111.875753")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Lise")->setLastName("Walker");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.577451", "longitude" => "-111.875753")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Victor")->setLastName("Zannis");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Breast Surgery")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")), "latitude" => "33.577451", "longitude" => "-111.875753")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Desert Ridge Family Physicians
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("Emily")->setLastName("Edwards");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Family Medicine")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Ridge Family Physicians")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Desert Ridge Family Physicians")), "latitude" => "33.67568", "longitude" => "-111.97936")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+
+		/**
+		 * Cardiovascular Institute of Scottsdale
+		 */
+
+		$physician = new Physicians();
+		$physician->setFirstName("David")->setLastName("Rashduni");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")), "latitude" => "33.57821", "longitude" => "-111.88016")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Michael")->setLastName("Maher");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")), "latitude" => "33.57821", "longitude" => "-111.88016")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Karen")->setLastName("Stark");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")), "latitude" => "33.57821", "longitude" => "-111.88016")));
+		$manager->persist($practicesHasPhysicians);
+
+		$manager->flush();
+
+		$physician = new Physicians();
+		$physician->setFirstName("Bernard")->setLastName("Villegas");
+		$manager->persist($physician);
+
+		$physicianHasSpecialties = new PhysiciansHasSpecialties();
+		$physicianHasSpecialties->setPhysician($physician)->setSpecialty($manager->getRepository("SiteBundle:Specialties")->findOneBy(array("specialty" => "Cardiology")));
+		$manager->persist($physicianHasSpecialties);
+
+		$practicesHasPhysicians = new PracticesHasPhysicians();
+		$practicesHasPhysicians->setPhysician($physician)->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")))->setPracticeLocation($manager->getRepository("SiteBundle:PracticesLocations")->findOneBy(array("practice" => $manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Cardiovascular Institute of Scottsdale")), "latitude" => "33.57821", "longitude" => "-111.88016")));
 		$manager->persist($practicesHasPhysicians);
 
 		$manager->flush();

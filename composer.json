@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+        "doctrine/orm": "2.3.*",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.4",
         "symfony/assetic-bundle": "~2.3",
@@ -27,7 +27,7 @@
         "jms/serializer-bundle": "0.13.*",
         "friendsofsymfony/rest-bundle": "^1.7",
         "salva/pdfjs-bundle": "1.0.*@dev",
-        "symfony-cmf/symfony-cmf": "1.0.1",
+        "symfony-cmf/symfony-cmf": "1.0.*",
         "jackalope/jackalope-doctrine-dbal": "1.0.*",
         "doctrine/phpcr-bundle": "1.0.*",
         "doctrine/phpcr-odm": "1.0.*",
