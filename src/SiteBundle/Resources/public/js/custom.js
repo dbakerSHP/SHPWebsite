@@ -1347,14 +1347,14 @@ function practiceDirectorySearch() {
 					if (search_val_exists) {
 						if (
 							(search_practice_val === null || practice_name.search(search_practice_val) != -1)
-							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val()) != -1)
-							&& (search_suite_val === null || findPartialStrInArray(suite_list, $('#search-suite').val()) != -1)
-							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val()) != -1)
-							&& (search_state_val === null || findPartialStrInArray(state_list, $('#search-state').val()) != -1)
-							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val()) != -1)
+							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
+							&& (search_suite_val === null || findPartialStrInArray(suite_list, $('#search-suite').val().toLowerCase()) != -1)
+							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
+							&& (search_state_val === null || findPartialStrInArray(state_list, $('#search-state').val().toLowerCase()) != -1)
+							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val().toLowerCase()) != -1)
 							//&& (search_phone_val === null || findPartialStrInArray(phone_list, $('#search-phone').val()) != -1)
-							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val()) != -1)
-							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val()) != -1)
+							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
+							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val().toLowerCase()) != -1)
 						) {
 
 							$('#results').find('.error').hide();

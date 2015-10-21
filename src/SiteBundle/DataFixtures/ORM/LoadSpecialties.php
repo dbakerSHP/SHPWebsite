@@ -46,6 +46,11 @@ class LoadSpecialties extends AbstractFixture implements OrderedFixtureInterface
 		$manager->flush();
 
 		$specialty = new Specialties();
+		$specialty->setSpecialty("Breast Surgery");
+		$manager->persist($specialty);
+		$manager->flush();
+
+		$specialty = new Specialties();
 		$specialty->setSpecialty("Breast Surgery, General Surgery");
 		$manager->persist($specialty);
 		$manager->flush();

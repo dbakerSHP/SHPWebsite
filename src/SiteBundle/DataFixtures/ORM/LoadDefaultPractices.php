@@ -607,6 +607,11 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 		$manager->flush();
 
 		$practice = new Practices();
+		$practice->setPractice("HonorHealth Medical Group - 92nd Street");
+		$manager->persist($practice);
+		$manager->flush();
+
+		$practice = new Practices();
 		$practice->setPractice("HonorHealth Medical Group - Thompson Peak");
 		$manager->persist($practice);
 		$manager->flush();
@@ -793,6 +798,11 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 
 		$practice = new Practices();
 		$practice->setPractice("Pinnacle Oncology Hematology");
+		$manager->persist($practice);
+		$manager->flush();
+
+		$practice = new Practices();
+		$practice->setPractice("Arizona Center for Hematology and Oncology");
 		$manager->persist($practice);
 		$manager->flush();
 
@@ -1120,13 +1130,6 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 		$practice->setPractice("Specialty Orthopaedic Surgery");
 		$manager->persist($practice);
 		$manager->flush();
-
-
-
-
-//		$practice->setPractice("Vincent J. Russo, M.D. ")->setAddress1("10290 N. 92nd St.")->setAddress2("Ste. 103")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58024")->setLongitude("-111.88379")->setPhone("(480) 860-1322");
-//		$practice->setPractice("Virginia G. Piper Cancer Center Clinical Trials")->setAddress1("10510 N. 92nd St.")->setAddress2("Ste. 200")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58140")->setLongitude("-111.88313")->setPhone("(480) 323-1350");
-//		$practice->setPractice("Weinberg Gastrointestinal Associates")->setAddress1("4915 E. Baseline Rd.")->setAddress2("Ste. 126")->setCity("Gilbert")->setState("AZ")->setZip("85234")->setLatitude("33.37849")->setLongitude("-111.72564")->setPhone("(480) 745-3690");
 
 	}
 

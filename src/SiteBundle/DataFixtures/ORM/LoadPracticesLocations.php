@@ -1068,6 +1068,11 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 		$manager->flush();
 
 		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Medical Group - 92nd Street")))->setAddress1("10277 N. 92nd St.")->setAddress2("Suite 101")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.578634")->setLongitude("-111.879481")->setPhone("(480) 609-1444");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "HonorHealth Medical Group - Thompson Peak")))->setAddress1("20401 N. 73rd St.")->setAddress2("Ste. 105")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.67300")->setLongitude("-111.92368")->setPhone("(480) 882-7500");
 		$manager->persist($practiceLocation);
 		$manager->flush();
@@ -1379,6 +1384,21 @@ class LoadPracticesLocations extends AbstractFixture implements OrderedFixtureIn
 
 		$practiceLocation = new PracticesLocations();
 		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Pinnacle Oncology Hematology")))->setAddress1("9055 E. Del Camino Dr.")->setAddress2("Ste. 100")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.55548")->setLongitude("-111.88692")->setPhone("(480) 922-4600");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setAddress1("19646 N. 27th Ave.")->setAddress2("Ste. 403")->setCity("Phoenix")->setState("AZ")->setZip("85027")->setLatitude("33.6654986")->setLongitude("-112.1204477")->setPhone("(602) 374-3440");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setAddress1("9179 W. Thunderbird Rd.")->setAddress2("Ste. 103")->setCity("Peoria")->setState("AZ")->setZip("85381")->setLatitude("33.608436")->setLongitude("-112.257088")->setPhone("(602) 374-3440");
+		$manager->persist($practiceLocation);
+		$manager->flush();
+
+		$practiceLocation = new PracticesLocations();
+		$practiceLocation->setPractice($manager->getRepository("SiteBundle:Practices")->findOneBy(array("practice" => "Arizona Center for Hematology and Oncology")))->setAddress1("9965 N. 95th St.")->setAddress2("Ste. 105")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.577451")->setLongitude("-111.875753")->setPhone("(480) 629-8390");
 		$manager->persist($practiceLocation);
 		$manager->flush();
 
