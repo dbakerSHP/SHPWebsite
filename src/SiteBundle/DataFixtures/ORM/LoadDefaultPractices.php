@@ -1124,73 +1124,9 @@ class LoadDefaultPractices extends AbstractFixture implements OrderedFixtureInte
 
 
 
-//		$practice->setPractice("The Insomnia and Sleep Institute of Arizona")->setAddress1("8330 E. Hartford Drive")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.64277")->setLongitude("-111.90017")->setPhone("(480) 745-3547");
-//		$practice->setPractice("The Pediatric Endocrine and Diabetes Clinic, PC")->setAddress1("333 West Thomas Road")->setAddress2("Suite 201")->setCity("Phoenix")->setState("AZ")->setZip("85013")->setLatitude("33.48003")->setLongitude("-112.07895")->setPhone("(602) 277-1117");
-//		$practice->setPractice("The Pediatric Endocrine and Diabetes Clinic, PC")->setAddress1("7010 East Chauncey Lane")->setAddress2("Suite 210")->setCity("Phoenix")->setState("AZ")->setZip("85054")->setLatitude("33.65186")->setLongitude("-111.92970")->setPhone("(602) 277-1117");
-//		$practice->setPractice("The Pediatric Endocrine and Diabetes Clinic, PC")->setAddress1("9250 West Thomas Road")->setAddress2("Suite 150")->setCity("Phoenix")->setState("AZ")->setZip("85037")->setLatitude("33.48038")->setLongitude("-112.25896")->setPhone("(602) 277-1117");
-//		$practice->setPractice("Urology Associates")->setAddress1("10301 North 92nd Street")->setAddress2("Ste. 101")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57954")->setLongitude("-111.88126")->setPhone("(480) 661-2662");
-//		$practice->setPractice("Urology Associates")->setAddress1("1313 East Osborne Road")->setAddress2("Ste. B150")->setCity("Phoenix")->setState("AZ")->setZip("85014")->setLatitude("33.48700")->setLongitude("-112.05408")->setPhone("(602) 264-4431");
-//		$practice->setPractice("Valley Anesthesiology Consultants")->setAddress1("1850 N. Central Ave.")->setAddress2("Ste. 1600")->setCity("Phoenix")->setState("AZ")->setZip("85004")->setLatitude("33.46855")->setLongitude("-112.07508")->setPhone("(602) 262-8916");
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("18700 North 64th Drive")->setAddress2("Suite 201")->setCity("Glendale")->setState("AZ")->setZip("85308")->setLatitude("33.65519")->setLongitude("-112.20053")->setPhone("(623) 566-4718");
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("20201 North Scottsdale Healthcare Drive")->setAddress2("Suite 230")->setCity("Scottsdale")->setState("AZ")->setZip("85255")->setLatitude("33.67102")->setLongitude("-111.92038")->setPhone("(480) 513-0336");
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("2058 South Dobson Road")->setAddress2("Suite 10")->setCity("Mesa")->setState("AZ")->setZip("85202")->setLatitude("33.37702")->setLongitude("-111.87933")->setPhone("(480) 614-0499");
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("3501 North Scottsdale Road")->setAddress2("Suite 160")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 273-8448");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("8952 East Desert Cove Ave.")->setAddress2("Suite 205")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.58560")->setLongitude("-111.88839")->setPhone("(480) 273-8688");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley ENT, PC")->setAddress1("9097 East Desert Cove Ave.")->setAddress2("Suite 260")->setCity("Scottsdale")->setState("AZ")->setZip("85260")->setLatitude("33.58481")->setLongitude("-111.88463")->setPhone("(480) 614-0499");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley Integrated Pain, PLLC")->setAddress1("3501 North Scottsdale Road")->setAddress2("Suite 221")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 422-8510");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley Integrated Pain, PLLC")->setAddress1("9977 North 90th Street")->setAddress2("Suite 240")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57556")->setLongitude("-111.88532")->setPhone("(480) 422-8510");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley OB/GYN Associates")->setAddress1("3501 N. Scottsdale Rd.")->setAddress2("Ste. 280")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48898")->setLongitude("-111.92584")->setPhone("(480) 945-6583");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("10200 North 92nd Street")->setAddress2("Ste. 101")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57833")->setLongitude("-111.88141")->setPhone("(480) 889-0255");
-//		$manager->flush();
-//
-//		$manager->persist($practice);
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("1331 North 7th Street")->setAddress2("Ste 355")->setCity("Phoenix")->setState("AZ")->setZip("85006")->setLatitude("33.46335")->setLongitude("-112.06405")->setPhone("(480) 991-3005");
-//		$manager->flush();
-//
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("2095 West Pecos Road")->setAddress2("Ste A8")->setCity("Chandler")->setState("AZ")->setZip("85224")->setLatitude("33.29061")->setLongitude("-111.87809")->setPhone("(480) 889-0255");
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("3301 North Miller Road")->setAddress2("Ste 120")->setCity("Scottsdale")->setState("AZ")->setZip("85251")->setLatitude("33.48638")->setLongitude("-111.91711")->setPhone("(480) 889-0255");
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("3483 South Mercy Road")->setAddress2("Ste 102")->setCity("Gilbert")->setState("AZ")->setZip("85297")->setLatitude("33.28603")->setLongitude("-111.74939")->setPhone("(480) 889-0255");
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("5425 East Bell Road")->setAddress2("Ste 115")->setCity("Scottsdale")->setState("AZ")->setZip("85254")->setLatitude("33.64002")->setLongitude("-111.96407")->setPhone("(480) 991-3005");
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("6780 West Thunderbird Road")->setAddress2("Ste A105")->setCity("Peoria")->setState("AZ")->setZip("85381")->setLatitude("33.61104")->setLongitude("-112.20499")->setPhone("(602) 242-5040");
-//		$practice->setPractice("Valley Pain Consultants")->setAddress1("9305 West Thomas Road")->setAddress2("Ste 500")->setCity("Phoenix")->setState("AZ")->setZip("85037")->setLatitude("33.47800")->setLongitude("-112.26038")->setPhone("(602) 242-5040");
-//		$practice->setPractice("Valley Radiology")->setAddress1("13555 W. McDowell Rd.")->setAddress2("Ste. 106")->setCity("Goodyear")->setState("AZ")->setZip("85395")->setLatitude("33.46390")->setLongitude("-112.35101")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("16641 N. 40th St.")->setAddress2("Ste. 1")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63857")->setLongitude("-111.99560")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("5310 W. Thunderbird Rd.")->setAddress2("Ste. 100")->setCity("Glendale")->setState("AZ")->setZip("85306")->setLatitude("33.61156")->setLongitude("-112.17488")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("5601 W. Eugie Ave.")->setAddress2("Ste. 102")->setCity("Glendale")->setState("AZ")->setZip("85304")->setLatitude("33.60672")->setLongitude("-112.18093")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("5605 W. Eugie Ave.")->setAddress2("Ste. 110")->setCity("Glendale")->setState("AZ")->setZip("85304")->setLatitude("33.60708")->setLongitude("-112.18150")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("5757 W. Thunderbird Rd.")->setAddress2("Ste. W-101 and W-100")->setCity("Glendale")->setState("AZ")->setZip("85306")->setLatitude("33.60967")->setLongitude("-112.18258")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Radiology")->setAddress1("9305 W. Thomas Rd.")->setAddress2("Ste. 100 and 200")->setCity("Phoenix")->setState("AZ")->setZip("85037")->setLatitude("33.47800")->setLongitude("-112.26038")->setPhone("(480) 425-5000");
-//		$practice->setPractice("Valley Surgical Clinics")->setAddress1("10210 N. 92nd St.")->setAddress2("Ste. 302")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.57927")->setLongitude("-111.88255")->setPhone("(602) 996-4747");
-//		$practice->setPractice("Valley Surgical Clinics")->setAddress1("3805 E. Bell Rd.")->setAddress2("Ste. 4800")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.64026")->setLongitude("-111.99990")->setPhone("(602) 996-4747");
-//		$practice->setPractice("Valley Surgical Clinics")->setAddress1("9250 N. 3rd St.")->setAddress2("Ste. 3015")->setCity("Phoenix")->setState("AZ")->setZip("85020")->setLatitude("33.57017")->setLongitude("-112.07013")->setPhone("(602) 996-4747");
-//		$practice->setPractice("Valley Urogynecology Associates, Ltd")->setAddress1("1616 E Maryland Avenue")->setCity("Phoenix")->setState("AZ")->setZip("85016")->setLatitude("33.53124")->setLongitude("-112.04664")->setPhone("(602) 788-1521");
-//		$practice->setPractice("Valley Urologic Associates")->setAddress1("13555 W McDowell Road")->setAddress2("Ste 304")->setCity("Goodyear")->setState("AZ")->setZip("85395")->setLatitude("33.46390")->setLongitude("-112.35101")->setPhone("(623) 935-5522");
-//		$practice->setPractice("Valley Urologic Associates")->setAddress1("183699 N 67th Avenue")->setAddress2("Ste 230")->setCity("Glendale")->setState("AZ")->setZip("85308")->setLatitude("33.65857")->setLongitude("-112.20305")->setPhone("(623) 935-5522");
-//		$practice->setPractice("Valley Urologic Associates")->setAddress1("3815 E Bell Road")->setAddress2("Ste 3600")->setCity("Phoenix")->setState("AZ")->setZip("85032")->setLatitude("33.63850")->setLongitude("-111.99909")->setPhone("(623) 935-5522");
 //		$practice->setPractice("Vincent J. Russo, M.D. ")->setAddress1("10290 N. 92nd St.")->setAddress2("Ste. 103")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58024")->setLongitude("-111.88379")->setPhone("(480) 860-1322");
 //		$practice->setPractice("Virginia G. Piper Cancer Center Clinical Trials")->setAddress1("10510 N. 92nd St.")->setAddress2("Ste. 200")->setCity("Scottsdale")->setState("AZ")->setZip("85258")->setLatitude("33.58140")->setLongitude("-111.88313")->setPhone("(480) 323-1350");
 //		$practice->setPractice("Weinberg Gastrointestinal Associates")->setAddress1("4915 E. Baseline Rd.")->setAddress2("Ste. 126")->setCity("Gilbert")->setState("AZ")->setZip("85234")->setLatitude("33.37849")->setLongitude("-111.72564")->setPhone("(480) 745-3690");
-//		$manager->persist($practice);
-//		$manager->flush();
 
 	}
 
