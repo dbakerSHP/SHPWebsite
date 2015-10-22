@@ -1476,6 +1476,12 @@ $(document).ready(function () {
 	});
 
 
+	$('#physician-search-btn').on('click', function(e) {
+		e.preventDefault();
+		clearTimeout(timer);
+		timer = setTimeout(practiceDirectorySearch, timer_interval);
+	});
+
 	$('#myMapModal').on('shown.bs.modal', function (e) {
 		var element = $(e.relatedTarget);
 		var data = element.data("coordinates").split(',');

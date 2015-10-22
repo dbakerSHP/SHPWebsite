@@ -5203,6 +5203,9 @@ ul.tags li{
 	padding: 8px 12px;
 	width: 100%;
 }
+button.full-width {
+	width: 100%;
+}
 textarea.form-control {
 	line-height: 2em;
 }
