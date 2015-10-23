@@ -19,7 +19,7 @@ executive_team:
     path:     /executive-team
     defaults: { _controller: SiteBundle:About:executiveTeam }
 
-board_of_directors:
+board_of_managers:
     path:     /board-of-managers
     defaults: { _controller: SiteBundle:About:boardOfDirectors }
 

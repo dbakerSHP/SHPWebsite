@@ -40,7 +40,7 @@ class Builder extends ContainerAware
 		$menu['About Us']['Who is SHP']->setChildrenAttributes(array('class' => 'dropdown-menu'))
 			->addChild('Mission / Vision / Values', array('route' => 'mission_vision_values'))->getParent()
 			->addChild('Executive Team', array('route' => 'executive_team'))->getParent()
-			->addChild('Board of Directors', array('route' => 'board_of_directors'))->getParent()
+			->addChild('Board of Managers', array('route' => 'board_of_managers'))->getParent()
 		;
 
 		/**
