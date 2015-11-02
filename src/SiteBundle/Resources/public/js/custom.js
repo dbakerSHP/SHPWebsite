@@ -1211,22 +1211,6 @@ function initializeGeoCode(address) {
 	});
 }
 
-
-var coords;
-function someFunction(addresses, callback) {
-	var geocoder = new google.maps.Geocoder();
-	geocoder.geocode({'address': addresses}, function (results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			//coords.length = 0;
-			coords = results[0].geometry.location;
-			callback();
-		}
-		else {
-			throw('No results found: ' + status);
-		}
-	});
-}
-
 function findPartialStrInArray(array, target) {
 	for (var i = 0; i < array.length; i++) {
 		var item = array[i];
@@ -1238,6 +1222,43 @@ function findPartialStrInArray(array, target) {
 	}
 	return -1;
 }
+
+
+
+function hesapla(meineLongitude, meineLatitude, long1, lat1) {
+	erdRadius = 6371;
+
+	meineLongitude = meineLongitude * (Math.PI / 180);
+	meineLatitude = meineLatitude * (Math.PI / 180);
+	long1 = long1 * (Math.PI / 180);
+	lat1 = lat1 * (Math.PI / 180);
+
+	x0 = meineLongitude * erdRadius * Math.cos(meineLatitude);
+	y0 = meineLatitude * erdRadius;
+
+	x1 = long1 * erdRadius * Math.cos(lat1);
+	y1 = lat1 * erdRadius;
+
+	dx = x0 - x1;
+	dy = y0 - y1;
+
+	d = Math.sqrt((dx * dx) + (dy * dy));
+
+
+	return Math.round(d * 1000);
+}
+
+
+
+
+function getFullDataList(data) {
+	$.each(data, function () {
+		$.each(this, function (key, value) {
+			return value;
+		});
+	});
+}
+
 
 function practiceDirectorySearch() {
 
@@ -1296,16 +1317,31 @@ function practiceDirectorySearch() {
 		}
 	});
 
-	var api_practices = '/api/physician-directory';
+	var api_practices;
+
+	if ( !$('#search-zip').val() ) {
+		api_practices = '/api/physician-directory';
+	} else {
+		api_practices = '/api/physician-directory/' + $('#search-zip').val();
+	}
+
 	var output = '';
 	var count = 1;
 
+	//var fullList = $.getJSON(api_practices, getFullDataList);
+	//console.log(fullList);
+
 	if (!search_criteria.length) {
+
 		$('#results').find('.error').hide();
 		$('#results').removeClass('page-section').find('.container').html('');
+
 	} else {
+
 		$.getJSON(api_practices, function (data) {
+
 			$.each(data, function () {
+
 				$.each(this, function (key, value) {
 
 					var practice_name = null,
@@ -1333,8 +1369,6 @@ function practiceDirectorySearch() {
 						});
 					}
 
-					//console.log(location_list);
-
 					if (value.physicians) {
 						$.each(value.physicians, function (key, value) {
 							physician_list.push(value.first_name + ' ' + value.last_name);
@@ -1342,17 +1376,13 @@ function practiceDirectorySearch() {
 						});
 					}
 
-					//console.log(physician_list);
-
 					if (search_val_exists) {
+
 						if (
 							(search_practice_val === null || practice_name.search(search_practice_val) != -1)
 							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
-							&& (search_suite_val === null || findPartialStrInArray(suite_list, $('#search-suite').val().toLowerCase()) != -1)
 							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
-							&& (search_state_val === null || findPartialStrInArray(state_list, $('#search-state').val().toLowerCase()) != -1)
-							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val().toLowerCase()) != -1)
-							//&& (search_phone_val === null || findPartialStrInArray(phone_list, $('#search-phone').val()) != -1)
+							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val()) != -1)
 							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
 							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val().toLowerCase()) != -1)
 						) {
@@ -1372,6 +1402,41 @@ function practiceDirectorySearch() {
 							var fullAddress = '';
 
 							$.each(value.location, function (key, value) {
+
+
+
+
+
+								//var distanceObj = [],
+								//i = 0;
+
+								//var fullList;
+								//$.getJSON(api_practices, function (json) {
+								//	fullList = json;
+								//});
+
+								//var myData = JSON.parse(fullList);
+
+								//console.log(fullList);
+
+								//$.each(fullList, function (a, b) {
+								//	distanceObj[i] = { distance: hesapla(value.longitude, value.latitude, b.location.longitude, b.location.latitude), location: a };
+								//	++i;
+								//});
+
+								//distanceObj.sort(function(a,b) {
+								//	return parseInt(a.distance) - parseInt(b.distance)
+								//});
+								//
+								//$.each(distanceObj, function(a, b) {
+								//	$('#groups').append('<li>' + b.location + ': ' + b.distance + 'm</li>');
+								//});
+								//
+								//console.log(distanceObj);
+
+
+
+
 
 								fullAddress += '				<p>' + value.address1;
 								if (value.address2) {
@@ -1408,23 +1473,32 @@ function practiceDirectorySearch() {
 									output += '	</div>';
 								}
 								output += '</address>';
+
 							});
 
 							count++;
 
 						}
+
 					}
+
 				});
+
 			});
+
 			if (output !== '') {
 				$('#results').addClass('page-section').find('.container').html(output);
 			} else {
 				$('#results').addClass('page-section').find('.container').html('<div class="col-sm-12 error"><h5>No results found</h5></div>');
 				$('#results').find('.error').show();
 			}
+
 		});
+
 		//GmapInit();
+
 	}
+
 }
 
 var timer;

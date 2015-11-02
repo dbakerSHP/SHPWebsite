@@ -51,6 +51,49 @@ class PhysicianAPIController extends FOSRestController
 		return $this->get('fos_rest.view_handler')->handle($view);
 	}
 
+
+	/**
+	 * @Get("/physician-directory/{postalCode}")
+	 */
+	public function apiAllPracticesAction($postalCode)
+	{
+		$practices = $this->getDoctrine()
+			->getRepository('SiteBundle:Practices')
+			->getAllPracticesWithZipRange($postalCode);
+
+		$joins = array(
+			'location' =>
+				array(
+					'location_id'=>'location_id',
+					'address1'=>'address1',
+					'address2'=>'address2',
+					'city'=>'city',
+					'state'=>'state',
+					'zip'=>'zip',
+					'phone'=>'phone',
+					'latitude'=>'latitude',
+					'longitude'=>'longitude'
+				),
+			'physicians' => array(
+				'physician_id' => 'physician_id',
+				'first_name' => 'first_name',
+				'last_name' => 'last_name',
+				'specialty' => 'specialty'
+			)
+		);
+
+		$practices = $this->create_join_array($practices, $joins, 'location_id');
+
+		$view = View::create()
+			->setFormat('json')
+			->setStatusCode(200)
+			->setData(['practices' => $practices])
+		;
+
+		return $this->get('fos_rest.view_handler')->handle($view);
+	}
+
+
 	/**
 	 * @Get("/physician-directory/practice/{practiceId}/{practiceLocationId}")
 	 */
