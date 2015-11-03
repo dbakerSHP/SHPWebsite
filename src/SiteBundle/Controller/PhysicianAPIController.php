@@ -55,7 +55,7 @@ class PhysicianAPIController extends FOSRestController
 	/**
 	 * @Get("/physician-directory/{postalCode}")
 	 */
-	public function apiAllPracticesAction($postalCode)
+	public function apiAllPracticesZipRangeAction($postalCode)
 	{
 		$practices = $this->getDoctrine()
 			->getRepository('SiteBundle:Practices')
