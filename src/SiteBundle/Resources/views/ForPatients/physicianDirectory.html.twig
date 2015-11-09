@@ -57,35 +57,40 @@
 						<div class="col-sm-12 text-left">
 							<h5>Search by:</h5>
 						</div>
+						<div class="col-sm-12 text-left">
+							<p><input type="radio" id="search-pcp" name="search-pcp" value="pcp" data-search="true" /> Search for PCP</p>
+							{#<input type="hidden" name="search-pcp-type[]" value="family medicine" />#}
+							{#<input type="hidden" name="search-pcp-type[]" value="internal medicine" />#}
+						</div>
 						<div class="col-xs-12 col-sm-6">
-							<p><input type="text" class="form-control input-lg" id="search-practice" data-search="true" placeholder="Practice"></p>
+							<p><input type="text" class="form-control input-lg" id="search-practice" data-search="true" placeholder="Practice" /></p>
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<p><input type="text" class="form-control input-lg" id="search-physician" data-search="true" placeholder="Physician First Name or Last Name"></p>
+							<p><input type="text" class="form-control input-lg" id="search-physician" data-search="true" placeholder="Physician First Name or Last Name" /></p>
 						</div>
 						<div class="col-xs-6 col-sm-3">
-							<p><input type="text" class="form-control input-lg" id="search-specialty" data-search="true" placeholder="Specialty"></p>
+							<p><input type="text" class="form-control input-lg" id="search-specialty" data-search="true" placeholder="Specialty" /></p>
 						</div>
 						{#<div class="col-xs-6 col-sm-2">#}
 							{#<p><input type="text" class="form-control input-lg" id="search-phone" data-search="true" placeholder="Phone"></p>#}
 						{#</div>#}
 						<div class="col-xs-12 col-sm-4 col-md-5">
-							<p><input type="text" class="form-control input-lg" id="search-address" data-search="true" placeholder="Street Address"></p>
+							<p><input type="text" class="form-control input-lg" id="search-address" data-search="true" placeholder="Street Address" /></p>
 						</div>
 						{#<div class="col-xs-6 col-sm-2 col-md-1">#}
 							{#<p><input type="text" class="form-control input-lg" id="search-suite" data-search="true" placeholder="Suite #"></p>#}
 						{#</div>#}
 						<div class="col-xs-6 col-sm-3 col-md-3">
-							<p><input type="text" class="form-control input-lg" id="search-city" data-search="true" placeholder="City"></p>
+							<p><input type="text" class="form-control input-lg" id="search-city" data-search="true" placeholder="City" /></p>
 						</div>
 						{#<div class="col-xs-4 col-sm-2 col-md-3">#}
 							{#<p><input type="text" class="form-control input-lg" id="search-state" data-search="true" placeholder="State"></p>#}
 						{#</div>#}
 						<div class="col-xs-6 col-sm-2 col-md-2">
-							<p><input type="text" class="form-control input-lg" id="search-zip" data-search="true" placeholder="Zip"></p>
+							<p><input type="text" class="form-control input-lg" id="search-zip" data-search="true" placeholder="Zip" /></p>
 						</div>
 						<div class="col-xs-12 col-sm-3 col-md-2">
-							<button type="button" id="physician-search-btn" class="btn btn-primary full-width"><i class="fa fa-search"></i> Search for PCP</button>
+							<button type="button" id="physician-search-btn" class="btn btn-primary full-width"><i class="fa fa-search"></i> Search Directory</button>
 						</div>
 					</form>
 				</div>

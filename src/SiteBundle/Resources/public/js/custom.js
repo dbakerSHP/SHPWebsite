@@ -1277,6 +1277,8 @@ function practiceDirectorySearch() {
 	var search_city_val = null;
 	var search_state_val = null;
 	var search_zip_val = null;
+	var search_pcp_family_med = null;
+	var search_pcp_internal_med = null;
 
 	$.each(search, function () {
 		if ($(this).val()) {
@@ -1308,6 +1310,12 @@ function practiceDirectorySearch() {
 			}
 			if (field_id == 'search-zip') {
 				search_zip_val = new RegExp($(this).val(), "i");
+			}
+			if (field_id == 'search-pcp') {
+				if ( $('#search-pcp').is(':checked') ) {
+					search_pcp_family_med = 'family medicine';
+					search_pcp_internal_med = 'internal medicine';
+				}
 			}
 			search_val_exists = true;
 			search_criteria.push({
@@ -1383,6 +1391,8 @@ function practiceDirectorySearch() {
 							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
 							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
 							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val()) != -1)
+							&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1)
+							&& (search_pcp_internal_med === null || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
 							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
 							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val().toLowerCase()) != -1)
 						) {
@@ -1402,41 +1412,6 @@ function practiceDirectorySearch() {
 							var fullAddress = '';
 
 							$.each(value.location, function (key, value) {
-
-
-
-
-
-								//var distanceObj = [],
-								//i = 0;
-
-								//var fullList;
-								//$.getJSON(api_practices, function (json) {
-								//	fullList = json;
-								//});
-
-								//var myData = JSON.parse(fullList);
-
-								//console.log(fullList);
-
-								//$.each(fullList, function (a, b) {
-								//	distanceObj[i] = { distance: hesapla(value.longitude, value.latitude, b.location.longitude, b.location.latitude), location: a };
-								//	++i;
-								//});
-
-								//distanceObj.sort(function(a,b) {
-								//	return parseInt(a.distance) - parseInt(b.distance)
-								//});
-								//
-								//$.each(distanceObj, function(a, b) {
-								//	$('#groups').append('<li>' + b.location + ': ' + b.distance + 'm</li>');
-								//});
-								//
-								//console.log(distanceObj);
-
-
-
-
 
 								fullAddress += '				<p>' + value.address1;
 								if (value.address2) {
