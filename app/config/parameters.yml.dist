@@ -39,6 +39,6 @@ parameters:
     send_emails_cc: ~
     send_emails_bcc: ~
 
-    meta_keywords_default: "aco, accountable, care, organization, health, partners, scottsdale, arizona"
+    meta_keywords_default: "scottsdale health partners,shp,clinically,integrated,network,aco,accountable,care,organization,physician network,honorhealth,medical technology,care coordination,transitional care management,healthcare"
     meta_description_default: "Scottsdale Health Partners is a physician-led Clinical Integration Network and Accountable Care Organization. We are dedicated to improving patient health and reducing healthcare spend through collaboration, coordination, and communication in the community."
     meta_author_default: "omedix.com"
