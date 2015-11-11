@@ -1360,10 +1360,15 @@ function practiceDirectorySearch() {
 						zip_list = [],
 						phone_list = [],
 						physician_list = [],
-						specialty_list = [];
+						specialty_list = [],
+						distance = null;
 
 					if (value.practice) {
 						practice_name = value.practice;
+					}
+
+					if (value.distance) {
+						distance = Math.round(value.distance * 100) / 100;
 					}
 
 					if (value.location) {
@@ -1390,7 +1395,7 @@ function practiceDirectorySearch() {
 							(search_practice_val === null || practice_name.search(search_practice_val) != -1)
 							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
 							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
-							&& (search_zip_val === null || findPartialStrInArray(zip_list, $('#search-zip').val()) != -1)
+							&& (search_zip_val === null || value.distance <= 10)
 							&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1)
 							&& (search_pcp_internal_med === null || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
 							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
@@ -1434,6 +1439,9 @@ function practiceDirectorySearch() {
 								if (value.phone) {
 									output += '				<br/><a href="tel:' + value.phone + '">' + value.phone + '</a>';
 								}
+								if ($('#search-zip').val()) {
+									output += '				<br/>Distance From <strong>' + $('#search-zip').val() + '</strong>: ' + distance;
+								}
 								output += '				</p>';
 
 								output += '			</div>';
@@ -1473,6 +1481,8 @@ function practiceDirectorySearch() {
 		//GmapInit();
 
 	}
+
+	$('.results-loader-item').addClass('hidden');
 
 }
 
@@ -1515,21 +1525,37 @@ $(document).ready(function () {
 
 	/* Practices Search */
 
-	$('input[data-search="true"]').on('keyup', function () {
-		clearTimeout(timer);
-		timer = setTimeout(practiceDirectorySearch, timer_interval);
-	});
-
-	$('input[data-search="true"]').on('keydown', function () {
-		clearTimeout(timer);
-	});
+	//$('input[data-search="true"]').on('keyup', function () {
+	//	clearTimeout(timer);
+	//	timer = setTimeout(practiceDirectorySearch, timer_interval);
+	//});
+	//
+	//$('input[data-search="true"]').on('keydown', function () {
+	//	clearTimeout(timer);
+	//});
 
 
 	$('#physician-search-btn').on('click', function(e) {
 		e.preventDefault();
 		clearTimeout(timer);
+		$('.results-loader-item').removeClass('hidden');
 		timer = setTimeout(practiceDirectorySearch, timer_interval);
 	});
+
+	$('#search-pcp').on('click', function() {
+		var form = $(this).parents('form');
+		form.find('input[type="text"]').each(function() {
+			$(this).val('');
+		})
+	});
+
+	$('input[type="text"]').on('click', function() {
+		var form = $(this).parents('form');
+		if ( $('#search-pcp').is(':checked') ) {
+			$('#search-pcp').removeAttr('checked');
+		}
+	});
+
 
 	$('#myMapModal').on('shown.bs.modal', function (e) {
 		var element = $(e.relatedTarget);

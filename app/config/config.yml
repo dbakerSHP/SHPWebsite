@@ -94,6 +94,12 @@ doctrine:
         dql:
             string_functions:
                 GROUP_CONCAT: SiteBundle\DQL\GroupConcat
+                radians: SiteBundle\DQL\Radians
+
+            numeric_functions:
+                acos: SiteBundle\DQL\Acos
+                cos: SiteBundle\DQL\Cos
+                sin: SiteBundle\DQL\Sin
 
 # Swiftmailer Configuration
 swiftmailer:

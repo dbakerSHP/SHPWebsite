@@ -90,12 +90,18 @@
 							<p><input type="text" class="form-control input-lg" id="search-zip" data-search="true" placeholder="Zip" /></p>
 						</div>
 						<div class="col-xs-12 col-sm-3 col-md-2">
-							<button type="button" id="physician-search-btn" class="btn btn-primary full-width"><i class="fa fa-search"></i> Search Directory</button>
+							<button type="button" id="physician-search-btn" class="btn btn-primary full-width has-spinner"><span class="spinner"><i class="icon-spin icon-refresh"></i> Searching&hellip;</span><i class="fa fa-search"></i> Search Directory</button>
 						</div>
 					</form>
 				</div>
 			</div>
+
+			<div id="resultsloader" class="text-center">
+				<div class="results-loader-item fa fa-spin text-color hidden"></div>
+			</div>
+
 		</section>
+
 		<section id="results" class="no-pad-top">
 			<div class="container">
 				{#<div class="map-section"><div style="height: 376px;" data-content="Address: 5111 N. Scottsdale Rd." data-title="HonorHealth Medical Group - Chaparral" data-hue="#8eb4e3" data-type="roadmap" data-lng="-111.92494" data-lat="33.51181" data-zoomcontrol="false" data-zoom="15" class="map-canvas"></div></div>#}

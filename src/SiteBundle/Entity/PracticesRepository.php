@@ -62,7 +62,7 @@ class PracticesRepository extends EntityRepository
 			"physician.firstName as first_name",
 			"physician.lastName as last_name",
 			"specialties.specialty",
-			"( 3959 * acos( cos( radians( '33.5243' ) ) * cos( radians( location.latitude ) ) * cos( radians( location.longitude ) - radians( '-111.906' ) ) + sin( radians( '33.5243' ) ) * sin( radians( location.latitude ) ) ) ) AS distance ",
+			"( 3959 * acos( cos( radians( postal_codes.latitude ) ) * cos( radians( location.latitude ) ) * cos( radians( location.longitude ) - radians( postal_codes.longitude ) ) + sin( radians( postal_codes.latitude ) ) * sin( radians( location.latitude ) ) ) ) AS distance ",
 		])
 			->from("SiteBundle:Practices", "practice")
 			->leftJoin("SiteBundle:PracticesLocations", "location", "WITH", "practice.id = location.practice")
@@ -70,8 +70,11 @@ class PracticesRepository extends EntityRepository
 			->leftJoin("SiteBundle:Physicians", "physician", "WITH", "physician.id = xref_practice_physicians.physician")
 			->leftJoin("SiteBundle:PhysiciansHasSpecialties", "xref_specialties", "WITH", "physician.id = xref_specialties.physician")
 			->leftJoin("SiteBundle:Specialties", "specialties", "WITH", "specialties.id = xref_specialties.specialty")
+			->leftJoin("SiteBundle:PostalCodes", "postal_codes", "WITH", "postal_codes.postalCode = :postalCode")
 			->where("practice.deletedDate IS NULL")
+//			->andWhere("location.zip = :postalCode")
 			->orderBy("distance", "ASC")
+			->setParameter("postalCode", $postalCode)
 		;
 		return $queryBuilder->distinct()->getQuery()->getResult();
 	}
