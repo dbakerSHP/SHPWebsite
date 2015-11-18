@@ -1395,9 +1395,8 @@ function practiceDirectorySearch() {
 							(search_practice_val === null || practice_name.search(search_practice_val) != -1)
 							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
 							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
-							&& (search_zip_val === null || value.distance <= 10)
-							&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1)
-							&& (search_pcp_internal_med === null || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
+							&& (search_zip_val === null || value.distance <= parseInt($('#search-distance').val(), 10))
+							&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1 || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
 							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
 							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val().toLowerCase()) != -1)
 						) {
