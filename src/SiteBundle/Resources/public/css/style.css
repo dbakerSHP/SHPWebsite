@@ -507,6 +507,9 @@ a.btn-success {
 	font-size: 14px;
 	padding: 16px 45px;
 }
+a.btn-primary:active, a.btn-primary:visited, a.btn-primary:link {
+    color: #ffffff;
+}
 .transparent-header.top-bar .sticky-wrapper {
 	top:45px;
 }

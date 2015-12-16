@@ -57,6 +57,7 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        [ ]
+    node: /usr/local/bin/node
     #java: /usr/bin/java
     filters:
         uglifyjs2:
