@@ -34,12 +34,14 @@ class PracticesRepository extends EntityRepository
 		])
 			->from("SiteBundle:Practices", "practice")
 			->where("practice.deletedDate IS NULL")
-			->leftJoin("SiteBundle:PracticesLocations", "location", "WITH", "practice.id = location.practice")
-			->leftJoin("SiteBundle:PracticesHasPhysicians", "xref_practice_physicians", "WITH", "practice.id = xref_practice_physicians.practice and location.id = xref_practice_physicians.practiceLocation")
-			->leftJoin("SiteBundle:Physicians", "physician", "WITH", "physician.id = xref_practice_physicians.physician")
-			->leftJoin("SiteBundle:PhysiciansHasSpecialties", "xref_specialties", "WITH", "physician.id = xref_specialties.physician")
-			->leftJoin("SiteBundle:Specialties", "specialties", "WITH", "specialties.id = xref_specialties.specialty")
+			->innerJoin("SiteBundle:PracticesLocations", "location", "WITH", "practice.id = location.practice")
+			->innerJoin("SiteBundle:PracticesHasPhysicians", "xref_practice_physicians", "WITH", "practice.id = xref_practice_physicians.practice and location.id = xref_practice_physicians.practiceLocation")
+			->innerJoin("SiteBundle:Physicians", "physician", "WITH", "physician.id = xref_practice_physicians.physician")
+			->innerJoin("SiteBundle:PhysiciansHasSpecialties", "xref_specialties", "WITH", "physician.id = xref_specialties.physician")
+			->innerJoin("SiteBundle:Specialties", "specialties", "WITH", "specialties.id = xref_specialties.specialty")
+			->andWhere("physician.deletedDate IS NULL")
 		;
+//		echo $queryBuilder;
 		return $queryBuilder->distinct()->getQuery()->getResult();
 	}
 
