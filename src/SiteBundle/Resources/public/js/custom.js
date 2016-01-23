@@ -1270,10 +1270,10 @@ function practiceDirectorySearch() {
 	var search_practice_val = null;
 	var search_physician_val = null;
 	var search_specialty_val = null;
-	var search_phone_val = null;
-	var search_phone_regex = null;
+	//var search_phone_val = null;
+	//var search_phone_regex = null;
 	var search_address_val = null;
-	var search_suite_val = null;
+	//var search_suite_val = null;
 	var search_city_val = null;
 	var search_state_val = null;
 	var search_zip_val = null;
@@ -1283,40 +1283,40 @@ function practiceDirectorySearch() {
 	$.each(search, function () {
 		if ($(this).val()) {
 			var field_id = $(this).attr('id');
-			if (field_id == 'search-practice') {
-				search_practice_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-physician') {
-				search_physician_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-specialty') {
-				search_specialty_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-phone') {
-				search_phone_regex = new RegExp("/[0-9-()+]{3,20}/");
-				search_phone_val = $(this).val().match(search_phone_regex);
-			}
-			if (field_id == 'search-address') {
-				search_address_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-suite') {
-				search_suite_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-city') {
-				search_city_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-state') {
-				search_state_val = new RegExp($(this).val(), "i");
-			}
-			if (field_id == 'search-zip') {
+	//		if (field_id == 'form_search_practice') {
+	//			search_practice_val = new RegExp($(this).val(), "i");
+	//		}
+	//		if (field_id == 'form_search_physician') {
+	//			search_physician_val = new RegExp($(this).val(), "i");
+	//		}
+	//		if (field_id == 'form_search_specialty') {
+	//			search_specialty_val = new RegExp($(this).val(), "i");
+	//		}
+	//		//if (field_id == 'form_search_phone') {
+	//		//	search_phone_regex = new RegExp("/[0-9-()+]{3,20}/");
+	//		//	search_phone_val = $(this).val().match(search_phone_regex);
+	//		//}
+	//		if (field_id == 'form_search_address') {
+	//			search_address_val = new RegExp($(this).val(), "i");
+	//		}
+	//		//if (field_id == 'search-suite') {
+	//		//	search_suite_val = new RegExp($(this).val(), "i");
+	//		//}
+	//		if (field_id == 'form_search_city') {
+	//			search_city_val = new RegExp($(this).val(), "i");
+	//		}
+	//		if (field_id == 'form_search_state') {
+	//			search_state_val = new RegExp($(this).val(), "i");
+	//		}
+			if (field_id == 'form_search_zip') {
 				search_zip_val = new RegExp($(this).val(), "i");
 			}
-			if (field_id == 'search-pcp') {
-				if ( $('#search-pcp').is(':checked') ) {
-					search_pcp_family_med = 'family medicine';
-					search_pcp_internal_med = 'internal medicine';
-				}
-			}
+	//		//if (field_id == 'form_search_pcp') {
+	//		//	if ( $('#form_search_pcp').is(':checked') ) {
+	//		//		search_pcp_family_med = 'family medicine';
+	//		//		search_pcp_internal_med = 'internal medicine';
+	//		//	}
+	//		//}
 			search_val_exists = true;
 			search_criteria.push({
 				'fieldId': $(this).attr('id'),
@@ -1325,13 +1325,48 @@ function practiceDirectorySearch() {
 		}
 	});
 
-	var api_practices;
+	var api_practices = '/api/physician-directory';
 
-	if ( !$('#search-zip').val() ) {
-		api_practices = '/api/physician-directory';
-	} else {
-		api_practices = '/api/physician-directory/' + $('#search-zip').val();
+	if (
+		$('#form_search_pcp').is(':checked') ||
+		$('#form_search_practice').val() ||
+		$('#form_search_physician').val() ||
+		$('#form_search_specialty').val() ||
+		$('#form_search_address').val() ||
+		$('#form_search_city').val() ||
+		$('#form_search_zip').val() ||
+		$('#form_search_distance').val()
+	) {
+
+		api_practices = api_practices + '?';
+
+		if ($('#form_search_pcp').is(':checked')) {
+			api_practices = api_practices + '&pcp=true';
+		}
+
+		if ($('#form_search_practice').val()) {
+			api_practices = api_practices + '&practice=' + $('#form_search_practice').val();
+		}
+
+		if ($('#form_search_physician').val()) {
+			api_practices = api_practices + '&physician=' + $('#form_search_physician').val();
+		}
+
+		if ($('#form_search_specialty').val()) {
+			api_practices = api_practices + '&specialty=' + $('#form_search_specialty').val();
+		}
+
+		if ($('#form_search_zip').val()) {
+			api_practices = api_practices + '&postal_code=' + $('#form_search_zip').val();
+		}
+
+		if ($('#form_search_distance').val()) {
+			api_practices = api_practices + '&distance=' + $('#form_search_distance').val();
+		}
+
 	}
+
+	console.log(api_practices);
 
 	var output = '';
 	var count = 1;
@@ -1339,12 +1374,12 @@ function practiceDirectorySearch() {
 	//var fullList = $.getJSON(api_practices, getFullDataList);
 	//console.log(fullList);
 
-	if (!search_criteria.length) {
-
-		$('#results').find('.error').hide();
-		$('#results').removeClass('page-section').find('.container').html('');
-
-	} else {
+	//if (!search_criteria.length) {
+	//
+	//	$('#results').find('.error').hide();
+	//	$('#results').removeClass('page-section').find('.container').html('');
+	//
+	//} else {
 
 		$.getJSON(api_practices, function (data) {
 
@@ -1389,16 +1424,16 @@ function practiceDirectorySearch() {
 						});
 					}
 
-					if (search_val_exists) {
+					//if (search_val_exists) {
 
 						if (
-							(search_practice_val === null || practice_name.search(search_practice_val) != -1)
-							&& (search_address_val === null || findPartialStrInArray(address_list, $('#search-address').val().toLowerCase()) != -1)
-							&& (search_city_val === null || findPartialStrInArray(city_list, $('#search-city').val().toLowerCase()) != -1)
-							&& (search_zip_val === null || value.distance <= parseInt($('#search-distance').val(), 10))
-							&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1 || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
-							&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#search-physician').val().toLowerCase()) != -1)
-							&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#search-specialty').val().toLowerCase()) != -1)
+						//	(search_practice_val === null || practice_name.search(search_practice_val) != -1)
+						//	&& (search_address_val === null || findPartialStrInArray(address_list, $('#form_search_address').val().toLowerCase()) != -1)
+						//	&& (search_city_val === null || findPartialStrInArray(city_list, $('#form_search_city').val().toLowerCase()) != -1)
+							search_zip_val === null || value.distance <= parseInt($('#form_search_distance').val(), 10)
+						//	&& (search_pcp_family_med === null || findPartialStrInArray(specialty_list, search_pcp_family_med) != -1 || findPartialStrInArray(specialty_list, search_pcp_internal_med) != -1)
+						//	&& (search_physician_val === null || findPartialStrInArray(physician_list, $('#form_search_physician').val().toLowerCase()) != -1)
+						//	&& (search_specialty_val === null || findPartialStrInArray(specialty_list, $('#form_search_specialty').val().toLowerCase()) != -1)
 						) {
 
 							$('#results').find('.error').hide();
@@ -1407,7 +1442,7 @@ function practiceDirectorySearch() {
 							if (value.physicians) {
 								$.each(value.physicians, function (key, value) {
 									physician += '		<div class="col-sm-6">';
-									physician += '			<p><srtong class="title">Name:</srtong> ' + value.first_name + ' ' + value.last_name + '<br/>';
+									physician += '			<p><srtong class="title">Name:</srtong> ' + value.full_name + '<br/>';
 									physician += '			<srtong class="title">Specialty:</srtong> ' + value.specialty;
 									physician += '		</div>';
 								});
@@ -1438,8 +1473,8 @@ function practiceDirectorySearch() {
 								if (value.phone) {
 									output += '				<br/><a href="tel:' + value.phone + '">' + value.phone + '</a>';
 								}
-								if ($('#search-zip').val()) {
-									output += '				<br/>Distance From <strong>' + $('#search-zip').val() + '</strong>: ' + distance;
+								if ($('#form_search_zip').val()) {
+									output += '				<br/>Distance From <strong>' + $('#form_search_zip').val() + '</strong>: ' + distance;
 								}
 								output += '				</p>';
 
@@ -1462,7 +1497,7 @@ function practiceDirectorySearch() {
 
 						}
 
-					}
+					//}
 
 				});
 
@@ -1479,7 +1514,7 @@ function practiceDirectorySearch() {
 
 		//GmapInit();
 
-	}
+	//}
 
 	$('.results-loader-item').addClass('hidden');
 
@@ -1541,17 +1576,18 @@ $(document).ready(function () {
 		timer = setTimeout(practiceDirectorySearch, timer_interval);
 	});
 
-	$('#search-pcp').on('click', function() {
+	$('#form_search_pcp').on('click', function() {
 		var form = $(this).parents('form');
 		form.find('input[type="text"]').each(function() {
 			$(this).val('');
-		})
+		});
+		form.find('#form_search_specialty').val('');
 	});
 
-	$('input[type="text"]').on('click', function() {
+	$('input[type="text"], select').on('click', function() {
 		var form = $(this).parents('form');
-		if ( $('#search-pcp').is(':checked') ) {
-			$('#search-pcp').removeAttr('checked');
+		if ( $('#form_search_pcp').is(':checked') ) {
+			$('#form_search_pcp').removeAttr('checked');
 		}
 	});
 
@@ -1733,6 +1769,15 @@ function MapLoadScript() {
 	script.type = 'text/javascript';
 	script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=GmapInit';
 	document.body.appendChild(script);
+}
+
+
+function sortResults(prop, asc) {
+	people = people.sort(function(a, b) {
+		if (asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+		else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+	});
+	showResults();
 }
 
 

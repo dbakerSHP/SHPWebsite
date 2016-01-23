@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class SpecialtiesRepository extends EntityRepository
 {
+
+	public function getAllSpecialties () {
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
+		$queryBuilder->select([
+			"specialty.id",
+			"specialty.specialty",
+		])
+			->from("SiteBundle:Specialties", "specialty")
+			->where("specialty.deletedDate IS NULL")
+			->orderBy("specialty.specialty", "ASC")
+		;
+		return $queryBuilder->distinct()->getQuery()->getResult();
+	}
+
 }

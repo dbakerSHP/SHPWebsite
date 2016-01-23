@@ -132,6 +132,8 @@ fos_rest:
         array_normalizer: fos_rest.normalizer.camel_keys
     disable_csrf_role: ROLE_API
     exception:
+        enabled: true
+        exception_controller: 'SiteBundle\Controller\PhysicianAPIController::apiAllPracticesAction'
         codes:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
             'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT

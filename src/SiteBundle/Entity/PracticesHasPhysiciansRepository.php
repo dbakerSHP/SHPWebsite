@@ -36,6 +36,7 @@ class PracticesHasPhysiciansRepository extends EntityRepository
 			->where("practices_has_physicians.practice = :practices_id")
 			->andWhere("practices_has_physicians.practiceLocation = :practice_location_id")
 			->groupBy("physicians.id")
+			->orderBy("practices.practice", "ASC")
 			->setParameters(
 				array(
 					"practices_id" => $practiceId,
