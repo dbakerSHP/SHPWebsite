@@ -7,6 +7,7 @@ use Proxies\__CG__\SiteBundle\Entity\Practices;
 use SiteBundle\Form\PhysicianDirectoryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use SiteBundle\Entity\Specialties;
+use Doctrine\ORM\EntityRepository;
 
 class ForPatientsController extends Controller
 {
@@ -57,15 +58,15 @@ class ForPatientsController extends Controller
 		    ))
 		    ->add('search_specialty', 'entity', array(
 			    'class'=>'SiteBundle\Entity\Specialties',
+			    'query_builder'=>function(EntityRepository $er) {
+				    return $er->createQueryBuilder('specialty')
+					    ->where('specialty.deletedDate IS NULL')
+					    ->orderBy('specialty.specialty', 'ASC')
+				    ;
+			    },
 			    'property'=>'specialty',
 			    'placeholder' => 'Select a Specialty',
 			    'choices_as_values' => true,
-			    'required' => false,
-		    ))
-		    ->add('search_address', 'text', array(
-			    'attr' => array(
-				    'placeholder' => 'Street Address',
-			    ),
 			    'required' => false,
 		    ))
 		    ->add('search_city', 'text', array(

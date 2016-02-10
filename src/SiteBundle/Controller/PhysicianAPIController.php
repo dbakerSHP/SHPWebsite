@@ -19,7 +19,7 @@ class PhysicianAPIController extends FOSRestController
 	 * @QueryParam(name="practice", nullable=true, strict=false)
 	 * @QueryParam(name="physician", nullable=true, strict=false)
 	 * @QueryParam(name="specialty", nullable=true, strict=false)
-	 * @QueryParam(name="street_address", nullable=true, strict=false)
+	 * @QueryParam(name="city", nullable=true, strict=false)
 	 * @QueryParam(name="postal_code", nullable=true, strict=false)
 	 * @QueryParam(name="location_distance", nullable=true, strict=false)
 	 *
@@ -64,69 +64,11 @@ class PhysicianAPIController extends FOSRestController
 	}
 
 
-//	/**
-//	 * @Get("/physician-directory/{postalCode}")
-//	 */
-//	public function apiAllPracticesZipRangeAction($postalCode)
-//	{
-//		$practices = $this->getDoctrine()
-//			->getRepository('SiteBundle:Practices')
-//			->getAllPracticesWithZipRange($postalCode);
-//
-//		$joins = array(
-//			'location' =>
-//				array(
-//					'location_id'=>'location_id',
-//					'address1'=>'address1',
-//					'address2'=>'address2',
-//					'city'=>'city',
-//					'state'=>'state',
-//					'zip'=>'zip',
-//					'phone'=>'phone',
-//					'latitude'=>'latitude',
-//					'longitude'=>'longitude'
-//				),
-//			'physicians' => array(
-//				'physician_id' => 'physician_id',
-//				'first_name' => 'first_name',
-//				'last_name' => 'last_name',
-//				'specialty' => 'specialty'
-//			)
-//		);
-//
-//		$practices = $this->create_join_array($practices, $joins, 'location_id');
-//
-//		$view = View::create()
-//			->setFormat('json')
-//			->setStatusCode(200)
-//			->setData(['practices' => $practices])
-//		;
-//
-//		return $this->get('fos_rest.view_handler')->handle($view);
-//	}
-
-
-//	/**
-//	 * @Get("/physician-directory/practice/{practiceId}/{practiceLocationId}")
-//	 */
-//	public function apiAllPhysiciansByBusinessAction($practiceId, $practiceLocationId)
-//	{
-//		$practices = $this->getDoctrine()
-//			->getRepository('SiteBundle:PracticesHasPhysicians')
-//			->getPracticebyLocationId($practiceId, $practiceLocationId);
-//
-//		$view = View::create()
-//			->setFormat('json')
-//			->setStatusCode(200)
-//			->setData(['practices' => $practices])
-//		;
-//
-//		return $this->get('fos_rest.view_handler')->handle($view);
-//	}
-
-
+	/**
+	 * Build associative multidimensional array
+	 * with joined tables from query rows
+	 */
 	private function create_join_array($rows, $joins, $joinOn){
-		/* build associative multidimensional array with joined tables from query rows */
 
 		$out = null;
 
@@ -159,7 +101,38 @@ class PhysicianAPIController extends FOSRestController
 
 		}
 
+		if ( $this->multiKeyExists($out, 'distance') ) {
+			usort($out, function($a, $b) {
+				if ($a['distance'] == $b['distance']) {
+					return 0;
+				}
+				return ($a['distance'] < $b['distance']) ? -1 : 1;
+			});
+		}
+
 		return $out;
+
+	}
+
+
+	function multiKeyExists(array $arr, $key) {
+
+		// is in base array?
+		if (array_key_exists($key, $arr)) {
+			return true;
+		}
+
+		// check arrays contained in this array
+		foreach ($arr as $element) {
+			if (is_array($element)) {
+				if ($this->multiKeyExists($element, $key)) {
+					return true;
+				}
+			}
+
+		}
+
+		return false;
 	}
 
 }

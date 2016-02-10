@@ -1356,6 +1356,10 @@ function practiceDirectorySearch() {
 			api_practices = api_practices + '&specialty=' + $('#form_search_specialty').val();
 		}
 
+		if ($('#form_search_city').val()) {
+			api_practices = api_practices + '&city=' + $('#form_search_city').val();
+		}
+
 		if ($('#form_search_zip').val()) {
 			api_practices = api_practices + '&postal_code=' + $('#form_search_zip').val();
 		}

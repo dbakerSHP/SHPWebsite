@@ -58,7 +58,7 @@
 							{{ form_widget(form.search_pcp, {'attr': {'data-search': 'true'} }) }}
 							{{ form_label(form.search_pcp) }}
 						</div>
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-6 col-sm-6">
 							{{ form_widget(form.search_practice, { 'attr': {'class': 'form-control input-lg', 'data-search': 'true'} }) }}
 						</div>
 						<div class="col-xs-6 col-sm-3">
@@ -67,19 +67,19 @@
 						<div class="col-xs-6 col-sm-3">
 							{{ form_widget(form.search_specialty, { 'attr': {'class': 'form-control', 'data-search': 'true'} }) }}
 						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-							{{ form_widget(form.search_address, { 'attr': {'class': 'form-control input-lg', 'data-search': 'true'} }) }}
-						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+						{#<div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">#}
+							{#{{ form_widget(form.search_address, { 'attr': {'class': 'form-control input-lg', 'data-search': 'true'} }) }}#}
+						{#</div>#}
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-4">
 							{{ form_widget(form.search_city, { 'attr': {'class': 'form-control input-lg', 'data-search': 'true'} }) }}
 						</div>
-						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 							{{ form_widget(form.search_zip, { 'attr': {'class': 'form-control input-lg', 'data-search': 'true'} }) }}
 						</div>
-						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 							{{ form_widget(form.search_distance, { 'attr': {'class': 'form-control', 'data-search': 'true'} }) }}
 						</div>
-						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-2">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
 							<button type="submit" id="physician-search-btn" class="btn btn-primary full-width has-spinner"><span class="spinner"><i class="icon-spin icon-refresh"></i> Searching&hellip;</span><i class="fa fa-search"></i> Search Directory</button>
 							{#<input type="submit" id="physician-search-btn" class="btn btn-primary full-width has-spinner" value="" />#}
 						</div>

@@ -72,8 +72,8 @@ class PracticesRepository extends EntityRepository
 				->setParameter("specialtyId", $paramFetcher->get('specialty'))
 			;
 		}
-		if ($paramFetcher->get('street_address')) {
-			$queryBuilder->andWhere ($queryBuilder->expr()->like("location.address1", "'%" . $paramFetcher->get('street_address') . "%'"));
+		if ($paramFetcher->get('city')) {
+			$queryBuilder->andWhere ($queryBuilder->expr()->like("location.city", "'%" . $paramFetcher->get('city') . "%'"));
 		}
 		if ($paramFetcher->get('postal_code')) {
 			$queryBuilder->orderBy("distance", "ASC");
