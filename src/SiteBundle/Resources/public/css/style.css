@@ -6173,6 +6173,7 @@ textarea.form-control {
 	height:inherit;
 	/* To center horizontally */
 	margin: 0 auto;
+	max-width: 800px;
 	pointer-events: all;
 }
 
@@ -6181,7 +6182,7 @@ textarea.form-control {
 }
 
 .modal-dialog {
-	width: 800px;
+	width: 100%;
 }
 
 .modal .modal-header h3 {
